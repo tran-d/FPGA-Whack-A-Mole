@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for capacitive_sensor
-Fri Apr  6 13:57:30 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Fri Apr 06 17:40:37 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
 ---------------------
@@ -17,65 +17,76 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   9. Slow 1200mV 85C Model Recovery Summary
  10. Slow 1200mV 85C Model Removal Summary
  11. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 12. Slow 1200mV 85C Model Metastability Summary
- 13. Slow 1200mV 0C Model Fmax Summary
- 14. Slow 1200mV 0C Model Setup Summary
- 15. Slow 1200mV 0C Model Hold Summary
- 16. Slow 1200mV 0C Model Recovery Summary
- 17. Slow 1200mV 0C Model Removal Summary
- 18. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 19. Slow 1200mV 0C Model Metastability Summary
- 20. Fast 1200mV 0C Model Setup Summary
- 21. Fast 1200mV 0C Model Hold Summary
- 22. Fast 1200mV 0C Model Recovery Summary
- 23. Fast 1200mV 0C Model Removal Summary
- 24. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 25. Fast 1200mV 0C Model Metastability Summary
- 26. Multicorner Timing Analysis Summary
- 27. Board Trace Model Assignments
- 28. Input Transition Times
- 29. Signal Integrity Metrics (Slow 1200mv 0c Model)
- 30. Signal Integrity Metrics (Slow 1200mv 85c Model)
- 31. Signal Integrity Metrics (Fast 1200mv 0c Model)
- 32. Clock Transfers
- 33. Report TCCS
- 34. Report RSKM
- 35. Unconstrained Paths Summary
- 36. TimeQuest Timing Analyzer Messages
+ 12. Slow 1200mV 85C Model Setup: 'CLOCK_50'
+ 13. Slow 1200mV 85C Model Hold: 'CLOCK_50'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'CLOCK_50'
+ 22. Slow 1200mV 0C Model Hold: 'CLOCK_50'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'CLOCK_50'
+ 30. Fast 1200mV 0C Model Hold: 'CLOCK_50'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Output Ports
+ 45. Unconstrained Output Ports
+ 46. TimeQuest Timing Analyzer Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                           ;
-+-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Timing Analyzer       ; TimeQuest                                           ;
-; Revision Name         ; capacitive_sensor                                   ;
-; Device Family         ; Cyclone IV E                                        ;
-; Device Name           ; EP4CE115F29C7                                       ;
-; Timing Models         ; Final                                               ;
-; Delay Model           ; Combined                                            ;
-; Rise/Fall Delays      ; Enabled                                             ;
-+-----------------------+-----------------------------------------------------+
++---------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                               ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Timing Analyzer       ; TimeQuest                                               ;
+; Revision Name         ; capacitive_sensor                                       ;
+; Device Family         ; Cyclone IV E                                            ;
+; Device Name           ; EP4CE115F29C7                                           ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Combined                                                ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -83,28 +94,35 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.1%      ;
+;     Processors 2-4         ;   0.3%      ;
 +----------------------------+-------------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
 
 
---------------------------------------
-; Slow 1200mV 85C Model Fmax Summary ;
---------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                       ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 280.9 MHz ; 250.0 MHz       ; CLOCK_50   ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
 ----------------------------------
@@ -113,16 +131,22 @@ No paths to report.
 HTML report is unavailable in plain text report export.
 
 
----------------------------------------
++-------------------------------------+
 ; Slow 1200mV 85C Model Setup Summary ;
----------------------------------------
-No paths to report.
++----------+--------+-----------------+
+; Clock    ; Slack  ; End Point TNS   ;
++----------+--------+-----------------+
+; CLOCK_50 ; -2.560 ; -86.366         ;
++----------+--------+-----------------+
 
 
---------------------------------------
++------------------------------------+
 ; Slow 1200mV 85C Model Hold Summary ;
---------------------------------------
-No paths to report.
++----------+-------+-----------------+
+; Clock    ; Slack ; End Point TNS   ;
++----------+-------+-----------------+
+; CLOCK_50 ; 0.404 ; 0.000           ;
++----------+-------+-----------------+
 
 
 ------------------------------------------
@@ -137,10 +161,229 @@ No paths to report.
 No paths to report.
 
 
------------------------------------------------------
++---------------------------------------------------+
 ; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
------------------------------------------------------
-No paths to report.
++----------+--------+-------------------------------+
+; Clock    ; Slack  ; End Point TNS                 ;
++----------+--------+-------------------------------+
+; CLOCK_50 ; -3.000 ; -63.395                       ;
++----------+--------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK_50'                                                                                  ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.560 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.485      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.533 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.458      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.530 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.455      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.402 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.327      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.401 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.326      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.314 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.233      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.311 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.086     ; 3.223      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.310 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.229      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.257 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.080     ; 3.175      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.254 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.179      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.241 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.166      ;
+; -2.204 ; lcd:mylcd|delay[3]  ; lcd:mylcd|state1[0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.073     ; 3.129      ;
+; -2.199 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.079     ; 3.118      ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK_50'                                                                                    ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.404 ; lcd:mylcd|lcd_en    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|cstart    ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|cdone     ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|count[0]  ; lcd:mylcd|count[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|count[1]  ; lcd:mylcd|count[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|count[2]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|count[3]  ; lcd:mylcd|count[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; lcd:mylcd|mstart    ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.669      ;
+; 0.409 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.674      ;
+; 0.409 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.674      ;
+; 0.444 ; lcd:mylcd|delay[17] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.709      ;
+; 0.457 ; lcd:mylcd|count[4]  ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.722      ;
+; 0.458 ; lcd:mylcd|index[5]  ; lcd:mylcd|index[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.724      ;
+; 0.542 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.515      ; 1.243      ;
+; 0.608 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.874      ;
+; 0.617 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.883      ;
+; 0.638 ; lcd:mylcd|mstart    ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.904      ;
+; 0.639 ; lcd:mylcd|mstart    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.905      ;
+; 0.643 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.908      ;
+; 0.643 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.908      ;
+; 0.644 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.644 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.909      ;
+; 0.645 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
+; 0.645 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
+; 0.645 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.910      ;
+; 0.646 ; lcd:mylcd|delay[0]  ; lcd:mylcd|delay[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.097      ; 0.929      ;
+; 0.646 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.911      ;
+; 0.648 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.913      ;
+; 0.650 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.915      ;
+; 0.660 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.925      ;
+; 0.665 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.931      ;
+; 0.670 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.935      ;
+; 0.675 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.941      ;
+; 0.681 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.946      ;
+; 0.683 ; lcd:mylcd|state1[1] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.948      ;
+; 0.685 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.951      ;
+; 0.693 ; lcd:mylcd|prestart  ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.958      ;
+; 0.695 ; lcd:mylcd|state1[0] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.960      ;
+; 0.695 ; lcd:mylcd|state2[1] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.960      ;
+; 0.698 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.964      ;
+; 0.701 ; lcd:mylcd|state2[0] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.966      ;
+; 0.708 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.974      ;
+; 0.721 ; lcd:mylcd|state2[1] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.986      ;
+; 0.722 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 0.987      ;
+; 0.732 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 0.998      ;
+; 0.751 ; lcd:mylcd|prestart  ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.016      ;
+; 0.766 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.033      ;
+; 0.778 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.043      ;
+; 0.798 ; lcd:mylcd|index[2]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.515      ; 1.499      ;
+; 0.819 ; lcd:mylcd|index[4]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.085      ;
+; 0.823 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.088      ;
+; 0.835 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.101      ;
+; 0.837 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.103      ;
+; 0.837 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.103      ;
+; 0.840 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.515      ; 1.541      ;
+; 0.847 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.114      ;
+; 0.871 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.136      ;
+; 0.936 ; lcd:mylcd|cdone     ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.084      ; 1.206      ;
+; 0.944 ; lcd:mylcd|cdone     ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.084      ; 1.214      ;
+; 0.954 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.219      ;
+; 0.960 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.225      ;
+; 0.961 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.226      ;
+; 0.961 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.226      ;
+; 0.961 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.226      ;
+; 0.962 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.227      ;
+; 0.962 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.227      ;
+; 0.962 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.227      ;
+; 0.963 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.081      ; 1.230      ;
+; 0.964 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.085      ; 1.235      ;
+; 0.969 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.085      ; 1.240      ;
+; 0.971 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.236      ;
+; 0.971 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.236      ;
+; 0.971 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.236      ;
+; 0.972 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.237      ;
+; 0.973 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.238      ;
+; 0.975 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.240      ;
+; 0.976 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.241      ;
+; 0.976 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.241      ;
+; 0.976 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.241      ;
+; 0.977 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.242      ;
+; 0.977 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.242      ;
+; 0.977 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.242      ;
+; 0.978 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.243      ;
+; 0.980 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.079      ; 1.245      ;
+; 0.983 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.249      ;
+; 0.989 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.515      ; 1.690      ;
+; 0.993 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.259      ;
+; 0.998 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.264      ;
+; 1.002 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.268      ;
+; 1.007 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.273      ;
+; 1.015 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.080      ; 1.281      ;
+; 1.032 ; lcd:mylcd|cstart    ; lcd:mylcd|prestart    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.074      ; 1.292      ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -149,22 +392,32 @@ No paths to report.
 No synchronizer chains to report.
 
 
--------------------------------------
-; Slow 1200mV 0C Model Fmax Summary ;
--------------------------------------
-No paths to report.
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 305.81 MHz ; 250.0 MHz       ; CLOCK_50   ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
---------------------------------------
++------------------------------------+
 ; Slow 1200mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; CLOCK_50 ; -2.270 ; -74.942        ;
++----------+--------+----------------+
 
 
--------------------------------------
++-----------------------------------+
 ; Slow 1200mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; CLOCK_50 ; 0.355 ; 0.000          ;
++----------+-------+----------------+
 
 
 -----------------------------------------
@@ -179,10 +432,229 @@ No paths to report.
 No paths to report.
 
 
-----------------------------------------------------
++--------------------------------------------------+
 ; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; CLOCK_50 ; -3.000 ; -63.395                      ;
++----------+--------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK_50'                                                                                   ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.270 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.204      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.224 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.158      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.221 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.155      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.091 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 3.025      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.044 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.078     ; 2.965      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.027 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.955      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -2.024 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.952      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.993 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.072     ; 2.920      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.969 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.903      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.956 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.890      ;
+; -1.941 ; lcd:mylcd|delay[3]  ; lcd:mylcd|state1[0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.065     ; 2.875      ;
+; -1.923 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.071     ; 2.851      ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK_50'                                                                                     ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.355 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:mylcd|cstart    ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:mylcd|cdone     ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; lcd:mylcd|mstart    ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.597      ;
+; 0.356 ; lcd:mylcd|lcd_en    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|count[0]  ; lcd:mylcd|count[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|count[1]  ; lcd:mylcd|count[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|count[2]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|count[3]  ; lcd:mylcd|count[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.597      ;
+; 0.366 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.608      ;
+; 0.367 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.608      ;
+; 0.401 ; lcd:mylcd|delay[17] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.643      ;
+; 0.415 ; lcd:mylcd|index[5]  ; lcd:mylcd|index[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.657      ;
+; 0.422 ; lcd:mylcd|count[4]  ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.663      ;
+; 0.482 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.472      ; 1.125      ;
+; 0.551 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.793      ;
+; 0.565 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.807      ;
+; 0.587 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.829      ;
+; 0.587 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.829      ;
+; 0.588 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
+; 0.588 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
+; 0.588 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
+; 0.588 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
+; 0.588 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.830      ;
+; 0.589 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.831      ;
+; 0.589 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.831      ;
+; 0.589 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.831      ;
+; 0.590 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.832      ;
+; 0.590 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.832      ;
+; 0.591 ; lcd:mylcd|delay[0]  ; lcd:mylcd|delay[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.087      ; 0.849      ;
+; 0.591 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.833      ;
+; 0.592 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.834      ;
+; 0.592 ; lcd:mylcd|mstart    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.835      ;
+; 0.592 ; lcd:mylcd|mstart    ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.835      ;
+; 0.594 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.836      ;
+; 0.604 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.846      ;
+; 0.609 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.851      ;
+; 0.612 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.854      ;
+; 0.617 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.859      ;
+; 0.622 ; lcd:mylcd|state1[1] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.864      ;
+; 0.623 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.864      ;
+; 0.627 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.869      ;
+; 0.632 ; lcd:mylcd|prestart  ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.874      ;
+; 0.635 ; lcd:mylcd|state1[0] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.877      ;
+; 0.636 ; lcd:mylcd|state2[1] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.877      ;
+; 0.637 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.879      ;
+; 0.645 ; lcd:mylcd|state2[0] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.886      ;
+; 0.646 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.888      ;
+; 0.650 ; lcd:mylcd|state2[1] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.891      ;
+; 0.654 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.895      ;
+; 0.668 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.910      ;
+; 0.681 ; lcd:mylcd|prestart  ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.923      ;
+; 0.708 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.949      ;
+; 0.716 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 0.959      ;
+; 0.735 ; lcd:mylcd|index[2]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.472      ; 1.378      ;
+; 0.741 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 0.982      ;
+; 0.755 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.997      ;
+; 0.757 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 0.999      ;
+; 0.758 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.472      ; 1.401      ;
+; 0.758 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.000      ;
+; 0.759 ; lcd:mylcd|index[4]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.001      ;
+; 0.787 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 1.030      ;
+; 0.806 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.048      ;
+; 0.859 ; lcd:mylcd|cdone     ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.076      ; 1.106      ;
+; 0.861 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 1.102      ;
+; 0.864 ; lcd:mylcd|cdone     ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.076      ; 1.111      ;
+; 0.869 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 1.117      ;
+; 0.875 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.117      ;
+; 0.875 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.117      ;
+; 0.875 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.117      ;
+; 0.875 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.117      ;
+; 0.876 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.118      ;
+; 0.876 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.118      ;
+; 0.876 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.118      ;
+; 0.876 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.118      ;
+; 0.876 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.118      ;
+; 0.877 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.119      ;
+; 0.877 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.119      ;
+; 0.879 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.121      ;
+; 0.880 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.122      ;
+; 0.880 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.077      ; 1.128      ;
+; 0.882 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.124      ;
+; 0.882 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.072      ; 1.125      ;
+; 0.886 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.128      ;
+; 0.887 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.129      ;
+; 0.887 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.129      ;
+; 0.887 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.129      ;
+; 0.890 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.132      ;
+; 0.891 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.133      ;
+; 0.891 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.133      ;
+; 0.895 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.137      ;
+; 0.896 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.138      ;
+; 0.901 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.472      ; 1.544      ;
+; 0.905 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.147      ;
+; 0.907 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.149      ;
+; 0.916 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.158      ;
+; 0.924 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.071      ; 1.166      ;
+; 0.948 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.070      ; 1.189      ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -191,16 +663,22 @@ No paths to report.
 No synchronizer chains to report.
 
 
---------------------------------------
++------------------------------------+
 ; Fast 1200mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; CLOCK_50 ; -0.685 ; -17.970        ;
++----------+--------+----------------+
 
 
--------------------------------------
++-----------------------------------+
 ; Fast 1200mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; CLOCK_50 ; 0.182 ; 0.000          ;
++----------+-------+----------------+
 
 
 -----------------------------------------
@@ -215,10 +693,229 @@ No paths to report.
 No paths to report.
 
 
-----------------------------------------------------
++--------------------------------------------------+
 ; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; CLOCK_50 ; -3.000 ; -52.933                      ;
++----------+--------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK_50'                                                                                   ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.685 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.637      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.672 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.624      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.625 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.577      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.540      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.592 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.538      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[1]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.558 ; lcd:mylcd|index[3]  ; lcd:mylcd|delay[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.046     ; 1.499      ;
+; -0.549 ; lcd:mylcd|delay[4]  ; lcd:mylcd|state1[0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.501      ;
+; -0.549 ; lcd:mylcd|delay[2]  ; lcd:mylcd|state1[0] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.501      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.541 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.035     ; 1.493      ;
+; -0.540 ; lcd:mylcd|delay[0]  ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.238     ; 1.289      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.539 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[17] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.485      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[16] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
+; -0.537 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.041     ; 1.483      ;
++--------+---------------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK_50'                                                                                     ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.182 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; lcd:mylcd|cstart    ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.307      ;
+; 0.183 ; lcd:mylcd|lcd_en    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|cdone     ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|count[0]  ; lcd:mylcd|count[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|count[1]  ; lcd:mylcd|count[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|count[2]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|count[3]  ; lcd:mylcd|count[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; lcd:mylcd|mstart    ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.307      ;
+; 0.189 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.314      ;
+; 0.190 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.314      ;
+; 0.200 ; lcd:mylcd|delay[17] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.325      ;
+; 0.205 ; lcd:mylcd|count[4]  ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.329      ;
+; 0.209 ; lcd:mylcd|index[5]  ; lcd:mylcd|index[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.333      ;
+; 0.264 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.245      ; 0.593      ;
+; 0.283 ; lcd:mylcd|mstart    ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.408      ;
+; 0.284 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.408      ;
+; 0.284 ; lcd:mylcd|mstart    ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.409      ;
+; 0.286 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.410      ;
+; 0.293 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.417      ;
+; 0.293 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.418      ;
+; 0.293 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.418      ;
+; 0.294 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; lcd:mylcd|delay[0]  ; lcd:mylcd|delay[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.048      ; 0.426      ;
+; 0.294 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
+; 0.294 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
+; 0.294 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.418      ;
+; 0.294 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
+; 0.294 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.419      ;
+; 0.295 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.419      ;
+; 0.295 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.419      ;
+; 0.296 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.420      ;
+; 0.296 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.421      ;
+; 0.302 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.426      ;
+; 0.306 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.430      ;
+; 0.306 ; lcd:mylcd|state1[0] ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.431      ;
+; 0.312 ; lcd:mylcd|state1[1] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.437      ;
+; 0.313 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.437      ;
+; 0.315 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[0]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.439      ;
+; 0.318 ; lcd:mylcd|prestart  ; lcd:mylcd|cdone       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.442      ;
+; 0.318 ; lcd:mylcd|state1[0] ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.443      ;
+; 0.319 ; lcd:mylcd|state2[1] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.443      ;
+; 0.319 ; lcd:mylcd|state2[0] ; lcd:mylcd|state2[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.443      ;
+; 0.325 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.449      ;
+; 0.326 ; lcd:mylcd|state2[0] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.450      ;
+; 0.332 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.456      ;
+; 0.335 ; lcd:mylcd|state2[1] ; lcd:mylcd|lcd_en      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.459      ;
+; 0.338 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.463      ;
+; 0.341 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.465      ;
+; 0.344 ; lcd:mylcd|index[1]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.468      ;
+; 0.347 ; lcd:mylcd|prestart  ; lcd:mylcd|mstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.471      ;
+; 0.357 ; lcd:mylcd|index[2]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.245      ; 0.686      ;
+; 0.360 ; lcd:mylcd|state2[1] ; lcd:mylcd|state2[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.484      ;
+; 0.367 ; lcd:mylcd|index[4]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.491      ;
+; 0.385 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.510      ;
+; 0.390 ; lcd:mylcd|state1[1] ; lcd:mylcd|state1[0]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.515      ;
+; 0.394 ; lcd:mylcd|count[4]  ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.518      ;
+; 0.399 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.245      ; 0.728      ;
+; 0.402 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[5] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.526      ;
+; 0.403 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.527      ;
+; 0.404 ; lcd:mylcd|index[0]  ; lcd:mylcd|lcd_data[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.528      ;
+; 0.419 ; lcd:mylcd|cdone     ; lcd:mylcd|state1[1]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.549      ;
+; 0.424 ; lcd:mylcd|cdone     ; lcd:mylcd|cstart      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.554      ;
+; 0.441 ; lcd:mylcd|index[4]  ; lcd:mylcd|lcd_rs      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.245      ; 0.770      ;
+; 0.442 ; lcd:mylcd|delay[9]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.567      ;
+; 0.442 ; lcd:mylcd|delay[7]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.566      ;
+; 0.443 ; lcd:mylcd|delay[13] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.568      ;
+; 0.443 ; lcd:mylcd|delay[11] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.568      ;
+; 0.443 ; lcd:mylcd|delay[1]  ; lcd:mylcd|delay[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.567      ;
+; 0.443 ; lcd:mylcd|delay[15] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.568      ;
+; 0.444 ; lcd:mylcd|delay[5]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.568      ;
+; 0.446 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[9]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.576      ;
+; 0.447 ; lcd:mylcd|index[5]  ; lcd:mylcd|lcd_data[6] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.572      ;
+; 0.449 ; lcd:mylcd|delay[8]  ; lcd:mylcd|delay[10]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.046      ; 0.579      ;
+; 0.451 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[11]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.576      ;
+; 0.451 ; lcd:mylcd|delay[3]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.575      ;
+; 0.452 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[7]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.576      ;
+; 0.452 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[13]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.577      ;
+; 0.452 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[15]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.577      ;
+; 0.452 ; lcd:mylcd|state2[0] ; lcd:mylcd|count[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.576      ;
+; 0.453 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[5]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.577      ;
+; 0.454 ; lcd:mylcd|delay[16] ; lcd:mylcd|delay[17]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.579      ;
+; 0.454 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.578      ;
+; 0.454 ; lcd:mylcd|delay[10] ; lcd:mylcd|delay[12]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.579      ;
+; 0.455 ; lcd:mylcd|index[3]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.579      ;
+; 0.455 ; lcd:mylcd|delay[6]  ; lcd:mylcd|delay[8]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.579      ;
+; 0.455 ; lcd:mylcd|delay[12] ; lcd:mylcd|delay[14]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.580      ;
+; 0.455 ; lcd:mylcd|delay[14] ; lcd:mylcd|delay[16]   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.041      ; 0.580      ;
+; 0.456 ; lcd:mylcd|delay[4]  ; lcd:mylcd|delay[6]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.580      ;
+; 0.457 ; lcd:mylcd|delay[2]  ; lcd:mylcd|delay[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.581      ;
+; 0.464 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[1]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.588      ;
+; 0.467 ; lcd:mylcd|index[0]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.591      ;
+; 0.471 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[3]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.595      ;
+; 0.474 ; lcd:mylcd|index[2]  ; lcd:mylcd|index[4]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.598      ;
+; 0.474 ; lcd:mylcd|index[1]  ; lcd:mylcd|index[2]    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.040      ; 0.598      ;
+; 0.476 ; lcd:mylcd|cstart    ; lcd:mylcd|prestart    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.035      ; 0.595      ;
++-------+---------------------+-----------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -227,14 +924,16 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.560  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK_50        ; -2.560  ; 0.182 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -86.366 ; 0.0   ; 0.0      ; 0.0     ; -63.395             ;
+;  CLOCK_50        ; -86.366 ; 0.000 ; N/A      ; N/A     ; -63.395             ;
++------------------+---------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -341,10 +1040,24 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 914      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 914      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -368,9 +1081,54 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 0     ; 0    ;
-; Unconstrained Output Port Paths ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
 +---------------------------------+-------+------+
+
+
++------------------------------------------+
+; Clock Status Summary                     ;
++----------+----------+------+-------------+
+; Target   ; Clock    ; Type ; Status      ;
++----------+----------+------+-------------+
+; CLOCK_50 ; CLOCK_50 ; Base ; Constrained ;
++----------+----------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; lcd_data[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_en      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_rs      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; lcd_data[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_data[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_en      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; lcd_rs      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------+
@@ -378,58 +1136,82 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Apr  6 13:57:29 2018
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+    Info: Processing started: Fri Apr 06 17:40:32 2018
 Info: Command: quartus_sta capacitive_sensor -c capacitive_sensor
-Info: qsta_default_script.tcl version: #3
+Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'capacitive_sensor.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow 1200mV 85C Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.560
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.560             -86.366 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.404
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.404               0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -63.395 CLOCK_50 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.270
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.270             -74.942 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.355
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.355               0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -63.395 CLOCK_50 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.685
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.685             -17.970 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.182
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.182               0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
-Info (332101): Design is fully constrained for setup requirements
-Info (332101): Design is fully constrained for hold requirements
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -52.933 CLOCK_50 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 908 megabytes
-    Info: Processing ended: Fri Apr  6 13:57:30 2018
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 994 megabytes
+    Info: Processing ended: Fri Apr 06 17:40:37 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
 
 

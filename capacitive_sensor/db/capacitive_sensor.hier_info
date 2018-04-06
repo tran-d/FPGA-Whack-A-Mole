@@ -1,17 +1,17 @@
 |skeleton
-lcd_data[0] << lcd:mylcd.port4
-lcd_data[1] << lcd:mylcd.port4
-lcd_data[2] << lcd:mylcd.port4
-lcd_data[3] << lcd:mylcd.port4
-lcd_data[4] << lcd:mylcd.port4
-lcd_data[5] << lcd:mylcd.port4
-lcd_data[6] << lcd:mylcd.port4
-lcd_data[7] << lcd:mylcd.port4
-lcd_rw << lcd:mylcd.port5
-lcd_en << lcd:mylcd.port6
-lcd_rs << lcd:mylcd.port7
-lcd_on << lcd:mylcd.port8
-lcd_blon << lcd:mylcd.port9
+lcd_data[0] <= lcd:mylcd.port4
+lcd_data[1] <= lcd:mylcd.port4
+lcd_data[2] <= lcd:mylcd.port4
+lcd_data[3] <= lcd:mylcd.port4
+lcd_data[4] <= lcd:mylcd.port4
+lcd_data[5] <= lcd:mylcd.port4
+lcd_data[6] <= lcd:mylcd.port4
+lcd_data[7] <= lcd:mylcd.port4
+lcd_rw <= lcd:mylcd.port5
+lcd_en <= lcd:mylcd.port6
+lcd_rs <= lcd:mylcd.port7
+lcd_on <= lcd:mylcd.port8
+lcd_blon <= lcd:mylcd.port9
 CLOCK_50 => clock.IN1
 
 

@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at capacitive_sensor.v(33): always construct contains both blocking and non-blocking assignments File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/capacitive_sensor.v Line: 33
+Warning (10268): Verilog HDL information at skeleton.v(37): always construct contains both blocking and non-blocking assignments File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 37
