@@ -1,0 +1,12 @@
+module capacitive_sensor(clock, sensor_out, sensor_in, final_count, count);
+
+	reg [31:0] counter;
+
+	always @(posedge clock) begin
+		
+		
+		
+	end
+
+
+endmodule
