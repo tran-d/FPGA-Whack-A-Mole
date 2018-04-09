@@ -1,6 +1,6 @@
 Analysis & Synthesis report for capacitive_sensor
-Fri Apr 06 17:40:04 2018
-Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+Mon Apr  9 00:35:18 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -26,41 +26,40 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 06 17:40:04 2018           ;
-; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
-; Revision Name                      ; capacitive_sensor                               ;
-; Top-level Entity Name              ; skeleton                                        ;
-; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 68                                              ;
-;     Total combinational functions  ; 66                                              ;
-;     Dedicated logic registers      ; 47                                              ;
-; Total registers                    ; 47                                              ;
-; Total pins                         ; 14                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr  9 00:35:18 2018       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; capacitive_sensor                           ;
+; Top-level Entity Name              ; skeleton                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 68                                          ;
+;     Total combinational functions  ; 66                                          ;
+;     Dedicated logic registers      ; 47                                          ;
+; Total registers                    ; 47                                          ;
+; Total pins                         ; 14                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -77,7 +76,7 @@ agreement for further details.
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
@@ -130,7 +129,7 @@ agreement for further details.
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
 ; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
 ; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
 ; HDL message level                                                          ; Level2             ; Level2             ;
 ; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
 ; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
@@ -146,7 +145,6 @@ agreement for further details.
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
@@ -155,7 +153,7 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -163,18 +161,19 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
-; lcd.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/lcd.sv     ;         ;
-; skeleton.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
+; lcd.sv                           ; yes             ; User SystemVerilog HDL File  ; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/lcd.sv     ;         ;
+; skeleton.v                       ; yes             ; User Verilog HDL File        ; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -209,14 +208,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |skeleton                  ; 66 (0)            ; 47 (0)       ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |skeleton           ; skeleton    ; work         ;
-;    |lcd:mylcd|             ; 66 (66)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|lcd:mylcd ; lcd         ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |skeleton                  ; 66 (0)              ; 47 (0)                    ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |skeleton           ; skeleton    ; work         ;
+;    |lcd:mylcd|             ; 66 (66)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|lcd:mylcd ; lcd         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -628,25 +627,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Fri Apr 06 17:39:49 2018
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Apr  9 00:35:09 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off capacitive_sensor -c capacitive_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file lcd.sv
-    Info (12023): Found entity 1: lcd File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/lcd.sv Line: 1
+    Info (12023): Found entity 1: lcd File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/lcd.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file skeleton.v
-    Info (12023): Found entity 1: skeleton File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 1
+    Info (12023): Found entity 1: skeleton File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file capacitive_sensor.v
-    Info (12023): Found entity 1: capacitive_sensor File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/capacitive_sensor.v Line: 1
+    Info (12023): Found entity 1: capacitive_sensor File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/capacitive_sensor.v Line: 1
 Info (12127): Elaborating entity "skeleton" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at skeleton.v(25): object "value" assigned a value but never read File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 25
-Warning (10036): Verilog HDL or VHDL warning at skeleton.v(28): object "counter" assigned a value but never read File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 28
-Info (12128): Elaborating entity "lcd" for hierarchy "lcd:mylcd" File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 19
+Warning (10036): Verilog HDL or VHDL warning at skeleton.v(25): object "value" assigned a value but never read File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 25
+Warning (10036): Verilog HDL or VHDL warning at skeleton.v(28): object "counter" assigned a value but never read File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 28
+Info (12128): Elaborating entity "lcd" for hierarchy "lcd:mylcd" File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 19
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
-    Warning (13410): Pin "lcd_on" is stuck at VCC File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
-    Warning (13410): Pin "lcd_blon" is stuck at VCC File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
+    Warning (13410): Pin "lcd_on" is stuck at VCC File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
+    Warning (13410): Pin "lcd_blon" is stuck at VCC File: /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/skeleton.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -656,9 +655,9 @@ Info (21057): Implemented 85 device resources after synthesis - the final resour
     Info (21059): Implemented 13 output pins
     Info (21061): Implemented 71 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 919 megabytes
-    Info: Processing ended: Fri Apr 06 17:40:04 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 1000 megabytes
+    Info: Processing ended: Mon Apr  9 00:35:18 2018
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:23
 
 

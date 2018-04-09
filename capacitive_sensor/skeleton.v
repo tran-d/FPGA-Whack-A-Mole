@@ -24,42 +24,7 @@ module skeleton(
 	
 	wire [31:0] value = 31'd56876;
 
-
-	reg [6:0] counter;
-	
-	
-	initial begin
-		lcd_reset <= 1'b1;
-		counter <= 4'd0;
-		lcd_write_en <= 1'b1;
-		lcd_reset    <= 1'b0;
-		lcd_write_data <= 8'd0;
-	end
-	
-//	always @(posedge clock) begin
-//	
-//		
-//		if(counter >= 4'd11) begin
-//			lcd_write_en <= 1'b1;
-//			lcd_reset <= 1'b0;
-//						
-//			counter <= 4'd0;			
-//		end
-//		
-//		else if(counter == 4'd10) begin
-//			lcd_write_en <= 1'b0;
-//			lcd_reset <= 1'b1;
-//			
-//			counter <= counter + 1;
-//		end
-//		
-//		else begin
-//			lcd_write_data = (value / (10^(9-counter))) + 31'd48;
-//			counter <= counter + 1;
-//		end
-
-		
-//	end
+	probes debugger(
 
 
 	

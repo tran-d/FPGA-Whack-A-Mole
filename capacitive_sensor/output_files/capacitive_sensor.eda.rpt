@@ -1,6 +1,6 @@
 EDA Netlist Writer report for capacitive_sensor
-Fri Apr 06 17:40:42 2018
-Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+Mon Apr  9 00:35:38 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -17,27 +17,26 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera MegaCore Function License Agreement, or other 
-applicable license agreement, including, without limitation, 
-that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
-authorized distributors.  Please refer to the applicable 
-agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Apr 06 17:40:42 2018 ;
+; EDA Netlist Writer Status ; Successful - Mon Apr  9 00:35:38 2018 ;
 ; Revision Name             ; capacitive_sensor                     ;
 ; Top-level Entity Name     ; skeleton                              ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,20 +66,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                        ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                   ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_85c_slow.vo     ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_0c_slow.vo      ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_min_1200mv_0c_fast.vo    ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor.vo                       ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_85c_v_slow.sdo  ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_0c_v_slow.sdo   ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_v.sdo                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_85c_slow.vo     ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_0c_slow.vo      ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_min_1200mv_0c_fast.vo    ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor.vo                       ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_85c_v_slow.sdo  ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_7_1200mv_0c_v_slow.sdo   ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_min_1200mv_0c_v_fast.sdo ;
+; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/capacitive_sensor_v.sdo                    ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,22 +87,22 @@ agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Fri Apr 06 17:40:38 2018
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Apr  9 00:35:38 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off capacitive_sensor -c capacitive_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file capacitive_sensor_7_1200mv_85c_slow.vo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_7_1200mv_0c_slow.vo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_min_1200mv_0c_fast.vo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor.vo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_7_1200mv_85c_v_slow.sdo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_7_1200mv_0c_v_slow.sdo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_min_1200mv_0c_v_fast.sdo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file capacitive_sensor_v.sdo in folder "C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_7_1200mv_85c_slow.vo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_7_1200mv_0c_slow.vo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_min_1200mv_0c_fast.vo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor.vo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_7_1200mv_85c_v_slow.sdo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_7_1200mv_0c_v_slow.sdo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_min_1200mv_0c_v_fast.sdo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file capacitive_sensor_v.sdo in folder "/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 782 megabytes
-    Info: Processing ended: Fri Apr 06 17:40:42 2018
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 1055 megabytes
+    Info: Processing ended: Mon Apr  9 00:35:38 2018
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

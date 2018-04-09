@@ -5,8 +5,6 @@ JedecChain;
 
 	P ActionCode(Cfg)
 		Device PartName(EP4CE115F29) Path("/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/") File("capacitive_sensor.sof") MfrSpec(OpMask(1));
-	P ActionCode(Ign)
-		Device PartName(EP4CE115F29) MfrSpec(OpMask(0) FullPath("/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.sof"));
 
 ChainEnd;
 
