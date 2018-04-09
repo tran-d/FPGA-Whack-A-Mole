@@ -1,6 +1,6 @@
 Assembler report for capacitive_sensor
-Mon Apr  9 00:35:35 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Mon Apr 09 14:51:18 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
 ---------------------
@@ -9,35 +9,37 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: capacitive_sensor.sof
-  6. Assembler Messages
+  4. Assembler Encrypted IP Cores Summary
+  5. Assembler Generated Files
+  6. Assembler Device Options: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.sof
+  7. Assembler Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Apr  9 00:35:35 2018 ;
+; Assembler Status      ; Successful - Mon Apr 09 14:51:18 2018 ;
 ; Revision Name         ; capacitive_sensor                     ;
 ; Top-level Entity Name ; skeleton                              ;
 ; Family                ; Cyclone IV E                          ;
@@ -52,23 +54,34 @@ refer to the applicable agreement for further details.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                     ;
-+---------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                     ;
-+---------------------------------------------------------------------------------------------------------------+
-; /home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.sof ;
-+---------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
 
 
-+-------------------------------------------------+
-; Assembler Device Options: capacitive_sensor.sof ;
-+----------------+--------------------------------+
-; Option         ; Setting                        ;
-+----------------+--------------------------------+
-; JTAG usercode  ; 0x0056B14D                     ;
-; Checksum       ; 0x0056B14D                     ;
-+----------------+--------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.sof ;
++-----------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                        ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                                                                                  ;
+; JTAG usercode  ; 0x0058646B                                                                                                                     ;
+; Checksum       ; 0x0058646B                                                                                                                     ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -76,16 +89,16 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Apr  9 00:35:32 2018
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+    Info: Processing started: Mon Apr 09 14:51:11 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off capacitive_sensor -c capacitive_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 818 megabytes
-    Info: Processing ended: Mon Apr  9 00:35:35 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 812 megabytes
+    Info: Processing ended: Mon Apr 09 14:51:18 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
 
 

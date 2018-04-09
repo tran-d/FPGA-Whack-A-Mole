@@ -1,11 +1,11 @@
-module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count, count, temp_charge_count, temp_capacitor_charged);
+module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count);
 
-	parameter CHARGE_CONFIDENCE_CYCLES = 13'd10;//13'd5000;
+	parameter CHARGE_CONFIDENCE_CYCLES = 13'd5000;
 
 	input clock, start, sensor_in;
 	
 	output sensor_out;
-	output [31:0] count, final_count;
+	output [31:0] final_count;
 	
 	
 	reg [31:0] count_reg, final_count_reg;
@@ -13,12 +13,11 @@ module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count, count
 	reg capacitor_charged, sensor_out_reg, sensing_complete;
 
 	assign sensor_out = sensor_out_reg;
-	assign count = count_reg;
 	assign final_count = final_count_reg;
 	
 	
-	output [12:0] temp_charge_count = capacitor_charge_count;
-	output temp_capacitor_charged = capacitor_charged;
+	wire [12:0] temp_charge_count = capacitor_charge_count;
+	wire temp_capacitor_charged = capacitor_charged;
 	
 	initial begin
 		final_count_reg <= 1'b0;
