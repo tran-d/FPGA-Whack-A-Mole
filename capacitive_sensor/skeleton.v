@@ -13,7 +13,7 @@ module skeleton(CLOCK_50,					// 50 MHz clock
 	reg [16:0] div_count;
 	always @(posedge clock) begin
 		div_count <= div_count + 17'b1;
-		if(div_count == 17'd125000) begin
+		if(div_count == 17'd25000) begin
 			div_count <= 17'b0;
 			sensor_trigger <= !sensor_trigger;
 		end

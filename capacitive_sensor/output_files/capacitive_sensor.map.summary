@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Apr 09 14:50:52 2018
+Analysis & Synthesis Status : Successful - Mon Apr 09 17:23:37 2018
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 Revision Name : capacitive_sensor
 Top-level Entity Name : skeleton
 Family : Cyclone IV E
-Total logic elements : 313
-    Total combinational functions : 260
+Total logic elements : 355
+    Total combinational functions : 334
     Dedicated logic registers : 217
 Total registers : 217
 Total pins : 3

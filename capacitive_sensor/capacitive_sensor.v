@@ -1,6 +1,6 @@
 module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count);
 
-	parameter CHARGE_CONFIDENCE_CYCLES = 13'd5000;
+	parameter CHARGE_CONFIDENCE_CYCLES = 13'd8191;
 
 	input clock, start, sensor_in;
 	
@@ -20,7 +20,7 @@ module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count);
 	wire temp_capacitor_charged = capacitor_charged;
 	
 	initial begin
-		final_count_reg <= 1'b0;
+		final_count_reg <= 32'b0;
 		sensing_complete <= 1'b0;
 		sensor_out_reg <= 1'b0;
 	end
@@ -55,7 +55,7 @@ module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count);
 			end
 			
 			if(!sensor_in & capacitor_charged) begin // when sensor drains, latch count into final count, sensing complete.
-				final_count_reg <= count_reg;
+				final_count_reg <= |count_reg? count_reg : final_count_reg; // from empirical analysis, final count is 0 randomly sometimes -- we will ignore those
 				sensing_complete <= 1'b1;
 			end
 			

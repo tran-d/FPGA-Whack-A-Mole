@@ -1,5 +1,5 @@
 Analysis & Synthesis report for capacitive_sensor
-Mon Apr 09 14:50:52 2018
+Mon Apr 09 17:23:37 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -52,13 +52,13 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 09 14:50:52 2018           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 09 17:23:37 2018           ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                      ; capacitive_sensor                               ;
 ; Top-level Entity Name              ; skeleton                                        ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 313                                             ;
-;     Total combinational functions  ; 260                                             ;
+; Total logic elements               ; 355                                             ;
+;     Total combinational functions  ; 334                                             ;
 ;     Dedicated logic registers      ; 217                                             ;
 ; Total registers                    ; 217                                             ;
 ; Total pins                         ; 3                                               ;
@@ -204,16 +204,16 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 313                      ;
+; Estimated Total logic elements              ; 355                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 260                      ;
+; Total combinational functions               ; 334                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 109                      ;
-;     -- 3 input functions                    ; 42                       ;
-;     -- <=2 input functions                  ; 109                      ;
+;     -- 4 input functions                    ; 163                      ;
+;     -- 3 input functions                    ; 68                       ;
+;     -- <=2 input functions                  ; 103                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 195                      ;
+;     -- normal mode                          ; 269                      ;
 ;     -- arithmetic mode                      ; 65                       ;
 ;                                             ;                          ;
 ; Total registers                             ; 217                      ;
@@ -226,8 +226,8 @@ agreement for further details.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 142                      ;
-; Total fan-out                               ; 1499                     ;
-; Average fan-out                             ; 3.05                     ;
+; Total fan-out                               ; 1781                     ;
+; Average fan-out                             ; 3.15                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -236,8 +236,8 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                  ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |skeleton                                                                                                                               ; 260 (34)          ; 217 (18)     ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |skeleton                                                                                                                                                                                                                                                                                                                                            ; skeleton                          ; work         ;
-;    |capacitive_sensor:sensor0|                                                                                                          ; 55 (55)           ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|capacitive_sensor:sensor0                                                                                                                                                                                                                                                                                                                  ; capacitive_sensor                 ; work         ;
+; |skeleton                                                                                                                               ; 334 (32)          ; 217 (18)     ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |skeleton                                                                                                                                                                                                                                                                                                                                            ; skeleton                          ; work         ;
+;    |capacitive_sensor:sensor0|                                                                                                          ; 131 (131)         ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|capacitive_sensor:sensor0                                                                                                                                                                                                                                                                                                                  ; capacitive_sensor                 ; work         ;
 ;    |debugger:d1|                                                                                                                        ; 56 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|debugger:d1                                                                                                                                                                                                                                                                                                                                ; debugger                          ; debugger     ;
 ;       |altsource_probe_top:in_system_sources_probes_0|                                                                                  ; 56 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|debugger:d1|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                                                 ; altsource_probe_top               ; debugger     ;
 ;          |altsource_probe:issp_impl|                                                                                                    ; 56 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|debugger:d1|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                                                       ; altsource_probe                   ; work         ;
@@ -324,7 +324,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------+---------------+-----------------------------+
 ; Parameter Name           ; Value         ; Type                        ;
 +--------------------------+---------------+-----------------------------+
-; CHARGE_CONFIDENCE_CYCLES ; 1001110001000 ; Unsigned Binary             ;
+; CHARGE_CONFIDENCE_CYCLES ; 1111111111111 ; Unsigned Binary             ;
 +--------------------------+---------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -414,19 +414,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 39                          ;
 ;     ENA CLR           ; 74                          ;
 ;     plain             ; 19                          ;
-; cycloneiii_lcell_comb ; 144                         ;
+; cycloneiii_lcell_comb ; 218                         ;
 ;     arith             ; 57                          ;
 ;         2 data inputs ; 55                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 87                          ;
+;     normal            ; 161                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 59                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 113                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.43                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.11                        ;
 +-----------------------+-----------------------------+
 
 
@@ -445,19 +445,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Mon Apr 09 14:50:17 2018
+    Info: Processing started: Mon Apr 09 17:23:04 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off capacitive_sensor -c capacitive_sensor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Qsys system entity "debugger.qsys"
-Info (12250): 2018.04.09.14:50:35 Progress: Loading capacitive_sensor/debugger.qsys
-Info (12250): 2018.04.09.14:50:35 Progress: Reading input file
-Info (12250): 2018.04.09.14:50:35 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
-Info (12250): 2018.04.09.14:50:36 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2018.04.09.14:50:36 Progress: Building connections
-Info (12250): 2018.04.09.14:50:36 Progress: Parameterizing connections
-Info (12250): 2018.04.09.14:50:36 Progress: Validating
-Info (12250): 2018.04.09.14:50:36 Progress: Done reading input file
+Info (12250): 2018.04.09.17:23:21 Progress: Loading capacitive_sensor/debugger.qsys
+Info (12250): 2018.04.09.17:23:21 Progress: Reading input file
+Info (12250): 2018.04.09.17:23:21 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 16.0]
+Info (12250): 2018.04.09.17:23:22 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2018.04.09.17:23:22 Progress: Building connections
+Info (12250): 2018.04.09.17:23:22 Progress: Parameterizing connections
+Info (12250): 2018.04.09.17:23:22 Progress: Validating
+Info (12250): 2018.04.09.17:23:22 Progress: Done reading input file
 Info (12250): Debugger: Generating debugger "debugger" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "debugger" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Debugger: Done "debugger" with 2 modules, 2 files
@@ -504,7 +504,7 @@ Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "debugger:
 Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "debugger:d1|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst" File: c:/altera/16.0/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 508
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "debugger:d1|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_probe_gen:wider_probe_inst|sld_rom_sr:\no_instance_id_gen:rom_info_inst" File: c:/altera/16.0/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 776
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2018.04.09.14:50:44 Progress: Loading slda80f508c/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.04.09.17:23:29 Progress: Loading slda80f508c/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -531,14 +531,14 @@ Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 325 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 367 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 317 logic cells
+    Info (21061): Implemented 359 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 947 megabytes
-    Info: Processing ended: Mon Apr 09 14:50:52 2018
-    Info: Elapsed time: 00:00:35
-    Info: Total CPU time (on all processors): 00:01:07
+    Info: Peak virtual memory: 944 megabytes
+    Info: Processing ended: Mon Apr 09 17:23:37 2018
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:01:05
 
 

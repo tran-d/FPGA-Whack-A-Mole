@@ -88,7 +88,7 @@
     <sld_info hpath="debugger:d1" name="d1">
       <assignment_values>
         <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1523296766"/>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1523299837"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1523309002"/>
       </assignment_values>
       <parameters/>
     </sld_info>
