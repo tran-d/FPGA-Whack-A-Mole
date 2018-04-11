@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/simulation/qsim
+vled_pwm
+!s110 1523489768
+!i10b 1
+!s100 PRd;_1nKMBbH<MWZJicM62
+I^SM3RI_RJb7FSGBD0o8V`2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1523489767
+8led_controller.vo
+Fled_controller.vo
+L0 32
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1523489768.000000
+!s107 led_controller.vo|
+!s90 -work|work|led_controller.vo|
+!i113 1
+Z3 o-work work
+vled_pwm_vlg_vec_tst
+!s110 1523489769
+!i10b 1
+!s100 H9fkdi:4YFkDVaUT[QRkz2
+IX=hM>Gh_ZC0>NI9UbMR3:1
+R1
+R0
+w1523489763
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1523489769.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R3

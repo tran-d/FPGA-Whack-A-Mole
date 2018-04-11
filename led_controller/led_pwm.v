@@ -13,7 +13,7 @@ module led_pwm (
 	
 	wire [7:0] c_out; 
 
-	always (@posedge clk) begin
+	always @(posedge clk) begin
 	
 		if(pwm_codeword > c_out)
 			pwm_out <= 1;
@@ -34,9 +34,9 @@ module counter (
 );
 
 	input clk;
-	input reg [7:0] c_out;
+	output reg [7:0] c_out;
 	
-	always (@posedge clk) begin
+	always @(posedge clk) begin
 	
 		c_out <= c_out + 1'b1;
 	

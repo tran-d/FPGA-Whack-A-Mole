@@ -1,0 +1,37 @@
+# do led_controller.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:36:08 on Apr 11,2018
+# vlog -work work led_controller.vo 
+# -- Compiling module led_pwm
+# 
+# Top level modules:
+# 	led_pwm
+# End time: 19:36:08 on Apr 11,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 19:36:09 on Apr 11,2018
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module led_pwm_vlg_vec_tst
+# 
+# Top level modules:
+# 	led_pwm_vlg_vec_tst
+# End time: 19:36:09 on Apr 11,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.led_pwm_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 19:36:09 on Apr 11,2018
+# Loading work.led_pwm_vlg_vec_tst
+# Loading work.led_pwm
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Note: $finish    : Waveform.vwf.vt(47)
+#    Time: 1 us  Iteration: 0  Instance: /led_pwm_vlg_vec_tst
+# End time: 19:36:09 on Apr 11,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

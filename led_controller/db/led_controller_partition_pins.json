@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pwm_out",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pwm_codeword[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
