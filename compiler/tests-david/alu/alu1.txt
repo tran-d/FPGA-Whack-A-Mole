@@ -15,7 +15,7 @@ sub $r8, $r7, $r5
 
 # "cycles 30" runs the clock for 30 cycles before checking registers for correctness
 
-cycles 100
+cycles 30
 
 # "checkreg A, B" checks register "A" for value "B".
 
