@@ -1,0 +1,1 @@
+beq $rd, $rs, 		N 00010 I if ($rd != $rs) PC = PC + 1 + N
