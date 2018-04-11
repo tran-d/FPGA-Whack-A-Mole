@@ -28,7 +28,7 @@ module capacitive_sensor(clock, start, capacitor_charged, sensor_in, final_count
 			end
 			
 			if(!sensor_in & capacitor_charged) begin // when sensor drains, latch count into final count, sensing complete.
-				final_count <= |count_reg? count : final_count; // from empirical analysis, final count is 0 randomly sometimes -- we will ignore those
+				final_count <= |count? count : final_count; // from empirical analysis, final count is 0 randomly sometimes -- we will ignore those
 				sensing_complete <= 1'b1;
 			end
 			

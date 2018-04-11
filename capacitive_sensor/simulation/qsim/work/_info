@@ -29,6 +29,46 @@ Z9 !s90 -work|work|capacitive_sensor.vo|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
+vcapacitive_sensor_array
+!s110 1523477938
+!i10b 1
+!s100 i[`eiEi5YLJ`[M>eHBEzZ2
+I=U@EhSe^HHHR>Vj>=7=^:0
+R2
+Z12 dC:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/qsim
+w1523477937
+R4
+R5
+L0 32
+Z13 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1523477938.000000
+R8
+R9
+!i113 1
+R10
+vcapacitive_sensor_array_vlg_vec_tst
+!s110 1523477939
+!i10b 1
+!s100 9IO:PoEBi?M6K_>gAPW343
+I:6XUaebMd5iBhTX2KHgeb3
+R2
+R12
+w1523477933
+8capacitive_sensor_array.vwf.vt
+Fcapacitive_sensor_array.vwf.vt
+L0 30
+R13
+r1
+!s85 0
+31
+!s108 1523477939.000000
+!s107 capacitive_sensor_array.vwf.vt|
+!s90 -work|work|capacitive_sensor_array.vwf.vt|
+!i113 1
+R10
 vcapacitive_sensor_vlg_vec_tst
 R1
 !i10b 1
