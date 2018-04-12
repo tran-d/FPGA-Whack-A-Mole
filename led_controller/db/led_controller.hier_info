@@ -1,4 +1,32 @@
-|led_pwm
+|skeleton
+clock => clock.IN1
+r_pin <= led:led0.port2
+g_pin <= led:led0.port3
+
+
+|skeleton|led:led0
+clock => clock.IN2
+code[0] => green[0].DATAIN
+code[1] => green[1].DATAIN
+code[2] => green[2].DATAIN
+code[3] => green[3].DATAIN
+code[4] => green[4].DATAIN
+code[5] => green[5].DATAIN
+code[6] => green[6].DATAIN
+code[7] => green[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_g <= pwm:green_signal.pwm_out
+
+
+|skeleton|led:led0|pwm:red_signal
 clk => clk.IN1
 pwm_codeword[0] => LessThan0.IN8
 pwm_codeword[1] => LessThan0.IN7
@@ -11,7 +39,39 @@ pwm_codeword[7] => LessThan0.IN1
 pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|led_pwm|counter:count_mod
+|skeleton|led:led0|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|led:led0|pwm:green_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton|led:led0|pwm:green_signal|counter:count_mod
 clk => c_out[0]~reg0.CLK
 clk => c_out[1]~reg0.CLK
 clk => c_out[2]~reg0.CLK

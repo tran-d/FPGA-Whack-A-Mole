@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for led_controller
-Wed Apr 11 19:23:07 2018
+Wed Apr 11 21:11:22 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -17,8 +17,8 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
   9. Slow 1200mV 85C Model Recovery Summary
  10. Slow 1200mV 85C Model Removal Summary
  11. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 12. Slow 1200mV 85C Model Setup: 'clk'
- 13. Slow 1200mV 85C Model Hold: 'clk'
+ 12. Slow 1200mV 85C Model Setup: 'clock'
+ 13. Slow 1200mV 85C Model Hold: 'clock'
  14. Slow 1200mV 85C Model Metastability Summary
  15. Slow 1200mV 0C Model Fmax Summary
  16. Slow 1200mV 0C Model Setup Summary
@@ -26,16 +26,16 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
  18. Slow 1200mV 0C Model Recovery Summary
  19. Slow 1200mV 0C Model Removal Summary
  20. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 21. Slow 1200mV 0C Model Setup: 'clk'
- 22. Slow 1200mV 0C Model Hold: 'clk'
+ 21. Slow 1200mV 0C Model Setup: 'clock'
+ 22. Slow 1200mV 0C Model Hold: 'clock'
  23. Slow 1200mV 0C Model Metastability Summary
  24. Fast 1200mV 0C Model Setup Summary
  25. Fast 1200mV 0C Model Hold Summary
  26. Fast 1200mV 0C Model Recovery Summary
  27. Fast 1200mV 0C Model Removal Summary
  28. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 29. Fast 1200mV 0C Model Setup: 'clk'
- 30. Fast 1200mV 0C Model Hold: 'clk'
+ 29. Fast 1200mV 0C Model Setup: 'clock'
+ 30. Fast 1200mV 0C Model Hold: 'clock'
  31. Fast 1200mV 0C Model Metastability Summary
  32. Multicorner Timing Analysis Summary
  33. Board Trace Model Assignments
@@ -49,11 +49,9 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
  41. Report RSKM
  42. Unconstrained Paths Summary
  43. Clock Status Summary
- 44. Unconstrained Input Ports
+ 44. Unconstrained Output Ports
  45. Unconstrained Output Ports
- 46. Unconstrained Input Ports
- 47. Unconstrained Output Ports
- 48. TimeQuest Timing Analyzer Messages
+ 46. TimeQuest Timing Analyzer Messages
 
 
 
@@ -104,18 +102,17 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processors 3-4         ;   0.1%      ;
+;     Processors 2-4         ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                          ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -123,7 +120,7 @@ agreement for further details.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 492.85 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 465.77 MHz ; 250.0 MHz       ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -139,7 +136,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; clk   ; -1.029 ; -6.631             ;
+; clock ; -1.147 ; -6.920             ;
 +-------+--------+--------------------+
 
 
@@ -148,7 +145,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; clk   ; 0.407 ; 0.000              ;
+; clock ; 0.408 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -169,112 +166,120 @@ No paths to report.
 +-------+--------+----------------------------------+
 ; Clock ; Slack  ; End Point TNS                    ;
 +-------+--------+----------------------------------+
-; clk   ; -3.000 ; -14.565                          ;
+; clock ; -3.000 ; -17.135                          ;
 +-------+--------+----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'clk'                                                                                                     ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -1.029 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.946      ;
-; -1.014 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.931      ;
-; -0.960 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.877      ;
-; -0.897 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.814      ;
-; -0.882 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.799      ;
-; -0.871 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.788      ;
-; -0.847 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.098     ; 1.747      ;
-; -0.844 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.098     ; 1.744      ;
-; -0.836 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.753      ;
-; -0.828 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.745      ;
-; -0.827 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.744      ;
-; -0.812 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 2.143      ;
-; -0.809 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.726      ;
-; -0.747 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 2.078      ;
-; -0.743 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.660      ;
-; -0.739 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.656      ;
-; -0.732 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 2.063      ;
-; -0.704 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.621      ;
-; -0.699 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.616      ;
-; -0.680 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 2.011      ;
-; -0.678 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 2.009      ;
-; -0.601 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 1.932      ;
-; -0.589 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.920      ;
-; -0.554 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.885      ;
-; -0.548 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 1.879      ;
-; -0.545 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.876      ;
-; -0.527 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.858      ;
-; -0.463 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 1.794      ;
-; -0.461 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.792      ;
-; -0.417 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.748      ;
-; -0.394 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.725      ;
-; -0.386 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.303      ;
-; -0.331 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.333      ; 1.662      ;
-; -0.328 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.659      ;
-; -0.284 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.333      ; 1.615      ;
-; -0.238 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.098     ; 1.138      ;
-; -0.232 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.149      ;
-; -0.231 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.148      ;
-; -0.226 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.143      ;
-; -0.225 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.098     ; 1.125      ;
-; -0.222 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; -0.098     ; 1.122      ;
-; -0.206 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.123      ;
-; -0.205 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.081     ; 1.122      ;
-; 0.152  ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clock'                                                                                                                                                       ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.147 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.080     ; 2.065      ;
+; -1.144 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.080     ; 2.062      ;
+; -1.088 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.510     ; 1.576      ;
+; -0.984 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.080     ; 1.902      ;
+; -0.958 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.876      ;
+; -0.956 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.874      ;
+; -0.943 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.861      ;
+; -0.924 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.842      ;
+; -0.868 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.080     ; 1.786      ;
+; -0.864 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.782      ;
+; -0.855 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.773      ;
+; -0.834 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.752      ;
+; -0.826 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.744      ;
+; -0.824 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.742      ;
+; -0.822 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.740      ;
+; -0.811 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.729      ;
+; -0.803 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.721      ;
+; -0.792 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.710      ;
+; -0.736 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.654      ;
+; -0.732 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.650      ;
+; -0.723 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.641      ;
+; -0.702 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.620      ;
+; -0.699 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.617      ;
+; -0.694 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.612      ;
+; -0.692 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.610      ;
+; -0.662 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.993      ;
+; -0.658 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.080     ; 1.576      ;
+; -0.655 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.080     ; 1.573      ;
+; -0.599 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.510     ; 1.087      ;
+; -0.583 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.914      ;
+; -0.574 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.905      ;
+; -0.541 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.872      ;
+; -0.495 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.080     ; 1.413      ;
+; -0.455 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.786      ;
+; -0.415 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.746      ;
+; -0.384 ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.080     ; 1.302      ;
+; -0.379 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.080     ; 1.297      ;
+; -0.330 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.333      ; 1.661      ;
+; -0.232 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.150      ;
+; -0.223 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.141      ;
+; -0.221 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.139      ;
+; -0.210 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.128      ;
+; -0.206 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.124      ;
+; -0.200 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.118      ;
+; -0.189 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 1.107      ;
+; 0.091  ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; -0.097     ; 0.810      ;
+; 0.131  ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.080     ; 0.787      ;
+; 0.153  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 1.000        ; -0.080     ; 0.765      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'clk'                                                                                                     ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.407 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.674      ;
-; 0.538 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.236      ;
-; 0.543 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.241      ;
-; 0.574 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.272      ;
-; 0.626 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.098      ; 0.910      ;
-; 0.627 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.098      ; 0.911      ;
-; 0.642 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.909      ;
-; 0.643 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.910      ;
-; 0.643 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.910      ;
-; 0.644 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.911      ;
-; 0.650 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.348      ;
-; 0.655 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.353      ;
-; 0.657 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.098      ; 0.941      ;
-; 0.661 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.928      ;
-; 0.665 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.363      ;
-; 0.670 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.368      ;
-; 0.685 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.383      ;
-; 0.700 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.398      ;
-; 0.777 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.475      ;
-; 0.782 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.480      ;
-; 0.795 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.493      ;
-; 0.800 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.498      ;
-; 0.811 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.509      ;
-; 0.836 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.103      ;
-; 0.844 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.542      ;
-; 0.937 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.512      ; 1.635      ;
-; 0.943 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.098      ; 1.227      ;
-; 0.960 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.227      ;
-; 0.961 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.228      ;
-; 0.967 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.665      ;
-; 0.970 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.237      ;
-; 0.972 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.512      ; 1.670      ;
-; 0.974 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.098      ; 1.258      ;
-; 0.974 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.241      ;
-; 0.975 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.242      ;
-; 0.979 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.246      ;
-; 1.082 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.349      ;
-; 1.087 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.354      ;
-; 1.100 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.367      ;
-; 1.105 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.372      ;
-; 1.146 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.413      ;
-; 1.151 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.418      ;
-; 1.272 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.539      ;
-; 1.277 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.544      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clock'                                                                                                                                                       ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.408 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.674      ;
+; 0.412 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.097      ; 0.695      ;
+; 0.429 ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.080      ; 0.695      ;
+; 0.533 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.229      ;
+; 0.547 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.243      ;
+; 0.635 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.901      ;
+; 0.642 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.908      ;
+; 0.645 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.911      ;
+; 0.646 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.912      ;
+; 0.647 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.913      ;
+; 0.653 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.919      ;
+; 0.656 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.352      ;
+; 0.656 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.922      ;
+; 0.675 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.371      ;
+; 0.775 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.471      ;
+; 0.793 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.489      ;
+; 0.793 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.489      ;
+; 0.897 ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.080      ; 1.163      ;
+; 0.924 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.080      ; 1.190      ;
+; 0.953 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.219      ;
+; 0.960 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.226      ;
+; 0.966 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.232      ;
+; 0.966 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.232      ;
+; 0.971 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.237      ;
+; 0.971 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.237      ;
+; 0.972 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.238      ;
+; 0.974 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.240      ;
+; 0.979 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.245      ;
+; 1.049 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.080      ; 1.315      ;
+; 1.074 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.340      ;
+; 1.079 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.345      ;
+; 1.081 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.347      ;
+; 1.086 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; -0.333     ; 0.939      ;
+; 1.092 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.358      ;
+; 1.092 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.358      ;
+; 1.097 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.363      ;
+; 1.097 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.363      ;
+; 1.100 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.366      ;
+; 1.190 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.080      ; 1.456      ;
+; 1.192 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.080      ; 1.458      ;
+; 1.200 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.466      ;
+; 1.218 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.484      ;
+; 1.218 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.484      ;
+; 1.417 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.080      ; 1.683      ;
+; 1.542 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.080      ; 1.808      ;
+; 1.579 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; -0.333     ; 1.432      ;
+; 1.683 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.080      ; 1.949      ;
+; 1.685 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.080      ; 1.951      ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -288,7 +293,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 546.45 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 512.03 MHz ; 250.0 MHz       ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -298,7 +303,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -0.830 ; -5.172            ;
+; clock ; -0.953 ; -5.326            ;
 +-------+--------+-------------------+
 
 
@@ -307,7 +312,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.365 ; 0.000             ;
+; clock ; 0.365 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -328,112 +333,120 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -14.565                         ;
+; clock ; -3.000 ; -17.135                         ;
 +-------+--------+---------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'clk'                                                                                                      ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; -0.830 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.757      ;
-; -0.816 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.743      ;
-; -0.754 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.681      ;
-; -0.714 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.641      ;
-; -0.700 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.627      ;
-; -0.675 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.602      ;
-; -0.656 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.088     ; 1.567      ;
-; -0.654 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.581      ;
-; -0.652 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.563      ;
-; -0.638 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.565      ;
-; -0.637 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.564      ;
-; -0.609 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.536      ;
-; -0.607 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.915      ;
-; -0.565 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.873      ;
-; -0.565 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.492      ;
-; -0.559 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.486      ;
-; -0.551 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.859      ;
-; -0.538 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.465      ;
-; -0.534 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.461      ;
-; -0.491 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.799      ;
-; -0.489 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.797      ;
-; -0.422 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.730      ;
-; -0.410 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.718      ;
-; -0.389 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.697      ;
-; -0.374 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.682      ;
-; -0.372 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.680      ;
-; -0.344 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.652      ;
-; -0.302 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.610      ;
-; -0.300 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.608      ;
-; -0.269 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.577      ;
-; -0.239 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.166      ;
-; -0.227 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.535      ;
-; -0.186 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.309      ; 1.494      ;
-; -0.183 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.491      ;
-; -0.152 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.309      ; 1.460      ;
-; -0.116 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.027      ;
-; -0.107 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.088     ; 1.018      ;
-; -0.104 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.031      ;
-; -0.103 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.030      ;
-; -0.101 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.012      ;
-; -0.098 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.025      ;
-; -0.087 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.014      ;
-; -0.086 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.013      ;
-; 0.244  ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
-+--------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clock'                                                                                                                                                        ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.953 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.072     ; 1.880      ;
+; -0.952 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.072     ; 1.879      ;
+; -0.899 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.467     ; 1.431      ;
+; -0.816 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.072     ; 1.743      ;
+; -0.762 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.689      ;
+; -0.761 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.688      ;
+; -0.739 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.666      ;
+; -0.710 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.637      ;
+; -0.708 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.072     ; 1.635      ;
+; -0.672 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.599      ;
+; -0.663 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.590      ;
+; -0.653 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.580      ;
+; -0.646 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.573      ;
+; -0.645 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.572      ;
+; -0.632 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.559      ;
+; -0.623 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.550      ;
+; -0.603 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.530      ;
+; -0.594 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.521      ;
+; -0.557 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.484      ;
+; -0.556 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.483      ;
+; -0.547 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.474      ;
+; -0.537 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.464      ;
+; -0.535 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.462      ;
+; -0.530 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.457      ;
+; -0.529 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.456      ;
+; -0.503 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.072     ; 1.430      ;
+; -0.502 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.072     ; 1.429      ;
+; -0.475 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.782      ;
+; -0.449 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.467     ; 0.981      ;
+; -0.408 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.715      ;
+; -0.399 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.706      ;
+; -0.368 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.675      ;
+; -0.366 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.072     ; 1.293      ;
+; -0.293 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.600      ;
+; -0.259 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.566      ;
+; -0.258 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.072     ; 1.185      ;
+; -0.247 ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.072     ; 1.174      ;
+; -0.187 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.308      ; 1.494      ;
+; -0.106 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.033      ;
+; -0.096 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.023      ;
+; -0.095 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.022      ;
+; -0.088 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.015      ;
+; -0.086 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.013      ;
+; -0.083 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.010      ;
+; -0.074 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 1.001      ;
+; 0.177  ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; -0.087     ; 0.735      ;
+; 0.218  ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.072     ; 0.709      ;
+; 0.244  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 1.000        ; -0.072     ; 0.683      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'clk'                                                                                                      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.365 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.608      ;
-; 0.478 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.118      ;
-; 0.489 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.129      ;
-; 0.509 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.149      ;
-; 0.572 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.088      ; 0.831      ;
-; 0.572 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.088      ; 0.831      ;
-; 0.578 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.218      ;
-; 0.587 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.830      ;
-; 0.588 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.831      ;
-; 0.589 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.832      ;
-; 0.589 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.229      ;
-; 0.589 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.229      ;
-; 0.590 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.833      ;
-; 0.600 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.240      ;
-; 0.601 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.088      ; 0.860      ;
-; 0.607 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.850      ;
-; 0.608 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.248      ;
-; 0.619 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.259      ;
-; 0.689 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.329      ;
-; 0.700 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.340      ;
-; 0.703 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.343      ;
-; 0.714 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.354      ;
-; 0.718 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.358      ;
-; 0.746 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.386      ;
-; 0.776 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.019      ;
-; 0.828 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.469      ; 1.468      ;
-; 0.859 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.088      ; 1.118      ;
-; 0.870 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.510      ;
-; 0.876 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.119      ;
-; 0.876 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.119      ;
-; 0.877 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.120      ;
-; 0.879 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.088      ; 1.138      ;
-; 0.880 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.123      ;
-; 0.883 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.469      ; 1.523      ;
-; 0.887 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.130      ;
-; 0.891 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.134      ;
-; 0.976 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.219      ;
-; 0.987 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.230      ;
-; 0.990 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.233      ;
-; 1.001 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.244      ;
-; 1.047 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.290      ;
-; 1.060 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.303      ;
-; 1.157 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.400      ;
-; 1.170 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.413      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clock'                                                                                                                                                        ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.365 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.608      ;
+; 0.372 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.087      ; 0.630      ;
+; 0.395 ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.072      ; 0.638      ;
+; 0.483 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.121      ;
+; 0.493 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.131      ;
+; 0.580 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.823      ;
+; 0.586 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.829      ;
+; 0.587 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.225      ;
+; 0.589 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.832      ;
+; 0.591 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.834      ;
+; 0.591 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.834      ;
+; 0.599 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.842      ;
+; 0.603 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.846      ;
+; 0.605 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.243      ;
+; 0.691 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.329      ;
+; 0.707 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.345      ;
+; 0.708 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.346      ;
+; 0.825 ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.072      ; 1.068      ;
+; 0.836 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.072      ; 1.079      ;
+; 0.866 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.109      ;
+; 0.871 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.114      ;
+; 0.872 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.115      ;
+; 0.872 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.115      ;
+; 0.877 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.120      ;
+; 0.879 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.122      ;
+; 0.882 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.125      ;
+; 0.883 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.126      ;
+; 0.890 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.133      ;
+; 0.948 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.072      ; 1.191      ;
+; 0.965 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.208      ;
+; 0.971 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.214      ;
+; 0.976 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.219      ;
+; 0.981 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.224      ;
+; 0.982 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.225      ;
+; 0.989 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.232      ;
+; 0.992 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.235      ;
+; 0.993 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.236      ;
+; 0.994 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; -0.308     ; 0.857      ;
+; 1.075 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.318      ;
+; 1.077 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.072      ; 1.320      ;
+; 1.080 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.072      ; 1.323      ;
+; 1.091 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.334      ;
+; 1.092 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.335      ;
+; 1.282 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.072      ; 1.525      ;
+; 1.394 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.072      ; 1.637      ;
+; 1.440 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; -0.308     ; 1.303      ;
+; 1.523 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.072      ; 1.766      ;
+; 1.526 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.072      ; 1.769      ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -444,11 +457,11 @@ No synchronizer chains to report.
 
 +------------------------------------+
 ; Fast 1200mV 0C Model Setup Summary ;
-+-------+-------+--------------------+
-; Clock ; Slack ; End Point TNS      ;
-+-------+-------+--------------------+
-; clk   ; 0.011 ; 0.000              ;
-+-------+-------+--------------------+
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clock ; -0.015 ; -0.015            ;
++-------+--------+-------------------+
 
 
 +-----------------------------------+
@@ -456,7 +469,7 @@ No synchronizer chains to report.
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.188 ; 0.000             ;
+; clock ; 0.185 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -477,112 +490,120 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -12.636                         ;
+; clock ; -3.000 ; -14.683                         ;
 +-------+--------+---------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'clk'                                                                                                     ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.011 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.934      ;
-; 0.047 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.898      ;
-; 0.050 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.895      ;
-; 0.079 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.866      ;
-; 0.094 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.851      ;
-; 0.107 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.050     ; 0.830      ;
-; 0.108 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.050     ; 0.829      ;
-; 0.108 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 1.032      ;
-; 0.111 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.834      ;
-; 0.115 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.830      ;
-; 0.115 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.830      ;
-; 0.118 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.827      ;
-; 0.126 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.819      ;
-; 0.138 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 1.002      ;
-; 0.162 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.783      ;
-; 0.163 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.782      ;
-; 0.174 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.966      ;
-; 0.176 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 0.964      ;
-; 0.177 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.963      ;
-; 0.194 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.751      ;
-; 0.194 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.751      ;
-; 0.219 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 0.921      ;
-; 0.221 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.919      ;
-; 0.238 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.902      ;
-; 0.242 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.898      ;
-; 0.243 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 0.897      ;
-; 0.253 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.887      ;
-; 0.290 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.850      ;
-; 0.291 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 0.849      ;
-; 0.306 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.834      ;
-; 0.314 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.631      ;
-; 0.321 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.819      ;
-; 0.357 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.783      ;
-; 0.359 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; 0.153      ; 0.781      ;
-; 0.390 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; 0.153      ; 0.750      ;
-; 0.394 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 1.000        ; -0.050     ; 0.543      ;
-; 0.397 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.548      ;
-; 0.397 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 1.000        ; -0.050     ; 0.540      ;
-; 0.398 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.547      ;
-; 0.398 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.547      ;
-; 0.400 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 1.000        ; -0.050     ; 0.537      ;
-; 0.408 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.537      ;
-; 0.408 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.537      ;
-; 0.586 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 1.000        ; -0.042     ; 0.359      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clock'                                                                                                                                                        ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.015 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.041     ; 0.961      ;
+; -0.015 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.041     ; 0.961      ;
+; 0.007  ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.243     ; 0.737      ;
+; 0.053  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.893      ;
+; 0.055  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.041     ; 0.891      ;
+; 0.057  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.889      ;
+; 0.061  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.885      ;
+; 0.064  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.882      ;
+; 0.099  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.847      ;
+; 0.102  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.844      ;
+; 0.113  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.041     ; 0.833      ;
+; 0.116  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.830      ;
+; 0.120  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.826      ;
+; 0.121  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.825      ;
+; 0.125  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.821      ;
+; 0.127  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.819      ;
+; 0.129  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.817      ;
+; 0.132  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.814      ;
+; 0.163  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.783      ;
+; 0.167  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.779      ;
+; 0.170  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.776      ;
+; 0.183  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.957      ;
+; 0.195  ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.751      ;
+; 0.195  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.751      ;
+; 0.197  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.749      ;
+; 0.200  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.746      ;
+; 0.207  ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.041     ; 0.739      ;
+; 0.207  ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.041     ; 0.739      ;
+; 0.225  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.915      ;
+; 0.226  ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.243     ; 0.518      ;
+; 0.228  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.912      ;
+; 0.246  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.894      ;
+; 0.289  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.851      ;
+; 0.299  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.041     ; 0.647      ;
+; 0.309  ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.831      ;
+; 0.330  ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 1.000        ; -0.041     ; 0.616      ;
+; 0.349  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.041     ; 0.597      ;
+; 0.358  ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; 0.153      ; 0.782      ;
+; 0.399  ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.547      ;
+; 0.399  ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.547      ;
+; 0.402  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.544      ;
+; 0.406  ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.540      ;
+; 0.408  ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.538      ;
+; 0.412  ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.534      ;
+; 0.417  ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.529      ;
+; 0.559  ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 1.000        ; -0.049     ; 0.379      ;
+; 0.574  ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 1.000        ; -0.041     ; 0.372      ;
+; 0.587  ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 1.000        ; -0.041     ; 0.359      ;
++--------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'clk'                                                                                                      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                  ; To Node                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
-; 0.188 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[0] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.314      ;
-; 0.248 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.577      ;
-; 0.251 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.580      ;
-; 0.272 ; counter:count_mod|c_out[5] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.601      ;
-; 0.284 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.050      ; 0.418      ;
-; 0.284 ; counter:count_mod|c_out[7] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.050      ; 0.418      ;
-; 0.293 ; counter:count_mod|c_out[5] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.419      ;
-; 0.293 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.419      ;
-; 0.294 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.420      ;
-; 0.294 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.420      ;
-; 0.299 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.425      ;
-; 0.299 ; counter:count_mod|c_out[7] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.050      ; 0.433      ;
-; 0.302 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.631      ;
-; 0.305 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.634      ;
-; 0.315 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.644      ;
-; 0.318 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.647      ;
-; 0.325 ; counter:count_mod|c_out[4] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.654      ;
-; 0.338 ; counter:count_mod|c_out[3] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.667      ;
-; 0.369 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.698      ;
-; 0.372 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.701      ;
-; 0.373 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[1] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.499      ;
-; 0.381 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.710      ;
-; 0.384 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.713      ;
-; 0.391 ; counter:count_mod|c_out[2] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.720      ;
-; 0.411 ; counter:count_mod|c_out[1] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.740      ;
-; 0.433 ; counter:count_mod|c_out[6] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.050      ; 0.567      ;
-; 0.442 ; counter:count_mod|c_out[4] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.568      ;
-; 0.443 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.569      ;
-; 0.452 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.578      ;
-; 0.452 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.578      ;
-; 0.454 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[6] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.783      ;
-; 0.455 ; counter:count_mod|c_out[6] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.050      ; 0.589      ;
-; 0.455 ; counter:count_mod|c_out[3] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.581      ;
-; 0.455 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.581      ;
-; 0.457 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[7] ; clk          ; clk         ; 0.000        ; 0.245      ; 0.786      ;
-; 0.457 ; counter:count_mod|c_out[0] ; pwm_out~reg0               ; clk          ; clk         ; 0.000        ; 0.245      ; 0.786      ;
-; 0.506 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.632      ;
-; 0.509 ; counter:count_mod|c_out[2] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.635      ;
-; 0.518 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.644      ;
-; 0.521 ; counter:count_mod|c_out[0] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.647      ;
-; 0.525 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[2] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.651      ;
-; 0.528 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[3] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.654      ;
-; 0.591 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[4] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.717      ;
-; 0.594 ; counter:count_mod|c_out[1] ; counter:count_mod|c_out[5] ; clk          ; clk         ; 0.000        ; 0.042      ; 0.720      ;
-+-------+----------------------------+----------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clock'                                                                                                                                                        ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.185 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.049      ; 0.318      ;
+; 0.188 ; led:led0|green[3]                                    ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.041      ; 0.313      ;
+; 0.189 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.314      ;
+; 0.242 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.569      ;
+; 0.254 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.581      ;
+; 0.289 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.414      ;
+; 0.293 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.418      ;
+; 0.295 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.420      ;
+; 0.295 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.420      ;
+; 0.296 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.421      ;
+; 0.296 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.421      ;
+; 0.298 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.423      ;
+; 0.306 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.633      ;
+; 0.321 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.648      ;
+; 0.368 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.695      ;
+; 0.382 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.709      ;
+; 0.383 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.710      ;
+; 0.398 ; led:led0|green[3]                                    ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.041      ; 0.523      ;
+; 0.433 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.041      ; 0.558      ;
+; 0.438 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.563      ;
+; 0.442 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.567      ;
+; 0.449 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.574      ;
+; 0.450 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.575      ;
+; 0.452 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.577      ;
+; 0.453 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.578      ;
+; 0.453 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.578      ;
+; 0.454 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.579      ;
+; 0.457 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.582      ;
+; 0.489 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.041      ; 0.614      ;
+; 0.501 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; -0.153     ; 0.432      ;
+; 0.501 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.626      ;
+; 0.504 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.629      ;
+; 0.505 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.630      ;
+; 0.515 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.640      ;
+; 0.516 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.641      ;
+; 0.518 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.643      ;
+; 0.519 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.644      ;
+; 0.520 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.645      ;
+; 0.555 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.041      ; 0.680      ;
+; 0.556 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:green_signal|pwm_out                    ; clock        ; clock       ; 0.000        ; 0.041      ; 0.681      ;
+; 0.567 ; led:led0|pwm:green_signal|counter:count_mod|c_out[2] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.692      ;
+; 0.581 ; led:led0|pwm:green_signal|counter:count_mod|c_out[1] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.706      ;
+; 0.582 ; led:led0|pwm:green_signal|counter:count_mod|c_out[0] ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.707      ;
+; 0.658 ; led:led0|pwm:green_signal|counter:count_mod|c_out[4] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.041      ; 0.783      ;
+; 0.705 ; led:led0|pwm:green_signal|counter:count_mod|c_out[3] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.041      ; 0.830      ;
+; 0.735 ; led:led0|pwm:green_signal|counter:count_mod|c_out[7] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; -0.153     ; 0.666      ;
+; 0.789 ; led:led0|pwm:green_signal|counter:count_mod|c_out[6] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.041      ; 0.914      ;
+; 0.790 ; led:led0|pwm:green_signal|counter:count_mod|c_out[5] ; led:led0|pwm:red_signal|pwm_out                      ; clock        ; clock       ; 0.000        ; 0.041      ; 0.915      ;
++-------+------------------------------------------------------+------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -596,10 +617,10 @@ No synchronizer chains to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -1.029 ; 0.188 ; N/A      ; N/A     ; -3.000              ;
-;  clk             ; -1.029 ; 0.188 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -6.631 ; 0.0   ; 0.0      ; 0.0     ; -14.565             ;
-;  clk             ; -6.631 ; 0.000 ; N/A      ; N/A     ; -14.565             ;
+; Worst-case Slack ; -1.147 ; 0.185 ; N/A      ; N/A     ; -3.000              ;
+;  clock           ; -1.147 ; 0.185 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -6.92  ; 0.0   ; 0.0      ; 0.0     ; -17.135             ;
+;  clock           ; -6.920 ; 0.000 ; N/A      ; N/A     ; -17.135             ;
 +------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -608,7 +629,8 @@ No synchronizer chains to report.
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 ; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; pwm_out       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; r_pin         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; g_pin         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -619,15 +641,7 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
-; pwm_codeword[7]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[6]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[5]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[4]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[3]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[2]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[1]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; pwm_codeword[0]         ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clock                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -639,7 +653,8 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; pwm_out       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; r_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; g_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -650,7 +665,8 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; pwm_out       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; r_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; g_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -661,7 +677,8 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; pwm_out       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; r_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; g_pin         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -672,7 +689,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 44       ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 48       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -682,7 +699,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 44       ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 48       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -706,10 +723,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 8     ; 8    ;
-; Unconstrained Input Port Paths  ; 8     ; 8    ;
-; Unconstrained Output Ports      ; 1     ; 1    ;
-; Unconstrained Output Port Paths ; 1     ; 1    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 2     ; 2    ;
 +---------------------------------+-------+------+
 
 
@@ -718,24 +735,18 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------+-------+------+-------------+
 ; Target ; Clock ; Type ; Status      ;
 +--------+-------+------+-------------+
-; clk    ; clk   ; Base ; Constrained ;
+; clock  ; clock ; Base ; Constrained ;
 +--------+-------+------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                              ;
-+-----------------+--------------------------------------------------------------------------------------+
-; Input Port      ; Comment                                                                              ;
-+-----------------+--------------------------------------------------------------------------------------+
-; pwm_codeword[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-----------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; g_pin       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; r_pin       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -743,32 +754,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
-; pwm_out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-------------+---------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                              ;
-+-----------------+--------------------------------------------------------------------------------------+
-; Input Port      ; Comment                                                                              ;
-+-----------------+--------------------------------------------------------------------------------------+
-; pwm_codeword[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; pwm_codeword[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+-----------------+--------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                          ;
-+-------------+---------------------------------------------------------------------------------------+
-; Output Port ; Comment                                                                               ;
-+-------------+---------------------------------------------------------------------------------------+
-; pwm_out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; g_pin       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; r_pin       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -778,7 +765,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Wed Apr 11 19:23:02 2018
+    Info: Processing started: Wed Apr 11 21:11:17 2018
 Info: Command: quartus_sta led_controller -c led_controller
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -788,70 +775,70 @@ Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'led_controller.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name clock clock
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.029
+Info (332146): Worst-case setup slack is -1.147
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.029              -6.631 clk 
-Info (332146): Worst-case hold slack is 0.407
+    Info (332119):    -1.147              -6.920 clock 
+Info (332146): Worst-case hold slack is 0.408
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.407               0.000 clk 
+    Info (332119):     0.408               0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -14.565 clk 
+    Info (332119):    -3.000             -17.135 clock 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.830
+Info (332146): Worst-case setup slack is -0.953
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.830              -5.172 clk 
+    Info (332119):    -0.953              -5.326 clock 
 Info (332146): Worst-case hold slack is 0.365
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.365               0.000 clk 
+    Info (332119):     0.365               0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -14.565 clk 
+    Info (332119):    -3.000             -17.135 clock 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.011
-    Info (332119):     Slack       End Point TNS Clock 
-    Info (332119): ========= =================== =====================
-    Info (332119):     0.011               0.000 clk 
-Info (332146): Worst-case hold slack is 0.188
-    Info (332119):     Slack       End Point TNS Clock 
-    Info (332119): ========= =================== =====================
-    Info (332119):     0.188               0.000 clk 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.015
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.015              -0.015 clock 
+Info (332146): Worst-case hold slack is 0.185
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.185               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -12.636 clk 
+    Info (332119):    -3.000             -14.683 clock 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 999 megabytes
-    Info: Processing ended: Wed Apr 11 19:23:07 2018
+    Info: Peak virtual memory: 992 megabytes
+    Info: Processing ended: Wed Apr 11 21:11:22 2018
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:02
 

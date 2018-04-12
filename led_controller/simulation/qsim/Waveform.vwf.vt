@@ -19,80 +19,40 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "04/11/2018 19:36:03"
+// Generated on "04/11/2018 20:53:07"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          led_pwm
+// Verilog Test Bench (with test vectors) for design :                          skeleton
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module led_pwm_vlg_vec_tst();
+module skeleton_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg clk;
-reg [7:0] pwm_codeword;
+reg clock;
 // wires                                               
-wire pwm_out;
+wire g_pin;
+wire r_pin;
 
 // assign statements (if any)                          
-led_pwm i1 (
+skeleton i1 (
 // port map - connection between master ports and signals/registers   
-	.clk(clk),
-	.pwm_codeword(pwm_codeword),
-	.pwm_out(pwm_out)
+	.clock(clock),
+	.g_pin(g_pin),
+	.r_pin(r_pin)
 );
 initial 
 begin 
 #1000000 $finish;
 end 
 
-// clk
+// clock
 always
 begin
-	clk = 1'b0;
-	clk = #1000 1'b1;
+	clock = 1'b0;
+	clock = #1000 1'b1;
 	#1000;
-end 
-// pwm_codeword[ 7 ]
-initial
-begin
-	pwm_codeword[7] = 1'b1;
-end 
-// pwm_codeword[ 6 ]
-initial
-begin
-	pwm_codeword[6] = 1'b1;
-end 
-// pwm_codeword[ 5 ]
-initial
-begin
-	pwm_codeword[5] = 1'b1;
-end 
-// pwm_codeword[ 4 ]
-initial
-begin
-	pwm_codeword[4] = 1'b1;
-end 
-// pwm_codeword[ 3 ]
-initial
-begin
-	pwm_codeword[3] = 1'b1;
-end 
-// pwm_codeword[ 2 ]
-initial
-begin
-	pwm_codeword[2] = 1'b1;
-end 
-// pwm_codeword[ 1 ]
-initial
-begin
-	pwm_codeword[1] = 1'b1;
-end 
-// pwm_codeword[ 0 ]
-initial
-begin
-	pwm_codeword[0] = 1'b1;
 end 
 endmodule
 

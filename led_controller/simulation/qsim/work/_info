@@ -8,43 +8,123 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/simulation/qsim
+vled
+Z1 !s110 1523494722
+!i10b 1
+!s100 R;VjoeOYDS3HH2Y3^3^AI1
+ILE;Q:8eAoSiH:`P5=<T9:3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1523494720
+Z3 8led_controller.vo
+Z4 Fled_controller.vo
+Z5 L0 32
+Z6 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z7 !s108 1523494722.000000
+Z8 !s107 led_controller.vo|
+Z9 !s90 -work|work|led_controller.vo|
+!i113 1
+Z10 o-work work
 vled_pwm
 !s110 1523489768
 !i10b 1
 !s100 PRd;_1nKMBbH<MWZJicM62
 I^SM3RI_RJb7FSGBD0o8V`2
-Z1 VDg1SIo80bB@j0V0VzS_@n1
+R2
 R0
 w1523489767
-8led_controller.vo
-Fled_controller.vo
-L0 32
-Z2 OV;L;10.4d;61
+R3
+R4
+R5
+R6
 r1
 !s85 0
 31
 !s108 1523489768.000000
-!s107 led_controller.vo|
-!s90 -work|work|led_controller.vo|
+R8
+R9
 !i113 1
-Z3 o-work work
+R10
 vled_pwm_vlg_vec_tst
 !s110 1523489769
 !i10b 1
 !s100 H9fkdi:4YFkDVaUT[QRkz2
 IX=hM>Gh_ZC0>NI9UbMR3:1
-R1
+R2
 R0
 w1523489763
-8Waveform.vwf.vt
-FWaveform.vwf.vt
-L0 30
-R2
+Z11 8Waveform.vwf.vt
+Z12 FWaveform.vwf.vt
+Z13 L0 30
+R6
 r1
 !s85 0
 31
 !s108 1523489769.000000
-!s107 Waveform.vwf.vt|
-!s90 -work|work|Waveform.vwf.vt|
+Z14 !s107 Waveform.vwf.vt|
+Z15 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
+R10
+vled_vlg_vec_tst
+R1
+!i10b 1
+!s100 kgfjme?WEnaT=LI]h9He@3
+I=nBV3H9f^dzRRH`lMJg=M2
+R2
+R0
+w1523494716
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+R13
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+vskeleton
+Z16 !s110 1523494393
+!i10b 1
+!s100 aSGhGE0^^AZaJSDS=_93j2
+IlVe3Jh07RbYP8GC?CUH6f1
+R2
+R0
+w1523494391
 R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z17 !s108 1523494393.000000
+R8
+R9
+!i113 1
+R10
+vskeleton_vlg_vec_tst
+R16
+!i10b 1
+!s100 GG`oaYihlm7?YkcMK`IQT1
+IJ]DjTT?N9mSc^Q<3o?7`;0
+R2
+R0
+w1523494387
+R11
+R12
+R13
+R6
+r1
+!s85 0
+31
+R17
+R14
+R15
+!i113 1
+R10
