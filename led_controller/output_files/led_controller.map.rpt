@@ -1,5 +1,5 @@
 Analysis & Synthesis report for led_controller
-Wed Apr 11 21:10:49 2018
+Thu Apr 12 15:38:22 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -15,10 +15,9 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "led:led0"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +44,16 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 11 21:10:49 2018           ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 12 15:38:22 2018           ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                      ; led_controller                                  ;
-; Top-level Entity Name              ; skeleton                                        ;
+; Top-level Entity Name              ; led_array                                       ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 12                                              ;
-;     Total combinational functions  ; 10                                              ;
-;     Dedicated logic registers      ; 11                                              ;
-; Total registers                    ; 11                                              ;
-; Total pins                         ; 3                                               ;
+; Total logic elements               ; 296                                             ;
+;     Total combinational functions  ; 152                                             ;
+;     Dedicated logic registers      ; 170                                             ;
+; Total registers                    ; 170                                             ;
+; Total pins                         ; 163                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -68,7 +67,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; skeleton           ; led_controller     ;
+; Top-level entity name                                                      ; led_array          ; led_controller     ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -166,15 +165,15 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
-; pwm.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/pwm.v      ;         ;
-; led.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led.v      ;         ;
-; skeleton.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/skeleton.v ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; pwm.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/pwm.v       ;         ;
+; led.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led.v       ;         ;
+; led_array.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led_array.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -182,30 +181,30 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 12          ;
+; Estimated Total logic elements              ; 296         ;
 ;                                             ;             ;
-; Total combinational functions               ; 10          ;
+; Total combinational functions               ; 152         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 1           ;
-;     -- 3 input functions                    ; 2           ;
-;     -- <=2 input functions                  ; 7           ;
+;     -- 4 input functions                    ; 0           ;
+;     -- 3 input functions                    ; 127         ;
+;     -- <=2 input functions                  ; 25          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 4           ;
-;     -- arithmetic mode                      ; 6           ;
+;     -- normal mode                          ; 20          ;
+;     -- arithmetic mode                      ; 132         ;
 ;                                             ;             ;
-; Total registers                             ; 11          ;
-;     -- Dedicated logic registers            ; 11          ;
+; Total registers                             ; 170         ;
+;     -- Dedicated logic registers            ; 170         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 3           ;
+; I/O pins                                    ; 163         ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 11          ;
-; Total fan-out                               ; 48          ;
-; Average fan-out                             ; 1.78        ;
+; Maximum fan-out                             ; 170         ;
+; Total fan-out                               ; 950         ;
+; Average fan-out                             ; 1.47        ;
 +---------------------------------------------+-------------+
 
 
@@ -214,34 +213,182 @@ agreement for further details.
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name ; Library Name ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+-------------+--------------+
-; |skeleton                    ; 10 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |skeleton                                             ; skeleton    ; work         ;
-;    |led:led0|                ; 10 (0)            ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|led:led0                                    ; led         ; work         ;
-;       |pwm:green_signal|     ; 8 (0)             ; 9 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|led:led0|pwm:green_signal                   ; pwm         ; work         ;
-;          |counter:count_mod| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|led:led0|pwm:green_signal|counter:count_mod ; counter     ; work         ;
-;       |pwm:red_signal|       ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |skeleton|led:led0|pwm:red_signal                     ; pwm         ; work         ;
+; |led_array                   ; 152 (0)           ; 170 (0)      ; 0           ; 0            ; 0       ; 0         ; 163  ; 0            ; |led_array                                            ; led_array   ; work         ;
+;    |led:led0|                ; 24 (0)            ; 26 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led0                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 16 (8)            ; 9 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led0|pwm:blue_signal                   ; pwm         ; work         ;
+;          |counter:count_mod| ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led0|pwm:blue_signal|counter:count_mod ; counter     ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led0|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led1|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led1                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led1|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led1|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led2|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led2                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led2|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led2|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led3|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led3                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led3|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led3|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led4|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led4                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led4|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led4|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led5|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led5                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led5|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led5|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led6|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led6                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led6|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led6|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led7|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led7                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led7|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led7|pwm:red_signal                    ; pwm         ; work         ;
+;    |led:led8|                ; 16 (0)            ; 18 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led8                                   ; led         ; work         ;
+;       |pwm:blue_signal|      ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led8|pwm:blue_signal                   ; pwm         ; work         ;
+;       |pwm:red_signal|       ; 8 (8)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |led_array|led:led8|pwm:red_signal                    ; pwm         ; work         ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                    ;
-+----------------------------------------------------+------------------------------------------------------------------+
-; Register name                                      ; Reason for Removal                                               ;
-+----------------------------------------------------+------------------------------------------------------------------+
-; led:led0|green[0..2,7]                             ; Stuck at GND due to stuck port data_in                           ;
-; led:led0|red[0..2,7]                               ; Stuck at GND due to stuck port data_in                           ;
-; led:led0|green[4..6]                               ; Merged with led:led0|green[3]                                    ;
-; led:led0|red[3..6]                                 ; Merged with led:led0|green[3]                                    ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[7] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[6] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[5] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[4] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[3] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[2] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[1] ;
-; led:led0|pwm:red_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:green_signal|counter:count_mod|c_out[0] ;
-; Total Number of Removed Registers = 23             ;                                                                  ;
-+----------------------------------------------------+------------------------------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------------------+
+; Register name                                       ; Reason for Removal                                              ;
++-----------------------------------------------------+-----------------------------------------------------------------+
+; led:led0|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[7] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[7]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[7] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[6] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[6]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[6] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[5] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[5]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[5] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[4] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[4]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[4] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[3] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[3]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[3] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[2] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[2]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[2] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[1] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[1]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[1] ;
+; led:led0|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led1|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led1|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led2|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led2|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led3|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led3|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led4|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led4|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led5|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led5|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led6|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led6|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led7|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led7|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led8|pwm:blue_signal|counter:count_mod|c_out[0] ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; led:led8|pwm:red_signal|counter:count_mod|c_out[0]  ; Merged with led:led0|pwm:blue_signal|counter:count_mod|c_out[0] ;
+; Total Number of Removed Registers = 136             ;                                                                 ;
++-----------------------------------------------------+-----------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -249,7 +396,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 11    ;
+; Total registers                              ; 170   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -259,38 +406,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------+
-; Port Connectivity Checks: "led:led0"           ;
-+--------------+-------+----------+--------------+
-; Port         ; Type  ; Severity ; Details      ;
-+--------------+-------+----------+--------------+
-; code[14..11] ; Input ; Info     ; Stuck at VCC ;
-; code[6..3]   ; Input ; Info     ; Stuck at VCC ;
-; code[10..7]  ; Input ; Info     ; Stuck at GND ;
-; code[2..0]   ; Input ; Info     ; Stuck at GND ;
-; code[15]     ; Input ; Info     ; Stuck at GND ;
-+--------------+-------+----------+--------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 3                           ;
-; cycloneiii_ff         ; 11                          ;
-;     plain             ; 11                          ;
-; cycloneiii_lcell_comb ; 10                          ;
-;     arith             ; 6                           ;
+; boundary_port         ; 163                         ;
+; cycloneiii_ff         ; 170                         ;
+;     plain             ; 170                         ;
+; cycloneiii_lcell_comb ; 152                         ;
+;     arith             ; 132                         ;
 ;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 4                           ;
+;         3 data inputs ; 127                         ;
+;     normal            ; 20                          ;
 ;         1 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
+;         2 data inputs ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.37                        ;
+; Max LUT depth         ; 1.70                        ;
+; Average LUT depth     ; 0.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -309,7 +442,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Wed Apr 11 21:10:35 2018
+    Info: Processing started: Thu Apr 12 15:38:08 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off led_controller -c led_controller
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -320,20 +453,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file led.v
     Info (12023): Found entity 1: led File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file skeleton.v
     Info (12023): Found entity 1: skeleton File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/skeleton.v Line: 1
-Info (12127): Elaborating entity "skeleton" for the top level hierarchy
-Info (12128): Elaborating entity "led" for hierarchy "led:led0" File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/skeleton.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file led_array.v
+    Info (12023): Found entity 1: led_array File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led_array.v Line: 1
+Info (12127): Elaborating entity "led_array" for the top level hierarchy
+Info (12128): Elaborating entity "led" for hierarchy "led:led0" File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led_array.v Line: 9
 Info (12128): Elaborating entity "pwm" for hierarchy "led:led0|pwm:red_signal" File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/led.v Line: 19
 Info (12128): Elaborating entity "counter" for hierarchy "led:led0|pwm:red_signal|counter:count_mod" File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/pwm.v Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 13 logic cells
+Info (21057): Implemented 459 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 145 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 296 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 916 megabytes
-    Info: Processing ended: Wed Apr 11 21:10:49 2018
+    Info: Peak virtual memory: 918 megabytes
+    Info: Processing ended: Thu Apr 12 15:38:22 2018
     Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:25
 
