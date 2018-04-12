@@ -197,7 +197,6 @@ for instrLine in instructions:
 
         elif instr[0] == 'rand':
             line += opcode[instr[0]]
-            line +=
             a = ''.join(c for c in instr[1] if c.isdigit())
             b = str(binary_repr(int(a),6))
             line += b[1:6]
