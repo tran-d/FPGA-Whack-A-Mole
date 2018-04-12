@@ -69,12 +69,9 @@ set_global_assignment -name QSYS_FILE debugger.qsys
 set_global_assignment -name SYSTEMVERILOG_FILE lcd.sv
 set_global_assignment -name VERILOG_FILE skeleton.v
 set_global_assignment -name VERILOG_FILE capacitive_sensor.v
-<<<<<<< HEAD
-=======
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VERILOG_FILE db/ip/probes/probes.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE capacitive_sensor_array.vwf
->>>>>>> 3bfaa8ab7c7444f8c6d141485b7a748d863bf54b
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
