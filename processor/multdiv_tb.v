@@ -1,6 +1,6 @@
 `timescale 1 ns / 100 ps
 
-module multdiv_tb();
+module multdiv_tb1();
 
     // inputs to the multdiv are reg type
     reg            clock, ctrl_MULT, ctrl_DIV, data_exception_expected;
