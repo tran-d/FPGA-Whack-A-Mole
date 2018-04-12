@@ -1,6 +1,6 @@
 Flow report for processor
-Thu Apr 12 15:51:16 2018
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Thu Apr 12 16:13:11 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
 ---------------------
@@ -21,42 +21,43 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 12 15:51:16 2018       ;
-; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                      ; processor                                   ;
-; Top-level Entity Name              ; random32                                    ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 32 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 2 / 114,480 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 32 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 32                                          ;
-; Total pins                         ; 34 / 529 ( 6 % )                            ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Thu Apr 12 16:13:11 2018           ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Revision Name                      ; processor                                       ;
+; Top-level Entity Name              ; skeleton_ta                                     ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE115F29C7                                   ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 3,359 / 114,480 ( 3 % )                         ;
+;     Total combinational functions  ; 3,205 / 114,480 ( 3 % )                         ;
+;     Dedicated logic registers      ; 1,366 / 114,480 ( 1 % )                         ;
+; Total registers                    ; 1366                                            ;
+; Total pins                         ; 235 / 529 ( 44 % )                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 262,144 / 3,981,312 ( 7 % )                     ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,38 +65,38 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/12/2018 15:49:50 ;
+; Start date & time ; 04/12/2018 16:11:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processor           ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 182924282454155.152356258913648        ; --            ; --          ; --                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; processor_tb_auto ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; processor_tb_auto                      ; --            ; --          ; eda_simulation    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation    ;
-; EDA_TEST_BENCH_FILE                  ; processor_tb_auto.v                    ; --            ; --          ; processor_tb_auto ;
-; EDA_TEST_BENCH_MODULE_NAME           ; processor_tb_auto                      ; --            ; --          ; processor_tb_auto ;
-; EDA_TEST_BENCH_NAME                  ; processor_tb_auto                      ; --            ; --          ; eda_simulation    ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; random32    ; Top               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; random32    ; Top               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; random32    ; Top               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                ;
-; TOP_LEVEL_ENTITY                     ; random32                               ; processor     ; --          ; --                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++--------------------------------------+---------------------------------------+---------------+-------------+-------------------+
+; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id        ;
++--------------------------------------+---------------------------------------+---------------+-------------+-------------------+
+; COMPILER_SIGNATURE_ID                ; 159090364249950.152356386810192       ; --            ; --          ; --                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; processor_tb_auto ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; processor_tb_auto                     ; --            ; --          ; eda_simulation    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                           ; --            ; --          ; eda_simulation    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                       ; --            ; --          ; eda_simulation    ;
+; EDA_TEST_BENCH_FILE                  ; processor_tb_auto.v                   ; --            ; --          ; processor_tb_auto ;
+; EDA_TEST_BENCH_MODULE_NAME           ; processor_tb_auto                     ; --            ; --          ; processor_tb_auto ;
+; EDA_TEST_BENCH_NAME                  ; processor_tb_auto                     ; --            ; --          ; eda_simulation    ;
+; EDA_TIME_SCALE                       ; 1 ps                                  ; --            ; --          ; eda_simulation    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                    ; --            ; --          ; --                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                     ; --            ; --          ; --                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                  ; --            ; --          ; --                ;
+; PARTITION_COLOR                      ; 16764057                              ; --            ; skeleton_ta ; Top               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING                 ; --            ; skeleton_ta ; Top               ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                                ; --            ; skeleton_ta ; Top               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                   ; --            ; --          ; --                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                          ; --            ; --          ; --                ;
+; TOP_LEVEL_ENTITY                     ; skeleton_ta                           ; processor     ; --          ; --                ;
++--------------------------------------+---------------------------------------+---------------+-------------+-------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -103,34 +104,26 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 656 MB              ; 00:00:42                           ;
-; Fitter                    ; 00:00:21     ; 1.0                     ; 1341 MB             ; 00:00:28                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 602 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 734 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 566 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 551 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 560 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 551 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 560 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:54     ; --                      ; --                  ; 00:01:23                           ;
+; Analysis & Synthesis      ; 00:00:30     ; 1.0                     ; 989 MB              ; 00:00:39                           ;
+; Fitter                    ; 00:00:55     ; 1.0                     ; 2021 MB             ; 00:01:19                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 833 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.3                     ; 1047 MB             ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 843 MB              ; 00:00:05                           ;
+; Total                     ; 00:01:47     ; --                      ; --                  ; 00:02:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                         ;
-+---------------------------+------------------+------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; davidtranlaptop  ; Windows 10 ; 10.0       ; x86_64         ;
-+---------------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; 202a-pc07        ; Windows 8 ; 6.2        ; x86_64         ;
+; Fitter                    ; 202a-pc07        ; Windows 8 ; 6.2        ; x86_64         ;
+; Assembler                 ; 202a-pc07        ; Windows 8 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; 202a-pc07        ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; 202a-pc07        ; Windows 8 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
@@ -141,10 +134,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off processor -c pr
 quartus_asm --read_settings_files=off --write_settings_files=off processor -c processor
 quartus_sta processor -c processor
 quartus_eda --read_settings_files=off --write_settings_files=off processor -c processor
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/random32.vwf --testbench_file=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/qsim/random32.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/qsim/ processor -c processor
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/random32.vwf --testbench_file=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/qsim/random32.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/qsim/ processor -c processor
 
 
 
