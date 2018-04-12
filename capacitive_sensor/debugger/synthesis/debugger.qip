@@ -2,7 +2,7 @@ set_global_assignment -entity "debugger" -library "debugger" -name IP_TOOL_NAME 
 set_global_assignment -entity "debugger" -library "debugger" -name IP_TOOL_VERSION "16.0"
 set_global_assignment -entity "debugger" -library "debugger" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "debugger" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../debugger.sopcinfo"]
-set_global_assignment -entity "debugger" -library "debugger" -name SLD_INFO "QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1523557461"
+set_global_assignment -entity "debugger" -library "debugger" -name SLD_INFO "QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1523562927"
 set_global_assignment -library "debugger" -name MISC_FILE [file join $::quartus(qip_path) "../debugger.cmp"]
 set_global_assignment -library "debugger" -name SLD_FILE [file join $::quartus(qip_path) "debugger.debuginfo"]
 set_global_assignment -entity "debugger" -library "debugger" -name IP_TARGETED_DEVICE_FAMILY "Cyclone IV E"
@@ -15,7 +15,7 @@ set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUyMzU1NzQ2MQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTUyMzU2MjkyNw==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBJViBF::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::RVA0Q0UxMTVGMjlDNw==::QXV0byBERVZJQ0U="
 set_global_assignment -entity "debugger" -library "debugger" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="

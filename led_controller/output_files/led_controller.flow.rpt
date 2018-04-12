@@ -1,5 +1,5 @@
 Flow report for led_controller
-Thu Apr 12 15:39:07 2018
+Thu Apr 12 15:59:01 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 12 15:39:07 2018           ;
+; Flow Status                        ; Successful - Thu Apr 12 15:59:01 2018           ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                      ; led_controller                                  ;
 ; Top-level Entity Name              ; led_array                                       ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/12/2018 15:38:11 ;
+; Start date & time ; 04/12/2018 15:58:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; led_controller      ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+----------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value  ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 159090364249950.152356189102020       ; --             ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 159090364249950.152356308503792       ; --             ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --             ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>         ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --             ; --          ; eda_simulation ;
@@ -98,12 +98,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 918 MB              ; 00:00:25                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 918 MB              ; 00:00:24                           ;
 ; Fitter                    ; 00:00:24     ; 1.0                     ; 1959 MB             ; 00:00:27                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 808 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 998 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 787 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:54     ; --                      ; --                  ; 00:00:58                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 808 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 999 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 787 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:54     ; --                      ; --                  ; 00:00:57                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

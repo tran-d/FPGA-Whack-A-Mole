@@ -1,5 +1,5 @@
 Fitter report for led_controller
-Thu Apr 12 15:38:47 2018
+Thu Apr 12 15:58:42 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -67,7 +67,7 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Apr 12 15:38:47 2018           ;
+; Fitter Status                      ; Successful - Thu Apr 12 15:58:42 2018           ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                      ; led_controller                                  ;
 ; Top-level Entity Name              ; led_array                                       ;
@@ -154,7 +154,7 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -2653,7 +2653,7 @@ Info (176215): I/O bank details before I/O pin placement
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "g_pin" is assigned to location or region, but does not exist in design
     Warning (15706): Node "r_pin" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -2666,19 +2666,19 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.16 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/led_controller/output_files/led_controller.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 1959 megabytes
-    Info: Processing ended: Thu Apr 12 15:38:48 2018
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Processing ended: Thu Apr 12 15:58:42 2018
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:28
 
 
 +----------------------------+
