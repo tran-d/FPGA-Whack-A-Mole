@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/random/simulation/qsim
+vrandom8
+Z1 !s110 1523573925
+!i10b 1
+!s100 ZFjlD?aZU6K=NVAe[MW_>3
+I0a_ml9:iA:7k3`a_X]9;^1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1523573923
+Z3 8random.vo
+Z4 Frandom.vo
+Z5 L0 32
+Z6 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z7 !s108 1523573925.000000
+Z8 !s107 random.vo|
+Z9 !s90 -work|work|random.vo|
+!i113 1
+Z10 o-work work
+vrandom8_vlg_vec_tst
+R1
+!i10b 1
+!s100 `GS]DASb[T33^a3KmoaA21
+ImARS;CDAa0CzP4QHNfCTK1
+R2
+R0
+w1523573920
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+Z11 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+vskeleton
+Z12 !s110 1523572411
+!i10b 1
+!s100 Xo4CkD]8AJY5iLJkC[4AU2
+IL7^NzINe4NlbhMzS;@HjZ1
+R2
+R0
+w1523572409
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z13 !s108 1523572411.000000
+R8
+R9
+!i113 1
+R10
+vskeleton_vlg_vec_tst
+R12
+!i10b 1
+!s100 QEKgTkM3R6_1W869@^H>B2
+IKCPdGGJSK6_RlhHXg^c2]1
+R2
+R0
+w1523572405
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+R11
+R6
+r1
+!s85 0
+31
+R13
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10

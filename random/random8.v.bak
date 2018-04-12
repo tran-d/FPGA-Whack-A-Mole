@@ -1,0 +1,10 @@
+module random8(clock, seed0, seed1, seed2, seed3, seed4, seed5, seed6, seed7, data);
+
+	input clock;
+	input [7:0] seed0, seed1, seed2, seed3, seed4, seed5, seed6, seed7;
+	
+	output [7:0] data;
+	
+	
+
+endmodule
