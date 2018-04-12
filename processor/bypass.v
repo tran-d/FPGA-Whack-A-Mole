@@ -82,20 +82,20 @@ module bypass(fd_insn, dx_insn, xm_insn, mw_insn, mx_bypass_A, mx_bypass_B, wx_b
 	endgenerate
 	
 	wire dx_r_insn, dx_addi_insn, dx_sw_insn, dx_lw_insn, dx_bne_insn, dx_blt_insn, dx_jr_insn, dx_write_insn, 
-			dx_read_rs_insn, dx_read_rt_insn, dx_read_rd_insn, dx_beq_insn, dx_rand_insn;
-	wire xm_r_insn, xm_addi_insn, xm_lw_insn, xm_write_insn, xm_sw_insn, xm_rand_insn;
-	wire mw_r_insn, mw_addi_insn, mw_lw_insn, mw_write_insn, mw_rand_insn;
+			dx_read_rs_insn, dx_read_rt_insn, dx_read_rd_insn, dx_beq_insn;
+	wire xm_r_insn, xm_addi_insn, xm_lw_insn, xm_write_insn, xm_sw_insn;
+	wire mw_r_insn, mw_addi_insn, mw_lw_insn, mw_write_insn;
 	
 	assign dx_r_insn 			=  (~dx_opcode[4] && ~dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0]); 	// r_insn
 	assign dx_addi_insn 		=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] && ~dx_opcode[1] &&  dx_opcode[0]); 	// addi
 	assign dx_sw_insn 		=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] &&  dx_opcode[1] &&  dx_opcode[0]);	//00111 sw
 	assign dx_lw_insn			=	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0]);	//01000 lw only check fd_rs1				
-	assign dx_rand_insn		= 	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] &&  dx_opcode[1] && ~dx_opcode[0]);	//01010 random32			
+	//assign dx_rand_insn		= 	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] &&  dx_opcode[1] && ~dx_opcode[0]);	//01010 random32			
 	assign dx_bne_insn 		= 	(~dx_opcode[4] && ~dx_opcode[3] && ~dx_opcode[2] &&  dx_opcode[1] && ~dx_opcode[0]);	//00010
 	assign dx_beq_insn 		= 	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] &&  dx_opcode[0]);	//01001
 	assign dx_blt_insn		=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] &&  dx_opcode[1] && ~dx_opcode[0]);	//00110
 	assign dx_jr_insn			=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0]);	//00100
-	assign dx_write_insn 	=  dx_r_insn || dx_addi_insn || dx_lw_insn || dx_rand_insn;
+	assign dx_write_insn 	=  dx_r_insn || dx_addi_insn || dx_lw_insn;
 	assign dx_read_rs_insn  =  dx_r_insn || dx_addi_insn || dx_lw_insn || dx_sw_insn || dx_bne_insn || dx_blt_insn || dx_beq_insn;
 	assign dx_read_rt_insn  =  (dx_r_insn && !(!dx_ALU_opcode[4] && !dx_ALU_opcode[3] && dx_ALU_opcode[2] && !dx_ALU_opcode[1]));
 	assign dx_read_rd_insn  =  dx_bne_insn || dx_blt_insn || dx_jr_insn || dx_sw_insn || dx_beq_insn;
@@ -103,16 +103,16 @@ module bypass(fd_insn, dx_insn, xm_insn, mw_insn, mx_bypass_A, mx_bypass_B, wx_b
 	assign xm_r_insn 			=  (~xm_opcode[4] && ~xm_opcode[3] && ~xm_opcode[2] && ~xm_opcode[1] && ~xm_opcode[0]); 	// r_insn
 	assign xm_addi_insn 		=	(~xm_opcode[4] && ~xm_opcode[3] &&  xm_opcode[2] && ~xm_opcode[1] &&  xm_opcode[0]);	// addit
 	assign xm_lw_insn			=	(~xm_opcode[4] &&  xm_opcode[3] && ~xm_opcode[2] && ~xm_opcode[1] && ~xm_opcode[0]);	//01000 lw only check fd_rs1				
-	assign xm_rand_insn		= 	(~xm_opcode[4] &&  xm_opcode[3] && ~xm_opcode[2] &&  xm_opcode[1] && ~xm_opcode[0]);	//01010 random32			
-	assign xm_write_insn 	=  xm_r_insn || xm_addi_insn || xm_lw_insn || xm_rand_insn;	
+	//assign xm_rand_insn		= 	(~xm_opcode[4] &&  xm_opcode[3] && ~xm_opcode[2] &&  xm_opcode[1] && ~xm_opcode[0]);	//01010 random32			
+	assign xm_write_insn 	=  xm_r_insn || xm_addi_insn || xm_lw_insn;	
 	
 	assign xm_sw_insn 		=  (~xm_opcode[4] && ~xm_opcode[3] &&  xm_opcode[2] &&  xm_opcode[1] &&  xm_opcode[0]);	//00111 sw
 	
 	assign mw_r_insn 			=  (~mw_opcode[4] && ~mw_opcode[3] && ~mw_opcode[2] && ~mw_opcode[1] && ~mw_opcode[0]); 	// r_insn
 	assign mw_addi_insn 		=	(~mw_opcode[4] && ~mw_opcode[3] &&  mw_opcode[2] && ~mw_opcode[1] &&  mw_opcode[0]);	// addit
 	assign mw_lw_insn			=	(~mw_opcode[4] &&  mw_opcode[3] && ~mw_opcode[2] && ~mw_opcode[1] && ~mw_opcode[0]);	//01000 lw only check fd_rs1				
-	assign mw_rand_insn		= 	(~mw_opcode[4] &&  mw_opcode[3] && ~mw_opcode[2] &&  mw_opcode[1] && ~mw_opcode[0]);	//01010 random32			
-	assign mw_write_insn 	=  mw_r_insn || mw_addi_insn || mw_lw_insn || mw_rand_insn;	
+	//assign mw_rand_insn		= 	(~mw_opcode[4] &&  mw_opcode[3] && ~mw_opcode[2] &&  mw_opcode[1] && ~mw_opcode[0]);	//01010 random32			
+	assign mw_write_insn 	=  mw_r_insn || mw_addi_insn || mw_lw_insn;	
 	
 	
 	assign mx_bypass_A 		= dx_read_rs_insn && xm_write_insn && &dx_rs1_equals_xm_rd && |dx_rs1; 							// need r30
