@@ -61,6 +61,8 @@ module processor_tb_auto(
 	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
 	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
 
+	wire 	branched_jumped	= dut.my_processor.branched_jumped;
+
 	// Hazards
 	//wire fd_dx_dhaz_rs_rt		= dut.my_processor.dhc.fd_dx_dhaz_rs_rt;
 	//wire fd_xm_dhaz_rs_rt		= dut.my_processor.dhc.fd_xm_dhaz_rs_rt;
@@ -81,13 +83,24 @@ module processor_tb_auto(
 	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
 	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
 
+	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
+	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
+	wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
+	wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
+	wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
+
 	wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
 	wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
 	wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
 	wire [31:0] alu_operandB = dut.my_processor.execute.ALU_operandB;
-	wire [31:0] alu_result = dut.my_processor.execute.o_out;
+	wire [31:0] alu_result 	= dut.my_processor.execute.o_out;
 	wire [31:0] exec_alu_operandB = dut.my_processor.execute.ALU_operandB;
-
+	wire 		isNotEqual 	= dut.my_processor.execute.isNotEqual;
+	wire [31:0] immediate 	= dut.my_processor.execute.immediate;
+	wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
+	wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
+	wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
+ 
 	wire [31:0] pc_in = dut.my_processor.pc_in;
 	wire [31:0] pc_out = dut.my_processor.pc_out;
 	wire [31:0] q_dmem = dut.my_processor.q_dmem;
@@ -151,8 +164,11 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, opcode: %d, exec_write_exception: %d", clock, opcode, exec_write_exception);
 
-		$monitor("clock: %d, opcode: %d, mx_bypass_A: %d, wx_bypass_A: %d, mx_bypass_B: %d, wx_bypass_B: %d, wm_bypass: %d", clock, opcode, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B, wm_bypass);
+		//$monitor("clock: %d, opcode: %d, mx_bypass_A: %d, wx_bypass_A: %d, mx_bypass_B: %d, wx_bypass_B: %d, wm_bypass: %d", clock, opcode, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B, wm_bypass);
 
+		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
+
+		$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
 
 

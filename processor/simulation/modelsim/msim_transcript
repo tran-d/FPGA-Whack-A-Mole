@@ -1,0 +1,455 @@
+# Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# do processor_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:35 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v 
+# -- Compiling module skeleton_ta
+# 
+# Top level modules:
+# 	skeleton_ta
+# End time: 15:25:35 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:36 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v 
+# -- Compiling module stage_write
+# -- Compiling module write_controls
+# 
+# Top level modules:
+# 	stage_write
+# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:36 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v 
+# -- Compiling module stage_memory
+# 
+# Top level modules:
+# 	stage_memory
+# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:36 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v 
+# -- Compiling module stage_fetch
+# 
+# Top level modules:
+# 	stage_fetch
+# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:36 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v 
+# -- Compiling module stage_execute
+# 
+# Top level modules:
+# 	stage_execute
+# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:36 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v 
+# -- Compiling module stage_decode
+# -- Compiling module decode_controls
+# 
+# Top level modules:
+# 	stage_decode
+# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:37 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v 
+# -- Compiling module signextender_16to32
+# 
+# Top level modules:
+# 	signextender_16to32
+# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:37 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v 
+# -- Compiling module tristate_buffer
+# -- Compiling module tristate_buffer32
+# -- Compiling module mux32_tristate
+# -- Compiling module mux2to1_32
+# -- Compiling module mux2to1_33
+# -- Compiling module mux8_tristate
+# 
+# Top level modules:
+# 	tristate_buffer32
+# 	mux32_tristate
+# 	mux2to1_32
+# 	mux2to1_33
+# 	mux8_tristate
+# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:37 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v 
+# -- Compiling module reg64_sl1
+# -- Compiling module reg6
+# -- Compiling module reg65_sr2
+# -- Compiling module reg5
+# -- Compiling module reg32
+# -- Compiling module reg32_neg
+# 
+# Top level modules:
+# 	reg64_sl1
+# 	reg6
+# 	reg65_sr2
+# 	reg5
+# 	reg32
+# 	reg32_neg
+# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:37 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:37 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v 
+# -- Compiling module processor
+# 
+# Top level modules:
+# 	processor
+# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v 
+# -- Compiling module latch_PC
+# -- Compiling module latch_FD
+# -- Compiling module latch_DX
+# -- Compiling module latch_XM
+# -- Compiling module latch_MW
+# 
+# Top level modules:
+# 	latch_PC
+# 	latch_FD
+# 	latch_DX
+# 	latch_XM
+# 	latch_MW
+# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v 
+# -- Compiling module imem
+# 
+# Top level modules:
+# 	imem
+# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v 
+# -- Compiling module dmem
+# 
+# Top level modules:
+# 	dmem
+# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v 
+# -- Compiling module dflipflop_neg
+# 
+# Top level modules:
+# 	dflipflop_neg
+# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v 
+# -- Compiling module dflipflop
+# 
+# Top level modules:
+# 	dflipflop
+# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:38 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v 
+# -- Compiling module decoder5to32
+# 
+# Top level modules:
+# 	decoder5to32
+# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:39 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v 
+# -- Compiling module decoder3to8
+# 
+# Top level modules:
+# 	decoder3to8
+# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:39 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v 
+# -- Compiling module sll
+# -- Compiling module sll16
+# -- Compiling module sll8
+# -- Compiling module sll4
+# -- Compiling module sll2
+# -- Compiling module sll1
+# -- Compiling module sra
+# -- Compiling module sra16
+# -- Compiling module sra8
+# -- Compiling module sra4
+# -- Compiling module sra2
+# -- Compiling module sra1
+# -- Compiling module and32
+# -- Compiling module or32
+# 
+# Top level modules:
+# 	sll
+# 	sra
+# 	and32
+# 	or32
+# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:39 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:39 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v 
+# -- Compiling module adder1
+# -- Compiling module adder5
+# -- Compiling module adder6
+# -- Compiling module adder8
+# 
+# Top level modules:
+# 	adder5
+# 	adder6
+# 	adder8
+# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:39 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v 
+# -- Compiling module adder32
+# 
+# Top level modules:
+# 	adder32
+# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:40 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v 
+# -- Compiling module bypass
+# 
+# Top level modules:
+# 	bypass
+# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:40 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v 
+# -- Compiling module bypass_stall
+# 
+# Top level modules:
+# 	bypass_stall
+# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:25:40 on Apr 12,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v 
+# -- Compiling module processor_tb_auto
+# 
+# Top level modules:
+# 	processor_tb_auto
+# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  processor_tb_auto
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" processor_tb_auto 
+# Start time: 15:25:41 on Apr 12,2018
+# Loading work.processor_tb_auto
+# Loading work.skeleton_ta
+# Loading work.imem
+# Loading altera_mf_ver.altsyncram
+# Loading work.dmem
+# Loading work.regfile
+# Loading work.decoder5to32
+# Loading work.processor
+# Loading work.latch_PC
+# Loading work.reg32_neg
+# Loading work.stage_fetch
+# Loading work.adder32
+# Loading work.adder8
+# Loading work.latch_FD
+# Loading work.reg32
+# Loading work.stage_decode
+# Loading work.decode_controls
+# Loading work.latch_DX
+# Loading work.stage_execute
+# Loading work.alu
+# Loading work.and32
+# Loading work.or32
+# Loading work.sll
+# Loading work.sll16
+# Loading work.sll8
+# Loading work.sll4
+# Loading work.sll2
+# Loading work.sll1
+# Loading work.sra
+# Loading work.sra16
+# Loading work.sra8
+# Loading work.sra4
+# Loading work.sra2
+# Loading work.sra1
+# Loading work.signextender_16to32
+# Loading work.latch_XM
+# Loading work.dflipflop
+# Loading work.stage_memory
+# Loading work.latch_MW
+# Loading work.stage_write
+# Loading work.write_controls
+# Loading work.bypass
+# Loading work.bypass_stall
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.mux32_tristate
+# Loading work.dflipflop_neg
+# Loading work.adder1
+# Loading work.mux8_tristate
+# Loading work.decoder3to8
+# Loading work.tristate_buffer
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#                    0:  << Starting Test >>
+# 
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
+# clock: 1, insn_execute: 00101000010000000000000000000011, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:          3, isNotEqual 1, branched_jumped: 0, immediate:          3, pc_plus_1_plus_immediate:          4
+# clock: 0, insn_execute: 00101000010000000000000000000011, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:          3, isNotEqual 1, branched_jumped: 0, immediate:          3, pc_plus_1_plus_immediate:          4
+# clock: 1, insn_execute: 00101000100000100000000000000000, ex_opcode:          5, alu_operandA_ex:          3, alu_operandB_ex:          0, isNotEqual 1, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          2
+# clock: 0, insn_execute: 00101000100000100000000000000000, ex_opcode:          5, alu_operandA_ex:          3, alu_operandB_ex:          0, isNotEqual 1, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          2
+# clock: 1, insn_execute: 00000000110001000001000000000000, ex_opcode:          0, alu_operandA_ex:          3, alu_operandB_ex:          3, isNotEqual 0, branched_jumped: 0, immediate:       4096, pc_plus_1_plus_immediate:       4099
+# clock: 0, insn_execute: 00000000110001000001000000000000, ex_opcode:          0, alu_operandA_ex:          3, alu_operandB_ex:          3, isNotEqual 0, branched_jumped: 0, immediate:       4096, pc_plus_1_plus_immediate:       4099
+# clock: 1, insn_execute: 01001000110000100000000000000010, ex_opcode:          9, alu_operandA_ex:          3, alu_operandB_ex:          6, isNotEqual 1, branched_jumped: 0, immediate:          2, pc_plus_1_plus_immediate:          6
+# clock: 0, insn_execute: 01001000110000100000000000000010, ex_opcode:          9, alu_operandA_ex:          3, alu_operandB_ex:          6, isNotEqual 1, branched_jumped: 0, immediate:          2, pc_plus_1_plus_immediate:          6
+# clock: 1, insn_execute: 00101001110000011111111110011101, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex: 4294967197, isNotEqual 1, branched_jumped: 0, immediate:     130973, pc_plus_1_plus_immediate: 4294967202
+# clock: 0, insn_execute: 00101001110000011111111110011101, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex: 4294967197, isNotEqual 1, branched_jumped: 0, immediate:     130973, pc_plus_1_plus_immediate: 4294967202
+# clock: 1, insn_execute: 00101010000000000000001010011010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        666, isNotEqual 1, branched_jumped: 0, immediate:        666, pc_plus_1_plus_immediate:        672
+# clock: 0, insn_execute: 00101010000000000000001010011010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        666, isNotEqual 1, branched_jumped: 0, immediate:        666, pc_plus_1_plus_immediate:        672
+# clock: 1, insn_execute: 00101010010000000000001111100111, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        999, isNotEqual 1, branched_jumped: 0, immediate:        999, pc_plus_1_plus_immediate:       1006
+# clock: 0, insn_execute: 00101010010000000000001111100111, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        999, isNotEqual 1, branched_jumped: 0, immediate:        999, pc_plus_1_plus_immediate:       1006
+# clock: 1, insn_execute: 00101010100000000000000000001010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:         10, isNotEqual 1, branched_jumped: 0, immediate:         10, pc_plus_1_plus_immediate:         18
+# clock: 0, insn_execute: 00101010100000000000000000001010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:         10, isNotEqual 1, branched_jumped: 0, immediate:         10, pc_plus_1_plus_immediate:         18
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          9
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          9
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         10
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         10
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         11
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         11
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         12
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         12
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         13
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         13
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         14
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         14
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         15
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         15
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         16
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         16
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         17
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         17
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         18
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         18
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         19
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         19
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         20
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         20
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         21
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         21
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         22
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         22
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         23
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         23
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         24
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         24
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         25
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         25
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         26
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         26
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         27
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         27
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         28
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         28
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         29
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         29
+# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         30
+# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         30
+# 									 Success! register $ 1 (expected: 00000003, read: 00000003)
+# 									 Success! register $ 2 (expected: 00000003, read: 00000003)
+# 									 Success! register $ 3 (expected: 00000006, read: 00000006)
+# ERROR: register $ 7 (expected:          0, read: 4294967197)
+# ERROR: register $ 8 (expected:          0, read:        666)
+# 									 Success! register $ 9 (expected: 000003e7, read: 000003e7)
+# 									 Success! register $10 (expected: 0000000a, read: 0000000a)
+#                  630:  << Test Complete >>
+# Errors:           2
+# ** Note: $stop    : C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v(182)
+#    Time: 630 ns  Iteration: 0  Instance: /processor_tb_auto
+# Break in Module processor_tb_auto at C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v line 182
+# End time: 15:26:10 on Apr 12,2018, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 0

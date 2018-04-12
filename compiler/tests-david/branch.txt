@@ -5,10 +5,15 @@
 addi $r1, $r0, 3 		# $r1 = 0 + 3 = 3			
 add $r2, $r1, $r0 		# $r2 = 0 + 3 = 3	
 add $r3, $r2, $r1 		# $r3 = 3 + 3 = 6
-bne $r3, $r2, 2
+bne $r2, $r3, 7
+nop
+nop
+nop
+nop
+nop
 addi $r7, $r0, -99 		# skipped	
 addi $r8, $r0, 666    	# skipped
-addi $r9, $r0, 999    	# $r9 = 0 + 666 = 666
+addi $r9, $r0, 999    	# $r9 = 0 + 999 = 999
 addi $r10, $r0, 10
 
 cycles 20
@@ -21,4 +26,4 @@ cycles 20
  checkreg 7, 0
  checkreg 8, 0
  checkreg 9, 999
- checkrreg 10, 10
+ checkreg 10, 10
