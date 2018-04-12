@@ -85,5 +85,11 @@ module skeleton_ta(
         data_readRegA,                  // I: Data from port A of regfile
         data_readRegB                   // I: Data from port B of regfile
     );
+	 
+	 wire [31:0] data_result;
+	 wire data_exception, data_resultRDY;
+	 
+	multdiv my_multdiv(32'd0, 32'd0, 1'b0, 1'b0, clock, data_result, data_exception, data_resultRDY);
+   
 
 endmodule

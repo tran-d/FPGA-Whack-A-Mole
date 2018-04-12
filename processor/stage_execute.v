@@ -135,5 +135,6 @@ module stage_execute(
 	assign b_out_alt	= wx_bypass_B ? data_writeReg : regfile_operandB;
 	
 	assign write_exception = exception && (add | addi | sub | mul | div);
+
 	
 endmodule
