@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for capacitive_sensor
-Wed Apr 11 18:26:06 2018
+Thu Apr 12 14:34:48 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -112,7 +112,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.5%      ;
+;     Processor 2            ;   2.8%      ;
 ;     Processors 3-4         ;   2.1%      ;
 +----------------------------+-------------+
 
@@ -1843,7 +1843,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
-    Info: Processing started: Wed Apr 11 18:26:01 2018
+    Info: Processing started: Thu Apr 12 14:34:42 2018
 Info: Command: quartus_sta capacitive_sensor -c capacitive_sensor
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1961,8 +1961,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 14 warnings
     Info: Peak virtual memory: 1013 megabytes
-    Info: Processing ended: Wed Apr 11 18:26:06 2018
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Thu Apr 12 14:34:48 2018
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:03
 
 

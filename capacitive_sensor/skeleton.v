@@ -45,6 +45,6 @@ module skeleton(CLOCK_50,					// 50 MHz clock
 	
 //	wire [31:0] input_probe;
 //	assign input_probe[8:0] = sensor_in[8:0];
-//	debugger d1(.probe(input_probe));
+//	debugger d9(.probe(input_probe));
 	
 endmodule

@@ -1,5 +1,5 @@
 Fitter report for capacitive_sensor
-Wed Apr 11 18:25:50 2018
+Thu Apr 12 14:34:31 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 
 
@@ -66,7 +66,7 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Apr 11 18:25:50 2018           ;
+; Fitter Status                      ; Successful - Thu Apr 12 14:34:31 2018           ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
 ; Revision Name                      ; capacitive_sensor                               ;
 ; Top-level Entity Name              ; skeleton                                        ;
@@ -159,7 +159,7 @@ agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.8%      ;
-;     Processor 3            ;   0.8%      ;
+;     Processor 3            ;   0.7%      ;
 ;     Processor 4            ;   0.7%      ;
 +----------------------------+-------------+
 
@@ -1827,7 +1827,7 @@ Info (176353): Automatically promoted node sld_hub:auto_hub|alt_sld_fab_with_jta
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1849,10 +1849,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/output_files/capacitive_sensor.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1992 megabytes
-    Info: Processing ended: Wed Apr 11 18:25:51 2018
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 1987 megabytes
+    Info: Processing ended: Thu Apr 12 14:34:32 2018
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +----------------------------+
