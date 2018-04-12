@@ -1,0 +1,1269 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/modelsim
+vadder1
+Z1 !s110 1523561139
+!i10b 1
+!s100 ?ZNm7_QCC@MVPY;ggQ[WV2
+IR>IdPbU6N8oFJ2Ym;MR0m2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1522349972
+Z4 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v
+Z5 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v
+L0 3
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1523561139.000000
+Z8 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d
+Z12 tCvgOpt 0
+vadder32
+R1
+!i10b 1
+!s100 4d=USA2nOiTF15le@0oci2
+I>?E0a2=^dVoQm5ULh][Ka0
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v|
+!i113 1
+R10
+R11
+R12
+vadder5
+R1
+!i10b 1
+!s100 Y53zzoizX_ET@fglE?4<E0
+INi]]V@fim`@;R5nReL1LP1
+R2
+R0
+R3
+R4
+R5
+Z13 L0 16
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vadder6
+R1
+!i10b 1
+!s100 ^Pe_?T_Vd2j`z?VW`;YTc2
+IQ>ee]5<LPJ;?WmXKlj9Ce3
+R2
+R0
+R3
+R4
+R5
+L0 95
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vadder8
+R1
+!i10b 1
+!s100 PR2E`zH8hRHC4Gm_D;OKR2
+I07J2Sa>dfPMJmB3<1njb^3
+R2
+R0
+R3
+R4
+R5
+L0 185
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+valu
+R1
+!i10b 1
+!s100 =?93odLnPeU^bkO5U7WW60
+Ib^z^:Af5_oXDGkf>CCS3H3
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v|
+!i113 1
+R10
+R11
+R12
+vand32
+R1
+!i10b 1
+!s100 Q5>`8T?ob7:4QfIJ]D2j53
+IAl8V7B2F=G^Af=C3Gzh7?1
+R2
+R0
+R3
+Z14 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v
+Z15 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v
+L0 272
+R6
+r1
+!s85 0
+31
+R7
+Z16 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v|
+Z17 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v|
+!i113 1
+R10
+R11
+R12
+vbypass
+Z18 !s110 1523561140
+!i10b 1
+!s100 zSBIF8c6WHLAiXCnOP;FX1
+I9MO4TU5GaX2h6MmUJSSE;2
+R2
+R0
+w1523561034
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z19 !s108 1523561140.000000
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v|
+!i113 1
+R10
+R11
+R12
+vbypass_stall
+R18
+!i10b 1
+!s100 cL:1gBB[DBIa`ICl:CN0j0
+IH840LUSnd[36?k_l>8_Kf1
+R2
+R0
+w1522991780
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v
+L0 1
+R6
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v|
+!i113 1
+R10
+R11
+R12
+vdecode_controls
+Z20 !s110 1523561136
+!i10b 1
+!s100 Y;9RB50mF[8FNm@[c<VPK1
+IQi?m`2L:knUA:I3LnL@[j0
+R2
+R0
+Z21 w1523493016
+Z22 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v
+Z23 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v
+R13
+R6
+r1
+!s85 0
+31
+Z24 !s108 1523561136.000000
+Z25 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v|
+Z26 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v|
+!i113 1
+R10
+R11
+R12
+vdecoder3to8
+R1
+!i10b 1
+!s100 Z>:Wm@Q?=c>EfJ;LcN=S31
+I9;3?c:T>1`NeWKNG34TXE0
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v|
+!i113 1
+R10
+R11
+R12
+vdecoder5to32
+Z27 !s110 1523561138
+!i10b 1
+!s100 gS3jmfigc]cX@j5K]4^NG0
+IMU=l0G3iKIYX>^>DTd:]Y1
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z28 !s108 1523561138.000000
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v|
+!i113 1
+R10
+R11
+R12
+vdflipflop
+R27
+!i10b 1
+!s100 6V>Lma@f[:Q3E6FcN8Wc32
+ImbjgUjFEPz2aVg7zhZGmz2
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v
+L0 1
+R6
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v|
+!i113 1
+R10
+R11
+R12
+vdflipflop_neg
+R27
+!i10b 1
+!s100 ^SeVI=8X:ORgeQfKX_UT[0
+IRG0nfc:fT``PSFUcnPO8M2
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v
+L0 1
+R6
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v|
+!i113 1
+R10
+R11
+R12
+vdmem
+R27
+!i10b 1
+!s100 KhbnD_b8fHNRG5^[H6gF02
+I]G:^fUVnmVLmNaWkg=RhI1
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v
+Z29 L0 39
+R6
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v|
+!i113 1
+R10
+R11
+R12
+vimem
+R27
+!i10b 1
+!s100 lz44KX8W3KFO`b7fMNQ<83
+IcjH4Vn0gjdC>Z`ci92o<z3
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v
+R29
+R6
+r1
+!s85 0
+31
+R28
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v|
+!i113 1
+R10
+R11
+R12
+vlatch_DX
+R27
+!i10b 1
+!s100 ZX=QHM6]fGh=aMPHnMdhz3
+Ib4f4>1aI906Ei?:gCmDm^3
+R2
+R0
+Z30 w1522971991
+Z31 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v
+Z32 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v
+Z33 L0 24
+R6
+r1
+!s85 0
+31
+R28
+Z34 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v|
+Z35 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v|
+!i113 1
+R10
+R11
+R12
+nlatch_@d@x
+vlatch_FD
+R27
+!i10b 1
+!s100 bKWdOIAQnCU;K@7M:LNnU0
+I?hTSMQWf=B17LTOK=o5UR0
+R2
+R0
+R30
+R31
+R32
+Z36 L0 12
+R6
+r1
+!s85 0
+31
+R28
+R34
+R35
+!i113 1
+R10
+R11
+R12
+nlatch_@f@d
+vlatch_MW
+R27
+!i10b 1
+!s100 _YWL6X5mC2l`fmz:YmniE1
+IHnlW^T17gW]gNih_ng91[0
+R2
+R0
+R30
+R31
+R32
+L0 55
+R6
+r1
+!s85 0
+31
+R28
+R34
+R35
+!i113 1
+R10
+R11
+R12
+nlatch_@m@w
+vlatch_PC
+R27
+!i10b 1
+!s100 7elVbo[_aSXXfmG3=g55[2
+I6<oXSe80GDQYjm@SVZo1H1
+R2
+R0
+R30
+R31
+R32
+L0 1
+R6
+r1
+!s85 0
+31
+R28
+R34
+R35
+!i113 1
+R10
+R11
+R12
+nlatch_@p@c
+vlatch_XM
+R27
+!i10b 1
+!s100 Eeb9z4bQ5U01zD1oaIWnV3
+ISOT1d?=CB?zXn<PbcXF6^0
+R2
+R0
+R30
+R31
+R32
+L0 38
+R6
+r1
+!s85 0
+31
+R28
+R34
+R35
+!i113 1
+R10
+R11
+R12
+nlatch_@x@m
+vmux2to1_32
+Z37 !s110 1523561137
+!i10b 1
+!s100 aC_G6:_Yc;b8l>>@=LETG1
+INKAR]6]@lh=QfTzkGJ`m?3
+R2
+R0
+R3
+Z38 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v
+Z39 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v
+L0 57
+R6
+r1
+!s85 0
+31
+Z40 !s108 1523561137.000000
+Z41 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v|
+Z42 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v|
+!i113 1
+R10
+R11
+R12
+vmux2to1_33
+R37
+!i10b 1
+!s100 cz=IZ:?ULVWXkRhQXzEjS1
+I9z7nkZ6PJXdCP15dEcbSP0
+R2
+R0
+R3
+R38
+R39
+L0 77
+R6
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 1
+R10
+R11
+R12
+vmux32_tristate
+R37
+!i10b 1
+!s100 OBCkh?LNJXGdZh^Q@:;d`1
+I;LejQdFmN6[LkJWmYODJY2
+R2
+R0
+R3
+R38
+R39
+L0 33
+R6
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 1
+R10
+R11
+R12
+vmux8_tristate
+R37
+!i10b 1
+!s100 HH6Qb_WB?IA9A]XgFQQ<90
+ILi?0PGX06@D?DF@FYXG8Q0
+R2
+R0
+R3
+R38
+R39
+L0 98
+R6
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 1
+R10
+R11
+R12
+vor32
+R1
+!i10b 1
+!s100 ZM9:ni3USbNNDAT7?oeoK2
+Ih^BmnL;25YLzTGV]baWbG1
+R2
+R0
+R3
+R14
+R15
+L0 290
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vprocessor
+R37
+!i10b 1
+!s100 Y>llomBI`iJOZ[C2[dPL:0
+I=2EcJjT`9;hPdWGT5A9VP0
+R2
+R0
+w1522991868
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v
+L0 50
+R6
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v|
+!i113 1
+R10
+R11
+R12
+vprocessor_tb_auto
+R18
+!i10b 1
+!s100 cf[[lfVYjILFX2d=nN[M22
+IoLha=]P6lYJ9@SJMkAYVd1
+R2
+R0
+w1523561122
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v
+L0 7
+R6
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v|
+!i113 1
+R10
+R11
+R12
+vreg32
+R37
+!i10b 1
+!s100 1PjFkUNMiho^jTFAnU68a0
+IQ89dV=CHID2l55I^YjEl90
+R2
+R0
+R3
+Z43 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v
+Z44 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v
+L0 93
+R6
+r1
+!s85 0
+31
+R40
+Z45 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v|
+Z46 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v|
+!i113 1
+R10
+R11
+R12
+vreg32_neg
+R37
+!i10b 1
+!s100 b4A0^6b9B`LBoch4Jz1X73
+IJWE6jGUD;OJk75mLWml4U0
+R2
+R0
+R3
+R43
+R44
+L0 110
+R6
+r1
+!s85 0
+31
+R40
+R45
+R46
+!i113 1
+R10
+R11
+R12
+vreg5
+R37
+!i10b 1
+!s100 :hlXM0c[aCiKLW:7NUR4W2
+IlW9ilCM`S`KKOWUmMROXk1
+R2
+R0
+R3
+R43
+R44
+L0 76
+R6
+r1
+!s85 0
+31
+R40
+R45
+R46
+!i113 1
+R10
+R11
+R12
+vreg6
+R37
+!i10b 1
+!s100 hX]l7G3FIa9b>4Qa?;bIn0
+Iz;H=m;FW<>XNLL[ehADS:3
+R2
+R0
+R3
+R43
+R44
+L0 32
+R6
+r1
+!s85 0
+31
+R40
+R45
+R46
+!i113 1
+R10
+R11
+R12
+vreg64_sl1
+R37
+!i10b 1
+!s100 CNY=lo3fHBIL;S5YIc39?0
+I9ZBBO<jKhV5BBbch^Ec6n1
+R2
+R0
+R3
+R43
+R44
+L0 4
+R6
+r1
+!s85 0
+31
+R40
+R45
+R46
+!i113 1
+R10
+R11
+R12
+vreg65_sr2
+R37
+!i10b 1
+!s100 gWK_T2=K8n:?WPR_2C0H33
+IL^7KB6l2Ya2nK2D<;FVI12
+R2
+R0
+R3
+R43
+R44
+L0 49
+R6
+r1
+!s85 0
+31
+R40
+R45
+R46
+!i113 1
+R10
+R11
+R12
+vregfile
+R37
+!i10b 1
+!s100 :GeS`T`RoaJmbaU7gofF?3
+I9CHT<Uf[fB`W1J5i;IMmi1
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v
+L0 1
+R6
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v|
+!i113 1
+R10
+R11
+R12
+vsignextender_16to32
+R37
+!i10b 1
+!s100 <[mlEna`8W?^D;l>R`48>3
+IV?cPHm3lLWl5CiH<`mz^A0
+R2
+R0
+R3
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v
+L0 1
+R6
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v|
+!i113 1
+R10
+R11
+R12
+vskeleton_ta
+!s110 1523561135
+!i10b 1
+!s100 ?kg;_1FFX@LikzE8jifC20
+IXWEKmAZ[Zk[BDD<WAa`B@1
+R2
+R0
+w1522613352
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v
+R36
+R6
+r1
+!s85 0
+31
+!s108 1523561135.000000
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v|
+!i113 1
+R10
+R11
+R12
+vsll
+R1
+!i10b 1
+!s100 >c4CZi:3l`dgQS_hCPOPI1
+I]aV9;GNHV9QLg>l5>=5ea2
+R2
+R0
+R3
+R14
+R15
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsll1
+R1
+!i10b 1
+!s100 4XYAFR4C<3V^0mO65V=4l1
+I9d<fB9GGdTm<fgF>SP2>O2
+R2
+R0
+R3
+R14
+R15
+L0 103
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsll16
+R1
+!i10b 1
+!s100 J2aZ^62Nn`_7Bjc:N5iO?1
+IYE[Q4B93<N5_TJi9_NTg03
+R2
+R0
+R3
+R14
+R15
+R33
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsll2
+R1
+!i10b 1
+!s100 aMoA?Qo:9SQ6k1kXU6OY81
+Ij:IYhm;TU@K<=L`ZmAXGi1
+R2
+R0
+R3
+R14
+R15
+L0 84
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsll4
+R1
+!i10b 1
+!s100 ]@P<m3PcSiYe3`c`X[VSM0
+I?m?7RE;^JX`7?GTL:n3h<3
+R2
+R0
+R3
+R14
+R15
+L0 64
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsll8
+R1
+!i10b 1
+!s100 S:o_GQN<7YG6OmDGbHnkW3
+ImOSUPVce^VdMlef3cjHTX1
+R2
+R0
+R3
+R14
+R15
+L0 44
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra
+R1
+!i10b 1
+!s100 :l9z7U3mK`W<OeaWeHm@I2
+I>?gm6FRn^0iP>V6g3_ccN0
+R2
+R0
+R3
+R14
+R15
+L0 125
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra1
+R1
+!i10b 1
+!s100 n^K5d8KQo]5zjP_zGTImO3
+Ij3gN;E6>WJB^f<]ZIHlPa0
+R2
+R0
+R3
+R14
+R15
+L0 250
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra16
+R1
+!i10b 1
+!s100 <47oS`lI6acb>4@b<=P5e0
+IY8k<iz=1`LeUBJSClR]PX2
+R2
+R0
+R3
+R14
+R15
+L0 146
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra2
+R1
+!i10b 1
+!s100 eaFhVZZclWjEaF2Dc3I`m3
+IOI7QB6iJ]J6]h_S9^>A>o3
+R2
+R0
+R3
+R14
+R15
+L0 224
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra4
+R1
+!i10b 1
+!s100 Y_Wj8X5[`NMTcI5[K@FQm3
+IH_:lQUQNK4m8:IJgQ0JQf0
+R2
+R0
+R3
+R14
+R15
+L0 198
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vsra8
+R1
+!i10b 1
+!s100 Y2Q>OE[^bb8n81M0047U>1
+I[C=cdzkVWeLej1>eHiC3o2
+R2
+R0
+R3
+R14
+R15
+L0 172
+R6
+r1
+!s85 0
+31
+R7
+R16
+R17
+!i113 1
+R10
+R11
+R12
+vstage_decode
+R20
+!i10b 1
+!s100 B?QDQna19;;aDYMg`P;VB1
+I>]>gcobNF>Edzm@f=Fl320
+R2
+R0
+R21
+R22
+R23
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 1
+R10
+R11
+R12
+vstage_execute
+R20
+!i10b 1
+!s100 mFBhzL1SdJkV6Z`2a=hdh2
+I^^i3OKT]44:zmh;FWkcUN1
+R2
+R0
+w1523561022
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v|
+!i113 1
+R10
+R11
+R12
+vstage_fetch
+R20
+!i10b 1
+!s100 ;ZbY<A9_2@Ri;ko]`AIh12
+IGg[K=3_elAM:I7zT5lEJJ2
+R2
+R0
+w1522988099
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v|
+!i113 1
+R10
+R11
+R12
+vstage_memory
+R20
+!i10b 1
+!s100 4e<D`bMF1J2aW]GdbLfM@2
+I_0VJmAoe^=W7az]laUOkd1
+R2
+R0
+w1522990551
+8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v
+FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+!s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v|
+!i113 1
+R10
+R11
+R12
+vstage_write
+R20
+!i10b 1
+!s100 84Pld`6JT0E921Xj6U8Ga3
+IB[6G0XQ5fDX^ob7NI4]QA2
+R2
+R0
+Z47 w1522990537
+Z48 8C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v
+Z49 FC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+Z50 !s107 C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v|
+Z51 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d|C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v|
+!i113 1
+R10
+R11
+R12
+vtristate_buffer
+R37
+!i10b 1
+!s100 A=B2zK>ojWg?5Ea4XeP4`0
+IX^RNdBR@4N51bYR@`gSa:0
+R2
+R0
+R3
+R38
+R39
+L0 3
+R6
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 1
+R10
+R11
+R12
+vtristate_buffer32
+R37
+!i10b 1
+!s100 ohICRP7f51nMW34Mc5CaI0
+IJB;jI5LKL=G>an3@KT=IA3
+R2
+R0
+R3
+R38
+R39
+L0 13
+R6
+r1
+!s85 0
+31
+R40
+R41
+R42
+!i113 1
+R10
+R11
+R12
+vwrite_controls
+R20
+!i10b 1
+!s100 f@AkWDF9aL`W^LffMUg@[2
+I@?NUTb3[CL85]Eo8<YCdC1
+R2
+R0
+R47
+R48
+R49
+L0 35
+R6
+r1
+!s85 0
+31
+R24
+R50
+R51
+!i113 1
+R10
+R11
+R12

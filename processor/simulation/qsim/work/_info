@@ -1,0 +1,201 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/David/Documents/pc4-tran-d/simulation/qsim
+vfibonacci_lfsr
+Z1 !s110 1523487811
+!i10b 1
+!s100 WKR0l=mVj^WJP9VbQ;ANl1
+IUUGcVO]<fd8LniFK_9Lb81
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/simulation/qsim
+w1523487810
+Z4 8processor.vo
+Z5 Fprocessor.vo
+Z6 L0 31
+Z7 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z8 !s108 1523487811.000000
+Z9 !s107 processor.vo|
+Z10 !s90 -work|work|processor.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+vfibonacci_lfsr_vlg_vec_tst
+R1
+!i10b 1
+!s100 ]bjXz:92BgMCBEJCP[hEQ2
+I]>keLJ:[f8Xh9AXJC[7iB1
+R2
+R3
+w1523487808
+8fibonacci_lfsr.v.vwf.vt
+Ffibonacci_lfsr.v.vwf.vt
+Z13 L0 29
+R7
+r1
+!s85 0
+31
+R8
+!s107 fibonacci_lfsr.v.vwf.vt|
+!s90 -work|work|fibonacci_lfsr.v.vwf.vt|
+!i113 1
+R11
+R12
+vGARO
+Z14 !s110 1523483742
+!i10b 1
+!s100 W5`PWN;`R1Afz`KmRTMm92
+IoQVCNEBPFGZRMVT9kKNQZ3
+R2
+R3
+w1523483740
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+Z15 !s108 1523483742.000000
+R9
+R10
+!i113 1
+R11
+R12
+n@g@a@r@o
+vGARO_vlg_vec_tst
+R14
+!i10b 1
+!s100 nE]3KV4?GB7cW]Y7lC=PD0
+I3OgO;eDRC?P^nR1>1N3[d3
+R2
+R3
+w1523483738
+8RNG-waveform.vwf.vt
+FRNG-waveform.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R15
+!s107 RNG-waveform.vwf.vt|
+!s90 -work|work|RNG-waveform.vwf.vt|
+!i113 1
+R11
+R12
+n@g@a@r@o_vlg_vec_tst
+vhard_block
+Z16 !s110 1523562677
+!i10b 1
+!s100 FiYEh<_EbUj6A2=lYNak]3
+Ie;LZl4JlNH2Lb?1:MfPQ`2
+R2
+R3
+Z17 w1523562676
+R4
+R5
+L0 1874
+R7
+r1
+!s85 0
+31
+Z18 !s108 1523562677.000000
+R9
+R10
+!i113 1
+R11
+R12
+vrandom32
+R16
+!i10b 1
+!s100 kNOk>nFN`37ZiPN855cI<2
+Ija6Q6a@K8UDlRO;R`;Pfz3
+R2
+R3
+R17
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+R18
+R9
+R10
+!i113 1
+R11
+R12
+vrandom32_vlg_vec_tst
+R16
+!i10b 1
+!s100 IRg4YQZjNUGia]2MdGWAE1
+I[<dIKj7238V9ncG5N1@Xd1
+R2
+R3
+w1523562674
+8random32.vwf.vt
+Frandom32.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+R18
+!s107 random32.vwf.vt|
+!s90 -work|work|random32.vwf.vt|
+!i113 1
+R11
+R12
+vskeleton_ta
+Z19 !s110 1522791560
+!i10b 1
+!s100 fdLjfJeG6NAYA=N]=`STU0
+IedFPoo4li^QLWJI7C:22e0
+R2
+R0
+w1522791558
+R4
+R5
+R6
+R7
+r1
+!s85 0
+31
+!s108 1522791559.000000
+R9
+R10
+!i113 1
+R11
+R12
+vskeleton_ta_vlg_vec_tst
+R19
+!i10b 1
+!s100 a=^NQ5IZ4VL6;zkaRT_B^1
+I8o0hm@:m32aZMO5bldDM_0
+R2
+R0
+w1522791555
+8waveform-ta.vwf.vt
+Fwaveform-ta.vwf.vt
+R13
+R7
+r1
+!s85 0
+31
+!s108 1522791560.000000
+!s107 waveform-ta.vwf.vt|
+!s90 -work|work|waveform-ta.vwf.vt|
+!i113 1
+R11
+R12
