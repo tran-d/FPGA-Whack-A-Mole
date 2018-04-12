@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Apr 12 15:50:09 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : processor
+Top-level Entity Name : random32
+Family : Cyclone IV E
+Total logic elements : 32
+    Total combinational functions : 2
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

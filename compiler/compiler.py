@@ -49,7 +49,7 @@ tests = {
 }
 
 counter = 0;
-opcode = {'add':'00000','addi':'00101','sub':'00000','and':'00000','or':'00000','sll':'00000','sra':'00000','mul':'00000','div':'00000','sw':'00111','lw':'01000','j':'00001','bne':'00010','jal':'00011','jr':'00100','blt':'00110','bex':'10110','setx':'10101', 'beq':'01000', 'rand':'01001'}
+opcode = {'add':'00000','addi':'00101','sub':'00000','and':'00000','or':'00000','sll':'00000','sra':'00000','mul':'00000','div':'00000','sw':'00111','lw':'01000','j':'00001','bne':'00010','jal':'00011','jr':'00100','blt':'00110','bex':'10110','setx':'10101', 'beq':'01001', 'rand':'01010'}
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():
@@ -197,7 +197,6 @@ for instrLine in instructions:
 
         elif instr[0] == 'rand':
             line += opcode[instr[0]]
-            line +=
             a = ''.join(c for c in instr[1] if c.isdigit())
             b = str(binary_repr(int(a),6))
             line += b[1:6]
