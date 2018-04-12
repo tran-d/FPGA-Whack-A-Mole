@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at capacitive_sensor_array.v(27): always construct contains both blocking and non-blocking assignments File: C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/capacitive_sensor_array.v Line: 27

@@ -1,0 +1,113 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/qsim
+vcapacitive_sensor
+Z1 !s110 1523034580
+!i10b 1
+!s100 mILTHHfe7eNUTeQI8;i[M1
+IRc0g4cMl>M;:VefeVWfW02
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1523034580
+Z4 8capacitive_sensor.vo
+Z5 Fcapacitive_sensor.vo
+L0 31
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1523034580.000000
+Z8 !s107 capacitive_sensor.vo|
+Z9 !s90 -work|work|capacitive_sensor.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vcapacitive_sensor_array
+!s110 1523477938
+!i10b 1
+!s100 i[`eiEi5YLJ`[M>eHBEzZ2
+I=U@EhSe^HHHR>Vj>=7=^:0
+R2
+Z12 dC:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/simulation/qsim
+w1523477937
+R4
+R5
+L0 32
+Z13 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1523477938.000000
+R8
+R9
+!i113 1
+R10
+vcapacitive_sensor_array_vlg_vec_tst
+!s110 1523477939
+!i10b 1
+!s100 9IO:PoEBi?M6K_>gAPW343
+I:6XUaebMd5iBhTX2KHgeb3
+R2
+R12
+w1523477933
+8capacitive_sensor_array.vwf.vt
+Fcapacitive_sensor_array.vwf.vt
+L0 30
+R13
+r1
+!s85 0
+31
+!s108 1523477939.000000
+!s107 capacitive_sensor_array.vwf.vt|
+!s90 -work|work|capacitive_sensor_array.vwf.vt|
+!i113 1
+R10
+vcapacitive_sensor_vlg_vec_tst
+R1
+!i10b 1
+!s100 U:WXCHXgdj02o;?E?z6ZL1
+IAidgAz39<D95Nf4Y[GNUO1
+R2
+R0
+w1523034579
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+vhard_block
+R1
+!i10b 1
+!s100 FYIcCRo?hH=WgATlV_]F_3
+IPFeH;118UJW@:m>]l[zCO3
+R2
+R0
+R3
+R4
+R5
+L0 4671
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
