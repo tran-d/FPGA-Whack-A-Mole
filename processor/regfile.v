@@ -3,8 +3,9 @@ module regfile (
     ctrl_writeEnable,
     ctrl_reset, ctrl_writeReg,
     ctrl_readRegA, ctrl_readRegB, data_writeReg,
-    data_readRegA, data_readRegB
+    data_readRegA, data_readRegB, r1, r2, r3
 );
+
 
    input clock, ctrl_writeEnable, ctrl_reset;
    input [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
@@ -21,6 +22,13 @@ module regfile (
 	
 	genvar i;
 	genvar j; 
+	
+	
+	
+	output [31:0] r1, r2, r3;
+	assign r1 = register_output[1];
+	assign r2 = register_output[2];
+	assign r3 = register_output[3];
 	
 	
 	/***** create decoder for write_reg *****/						

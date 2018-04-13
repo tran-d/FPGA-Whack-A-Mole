@@ -35,6 +35,8 @@ module skeleton_ta(
 	 input wire [8:0] 	capacitive_sensors_in,
 	 output wire 			capacitive_sensors_out
 );
+	wire [31:0] r1, r2, r3;
+
 
     /** IMEM **/
     imem my_imem(
@@ -62,7 +64,9 @@ module skeleton_ta(
         ctrl_readRegB,
         data_writeReg,
         data_readRegA,
-        data_readRegB
+        data_readRegB, 
+		  
+		  r1, r2, r3
     );
 	 
 	 
@@ -72,12 +76,7 @@ module skeleton_ta(
 	 
 	 /** Capacitive Sensor Array **/
 	 wire [287:0] capacitive_sensor_readings;
-	 //capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
-	 assign capacitive_sensor_readings[31:0] = 32'd8;
-	 
-	 assign capacitive_sensor_readings[287:256] = 32'd2147483648;
-	 
-	 
+	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
 
     /** PROCESSOR **/
     processor my_processor(
@@ -111,7 +110,14 @@ module skeleton_ta(
 		  capacitive_sensor_readings
     );
 	 
-	 		
 	 
+	 /** Debugger **/
+	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
+	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
+	 debugger d10(.probe({16'b0, led_commands[15:0]}));
+	 debugger d11(.probe(r1));
+	 debugger d12(.probe(r2));
+	 debugger d13(.probe(r3));
 
 endmodule

@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY skeleton_ta
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:20:38  MARCH 29, 2018"
-set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -65,6 +65,21 @@ set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity r
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB22 -to capacitive_sensors_in[0]
+set_location_assignment PIN_AC15 -to capacitive_sensors_in[1]
+set_location_assignment PIN_AB21 -to capacitive_sensors_in[2]
+set_location_assignment PIN_AD15 -to capacitive_sensors_in[8]
+set_location_assignment PIN_AE16 -to capacitive_sensors_in[7]
+set_location_assignment PIN_AD21 -to capacitive_sensors_in[6]
+set_location_assignment PIN_Y16 -to capacitive_sensors_in[5]
+set_location_assignment PIN_AC21 -to capacitive_sensors_in[4]
+set_location_assignment PIN_Y17 -to capacitive_sensors_in[3]
+set_location_assignment PIN_AE15 -to capacitive_sensors_out
+set_location_assignment PIN_Y2 -to clock
+set_location_assignment PIN_AC19 -to led_pins[0]
+set_location_assignment PIN_AF16 -to led_pins[1]
+set_global_assignment -name MIF_FILE imem.mif
+set_global_assignment -name QSYS_FILE debugger.qsys
 set_global_assignment -name VERILOG_FILE ../capacitive_sensor/capacitive_sensor_array.v
 set_global_assignment -name VERILOG_FILE ../capacitive_sensor/capacitive_sensor.v
 set_global_assignment -name VERILOG_FILE ../led_controller/pwm.v
@@ -72,7 +87,6 @@ set_global_assignment -name VERILOG_FILE ../led_controller/led_array.v
 set_global_assignment -name VERILOG_FILE ../led_controller/led.v
 set_global_assignment -name VERILOG_FILE random32.v
 set_global_assignment -name VERILOG_FILE skeleton_ta.v
-set_global_assignment -name MIF_FILE imem.mif
 set_global_assignment -name VERILOG_FILE twos_complement32.v
 set_global_assignment -name VERILOG_FILE stage_write.v
 set_global_assignment -name VERILOG_FILE stage_memory.v
@@ -114,4 +128,5 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE "waveform-ta.vwf"
 set_global_assignment -name VERILOG_FILE bypass_stall.v
 set_global_assignment -name VERILOG_FILE GARO.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE random32.vwf
+set_location_assignment PIN_Y23 -to reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
