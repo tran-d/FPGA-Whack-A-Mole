@@ -235,6 +235,9 @@ module processor_tb_auto(
 	task performTests; begin
 		checkRegister(32'd2, 32'd8);
 		checkRegister(32'd4, 32'd2147483648);
+		checkRegister(32'd5, 32'd2147483649);
+		checkRegister(32'd6, 32'd2147483650);
+		checkRegister(32'd7, 32'd2147483651);
 	end endtask
 
 endmodule
