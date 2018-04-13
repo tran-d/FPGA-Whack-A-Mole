@@ -186,6 +186,7 @@ module processor(
 	
 	stage_execute execute(
 			// inputs
+			.clock						(clock),
 			.insn_in						(insn_dx_out), 
 			.regfile_operandA			(a_dx_out), 
 			.regfile_operandB			(b_dx_out), 

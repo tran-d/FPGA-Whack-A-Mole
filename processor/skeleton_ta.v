@@ -30,19 +30,12 @@ module skeleton_ta(
     output wire [31:0]  data_readRegA,
     output wire [31:0]  data_readRegB,
 	 // LED Array
-<<<<<<< HEAD
-	 output wire [8:0] 	led_pins;
-=======
 	 output wire [8:0] 	led_pins
->>>>>>> 91f1071e141e24bfb02cb496f11c4ea1c7f875f0
 );
 		
 	 /** LED ARRAY **/
 	 wire [143:0] led_commands;
 	 led_array my_leds(clock, led_pins, led_commands);
-
-	 /** LED Array **/
-	 wire [143:0] led_commands;
 	 
 
     /** IMEM **/

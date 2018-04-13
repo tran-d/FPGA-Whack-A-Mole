@@ -1,6 +1,7 @@
 module stage_execute(
 
 	// inputs
+	clock,
 	insn_in,
 	regfile_operandA,
 	regfile_operandB,
@@ -24,7 +25,7 @@ module stage_execute(
 
 	input [4:0] pc_upper_5;
 	input [31:0] insn_in, regfile_operandA, regfile_operandB, pc_out, o_xm_out, data_writeReg;
-	input mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;  
+	input clock, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;  
 	
 	output [31:0] pc_in, o_out, b_out;
 	output write_exception, branched_jumped;
@@ -87,19 +88,9 @@ module stage_execute(
 	assign ALU_op_new_alt 		= (blt | bne | bex | beq)  ? 5'd1 : ALU_op;
 	
 	
-	/* RANDOM */
-<<<<<<< HEAD
-	wire [31:0] random_val;
-	random32 my_random32(clock, 1'b0, random_val);
-=======
-//	wire [31:0] random_val;
-//	random32 my_random32(clock, 1'b0, random_val);
->>>>>>> 91f1071e141e24bfb02cb496f11c4ea1c7f875f0
-	
 	/* TEST */
 	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011
 	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
-
 	
 	
 	/* Branch Controls */ 
@@ -133,7 +124,7 @@ module stage_execute(
 	
 	
 	/* LATCH Controls */ 
-	wire [31:0] o_out_alt1, o_out_alt2, o_out_alt3, o_out_alt4, o_out_alt5, o_out_alt6, b_out_alt;
+	wire [31:0] o_out_alt1, o_out_alt2, o_out_alt3, o_out_alt4, o_out_alt5, o_out_alt6, o_out_alt7, b_out_alt;
 	
 	assign o_out 		= jal	? pc_out : o_out_alt1;
 	assign o_out_alt1 = (add  && exception) ? 32'd1 : o_out_alt2;
@@ -155,7 +146,7 @@ module stage_execute(
 		led_commands <= 144'b0;
 	end
 	
-	always @(posedge clock) begin
+	always @(negedge clock) begin
 		if(led) begin
 			case(ALU_operandB)
 				32'd0: led_commands[15:0] <= ALU_operandA[15:0];
@@ -167,6 +158,7 @@ module stage_execute(
 				32'd6: led_commands[111:96] <= ALU_operandA[15:0];
 				32'd7: led_commands[127:112] <= ALU_operandA[15:0];
 				32'd9: led_commands[143:128] <= ALU_operandA[15:0];
+			endcase
 		end
 	end
 	
