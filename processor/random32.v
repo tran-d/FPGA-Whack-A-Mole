@@ -11,7 +11,7 @@ module random32(
 
 	always @(posedge clock or posedge reset)
 	  if (reset) 
-		 data <= 32'hFFFFFF;
+		 data <= 32'hFFF;
 	  else
 		 data <= {data[30:0], feedback} ;
 
