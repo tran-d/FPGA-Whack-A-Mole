@@ -22,7 +22,7 @@ module stage_write(
 	wire [4:0] rd, ctrl_writeReg_alt1;
 	wire lw, jal, setx;
 	
-	assign rd 			= insn_in[26:22];
+	assign rd 						= insn_in[26:22];
 	assign data_writeReg 		= lw 								? d_in	: o_in;
 	
 	assign ctrl_writeReg 		= jal 							? 5'd31 	: ctrl_writeReg_alt1;
@@ -38,16 +38,17 @@ module write_controls(insn_in, lw, jal, setx, ctrl_writeEnable);
 	output lw, jal, ctrl_writeEnable, setx;
 	
 	wire [4:0] opcode;
-	wire addi, custom_r, r_insn;
+	wire addi, cap, custom_r, r_insn;
 	
 	assign opcode 		= insn_in[31:27];
 	assign r_insn 		= ~opcode[4] & ~opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	
+	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
 	assign addi 		= ~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//00101
 	assign lw	 		= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	//01000
 	assign jal	 		= ~opcode[4] & ~opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//00011
 	assign setx			=  opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//10101
 	assign custom_r   = 1'b0; // CHANGE THIS FOR PROJECT
 	
-	assign ctrl_writeEnable = r_insn || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
+	assign ctrl_writeEnable = cap || r_insn || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
 
 endmodule

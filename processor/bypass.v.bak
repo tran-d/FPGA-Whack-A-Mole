@@ -1,6 +1,0 @@
-module bypass(fd_insn, dx_insn, xm_insn, is_data_hazard);
-
-	input [31:0] fd_insn, dx_insn, xm_insn;
-	output is_data_hazard;
-
-endmodule

@@ -30,5 +30,4 @@ cycles 15
  checkreg 5, 2
  checkreg 6, 3
  checkreg 7, 12
- checkreg 8, 6
  checkreg 11, 12
