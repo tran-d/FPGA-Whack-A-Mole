@@ -228,8 +228,6 @@ for instrLine in instructions:
             line += str(binary_repr(int(instr[2][2:]),5))
             line += str(binary_repr(0,17))
 
-
-
         # Tests
         elif instr[0] == 'checkreg':
             tests['checkRegister'].append((int(instr[1]), int(instr[2])))
