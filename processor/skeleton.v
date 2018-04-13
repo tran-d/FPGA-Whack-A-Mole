@@ -35,8 +35,24 @@ module skeleton(
 	 input wire [8:0] 	capacitive_sensors_in,
 	 output wire 			capacitive_sensors_out
 );
-	wire [31:0] r1, r2, r3;
+	
+	 /** Testing **/
+	 wire [31:0] r1, r2, r3;
+	 
+	 /** LED ARRAY **/
+	 wire [143:0] led_commands;
+	 led_array leds(clock, led_pins, led_commands);
+	 
+	 /** Capacitive Sensor Array **/
+	 wire [287:0] capacitive_sensor_readings;
+	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
 
+	 /** Random **/
+	 wire [63:0] seeds = {capacitive_sensor_readings[7:0], 	  capacitive_sensor_readings[39:32],    capacitive_sensor_readings[71:64],
+								 capacitive_sensor_readings[103:96],  capacitive_sensor_readings[135:128],  capacitive_sensor_readings[167:160],
+								 capacitive_sensor_readings[199:192], capacitive_sensor_readings[231:224]};
+	 wire [7:0] random_data;
+	 random8 rng(clock, seeds, random_data);
 
     /** IMEM **/
     imem my_imem(
@@ -65,19 +81,10 @@ module skeleton(
         data_writeReg,
         data_readRegA,
         data_readRegB, 
-		  
+		  random_data,
 		  r1, r2, r3
     );
 	 
-	 
-	 /** LED ARRAY **/
-	 wire [143:0] led_commands;
-	 led_array leds(clock, led_pins, led_commands);
-	 
-	 /** Capacitive Sensor Array **/
-	 wire [287:0] capacitive_sensor_readings;
-	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
-
     /** PROCESSOR **/
     processor my_processor(
         // Control signals
