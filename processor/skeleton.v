@@ -52,7 +52,7 @@ module skeleton(
 								 capacitive_sensor_readings[103:96],  capacitive_sensor_readings[135:128],  capacitive_sensor_readings[167:160],
 								 capacitive_sensor_readings[199:192], capacitive_sensor_readings[231:224]};
 	 wire [7:0] random_data;
-	 random8 rng(clock, seeds, random_data);
+	 random8 rng(~clock, seeds, random_data);
 
     /** IMEM **/
     imem my_imem(
