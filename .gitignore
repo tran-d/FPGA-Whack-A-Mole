@@ -64,6 +64,6 @@
 */testbench/
 */*_sim/
 
-.cdb
-.hdb
-.bpm
+*.cdb
+*.hdb
+*.bpm
