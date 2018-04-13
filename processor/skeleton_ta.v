@@ -28,8 +28,14 @@ module skeleton_ta(
     output wire [4:0]   ctrl_readRegB,
     output wire [31:0]  data_writeReg,
     output wire [31:0]  data_readRegA,
-    output wire [31:0]  data_readRegB
+    output wire [31:0]  data_readRegB,
+	 // LED Array
+	 output wire [8:0] 	led_pins
 );
+		
+	 /** LED ARRAY **/
+	 wire [143:0] led_commands;
+	 led_array my_leds(clock, led_pins, led_commands);
 
     /** IMEM **/
     imem my_imem(
@@ -41,7 +47,7 @@ module skeleton_ta(
     /** DMEM **/
     dmem my_dmem(
         .address    (address_dmem),       // address of data
-        .clock      (~clock),                  // may need to invert the clock
+        .clock      (~clock),            			 // may need to invert the clock
         .data	    (d_dmem),    // data you want to write
         .wren	    (wren_dmem),      // write enable
         .q          (q_dmem)    // data from dmem
@@ -83,7 +89,10 @@ module skeleton_ta(
         ctrl_readRegB,                  // O: Register to read from port B of regfile
         data_writeReg,                  // O: Data to write to for regfile
         data_readRegA,                  // I: Data from port A of regfile
-        data_readRegB                   // I: Data from port B of regfile
+        data_readRegB,                  // I: Data from port B of regfile
+		  
+		  // LED Array
+		  led_commands
     );
 
 endmodule

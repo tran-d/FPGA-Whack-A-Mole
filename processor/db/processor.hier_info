@@ -1,5 +1,5 @@
 |skeleton_ta
-clock => clock.IN2
+clock => clock.IN3
 reset => reset.IN2
 address_imem[0] <= address_imem[0].DB_MAX_OUTPUT_PORT_TYPE
 address_imem[1] <= address_imem[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -234,6 +234,963 @@ data_readRegB[28] <= data_readRegB[28].DB_MAX_OUTPUT_PORT_TYPE
 data_readRegB[29] <= data_readRegB[29].DB_MAX_OUTPUT_PORT_TYPE
 data_readRegB[30] <= data_readRegB[30].DB_MAX_OUTPUT_PORT_TYPE
 data_readRegB[31] <= data_readRegB[31].DB_MAX_OUTPUT_PORT_TYPE
+led_pins[0] <= led_array:my_leds.port1
+led_pins[1] <= led_array:my_leds.port1
+led_pins[2] <= led_array:my_leds.port1
+led_pins[3] <= led_array:my_leds.port1
+led_pins[4] <= led_array:my_leds.port1
+led_pins[5] <= led_array:my_leds.port1
+led_pins[6] <= led_array:my_leds.port1
+led_pins[7] <= led_array:my_leds.port1
+led_pins[8] <= led_array:my_leds.port1
+
+
+|skeleton_ta|led_array:my_leds
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+pins[0] <= led:led0.port3
+pins[1] <= led:led0.port2
+pins[2] <= led:led1.port3
+pins[3] <= led:led1.port2
+pins[4] <= led:led2.port3
+pins[5] <= led:led2.port2
+pins[6] <= led:led3.port3
+pins[7] <= led:led3.port2
+pins[8] <= led:led4.port3
+pins[9] <= led:led4.port2
+pins[10] <= led:led5.port3
+pins[11] <= led:led5.port2
+pins[12] <= led:led6.port3
+pins[13] <= led:led6.port2
+pins[14] <= led:led7.port3
+pins[15] <= led:led7.port2
+pins[16] <= led:led8.port3
+pins[17] <= led:led8.port2
+commands[0] => commands[0].IN1
+commands[1] => commands[1].IN1
+commands[2] => commands[2].IN1
+commands[3] => commands[3].IN1
+commands[4] => commands[4].IN1
+commands[5] => commands[5].IN1
+commands[6] => commands[6].IN1
+commands[7] => commands[7].IN1
+commands[8] => commands[8].IN1
+commands[9] => commands[9].IN1
+commands[10] => commands[10].IN1
+commands[11] => commands[11].IN1
+commands[12] => commands[12].IN1
+commands[13] => commands[13].IN1
+commands[14] => commands[14].IN1
+commands[15] => commands[15].IN1
+commands[16] => commands[16].IN1
+commands[17] => commands[17].IN1
+commands[18] => commands[18].IN1
+commands[19] => commands[19].IN1
+commands[20] => commands[20].IN1
+commands[21] => commands[21].IN1
+commands[22] => commands[22].IN1
+commands[23] => commands[23].IN1
+commands[24] => commands[24].IN1
+commands[25] => commands[25].IN1
+commands[26] => commands[26].IN1
+commands[27] => commands[27].IN1
+commands[28] => commands[28].IN1
+commands[29] => commands[29].IN1
+commands[30] => commands[30].IN1
+commands[31] => commands[31].IN1
+commands[32] => commands[32].IN1
+commands[33] => commands[33].IN1
+commands[34] => commands[34].IN1
+commands[35] => commands[35].IN1
+commands[36] => commands[36].IN1
+commands[37] => commands[37].IN1
+commands[38] => commands[38].IN1
+commands[39] => commands[39].IN1
+commands[40] => commands[40].IN1
+commands[41] => commands[41].IN1
+commands[42] => commands[42].IN1
+commands[43] => commands[43].IN1
+commands[44] => commands[44].IN1
+commands[45] => commands[45].IN1
+commands[46] => commands[46].IN1
+commands[47] => commands[47].IN1
+commands[48] => commands[48].IN1
+commands[49] => commands[49].IN1
+commands[50] => commands[50].IN1
+commands[51] => commands[51].IN1
+commands[52] => commands[52].IN1
+commands[53] => commands[53].IN1
+commands[54] => commands[54].IN1
+commands[55] => commands[55].IN1
+commands[56] => commands[56].IN1
+commands[57] => commands[57].IN1
+commands[58] => commands[58].IN1
+commands[59] => commands[59].IN1
+commands[60] => commands[60].IN1
+commands[61] => commands[61].IN1
+commands[62] => commands[62].IN1
+commands[63] => commands[63].IN1
+commands[64] => commands[64].IN1
+commands[65] => commands[65].IN1
+commands[66] => commands[66].IN1
+commands[67] => commands[67].IN1
+commands[68] => commands[68].IN1
+commands[69] => commands[69].IN1
+commands[70] => commands[70].IN1
+commands[71] => commands[71].IN1
+commands[72] => commands[72].IN1
+commands[73] => commands[73].IN1
+commands[74] => commands[74].IN1
+commands[75] => commands[75].IN1
+commands[76] => commands[76].IN1
+commands[77] => commands[77].IN1
+commands[78] => commands[78].IN1
+commands[79] => commands[79].IN1
+commands[80] => commands[80].IN1
+commands[81] => commands[81].IN1
+commands[82] => commands[82].IN1
+commands[83] => commands[83].IN1
+commands[84] => commands[84].IN1
+commands[85] => commands[85].IN1
+commands[86] => commands[86].IN1
+commands[87] => commands[87].IN1
+commands[88] => commands[88].IN1
+commands[89] => commands[89].IN1
+commands[90] => commands[90].IN1
+commands[91] => commands[91].IN1
+commands[92] => commands[92].IN1
+commands[93] => commands[93].IN1
+commands[94] => commands[94].IN1
+commands[95] => commands[95].IN1
+commands[96] => commands[96].IN1
+commands[97] => commands[97].IN1
+commands[98] => commands[98].IN1
+commands[99] => commands[99].IN1
+commands[100] => commands[100].IN1
+commands[101] => commands[101].IN1
+commands[102] => commands[102].IN1
+commands[103] => commands[103].IN1
+commands[104] => commands[104].IN1
+commands[105] => commands[105].IN1
+commands[106] => commands[106].IN1
+commands[107] => commands[107].IN1
+commands[108] => commands[108].IN1
+commands[109] => commands[109].IN1
+commands[110] => commands[110].IN1
+commands[111] => commands[111].IN1
+commands[112] => commands[112].IN1
+commands[113] => commands[113].IN1
+commands[114] => commands[114].IN1
+commands[115] => commands[115].IN1
+commands[116] => commands[116].IN1
+commands[117] => commands[117].IN1
+commands[118] => commands[118].IN1
+commands[119] => commands[119].IN1
+commands[120] => commands[120].IN1
+commands[121] => commands[121].IN1
+commands[122] => commands[122].IN1
+commands[123] => commands[123].IN1
+commands[124] => commands[124].IN1
+commands[125] => commands[125].IN1
+commands[126] => commands[126].IN1
+commands[127] => commands[127].IN1
+commands[128] => commands[128].IN1
+commands[129] => commands[129].IN1
+commands[130] => commands[130].IN1
+commands[131] => commands[131].IN1
+commands[132] => commands[132].IN1
+commands[133] => commands[133].IN1
+commands[134] => commands[134].IN1
+commands[135] => commands[135].IN1
+commands[136] => commands[136].IN1
+commands[137] => commands[137].IN1
+commands[138] => commands[138].IN1
+commands[139] => commands[139].IN1
+commands[140] => commands[140].IN1
+commands[141] => commands[141].IN1
+commands[142] => commands[142].IN1
+commands[143] => commands[143].IN1
+
+
+|skeleton_ta|led_array:my_leds|led:led0
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led0|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led0|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led0|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led0|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led1
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led1|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led1|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led1|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led1|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led2
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led2|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led2|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led2|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led2|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led3
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led3|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led3|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led3|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led3|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led4
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led4|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led4|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led4|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led4|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led5
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led5|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led5|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led5|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led5|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led6
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led6|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led6|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led6|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led6|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led7
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led7|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led7|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led7|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led7|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led8
+clock => clock.IN2
+code[0] => blue[0].DATAIN
+code[1] => blue[1].DATAIN
+code[2] => blue[2].DATAIN
+code[3] => blue[3].DATAIN
+code[4] => blue[4].DATAIN
+code[5] => blue[5].DATAIN
+code[6] => blue[6].DATAIN
+code[7] => blue[7].DATAIN
+code[8] => red[0].DATAIN
+code[9] => red[1].DATAIN
+code[10] => red[2].DATAIN
+code[11] => red[3].DATAIN
+code[12] => red[4].DATAIN
+code[13] => red[5].DATAIN
+code[14] => red[6].DATAIN
+code[15] => red[7].DATAIN
+pin_r <= pwm:red_signal.pwm_out
+pin_b <= pwm:blue_signal.pwm_out
+
+
+|skeleton_ta|led_array:my_leds|led:led8|pwm:red_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led8|pwm:red_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led8|pwm:blue_signal
+clk => clk.IN1
+pwm_codeword[0] => LessThan0.IN8
+pwm_codeword[1] => LessThan0.IN7
+pwm_codeword[2] => LessThan0.IN6
+pwm_codeword[3] => LessThan0.IN5
+pwm_codeword[4] => LessThan0.IN4
+pwm_codeword[5] => LessThan0.IN3
+pwm_codeword[6] => LessThan0.IN2
+pwm_codeword[7] => LessThan0.IN1
+pwm_out <= pwm_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|skeleton_ta|led_array:my_leds|led:led8|pwm:blue_signal|counter:count_mod
+clk => c_out[0]~reg0.CLK
+clk => c_out[1]~reg0.CLK
+clk => c_out[2]~reg0.CLK
+clk => c_out[3]~reg0.CLK
+clk => c_out[4]~reg0.CLK
+clk => c_out[5]~reg0.CLK
+clk => c_out[6]~reg0.CLK
+clk => c_out[7]~reg0.CLK
+c_out[0] <= c_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[1] <= c_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[2] <= c_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[3] <= c_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[4] <= c_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[5] <= c_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[6] <= c_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+c_out[7] <= c_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |skeleton_ta|imem:my_imem
@@ -1678,6 +2635,150 @@ data_readRegB[28] <= mux32_tristate:loop1[28].displayRegB.port2
 data_readRegB[29] <= mux32_tristate:loop1[29].displayRegB.port2
 data_readRegB[30] <= mux32_tristate:loop1[30].displayRegB.port2
 data_readRegB[31] <= mux32_tristate:loop1[31].displayRegB.port2
+led_commands[0] <= sortedBits[0][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[1] <= sortedBits[1][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[2] <= sortedBits[2][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[3] <= sortedBits[3][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[4] <= sortedBits[4][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[5] <= sortedBits[5][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[6] <= sortedBits[6][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[7] <= sortedBits[7][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[8] <= sortedBits[8][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[9] <= sortedBits[9][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[10] <= sortedBits[10][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[11] <= sortedBits[11][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[12] <= sortedBits[12][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[13] <= sortedBits[13][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[14] <= sortedBits[14][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[15] <= sortedBits[15][20].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[16] <= sortedBits[0][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[17] <= sortedBits[1][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[18] <= sortedBits[2][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[19] <= sortedBits[3][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[20] <= sortedBits[4][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[21] <= sortedBits[5][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[22] <= sortedBits[6][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[23] <= sortedBits[7][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[24] <= sortedBits[8][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[25] <= sortedBits[9][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[26] <= sortedBits[10][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[27] <= sortedBits[11][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[28] <= sortedBits[12][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[29] <= sortedBits[13][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[30] <= sortedBits[14][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[31] <= sortedBits[15][21].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[32] <= sortedBits[0][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[33] <= sortedBits[1][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[34] <= sortedBits[2][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[35] <= sortedBits[3][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[36] <= sortedBits[4][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[37] <= sortedBits[5][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[38] <= sortedBits[6][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[39] <= sortedBits[7][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[40] <= sortedBits[8][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[41] <= sortedBits[9][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[42] <= sortedBits[10][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[43] <= sortedBits[11][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[44] <= sortedBits[12][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[45] <= sortedBits[13][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[46] <= sortedBits[14][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[47] <= sortedBits[15][22].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[48] <= sortedBits[0][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[49] <= sortedBits[1][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[50] <= sortedBits[2][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[51] <= sortedBits[3][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[52] <= sortedBits[4][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[53] <= sortedBits[5][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[54] <= sortedBits[6][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[55] <= sortedBits[7][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[56] <= sortedBits[8][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[57] <= sortedBits[9][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[58] <= sortedBits[10][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[59] <= sortedBits[11][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[60] <= sortedBits[12][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[61] <= sortedBits[13][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[62] <= sortedBits[14][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[63] <= sortedBits[15][23].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[64] <= sortedBits[0][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[65] <= sortedBits[1][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[66] <= sortedBits[2][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[67] <= sortedBits[3][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[68] <= sortedBits[4][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[69] <= sortedBits[5][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[70] <= sortedBits[6][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[71] <= sortedBits[7][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[72] <= sortedBits[8][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[73] <= sortedBits[9][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[74] <= sortedBits[10][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[75] <= sortedBits[11][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[76] <= sortedBits[12][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[77] <= sortedBits[13][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[78] <= sortedBits[14][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[79] <= sortedBits[15][24].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[80] <= sortedBits[0][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[81] <= sortedBits[1][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[82] <= sortedBits[2][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[83] <= sortedBits[3][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[84] <= sortedBits[4][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[85] <= sortedBits[5][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[86] <= sortedBits[6][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[87] <= sortedBits[7][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[88] <= sortedBits[8][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[89] <= sortedBits[9][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[90] <= sortedBits[10][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[91] <= sortedBits[11][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[92] <= sortedBits[12][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[93] <= sortedBits[13][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[94] <= sortedBits[14][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[95] <= sortedBits[15][25].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[96] <= sortedBits[0][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[97] <= sortedBits[1][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[98] <= sortedBits[2][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[99] <= sortedBits[3][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[100] <= sortedBits[4][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[101] <= sortedBits[5][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[102] <= sortedBits[6][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[103] <= sortedBits[7][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[104] <= sortedBits[8][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[105] <= sortedBits[9][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[106] <= sortedBits[10][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[107] <= sortedBits[11][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[108] <= sortedBits[12][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[109] <= sortedBits[13][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[110] <= sortedBits[14][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[111] <= sortedBits[15][26].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[112] <= sortedBits[0][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[113] <= sortedBits[1][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[114] <= sortedBits[2][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[115] <= sortedBits[3][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[116] <= sortedBits[4][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[117] <= sortedBits[5][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[118] <= sortedBits[6][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[119] <= sortedBits[7][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[120] <= sortedBits[8][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[121] <= sortedBits[9][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[122] <= sortedBits[10][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[123] <= sortedBits[11][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[124] <= sortedBits[12][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[125] <= sortedBits[13][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[126] <= sortedBits[14][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[127] <= sortedBits[15][27].DB_MAX_OUTPUT_PORT_TYPE
+led_commands[128] <= <GND>
+led_commands[129] <= <GND>
+led_commands[130] <= <GND>
+led_commands[131] <= <GND>
+led_commands[132] <= <GND>
+led_commands[133] <= <GND>
+led_commands[134] <= <GND>
+led_commands[135] <= <GND>
+led_commands[136] <= <GND>
+led_commands[137] <= <GND>
+led_commands[138] <= <GND>
+led_commands[139] <= <GND>
+led_commands[140] <= <GND>
+led_commands[141] <= <GND>
+led_commands[142] <= <GND>
+led_commands[143] <= <GND>
 
 
 |skeleton_ta|regfile:my_regfile|decoder5to32:my_decoder
@@ -49545,105 +50646,6 @@ out[30] <= in[16].DB_MAX_OUTPUT_PORT_TYPE
 out[31] <= in[16].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|skeleton_ta|processor:my_processor|stage_execute:execute|random32:my_random32
-clock => data[0]~reg0.CLK
-clock => data[1]~reg0.CLK
-clock => data[2]~reg0.CLK
-clock => data[3]~reg0.CLK
-clock => data[4]~reg0.CLK
-clock => data[5]~reg0.CLK
-clock => data[6]~reg0.CLK
-clock => data[7]~reg0.CLK
-clock => data[8]~reg0.CLK
-clock => data[9]~reg0.CLK
-clock => data[10]~reg0.CLK
-clock => data[11]~reg0.CLK
-clock => data[12]~reg0.CLK
-clock => data[13]~reg0.CLK
-clock => data[14]~reg0.CLK
-clock => data[15]~reg0.CLK
-clock => data[16]~reg0.CLK
-clock => data[17]~reg0.CLK
-clock => data[18]~reg0.CLK
-clock => data[19]~reg0.CLK
-clock => data[20]~reg0.CLK
-clock => data[21]~reg0.CLK
-clock => data[22]~reg0.CLK
-clock => data[23]~reg0.CLK
-clock => data[24]~reg0.CLK
-clock => data[25]~reg0.CLK
-clock => data[26]~reg0.CLK
-clock => data[27]~reg0.CLK
-clock => data[28]~reg0.CLK
-clock => data[29]~reg0.CLK
-clock => data[30]~reg0.CLK
-clock => data[31]~reg0.CLK
-reset => data[0]~reg0.PRESET
-reset => data[1]~reg0.PRESET
-reset => data[2]~reg0.PRESET
-reset => data[3]~reg0.PRESET
-reset => data[4]~reg0.PRESET
-reset => data[5]~reg0.PRESET
-reset => data[6]~reg0.PRESET
-reset => data[7]~reg0.PRESET
-reset => data[8]~reg0.PRESET
-reset => data[9]~reg0.PRESET
-reset => data[10]~reg0.PRESET
-reset => data[11]~reg0.PRESET
-reset => data[12]~reg0.PRESET
-reset => data[13]~reg0.PRESET
-reset => data[14]~reg0.PRESET
-reset => data[15]~reg0.PRESET
-reset => data[16]~reg0.PRESET
-reset => data[17]~reg0.PRESET
-reset => data[18]~reg0.PRESET
-reset => data[19]~reg0.PRESET
-reset => data[20]~reg0.PRESET
-reset => data[21]~reg0.PRESET
-reset => data[22]~reg0.PRESET
-reset => data[23]~reg0.PRESET
-reset => data[24]~reg0.ACLR
-reset => data[25]~reg0.ACLR
-reset => data[26]~reg0.ACLR
-reset => data[27]~reg0.ACLR
-reset => data[28]~reg0.ACLR
-reset => data[29]~reg0.ACLR
-reset => data[30]~reg0.ACLR
-reset => data[31]~reg0.ACLR
-data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[8] <= data[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[9] <= data[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[10] <= data[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[11] <= data[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[12] <= data[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[13] <= data[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[14] <= data[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[15] <= data[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[16] <= data[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[17] <= data[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[18] <= data[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[19] <= data[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[20] <= data[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[21] <= data[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[22] <= data[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[23] <= data[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[24] <= data[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[25] <= data[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[26] <= data[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[27] <= data[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[28] <= data[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[29] <= data[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[30] <= data[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[31] <= data[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |skeleton_ta|processor:my_processor|stage_execute:execute|adder32:my_adder32
 x[0] => x[0].IN1
 x[1] => x[1].IN1
@@ -53130,20 +54132,18 @@ xm_insn[26] => loop1[4].xm3.IN0
 xm_insn[26] => WideOr3.IN4
 xm_insn[27] => xm_addi_insn.IN1
 xm_insn[27] => xm_sw_insn.IN1
-xm_insn[27] => xm_rand_insn.IN1
 xm_insn[27] => xm_lw_insn.IN1
 xm_insn[27] => xm_r_insn.IN1
-xm_insn[28] => xm_rand_insn.IN1
 xm_insn[28] => xm_sw_insn.IN1
 xm_insn[28] => xm_lw_insn.IN1
 xm_insn[28] => xm_addi_insn.IN1
 xm_insn[28] => xm_r_insn.IN1
 xm_insn[29] => xm_addi_insn.IN1
-xm_insn[29] => xm_rand_insn.IN1
+xm_insn[29] => xm_lw_insn.IN1
 xm_insn[29] => xm_r_insn.IN1
-xm_insn[30] => xm_rand_insn.IN0
+xm_insn[30] => xm_lw_insn.IN0
 xm_insn[30] => xm_addi_insn.IN0
-xm_insn[31] => xm_rand_insn.IN1
+xm_insn[31] => xm_lw_insn.IN1
 xm_insn[31] => xm_addi_insn.IN1
 mw_insn[0] => ~NO_FANOUT~
 mw_insn[1] => ~NO_FANOUT~
@@ -53188,19 +54188,17 @@ mw_insn[26] => loop1[4].dx5.IN1
 mw_insn[26] => loop1[4].dx6.IN1
 mw_insn[26] => loop1[4].xm3.IN1
 mw_insn[27] => mw_addi_insn.IN1
-mw_insn[27] => mw_rand_insn.IN1
 mw_insn[27] => mw_lw_insn.IN1
 mw_insn[27] => mw_r_insn.IN1
-mw_insn[28] => mw_rand_insn.IN1
 mw_insn[28] => mw_lw_insn.IN1
 mw_insn[28] => mw_addi_insn.IN1
 mw_insn[28] => mw_r_insn.IN1
 mw_insn[29] => mw_addi_insn.IN1
-mw_insn[29] => mw_rand_insn.IN1
+mw_insn[29] => mw_lw_insn.IN1
 mw_insn[29] => mw_r_insn.IN1
-mw_insn[30] => mw_rand_insn.IN0
+mw_insn[30] => mw_lw_insn.IN0
 mw_insn[30] => mw_addi_insn.IN0
-mw_insn[31] => mw_rand_insn.IN1
+mw_insn[31] => mw_lw_insn.IN1
 mw_insn[31] => mw_addi_insn.IN1
 mx_bypass_A <= mx_bypass_A.DB_MAX_OUTPUT_PORT_TYPE
 mx_bypass_B <= mx_bypass_B.DB_MAX_OUTPUT_PORT_TYPE
