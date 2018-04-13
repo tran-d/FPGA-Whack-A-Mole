@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags="INTERNAL_COMPONENT=true"
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element in_system_sources_probes_0
@@ -31,7 +31,7 @@
  <parameter name="hideFromIPCatalog" value="true" />
  <parameter name="lockedInterfaceDefinition" value="" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName">capacitive_sensor.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="testBenchDutName" value="" />
@@ -49,7 +49,7 @@
  <module
    name="in_system_sources_probes_0"
    kind="altera_in_system_sources_probes"
-   version="16.0"
+   version="17.1"
    enabled="1"
    autoexport="1">
   <parameter name="create_source_clock" value="false" />

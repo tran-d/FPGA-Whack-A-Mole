@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EnsembleReport name="debugger" kind="system" version="16.0" fabric="QSYS">
- <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2018.04.12.15:55:28 -->
+<EnsembleReport name="debugger" kind="system" version="17.1" fabric="QSYS">
+ <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
+ <!-- 2018.04.13.03:38:03 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1523562927</value>
+  <value>1523605083</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -101,7 +101,7 @@
  </parameter>
  <parameter name="projectName">
   <type>java.lang.String</type>
-  <value></value>
+  <value>capacitive_sensor.qpf</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -150,10 +150,22 @@
  <module
    name="in_system_sources_probes_0"
    kind="altera_in_system_sources_probes"
-   version="16.0"
+   version="17.1"
    path="in_system_sources_probes_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
+  <assignment>
+   <name>embeddedsw.dts.group</name>
+   <value>ignore</value>
+  </assignment>
+  <assignment>
+   <name>embeddedsw.dts.name</name>
+   <value>debug</value>
+  </assignment>
+  <assignment>
+   <name>embeddedsw.dts.vendor</name>
+   <value>altr</value>
+  </assignment>
   <parameter name="device_family">
    <type>java.lang.String</type>
    <value>CYCLONEIVE</value>
@@ -259,7 +271,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="probes" kind="conduit_end" version="16.0">
+  <interface name="probes" kind="conduit_end" version="17.1">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -311,7 +323,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName><![CDATA[Altera In-System Sources & Probes]]></displayName>
-  <version>16.0</version>
+  <version>17.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -319,8 +331,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>16.0</version>
+  <version>17.1</version>
  </plugin>
- <reportVersion>16.0 211</reportVersion>
- <uniqueIdentifier>00000000000000E000000162BB6D5763</uniqueIdentifier>
+ <reportVersion>17.1 590</reportVersion>
+ <uniqueIdentifier>A45E60E6896100000162BDF0945D</uniqueIdentifier>
 </EnsembleReport>
