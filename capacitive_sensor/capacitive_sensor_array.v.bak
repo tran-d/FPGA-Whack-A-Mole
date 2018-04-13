@@ -1,1 +1,0 @@
-module capacitive_sensor_array(clock, start, sensor_out, sensors_in);

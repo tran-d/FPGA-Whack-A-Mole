@@ -8,7 +8,7 @@ led $r3, $r1
 addi $r4, $r0, 8
 addi $r5, $r0, 32768
 led $r4, $r5
-addi $r10, $r0, 10
+addi $r10, $r0, 9
 
 cycles 30
 
@@ -19,4 +19,4 @@ cycles 30
  checkreg 3, 1
  checkreg 4, 8
  checkreg 5, 32768
- checkreg 10, 10
+ checkreg 10, 9

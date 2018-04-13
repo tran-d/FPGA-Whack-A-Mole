@@ -1,3 +1,0 @@
-module led(clock, code, pin);
-
-endmodule

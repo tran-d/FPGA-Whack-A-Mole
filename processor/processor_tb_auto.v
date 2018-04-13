@@ -227,6 +227,9 @@ module processor_tb_auto(
 		checkRegister(32'd1, 32'd65535);
 		checkRegister(32'd2, 32'd63);
 		checkRegister(32'd3, 32'd1);
+		checkRegister(32'd4, 32'd8);
+		checkRegister(32'd5, 32'd32768);
+		checkRegister(32'd10, 32'd9);
 	end endtask
 
 endmodule

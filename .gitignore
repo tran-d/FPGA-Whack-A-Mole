@@ -63,5 +63,3 @@
 */timing/
 */testbench/
 */*_sim/
-
-*.map

@@ -82,7 +82,7 @@ module bypass(fd_insn, dx_insn, xm_insn, mw_insn, mx_bypass_A, mx_bypass_B, wx_b
 	endgenerate
 	
 	wire dx_r_insn, dx_addi_insn, dx_sw_insn, dx_lw_insn, dx_bne_insn, dx_blt_insn, dx_jr_insn, dx_write_insn, 
-			dx_read_rs_insn, dx_read_rt_insn, dx_read_rd_insn, dx_beq_insn;
+			dx_read_rs_insn, dx_read_rt_insn, dx_read_rd_insn, dx_beq_insn, dx_led_insn;
 	wire xm_r_insn, xm_addi_insn, xm_lw_insn, xm_write_insn, xm_sw_insn;
 	wire mw_r_insn, mw_addi_insn, mw_lw_insn, mw_write_insn;
 	

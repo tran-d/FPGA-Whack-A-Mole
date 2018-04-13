@@ -1,5 +1,0 @@
-module led_array(clock, codes, );
-
-	
-
-endmodule;
