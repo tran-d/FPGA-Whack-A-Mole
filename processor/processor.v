@@ -58,7 +58,7 @@ module processor(
 
     // Dmem
     address_dmem,                   // O: The address of the data to get or put from/to dmem
-    d_dmem,                           // O: The data to write to dmem
+    d_dmem,                         // O: The data to write to dmem
     wren,                           // O: Write enable for dmem
     q_dmem,                         // I: The data from dmem
 
@@ -69,8 +69,11 @@ module processor(
     ctrl_readRegB,                  // O: Register to read from port B of regfile
     data_writeReg,                  // O: Data to write to for regfile
     data_readRegA,                  // I: Data from port A of regfile
-    data_readRegB                   // I: Data from port B of regfile
+    data_readRegB,                  // I: Data from port B of regfile
+	 
+	 led_commands,							// O: Data to write to LED array
 );
+
 	// Control signals
 	input clock, reset;
 
@@ -89,6 +92,10 @@ module processor(
 	output [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	output [31:0] data_writeReg;
 	input [31:0] data_readRegA, data_readRegB;
+	
+	// LED Array
+	output [143:0] led_commands;
+	
 
 	/* YOUR CODE STARTS HERE */
 	
@@ -291,5 +298,4 @@ module processor(
 			.is_bypass_hazard			(is_bypass_hazard)
 	);
 	
-
 endmodule

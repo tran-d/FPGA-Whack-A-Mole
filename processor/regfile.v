@@ -11,7 +11,7 @@ module regfile (
    input [31:0] data_writeReg;
 
    output [31:0] data_readRegA, data_readRegB;
-	
+	output [143:0] led_commands;	
 	
 	
    /* YOUR CODE HERE */
@@ -21,28 +21,23 @@ module regfile (
 	wire [31:0] sortedBits[31:0];
 	wire [31:0] reg_writeEnable;
 	
-	
 	genvar i;
 	genvar j; 
 	
 	
 	/***** create decoder for write_reg *****/						
 	decoder5to32 my_decoder(ctrl_writeReg, selectedRegisterBits);
-	
-	
 
 	generate
 	
 		for(i=0; i<32; i=i+1) begin: loop1
-			
-			
 		
 			/***** create writeEnable for selected write_reg *****/
 			and my_and(reg_writeEnable[i], selectedRegisterBits[i], ctrl_writeEnable);
 			
 			/***** create 32-bit register *****/
 			if(i==0)
-				reg32_neg myregisterZero(32'b0, clock, ctrl_reset, 1'b0, register_output[i]);
+				reg32_neg 	  myregisterZero(32'b0, clock, ctrl_reset, 1'b0, register_output[i]);
 			else
 				reg32_neg     myregister(data_writeReg, clock, ctrl_reset, reg_writeEnable[i], register_output[i]);
 			
@@ -59,6 +54,8 @@ module regfile (
 		end
 		
 	endgenerate
+	
+	
 	
 endmodule
 

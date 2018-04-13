@@ -73,11 +73,10 @@ module stage_execute(
 								(~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
 	
 	/* ALU Inputs */
-	wire [31:0] ALU_operandA_alt1, ALU_operandA_alt2, ALU_operandB_alt1, ALU_operandB_alt2, ALU_operandB_alt3;
+	wire [31:0] ALU_operandA_alt1, ALU_operandB_alt1, ALU_operandB_alt2, ALU_operandB_alt3;
 	
 	assign ALU_operandA 			= mx_bypass_A 	? o_xm_out 			: ALU_operandA_alt1;
-	assign ALU_operandA_alt1 	= wx_bypass_A 	? data_writeReg 	: ALU_operandA_alt2;
-	assign ALU_operandA_alt2	= rand_insn 	? 32'd0				: regfile_operandA;		// add 0 + random
+	assign ALU_operandA_alt1 	= wx_bypass_A 	? data_writeReg 	: regfile_operandA;
 	
 	assign ALU_operandB 			= immed_insn  	? immediate_extended	: ALU_operandB_alt1;
 	assign ALU_operandB_alt1	= bex				? 32'd0				: ALU_operandB_alt2;
@@ -89,8 +88,13 @@ module stage_execute(
 	
 	
 	/* RANDOM */
+<<<<<<< HEAD
 	wire [31:0] random_val;
 	random32 my_random32(clock, 1'b0, random_val);
+=======
+//	wire [31:0] random_val;
+//	random32 my_random32(clock, 1'b0, random_val);
+>>>>>>> 91f1071e141e24bfb02cb496f11c4ea1c7f875f0
 	
 	/* TEST */
 	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011
