@@ -33,7 +33,7 @@ module stage_execute(
 	output write_exception, branched_jumped;
 	output reg [143:0] led_commands;
 	
-	reg [31:0] selected_sensor_reading;
+	reg [31:0] selected_sensor_reading; 
 		
 	wire [31:0] ALU_operandA, ALU_operandB, ALU_result;
 	wire [4:0] ALU_op_new, shamt;
