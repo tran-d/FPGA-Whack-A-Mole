@@ -196,7 +196,8 @@ module processor(
 			.b_out						(execute_b_out), 
 			.write_exception			(exec_write_exception), 
 			.pc_in						(execute_pc_out), 
-			.branched_jumped			(branched_jumped)
+			.branched_jumped			(branched_jumped),
+			.led_commands				(led_commands)
 	);			
 	
 	

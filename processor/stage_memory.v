@@ -13,7 +13,7 @@ module stage_memory(
 	d_out, 
 	d_dmem, 
 	address_dmem, 
-	wren  
+	wren
 );
 
 	input [31:0] insn_in, q_dmem;					//	q_mem: output of dmem (lw)
@@ -24,6 +24,7 @@ module stage_memory(
 	output [31:0] o_out, d_out, d_dmem;			//	d_dmem: data to write to dmem ($rd for sw)
 	output [11:0] address_dmem;
 	output wren;
+
 	
 	wire [4:0] opcode;
 	
@@ -35,5 +36,8 @@ module stage_memory(
 	
 	/* WM BYPASSING */
 	assign d_dmem 			= wm_bypass ? data_writeReg : b_in;
+	
+	
+	
 	
 endmodule

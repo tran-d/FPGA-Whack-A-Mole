@@ -18,7 +18,8 @@ module stage_execute(
 	b_out,
 	write_exception,
 	pc_in,
-	branched_jumped
+	branched_jumped,
+	led_commands
 );
 
 	input [4:0] pc_upper_5;
@@ -27,7 +28,8 @@ module stage_execute(
 	
 	output [31:0] pc_in, o_out, b_out;
 	output write_exception, branched_jumped;
-	
+	output reg [143:0] led_commands;
+		
 	wire [31:0] ALU_operandA, ALU_operandB, ALU_result;
 	wire [4:0] ALU_op_new, shamt;
 	wire isNotEqual, isLessThan, exception;
@@ -50,7 +52,8 @@ module stage_execute(
 	/* ALU Controls */
 	wire [31:0] immediate_extended;
 	wire [4:0] ALU_op_new_alt;
-	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, bne, blt, bex, j, jr, jal, setx, beq, rand_insn;
+	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, 
+	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap;
 	
 	signextender_16to32 my_se(immediate, immediate_extended);
 	
@@ -87,8 +90,12 @@ module stage_execute(
 	
 	/* RANDOM */
 	wire [31:0] random_val;
-	
 	random32 my_random32(clock, 1'b0, random_val);
+	
+	/* TEST */
+	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011
+	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
+
 	
 	
 	/* Branch Controls */ 
@@ -102,7 +109,6 @@ module stage_execute(
 	assign jr			= ~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//00100
 	assign setx			=  opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//10101
 	assign beq			= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] &  opcode[0];	//01001
-
 	
 	assign take_bne 		= bne && isNotEqual;
 	assign take_blt		= blt && ~isLessThan && isNotEqual;  // rs > rd ---> rs 	notLT & NE rd
@@ -131,11 +137,33 @@ module stage_execute(
 	assign o_out_alt3 = (sub  && exception) ? 32'd3 : o_out_alt4;
 	assign o_out_alt4 = (mul  && exception) ? 32'd4 : o_out_alt5;
 	assign o_out_alt5 = (div  && exception) ? 32'd5 : o_out_alt6;
-	assign o_out_alt6 = setx ? {pc_upper_5, target} : ALU_result;
+	assign o_out_alt6 = setx ? {pc_upper_5, target} : o_out_alt7;
+	assign o_out_alt7 = cap  ?	ALU_operandA 			: ALU_result;
 
 	assign b_out 		= mx_bypass_B ? o_xm_out 		: b_out_alt;
 	assign b_out_alt	= wx_bypass_B ? data_writeReg : regfile_operandB;
 	
 	assign write_exception = exception && (add | addi | sub | mul | div);
+	
+	
+	/* LED Array */
+	initial begin
+		led_commands <= 144'b0;
+	end
+	
+	always @(posedge clock) begin
+		if(led) begin
+			case(ALU_operandB)
+				32'd0: led_commands[15:0] <= ALU_operandA[15:0];
+				32'd1: led_commands[31:16] <= ALU_operandA[15:0];
+				32'd2: led_commands[47:32] <= ALU_operandA[15:0];
+				32'd3: led_commands[63:48] <= ALU_operandA[15:0];
+				32'd4: led_commands[79:64] <= ALU_operandA[15:0];
+				32'd5: led_commands[95:80] <= ALU_operandA[15:0];
+				32'd6: led_commands[111:96] <= ALU_operandA[15:0];
+				32'd7: led_commands[127:112] <= ALU_operandA[15:0];
+				32'd9: led_commands[143:128] <= ALU_operandA[15:0];
+		end
+	end
 	
 endmodule
