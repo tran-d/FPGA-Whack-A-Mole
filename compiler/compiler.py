@@ -269,7 +269,7 @@ for test_type in tests:
 
 # change file
 with open(tb_path,'w') as tb:
-    for line in open("./processor_tb_base_ta.v"):
+    for line in open("./processor_tb_base.v"):
        line = line.replace("CYCLE_LIMIT_AUTO_GENERATE", str(tests['cycles']))
        tb.write(line)
 
