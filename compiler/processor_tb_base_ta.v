@@ -83,6 +83,13 @@ module processor_tb_auto(
 	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
 	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
 
+	// FETCH STAGE
+	wire [31:0] pc_in_fetch		= dut.my_processor.fetch.pc_in;
+	wire [31:0] insn_fd_in		= dut.my_processor.insn_fd_in;
+	wire [31:0] opcode_fetch	= dut.my_processor.insn_fd_in[31:27];
+	wire [31:0] pc_out_fetch	= dut.my_processor.fetch.pc_out;
+	
+	// EXECUTE STAGE
 	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
 	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
 	wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
@@ -119,7 +126,7 @@ module processor_tb_auto(
 	wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
 	wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
 
-	wire exec_write_exception = dut.my_processor.execute.exception;
+	wire exec_ALU_exception = dut.my_processor.execute.ALU_exception;
 	
 	// DUT 
 	skeleton_ta dut(
@@ -166,9 +173,12 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, opcode: %d, mx_bypass_A: %d, wx_bypass_A: %d, mx_bypass_B: %d, wx_bypass_B: %d, wm_bypass: %d", clock, opcode, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B, wm_bypass);
 
-		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
 
-		$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
+		// FETCH STAGE
+		$monitor("clock: %d, pc_in_fetch: %d, insn_fd_in: %b, opcode_fetch: %d, pc_out_fetch: %d", clock, pc_in_fetch, insn_fd_in, opcode_fetch, pc_out_fetch);
+
+		// EXECUTE STAGE
+		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
 
 
