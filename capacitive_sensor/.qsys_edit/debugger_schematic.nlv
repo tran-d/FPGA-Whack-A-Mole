@@ -1,0 +1,7 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst debugger -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst debugger.in_system_sources_probes_0 -pg 1 -lvl 1 -y 30
+preplace netloc EXPORT<net_container>debugger</net_container>(SLAVE)debugger.probes,(SLAVE)in_system_sources_probes_0.probes) 1 0 1 NJ
+levelinfo -pg 1 0 50 280
+levelinfo -hier debugger 60 130 260

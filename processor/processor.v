@@ -58,7 +58,7 @@ module processor(
 
     // Dmem
     address_dmem,                   // O: The address of the data to get or put from/to dmem
-    d_dmem,                           // O: The data to write to dmem
+    d_dmem,                         // O: The data to write to dmem
     wren,                           // O: Write enable for dmem
     q_dmem,                         // I: The data from dmem
 
@@ -69,8 +69,15 @@ module processor(
     ctrl_readRegB,                  // O: Register to read from port B of regfile
     data_writeReg,                  // O: Data to write to for regfile
     data_readRegA,                  // I: Data from port A of regfile
-    data_readRegB                   // I: Data from port B of regfile
+    data_readRegB,                  // I: Data from port B of regfile
+	 
+	 // LED Array
+	 led_commands,							// O: Data to write to LED array
+	 
+	 // Capacitive Sensor Array
+	 capacitive_sensor_readings		// I: Data being read from sensor array
 );
+
 	// Control signals
 	input clock, reset;
 
@@ -89,6 +96,12 @@ module processor(
 	output [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	output [31:0] data_writeReg;
 	input [31:0] data_readRegA, data_readRegB;
+	
+	// LED Array
+	output [143:0] led_commands;
+	
+	// Capacitive Sensor Array
+	input [287:0] capacitive_sensor_readings;
 
 	/* YOUR CODE STARTS HERE */
 	
@@ -179,6 +192,7 @@ module processor(
 	
 	stage_execute execute(
 			// inputs
+			.clock						(clock),
 			.insn_in						(insn_dx_out), 
 			.regfile_operandA			(a_dx_out), 
 			.regfile_operandB			(b_dx_out), 
@@ -196,7 +210,8 @@ module processor(
 			.b_out						(execute_b_out), 
 			.write_exception			(exec_write_exception), 
 			.pc_in						(execute_pc_out), 
-			.branched_jumped			(branched_jumped)
+			.branched_jumped			(branched_jumped),
+			.led_commands				(led_commands)
 	);			
 	
 	
@@ -220,12 +235,14 @@ module processor(
 	
 	stage_memory memory(
 			// inputs
+			.clock						(clock),
 			.insn_in						(insn_xm_out), 
 			.q_dmem						(q_dmem), 
 			.o_in							(o_xm_out), 
 			.b_in							(b_xm_out), 
 			.wm_bypass					(wm_bypass), 
 			.data_writeReg				(data_writeReg),
+			.sensor_readings			(capacitive_sensor_readings),
 			
 			// outputs
 			.d_dmem						(d_dmem), 
@@ -290,5 +307,4 @@ module processor(
 			.is_bypass_hazard			(is_bypass_hazard)
 	);
 	
-
 endmodule

@@ -1,0 +1,22 @@
+
+
+addi $r1, $r0, 65535 		# $r1 = 0 + 1 = 1			
+addi $r2, $r0, 63 		# $r2 = 0 + 63 = 63	
+addi $r3, $r0, 1
+led $r0, $r1 	
+led $r3, $r1
+addi $r4, $r0, 8
+addi $r5, $r0, 32768
+led $r4, $r5
+addi $r10, $r0, 9
+
+cycles 30
+
+# "checkreg A, B" checks register "A" for value "B".
+
+ checkreg 1, 65535
+ checkreg 2, 63
+ checkreg 3, 1
+ checkreg 4, 8
+ checkreg 5, 32768
+ checkreg 10, 9

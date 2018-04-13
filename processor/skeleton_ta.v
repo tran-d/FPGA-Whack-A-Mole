@@ -28,8 +28,15 @@ module skeleton_ta(
     output wire [4:0]   ctrl_readRegB,
     output wire [31:0]  data_writeReg,
     output wire [31:0]  data_readRegA,
-    output wire [31:0]  data_readRegB
+    output wire [31:0]  data_readRegB,
+	 // LED Array
+	 output wire [17:0] 	led_pins,
+	 // Capacitive Sensor Array
+	 input wire [8:0] 	capacitive_sensors_in,
+	 output wire 			capacitive_sensors_out
 );
+	wire [31:0] r1, r2, r3;
+
 
     /** IMEM **/
     imem my_imem(
@@ -41,7 +48,7 @@ module skeleton_ta(
     /** DMEM **/
     dmem my_dmem(
         .address    (address_dmem),       // address of data
-        .clock      (~clock),                  // may need to invert the clock
+        .clock      (~clock),            			 // may need to invert the clock
         .data	    (d_dmem),    // data you want to write
         .wren	    (wren_dmem),      // write enable
         .q          (q_dmem)    // data from dmem
@@ -57,8 +64,19 @@ module skeleton_ta(
         ctrl_readRegB,
         data_writeReg,
         data_readRegA,
-        data_readRegB
+        data_readRegB, 
+		  
+		  r1, r2, r3
     );
+	 
+	 
+	 /** LED ARRAY **/
+	 wire [143:0] led_commands;
+	 led_array leds(clock, led_pins, led_commands);
+	 
+	 /** Capacitive Sensor Array **/
+	 wire [287:0] capacitive_sensor_readings;
+	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
 
     /** PROCESSOR **/
     processor my_processor(
@@ -83,7 +101,23 @@ module skeleton_ta(
         ctrl_readRegB,                  // O: Register to read from port B of regfile
         data_writeReg,                  // O: Data to write to for regfile
         data_readRegA,                  // I: Data from port A of regfile
-        data_readRegB                   // I: Data from port B of regfile
+        data_readRegB,                  // I: Data from port B of regfile
+		  
+		  // LED Array
+		  led_commands,
+		  
+		  // Capacitive Sensor Array
+		  capacitive_sensor_readings
     );
+	 
+	 
+	 /** Debugger **/
+	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
+	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
+	 debugger d10(.probe({16'b0, led_commands[15:0]}));
+	 debugger d11(.probe(r1));
+	 debugger d12(.probe(r2));
+	 debugger d13(.probe(r3));
 
 endmodule
