@@ -96,14 +96,14 @@ module processor(
 	
 	wire [4:0]  pc_upper_5;
 	wire [31:0] pc_in, pc_out, execute_pc_out, pc_fd_out, pc_dx_out;
-	wire [31:0] nop;
+	wire [31:0] nop, multdiv_result;
 	wire [31:0] insn_fd_out, insn_dx_out, insn_mw_out, insn_xm_out;
 	wire [31:0] a_dx_out, b_dx_out, o_xm_out, b_xm_out, o_mw_out, d_mw_out;
 	wire [31:0] execute_b_out, execute_o_out, memory_o_out, memory_d_out;
 	wire [31:0] insn_fd_in, insn_dx_in;
 	
 	wire exec_write_exception, xm_write_exception, mw_write_exception;
-	wire is_bypass_hazard, branched_jumped;
+	wire is_bypass_hazard, branched_jumped, multdiv_RDY;
 	wire mx_bypass_A, mx_bypass_B, wx_bypass_A, wx_bypass_B, wm_bypass;
 
 	assign nop = 32'd0;
@@ -179,6 +179,7 @@ module processor(
 	
 	stage_execute execute(
 			// inputs
+			.clock 						(clock),
 			.insn_in						(insn_dx_out), 
 			.regfile_operandA			(a_dx_out), 
 			.regfile_operandB			(b_dx_out), 
@@ -194,9 +195,11 @@ module processor(
 			// outputs
 			.o_out						(execute_o_out), 
 			.b_out						(execute_b_out), 
+			.multdiv_result			(multdiv_result),
 			.write_exception			(exec_write_exception), 
 			.pc_in						(execute_pc_out), 
-			.branched_jumped			(branched_jumped)
+			.branched_jumped			(branched_jumped),
+			.multdiv_RDY				(multdiv_RDY)
 	);			
 	
 	
@@ -256,7 +259,9 @@ module processor(
 			// inputs
 			.insn_in						(insn_mw_out), 
 			.o_in							(o_mw_out), 
-			.d_in							(d_mw_out), 
+			.d_in							(d_mw_out),
+			.multdiv_result			(multdiv_result),
+			.multdiv_RDY				(multdiv_RDY),
 			.write_exception			(mw_write_exception), 			
 			
 			// outputs			
@@ -284,7 +289,8 @@ module processor(
 	bypass_stall 	my_bypass_stall(
 			// inputs
 			.fd_insn						(insn_fd_out), 
-			.dx_insn						(insn_dx_out), 
+			.dx_insn						(insn_dx_out),
+			.multdiv_RDY				(multdiv_RDY),
 			
 			// outputs
 			.is_bypass_hazard			(is_bypass_hazard)

@@ -10,82 +10,142 @@
 # Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/cla8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:35 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/skeleton_ta.v 
+# Start time: 00:05:45 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/cla8.v 
+# -- Compiling module cla8
+# 
+# Top level modules:
+# 	cla8
+# End time: 00:05:45 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/adder32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:45 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/adder32.v 
+# -- Compiling module adder32_md
+# 
+# Top level modules:
+# 	adder32_md
+# End time: 00:05:45 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/alu.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:45 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/alu.v 
+# -- Compiling module alu_md
+# 
+# Top level modules:
+# 	alu_md
+# End time: 00:05:45 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/multctrl.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:45 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/multctrl.v 
+# -- Compiling module multctrl
+# 
+# Top level modules:
+# 	multctrl
+# End time: 00:05:45 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/divctrl.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:45 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/divctrl.v 
+# -- Compiling module divctrl
+# 
+# Top level modules:
+# 	divctrl
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/multdiv.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv/multdiv.v 
+# -- Compiling module multdiv
+# 
+# Top level modules:
+# 	multdiv
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/skeleton_ta.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/skeleton_ta.v 
 # -- Compiling module skeleton_ta
 # 
 # Top level modules:
 # 	skeleton_ta
-# End time: 15:25:35 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_write.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:36 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_write.v 
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_write.v 
 # -- Compiling module stage_write
 # -- Compiling module write_controls
 # 
 # Top level modules:
 # 	stage_write
-# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_memory.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:36 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_memory.v 
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_memory.v 
 # -- Compiling module stage_memory
 # 
 # Top level modules:
 # 	stage_memory
-# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_fetch.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:36 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_fetch.v 
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_fetch.v 
 # -- Compiling module stage_fetch
 # 
 # Top level modules:
 # 	stage_fetch
-# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_execute.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:36 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_execute.v 
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_execute.v 
 # -- Compiling module stage_execute
 # 
 # Top level modules:
 # 	stage_execute
-# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:46 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_decode.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:36 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/stage_decode.v 
+# Start time: 00:05:46 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/stage_decode.v 
 # -- Compiling module stage_decode
 # -- Compiling module decode_controls
 # 
 # Top level modules:
 # 	stage_decode
-# End time: 15:25:36 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/signextender_16to32.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:37 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/signextender_16to32.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/signextender_16to32.v 
 # -- Compiling module signextender_16to32
 # 
 # Top level modules:
 # 	signextender_16to32
-# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/selectors.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:37 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/selectors.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/selectors.v 
 # -- Compiling module tristate_buffer
 # -- Compiling module tristate_buffer32
 # -- Compiling module mux32_tristate
@@ -99,18 +159,19 @@
 # 	mux2to1_32
 # 	mux2to1_33
 # 	mux8_tristate
-# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/registers.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:37 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/registers.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/registers.v 
 # -- Compiling module reg64_sl1
 # -- Compiling module reg6
 # -- Compiling module reg65_sr2
 # -- Compiling module reg5
 # -- Compiling module reg32
 # -- Compiling module reg32_neg
+# -- Compiling module reg64
 # 
 # Top level modules:
 # 	reg64_sl1
@@ -119,32 +180,33 @@
 # 	reg5
 # 	reg32
 # 	reg32_neg
-# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# 	reg64
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/regfile.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:37 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/regfile.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/regfile.v 
 # -- Compiling module regfile
 # 
 # Top level modules:
 # 	regfile
-# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:37 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor.v 
 # -- Compiling module processor
 # 
 # Top level modules:
 # 	processor
-# End time: 15:25:37 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/latches.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/latches.v 
+# Start time: 00:05:47 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/latches.v 
 # -- Compiling module latch_PC
 # -- Compiling module latch_FD
 # -- Compiling module latch_DX
@@ -157,72 +219,72 @@
 # 	latch_DX
 # 	latch_XM
 # 	latch_MW
-# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:47 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/imem.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/imem.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/imem.v 
 # -- Compiling module imem
 # 
 # Top level modules:
 # 	imem
-# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dmem.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dmem.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dmem.v 
 # -- Compiling module dmem
 # 
 # Top level modules:
 # 	dmem
-# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dflipflop_neg.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop_neg.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dflipflop_neg.v 
 # -- Compiling module dflipflop_neg
 # 
 # Top level modules:
 # 	dflipflop_neg
-# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dflipflop.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/dflipflop.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/dflipflop.v 
 # -- Compiling module dflipflop
 # 
 # Top level modules:
 # 	dflipflop
-# End time: 15:25:38 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/decoder5to32.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:38 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder5to32.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/decoder5to32.v 
 # -- Compiling module decoder5to32
 # 
 # Top level modules:
 # 	decoder5to32
-# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:01
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/decoder3to8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:39 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/decoder3to8.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/decoder3to8.v 
 # -- Compiling module decoder3to8
 # 
 # Top level modules:
 # 	decoder3to8
-# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:48 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/ALU_operations.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:39 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/ALU_operations.v 
+# Start time: 00:05:48 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/ALU_operations.v 
 # -- Compiling module sll
 # -- Compiling module sll16
 # -- Compiling module sll8
@@ -243,22 +305,22 @@
 # 	sra
 # 	and32
 # 	or32
-# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/alu.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:39 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/alu.v 
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/alu.v 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/adders.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:39 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adders.v 
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/adders.v 
 # -- Compiling module adder1
 # -- Compiling module adder5
 # -- Compiling module adder6
@@ -268,53 +330,64 @@
 # 	adder5
 # 	adder6
 # 	adder8
-# End time: 15:25:39 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/adder32.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:39 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/adder32.v 
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/adder32.v 
 # -- Compiling module adder32
 # 
 # Top level modules:
 # 	adder32
-# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:01
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/bypass.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:40 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass.v 
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/bypass.v 
 # -- Compiling module bypass
 # 
 # Top level modules:
 # 	bypass
-# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/bypass_stall.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:40 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/bypass_stall.v 
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/bypass_stall.v 
 # -- Compiling module bypass_stall
 # 
 # Top level modules:
 # 	bypass_stall
-# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:49 on Apr 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:05:49 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v 
+# -- Compiling module multdiv_controller
+# -- Compiling module latch_md
+# 
+# Top level modules:
+# 	multdiv_controller
+# End time: 00:05:50 on Apr 13,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor {C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor_tb_auto.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:25:40 on Apr 12,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v 
+# Start time: 00:05:50 on Apr 13,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor" C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor_tb_auto.v 
 # -- Compiling module processor_tb_auto
 # 
 # Top level modules:
 # 	processor_tb_auto
-# End time: 15:25:40 on Apr 12,2018, Elapsed time: 0:00:00
+# End time: 00:05:50 on Apr 13,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  processor_tb_auto
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" processor_tb_auto 
-# Start time: 15:25:41 on Apr 12,2018
+# Start time: 00:05:50 on Apr 13,2018
 # Loading work.processor_tb_auto
 # Loading work.skeleton_ta
 # Loading work.imem
@@ -350,8 +423,18 @@
 # Loading work.sra2
 # Loading work.sra1
 # Loading work.signextender_16to32
-# Loading work.latch_XM
+# Loading work.multdiv_controller
+# Loading work.latch_md
+# Loading work.multdiv
+# Loading work.reg64
+# Loading work.alu_md
+# Loading work.adder32_md
+# Loading work.cla8
+# Loading work.decoder3to8
 # Loading work.dflipflop
+# Loading work.divctrl
+# Loading work.multctrl
+# Loading work.latch_XM
 # Loading work.stage_memory
 # Loading work.latch_MW
 # Loading work.stage_write
@@ -365,8 +448,18 @@
 # Loading work.dflipflop_neg
 # Loading work.adder1
 # Loading work.mux8_tristate
-# Loading work.decoder3to8
 # Loading work.tristate_buffer
+# ** Warning: (vsim-3015) C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(40): [PCDPC] - Port size (32) does not match connection size (1) for port 'in'. The port definition is at: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(56).
+#    Time: 0 ps  Iteration: 0  Instance: /processor_tb_auto/dut/my_processor/execute/my_multdiv_controller/ctrl_mult File: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v
+# ** Warning: (vsim-3015) C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(40): [PCDPC] - Port size (32) does not match connection size (1) for port 'out'. The port definition is at: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(56).
+#    Time: 0 ps  Iteration: 0  Instance: /processor_tb_auto/dut/my_processor/execute/my_multdiv_controller/ctrl_mult File: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v
+# ** Warning: (vsim-3015) C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(41): [PCDPC] - Port size (32) does not match connection size (1) for port 'in'. The port definition is at: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(56).
+#    Time: 0 ps  Iteration: 0  Instance: /processor_tb_auto/dut/my_processor/execute/my_multdiv_controller/ctrl_div File: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v
+# ** Warning: (vsim-3015) C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(41): [PCDPC] - Port size (32) does not match connection size (1) for port 'out'. The port definition is at: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v(56).
+#    Time: 0 ps  Iteration: 0  Instance: /processor_tb_auto/dut/my_processor/execute/my_multdiv_controller/ctrl_div File: C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/multdiv_controller.v
+# ** Warning: Design size of 6321 instances exceeds ModelSim - Intel FPGA Starter Edition recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim - Intel FPGA Edition. Expect performance to be adversely affected.
 # 
 # add wave *
 # view structure
@@ -376,80 +469,78 @@
 # run -all
 #                    0:  << Starting Test >>
 # 
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          0
-# clock: 1, insn_execute: 00101000010000000000000000000011, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:          3, isNotEqual 1, branched_jumped: 0, immediate:          3, pc_plus_1_plus_immediate:          4
-# clock: 0, insn_execute: 00101000010000000000000000000011, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:          3, isNotEqual 1, branched_jumped: 0, immediate:          3, pc_plus_1_plus_immediate:          4
-# clock: 1, insn_execute: 00101000100000100000000000000000, ex_opcode:          5, alu_operandA_ex:          3, alu_operandB_ex:          0, isNotEqual 1, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          2
-# clock: 0, insn_execute: 00101000100000100000000000000000, ex_opcode:          5, alu_operandA_ex:          3, alu_operandB_ex:          0, isNotEqual 1, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          2
-# clock: 1, insn_execute: 00000000110001000001000000000000, ex_opcode:          0, alu_operandA_ex:          3, alu_operandB_ex:          3, isNotEqual 0, branched_jumped: 0, immediate:       4096, pc_plus_1_plus_immediate:       4099
-# clock: 0, insn_execute: 00000000110001000001000000000000, ex_opcode:          0, alu_operandA_ex:          3, alu_operandB_ex:          3, isNotEqual 0, branched_jumped: 0, immediate:       4096, pc_plus_1_plus_immediate:       4099
-# clock: 1, insn_execute: 01001000110000100000000000000010, ex_opcode:          9, alu_operandA_ex:          3, alu_operandB_ex:          6, isNotEqual 1, branched_jumped: 0, immediate:          2, pc_plus_1_plus_immediate:          6
-# clock: 0, insn_execute: 01001000110000100000000000000010, ex_opcode:          9, alu_operandA_ex:          3, alu_operandB_ex:          6, isNotEqual 1, branched_jumped: 0, immediate:          2, pc_plus_1_plus_immediate:          6
-# clock: 1, insn_execute: 00101001110000011111111110011101, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex: 4294967197, isNotEqual 1, branched_jumped: 0, immediate:     130973, pc_plus_1_plus_immediate: 4294967202
-# clock: 0, insn_execute: 00101001110000011111111110011101, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex: 4294967197, isNotEqual 1, branched_jumped: 0, immediate:     130973, pc_plus_1_plus_immediate: 4294967202
-# clock: 1, insn_execute: 00101010000000000000001010011010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        666, isNotEqual 1, branched_jumped: 0, immediate:        666, pc_plus_1_plus_immediate:        672
-# clock: 0, insn_execute: 00101010000000000000001010011010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        666, isNotEqual 1, branched_jumped: 0, immediate:        666, pc_plus_1_plus_immediate:        672
-# clock: 1, insn_execute: 00101010010000000000001111100111, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        999, isNotEqual 1, branched_jumped: 0, immediate:        999, pc_plus_1_plus_immediate:       1006
-# clock: 0, insn_execute: 00101010010000000000001111100111, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:        999, isNotEqual 1, branched_jumped: 0, immediate:        999, pc_plus_1_plus_immediate:       1006
-# clock: 1, insn_execute: 00101010100000000000000000001010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:         10, isNotEqual 1, branched_jumped: 0, immediate:         10, pc_plus_1_plus_immediate:         18
-# clock: 0, insn_execute: 00101010100000000000000000001010, ex_opcode:          5, alu_operandA_ex:          0, alu_operandB_ex:         10, isNotEqual 1, branched_jumped: 0, immediate:         10, pc_plus_1_plus_immediate:         18
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          9
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:          9
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         10
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         10
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         11
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         11
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         12
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         12
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         13
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         13
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         14
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         14
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         15
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         15
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         16
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         16
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         17
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         17
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         18
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         18
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         19
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         19
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         20
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         20
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         21
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         21
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         22
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         22
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         23
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         23
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         24
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         24
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         25
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         25
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         26
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         26
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         27
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         27
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         28
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         28
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         29
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         29
-# clock: 1, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         30
-# clock: 0, insn_execute: 00000000000000000000000000000000, ex_opcode:          0, alu_operandA_ex:          0, alu_operandB_ex:          0, isNotEqual 0, branched_jumped: 0, immediate:          0, pc_plus_1_plus_immediate:         30
-# 									 Success! register $ 1 (expected: 00000003, read: 00000003)
-# 									 Success! register $ 2 (expected: 00000003, read: 00000003)
-# 									 Success! register $ 3 (expected: 00000006, read: 00000006)
-# ERROR: register $ 7 (expected:          0, read: 4294967197)
-# ERROR: register $ 8 (expected:          0, read:        666)
-# 									 Success! register $ 9 (expected: 000003e7, read: 000003e7)
-# 									 Success! register $10 (expected: 0000000a, read: 0000000a)
+# clock: 0, pc_in_fetch:          0, insn_fd_in: 00101000010000000000000000000011, opcode_fetch:          5, pc_out_fetch:          1, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          0, insn_fd_in: 00101000010000000000000000000011, opcode_fetch:          5, pc_out_fetch:          1, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          1, insn_fd_in: 00101000010000000000000000000011, opcode_fetch:          5, pc_out_fetch:          2, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          1, insn_fd_in: 00101000010000000000000000000011, opcode_fetch:          5, pc_out_fetch:          2, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          2, insn_fd_in: 00101000100000000000000000000010, opcode_fetch:          5, pc_out_fetch:          3, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          2, insn_fd_in: 00101000100000000000000000000010, opcode_fetch:          5, pc_out_fetch:          3, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          3, insn_fd_in: 00000000110000100010000000011000, opcode_fetch:          0, pc_out_fetch:          4, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          3, insn_fd_in: 00000000110000100010000000011000, opcode_fetch:          0, pc_out_fetch:          4, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          4, insn_fd_in: 00101001010000000000000000000101, opcode_fetch:          5, pc_out_fetch:          5, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          4, insn_fd_in: 00101001010000000000000000000101, opcode_fetch:          5, pc_out_fetch:          5, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          5, insn_fd_in: 00101001100000000000000000000110, opcode_fetch:          5, pc_out_fetch:          6, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          5, insn_fd_in: 00101001100000000000000000000110, opcode_fetch:          5, pc_out_fetch:          6, multdiv_RDY: 1
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 1
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 1, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# clock: 0, pc_in_fetch:          6, insn_fd_in: 00000000000000000000000000000000, opcode_fetch:          0, pc_out_fetch:          7, multdiv_RDY: 0
+# ERROR: register $ 1 (expected:          3, read:          0)
+# ERROR: register $ 2 (expected:          2, read:          0)
+# ERROR: register $ 3 (expected:          6, read:          z)
+# 									 Success! register $ 5 (expected: 00000005, read: 00000005)
+# 									 Success! register $ 6 (expected: 00000006, read: 00000006)
 #                  630:  << Test Complete >>
-# Errors:           2
-# ** Note: $stop    : C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v(182)
+# Errors:           3
+# ** Note: $stop    : C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor_tb_auto.v(195)
 #    Time: 630 ns  Iteration: 0  Instance: /processor_tb_auto
-# Break in Module processor_tb_auto at C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/pc4-tran-d/processor_tb_auto.v line 182
-# End time: 15:26:10 on Apr 12,2018, Elapsed time: 0:00:29
-# Errors: 0, Warnings: 0
+# Break in Module processor_tb_auto at C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/processor_tb_auto.v line 195
+# End time: 00:12:16 on Apr 13,2018, Elapsed time: 0:06:26
+# Errors: 0, Warnings: 5

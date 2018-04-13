@@ -1,6 +1,7 @@
 module stage_execute(
 
 	// inputs
+	clock,
 	insn_in,
 	regfile_operandA,
 	regfile_operandB,
@@ -16,6 +17,8 @@ module stage_execute(
 	// outputs
 	o_out,
 	b_out,
+	multdiv_result,
+	multdiv_RDY,
 	write_exception,
 	pc_in,
 	branched_jumped
@@ -23,18 +26,18 @@ module stage_execute(
 
 	input [4:0] pc_upper_5;
 	input [31:0] insn_in, regfile_operandA, regfile_operandB, pc_out, o_xm_out, data_writeReg;
-	input mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;  
+	input clock, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;  
 	
-	output [31:0] pc_in, o_out, b_out;
-	output write_exception, branched_jumped;
+	output [31:0] pc_in, o_out, b_out, multdiv_result;
+	output write_exception, branched_jumped, multdiv_RDY;
 	
 	wire [31:0] ALU_operandA, ALU_operandB, ALU_result;
 	wire [4:0] ALU_op_new, shamt;
-	wire isNotEqual, isLessThan, exception;
+	wire isNotEqual, isLessThan, ALU_exception, multdiv_exception;
 	
 	assign shamt = insn_in[11:7];
 		
-	alu my_alu(ALU_operandA, ALU_operandB, ALU_op_new, shamt, ALU_result, isNotEqual, isLessThan, exception);
+	alu my_alu(ALU_operandA, ALU_operandB, ALU_op_new, shamt, ALU_result, isNotEqual, isLessThan, ALU_exception);
 
 	/* Insn Controls */
 	wire [4:0] opcode, ALU_op;
@@ -87,6 +90,11 @@ module stage_execute(
 	/* RANDOM */
 //	wire [31:0] random_val;
 //	random32 my_random32(clock, 1'b0, random_val);
+
+	/* Multiplier/Divider */
+	
+	
+	multdiv_controller my_multdiv_controller(ALU_operandA, ALU_operandB, mul, div, clock, multdiv_result, multdiv_exception, multdiv_RDY);
 	
 	
 	/* Branch Controls */ 
@@ -121,20 +129,20 @@ module stage_execute(
 	
 	
 	/* LATCH Controls */ 
-	wire [31:0] o_out_alt1, o_out_alt2, o_out_alt3, o_out_alt4, o_out_alt5, o_out_alt6, b_out_alt;
+	wire [31:0] o_out_alt1, o_out_alt2, o_out_alt3, o_out_alt4, o_out_alt5, o_out_alt6, o_out_alt7, b_out_alt;
 	
 	assign o_out 		= jal	? pc_out : o_out_alt1;
-	assign o_out_alt1 = (add  && exception) ? 32'd1 : o_out_alt2;
-	assign o_out_alt2 = (addi && exception) ? 32'd2 : o_out_alt3;
-	assign o_out_alt3 = (sub  && exception) ? 32'd3 : o_out_alt4;
-	assign o_out_alt4 = (mul  && exception) ? 32'd4 : o_out_alt5;
-	assign o_out_alt5 = (div  && exception) ? 32'd5 : o_out_alt6;
-	assign o_out_alt6 = setx ? {pc_upper_5, target} : ALU_result;
+	assign o_out_alt1 = (add  && ALU_exception) 		? 32'd1 : o_out_alt2;
+	assign o_out_alt2 = (addi && ALU_exception) 		? 32'd2 : o_out_alt3;
+	assign o_out_alt3 = (sub  && ALU_exception) 		? 32'd3 : o_out_alt4;
+	assign o_out_alt4 = (mul  && multdiv_exception) ? 32'd4 : o_out_alt5;
+	assign o_out_alt5 = (div  && multdiv_exception) ? 32'd5 : o_out_alt6;
+	assign o_out_alt6 = setx ? {pc_upper_5, target} 		  : ALU_result;
 
 	assign b_out 		= mx_bypass_B ? o_xm_out 		: b_out_alt;
 	assign b_out_alt	= wx_bypass_B ? data_writeReg : regfile_operandB;
 	
-	assign write_exception = exception && (add | addi | sub | mul | div);
+	assign write_exception = ALU_exception && (add | addi | sub | mul | div);
 
 	
 endmodule

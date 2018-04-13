@@ -1,6 +1,7 @@
-module bypass_stall(fd_insn, dx_insn, multdiv_ready, is_bypass_hazard);
+module bypass_stall(fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
 
-	input [31:0] fd_insn, dx_insn, multdiv_ready;
+	input [31:0] fd_insn, dx_insn;
+	input multdiv_RDY;
 	output is_bypass_hazard;
 	
 	wire [4:0] fd_rs1, fd_rs2, dx_rd, dx_opcode, dx_ALU_op, fd_rs1_equals_dx_rd, fd_rs2_equals_dx_rd;
@@ -11,28 +12,32 @@ module bypass_stall(fd_insn, dx_insn, multdiv_ready, is_bypass_hazard);
 	assign dx_rd 			= dx_insn[26:22];
 	assign dx_opcode 		= dx_insn[31:27];
 	assign dx_ALU_op 		= dx_insn[6:2];
-	assign dx_r_insn 		= ~dx_opcode[4] & ~dx_opcode[3] & ~dx_opcode[2] & ~dx_opcode[1] & ~dx_opcode[0];
+	assign dx_r_insn 		= ~dx_opcode[4] && ~dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0];
 	assign dx_lw_insn		= ~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0];					//01000 lw only check fd_rs1					
 	assign dx_mul_insn 	= dx_r_insn && (~dx_ALU_op[4] && ~dx_ALU_op[3] &&  dx_ALU_op[2] &&  dx_ALU_op[1] && ~dx_ALU_op[0]);	// 00000 & 00110
 	assign dx_div_insn 	= dx_r_insn && (~dx_ALU_op[4] && ~dx_ALU_op[3] &&  dx_ALU_op[2] &&  dx_ALU_op[1] &&  dx_ALU_op[0]);	// 00000 & 00111
 										
 	assign lw_hazard 			= dx_lw_insn && (&fd_rs1_equals_dx_rd || &fd_rs2_equals_dx_rd);
-	assign is_bypass_hazard = lw_hazard || multdiv_hazard; 							// && !fd_sw_insn;
+	assign is_bypass_hazard = lw_hazard || multdiv_hazard ; 							// && !fd_sw_insn;
 	
 	
 	/* MULTIPLIER */
 	
-	reg wait_multdiv_ready;
+	reg wait_multdiv_RDY;
 	
-	always @(posedge dx_mul_insn or posedge dx_div_insn or posedge multdiv_ready)
-	begin
-	if (dx_mul_insn || dx_div_insn) 
-		wait_multdiv_ready <= 1'b1;
-	else if (wait_multdiv_ready && multdiv_ready)
-		wait_multdiv_ready <= 1'b0;
+	initial begin
+		wait_multdiv_RDY <= 1'b0;
 	end
 	
-	assign multdiv_hazard = wait_multdiv_ready && ~multdiv_ready;
+	always @(posedge dx_mul_insn or posedge dx_div_insn or posedge multdiv_RDY)
+	begin
+	if (dx_mul_insn || dx_div_insn) 
+		wait_multdiv_RDY <= 1'b1;
+	else if (wait_multdiv_RDY && multdiv_RDY)
+		wait_multdiv_RDY <= 1'b0;
+	end
+	
+	assign multdiv_hazard = wait_multdiv_RDY && ~multdiv_RDY;
 	
 	
 	genvar i;
