@@ -1,6 +1,7 @@
 module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 
 	parameter CHARGE_CONFIDENCE_CYCLES = 15'd20000;
+	parameter TRIGGER_EDGE_CYCLES = 17'd50000;
 
 	input clock;
 	input [8:0] sensors_in;
@@ -25,6 +26,14 @@ module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 	
 	always @(posedge clock) begin
 	
+		// start trigger
+		div_count <= div_count + 17'b1;
+		if(div_count == 17'd50000) begin
+			div_count <= 17'b0;
+			sensor_trigger = !sensor_trigger;
+		end
+	
+		// sensor control
 		if(start) begin
 		 
 			if(capacitors_charged) begin  // when capacitors full, ensure output pin low
@@ -49,12 +58,6 @@ module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 			capacitors_charge_count <= 16'b0;
 		end
 		
-		// start trigger
-		div_count <= div_count + 17'b1;
-		if(div_count == 17'd50000) begin
-			div_count <= 17'b0;
-			sensor_trigger <= !sensor_trigger;
-		end
 	end		
 			
 	generate

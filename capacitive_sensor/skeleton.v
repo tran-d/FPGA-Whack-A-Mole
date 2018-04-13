@@ -1,35 +1,33 @@
 module skeleton(CLOCK_50,					// 50 MHz clock
-					 sensor_in, sensor_out	// Capacitive Sensor
-					 
+					 sensor_in, sensor_out,	// Capacitive Sensor
+					 f0, f1, f2, f3, f4, f5, f6, f7, f8
 );  													
 	
 	input CLOCK_50;
 	input [8:0] sensor_in;
-	
 	output sensor_out;
+	output [31:0] f0, f1, f2, f3, f4, f5, f6, f7, f8;
 	
 	
 	// 50 MHz Clock
 	wire clock = CLOCK_50;
 	
-	// Trigger for Capacitive Sensor
-	reg sensor_trigger;	
-	
-	reg [16:0] div_count;
-	always @(posedge clock) begin
-		div_count <= div_count + 17'b1;
-		if(div_count == 17'd50000) begin
-			div_count <= 17'b0;
-			sensor_trigger <= !sensor_trigger;
-		end
-	end
+	wire [287:0] sensor_readings;
 
 	
 	// Capacitive Sensor Array
-	wire [31:0] f0, f1, f2, f3, f4, f5, f6, f7, f8; // Each is a 32-bit register holding most recent sensor value
-	capacitive_sensor_array sensors(clock, sensor_trigger, sensor_in, sensor_out,
-											  f0, f1, f2, f3, f4, f5, f6, f7, f8);
+	capacitive_sensor_array sensors(clock, sensor_in, sensor_out, sensor_readings);
 
+
+	assign f0 = sensor_readings[31:0];
+	assign f1 = sensor_readings[63:32];
+	assign f2 = sensor_readings[95:64];
+	assign f3 = sensor_readings[127:96];
+	assign f4 = sensor_readings[159:128];
+	assign f5 = sensor_readings[191:160];
+	assign f6 = sensor_readings[223:192];
+	assign f7 = sensor_readings[255:224];
+	assign f8 = sensor_readings[287:256];
 	
 	// Debugging Probe
 //	debugger d0(.probe(f0));

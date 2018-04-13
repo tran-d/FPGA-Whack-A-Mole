@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2018.04.12.15:55:28"
- outputDirectory="C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/">
+ date="2018.04.13.03:38:03"
+ outputDirectory="/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -41,34 +41,34 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="debugger:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1523562927,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:16.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=0)"
+   parameterizationKey="debugger:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1523605083,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:17.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=0)"
    instancePathKey="debugger"
    kind="debugger"
    version="1.0"
    name="debugger">
-  <parameter name="AUTO_GENERATION_ID" value="1523562927" />
+  <parameter name="AUTO_GENERATION_ID" value="1523605083" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/debugger.v"
+       path="/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/debugger.v"
        type="VERILOG" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/submodules/altsource_probe_top.v"
+       path="/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger.qsys" />
+       path="/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger.qsys" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/altera/16.0/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/home/dhruv/altera/17.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Debug" culprit="debugger">queue size: 0 starting:debugger "debugger"</message>
@@ -91,10 +91,10 @@
  </entity>
  <entity
    path="submodules/"
-   parameterizationKey="altera_in_system_sources_probes:16.0:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=0"
+   parameterizationKey="altera_in_system_sources_probes:17.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=0"
    instancePathKey="debugger:.:in_system_sources_probes_0"
    kind="altera_in_system_sources_probes"
-   version="16.0"
+   version="17.1"
    name="altsource_probe_top">
   <parameter name="create_source_clock" value="false" />
   <parameter name="instance_id" value="NONE" />
@@ -109,14 +109,14 @@
   <parameter name="gui_use_auto_index" value="true" />
   <generatedFiles>
    <file
-       path="C:/Users/Student/Documents/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/submodules/altsource_probe_top.v"
+       path="/home/dhruv/ECE350/final-project-s18-trusttheprocessor-1/capacitive_sensor/debugger/synthesis/submodules/altsource_probe_top.v"
        type="VERILOG"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles/>
   <sourceFiles>
    <file
-       path="C:/altera/16.0/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+       path="/home/dhruv/altera/17.1/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="debugger" as="in_system_sources_probes_0" />
