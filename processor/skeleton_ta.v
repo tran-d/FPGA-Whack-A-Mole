@@ -30,7 +30,7 @@ module skeleton_ta(
     output wire [31:0]  data_readRegA,
     output wire [31:0]  data_readRegB,
 	 // LED Array
-	 output wire [8:0] 	led_pins
+	 output wire [17:0] 	led_pins
 );
 		
 	 /** LED ARRAY **/

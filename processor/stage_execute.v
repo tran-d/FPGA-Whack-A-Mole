@@ -148,16 +148,16 @@ module stage_execute(
 	
 	always @(negedge clock) begin
 		if(led) begin
-			case(ALU_operandB)
-				32'd0: led_commands[15:0] <= ALU_operandA[15:0];
-				32'd1: led_commands[31:16] <= ALU_operandA[15:0];
-				32'd2: led_commands[47:32] <= ALU_operandA[15:0];
-				32'd3: led_commands[63:48] <= ALU_operandA[15:0];
-				32'd4: led_commands[79:64] <= ALU_operandA[15:0];
-				32'd5: led_commands[95:80] <= ALU_operandA[15:0];
-				32'd6: led_commands[111:96] <= ALU_operandA[15:0];
-				32'd7: led_commands[127:112] <= ALU_operandA[15:0];
-				32'd9: led_commands[143:128] <= ALU_operandA[15:0];
+			case(ALU_operandB[3:0])
+				4'd0: led_commands[15:0] <= ALU_operandA[15:0];
+				4'd1: led_commands[31:16] <= ALU_operandA[15:0];
+				4'd2: led_commands[47:32] <= ALU_operandA[15:0];
+				4'd3: led_commands[63:48] <= ALU_operandA[15:0];
+				4'd4: led_commands[79:64] <= ALU_operandA[15:0];
+				4'd5: led_commands[95:80] <= ALU_operandA[15:0];
+				4'd6: led_commands[111:96] <= ALU_operandA[15:0];
+				4'd7: led_commands[127:112] <= ALU_operandA[15:0];
+				4'd8: led_commands[143:128] <= ALU_operandA[15:0];
 			endcase
 		end
 	end

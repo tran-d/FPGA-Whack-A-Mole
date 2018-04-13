@@ -71,7 +71,7 @@ module processor(
     data_readRegA,                  // I: Data from port A of regfile
     data_readRegB,                  // I: Data from port B of regfile
 	 
-	 led_commands,							// O: Data to write to LED array
+	 led_commands							// O: Data to write to LED array
 );
 
 	// Control signals

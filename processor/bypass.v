@@ -95,10 +95,12 @@ module bypass(fd_insn, dx_insn, xm_insn, mw_insn, mx_bypass_A, mx_bypass_B, wx_b
 	assign dx_beq_insn 		= 	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] && ~dx_opcode[1] &&  dx_opcode[0]);	//01001
 	assign dx_blt_insn		=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] &&  dx_opcode[1] && ~dx_opcode[0]);	//00110
 	assign dx_jr_insn			=  (~dx_opcode[4] && ~dx_opcode[3] &&  dx_opcode[2] && ~dx_opcode[1] && ~dx_opcode[0]);	//00100
+	assign dx_led_insn		=	(~dx_opcode[4] &&  dx_opcode[3] && ~dx_opcode[2] &&  dx_opcode[1] &&  dx_opcode[0]);	//01011
+	 
 	assign dx_write_insn 	=  dx_r_insn || dx_addi_insn || dx_lw_insn;
-	assign dx_read_rs_insn  =  dx_r_insn || dx_addi_insn || dx_lw_insn || dx_sw_insn || dx_bne_insn || dx_blt_insn || dx_beq_insn;
+	assign dx_read_rs_insn  =  dx_r_insn || dx_addi_insn || dx_lw_insn || dx_sw_insn || dx_bne_insn || dx_blt_insn || dx_beq_insn || dx_led_insn;
 	assign dx_read_rt_insn  =  (dx_r_insn && !(!dx_ALU_opcode[4] && !dx_ALU_opcode[3] && dx_ALU_opcode[2] && !dx_ALU_opcode[1]));
-	assign dx_read_rd_insn  =  dx_bne_insn || dx_blt_insn || dx_jr_insn || dx_sw_insn || dx_beq_insn;
+	assign dx_read_rd_insn  =  dx_bne_insn || dx_blt_insn || dx_jr_insn || dx_sw_insn || dx_beq_insn || dx_led_insn;
 	
 	assign xm_r_insn 			=  (~xm_opcode[4] && ~xm_opcode[3] && ~xm_opcode[2] && ~xm_opcode[1] && ~xm_opcode[0]); 	// r_insn
 	assign xm_addi_insn 		=	(~xm_opcode[4] && ~xm_opcode[3] &&  xm_opcode[2] && ~xm_opcode[1] &&  xm_opcode[0]);	// addit
