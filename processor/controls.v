@@ -5,7 +5,7 @@ module controls(opcode, ALU_op, Rwe, br, DMwe, ALUinB, Rwd, j_sig, jr_sig, jal_s
 	input [4:0] opcode, ALU_op;
 	output Rwe, br, DMwe, ALUinB, Rwd, j_sig, jr_sig, jal_sig;
 	
-	wire add, addi, sub, and_insn, or_insn, sll, sra, mul, div, sw, lw, j, bne, jal, jr, blt, bex, setx, custom_r, beq, rand_insn;
+	wire add, addi, sub, and_insn, or_insn, sll, sra, mul, div, sw, lw, j, bne, jal, jr, blt, bex, setx, custom_r, beq, rand_insn, led, cap;
 	wire r_insn;
 	wire ALU_add, ALU_sub, ALU_and, ALU_or, ALU_sll, ALU_sra, ALU_mul, ALU_div;
 	
@@ -43,9 +43,12 @@ module controls(opcode, ALU_op, Rwe, br, DMwe, ALUinB, Rwd, j_sig, jr_sig, jal_s
 	assign bex			=  opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] & ~opcode[0];	//10110
 	assign setx			=  opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//10101
 	
+	/* CUSTOM */
 	assign custom_r 	=  1'b0; 																			//01000 - 11111 Change this later...
-	assign beq			= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	//10001
-	assign rand_insn	= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] & ~opcode[0];	//10010
+	assign beq			= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	//01001
+	assign rand_insn	= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] & ~opcode[0];	//01010
+	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011
+	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
 
 	assign Rwe 			= r_insn || addi || lw || jal || setx || custom_r;		//includes write to $rstatus
 	assign br 			= bne || blt || bex;

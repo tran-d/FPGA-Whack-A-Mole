@@ -1,29 +1,37 @@
-module capacitive_sensor(clock, start, sensor_in, sensor_out, final_count_out, count_out);
+module capacitive_sensor(clock, start, capacitor_charged, sensor_in, final_count);
 
-	input clock, start, sensor_in;
-	
-	output sensor_out;
-	output [31:0] count_out, final_count_out;
-	
-	reg [31:0] count, final_count;
-	
-	reg capacitor_charged;
-	reg [13:0] capacitor_charge_count;
 
-	always @(posedge start) begin
-		
-		count = 0;	
-		capacitor_charge_count = 13'd0;
-		
+	input clock, start, capacitor_charged, sensor_in;
+	
+	output reg [31:0] final_count;
+	
+	reg [31:0] count;
+	reg sensing_complete;
+	
+
+	initial begin
+		final_count <= 32'b0;
+		sensing_complete <= 1'b0;
 	end
 	
-	always @(posedge clock) begin
+	always @(posedge clock or negedge start) begin
 	
-		if(sensor_in & !capacitor_charged) begin // when sensor reads high, count 100us to ensure capacitor fully charged
-			if(capacitor_charge_count < 13'd5000)
-				capacitor_charge_count = capacitor_charge_count + 1;
-			else 
-				capacitor_charged = 1;				
+		if(!start) begin
+			sensing_complete <= 1'b0;
+			count <= 32'b0;	
+		end
+	
+		else if(!sensing_complete) begin
+
+			if(sensor_in & capacitor_charged) begin // when sensor reads high and capacitor is charged, increment counter until capactor drains
+				count <= count + 32'b1;
+			end
+			
+			if(!sensor_in & capacitor_charged) begin // when sensor drains, latch count into final count, sensing complete.
+				final_count <= |count? count : final_count; // from empirical analysis, final count is 0 randomly sometimes -- we will ignore those
+				sensing_complete <= 1'b1;
+			end
+			
 		end
 	
 	end

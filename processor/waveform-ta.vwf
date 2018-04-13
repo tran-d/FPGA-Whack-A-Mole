@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source="C:/Users/David/Documents/pc4-tran-d/waveform-ta.vwf" --testbench_file="C:/Users/David/Documents/pc4-tran-d/simulation/qsim/waveform-ta.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source="C:/Users/David/Documents/pc4-tran-d/waveform-ta.vwf" --testbench_file="C:/Users/David/Documents/pc4-tran-d/simulation/qsim/waveform-ta.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/David/Documents/pc4-tran-d/simulation/qsim/" processor -c processor</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/David/Documents/pc4-tran-d/simulation/qsim/" processor -c processor</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/waveform-ta.vwf" --testbench_file="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/simulation/qsim/waveform-ta.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off processor -c processor --vector_source="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/waveform-ta.vwf" --testbench_file="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/simulation/qsim/waveform-ta.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/simulation/qsim/" processor -c processor</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/David/Documents/final-project-s18-trusttheprocessor-1/processor/simulation/qsim/" processor -c processor</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work processor.vo
@@ -20,7 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
