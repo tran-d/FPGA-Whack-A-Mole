@@ -21,7 +21,9 @@ module processor_tb_auto(
     data_writeReg, 
     data_readRegA, 
     data_readRegB,
-    led_pins);
+    led_pins,
+    capacitive_sensors_in,
+	capacitive_sensors_out);
 
 	integer CYCLE_LIMIT = 30; // Modify this to change number of cycles run during test
 
@@ -49,7 +51,12 @@ module processor_tb_auto(
     output wire [31:0]  data_writeReg;
     output wire [31:0]  data_readRegA;
     output wire [31:0]  data_readRegB;
+
+    // New
     output wire [17:0] 	led_pins;
+	input wire [8:0] 	capacitive_sensors_in;
+	output wire 		capacitive_sensors_out;
+
 	
 	// Probes
 	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
@@ -151,7 +158,9 @@ module processor_tb_auto(
     data_writeReg, 
     data_readRegA, 
     data_readRegB,
-    led_pins);
+    led_pins,
+    capacitive_sensors_in,
+    capacitive_sensors_out);
 	
 	// Main: wait specified cycles, then perform tests
 	initial begin
@@ -224,12 +233,8 @@ module processor_tb_auto(
 	endtask
 
 	task performTests; begin
-		checkRegister(32'd1, 32'd65535);
-		checkRegister(32'd2, 32'd63);
-		checkRegister(32'd3, 32'd1);
-		checkRegister(32'd4, 32'd8);
-		checkRegister(32'd5, 32'd32768);
-		checkRegister(32'd10, 32'd9);
+		checkRegister(32'd2, 32'd8);
+		checkRegister(32'd4, 32'd2147483648);
 	end endtask
 
 endmodule

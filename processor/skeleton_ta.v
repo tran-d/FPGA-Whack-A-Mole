@@ -30,7 +30,7 @@ module skeleton_ta(
     output wire [31:0]  data_readRegA,
     output wire [31:0]  data_readRegB,
 	 // LED Array
-	 output wire [8:0] 	led_pins,
+	 output wire [17:0] 	led_pins,
 	 // Capacitive Sensor Array
 	 input wire [8:0] 	capacitive_sensors_in,
 	 output wire 			capacitive_sensors_out
@@ -64,6 +64,20 @@ module skeleton_ta(
         data_readRegA,
         data_readRegB
     );
+	 
+	 
+	 /** LED ARRAY **/
+	 wire [143:0] led_commands;
+	 led_array leds(clock, led_pins, led_commands);
+	 
+	 /** Capacitive Sensor Array **/
+	 wire [287:0] capacitive_sensor_readings;
+	 //capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
+	 assign capacitive_sensor_readings[31:0] = 32'd8;
+	 
+	 assign capacitive_sensor_readings[287:256] = 32'd2147483648;
+	 
+	 
 
     /** PROCESSOR **/
     processor my_processor(
@@ -98,13 +112,6 @@ module skeleton_ta(
     );
 	 
 	 		
-	 /** LED ARRAY **/
-	 wire [143:0] led_commands;
-	 led_array leds(clock, led_pins, led_commands);
 	 
-	 /** Capacitive Sensor Array **/
-	 wire [287:0] capacitive_sensor_readings;
-	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
-
 
 endmodule

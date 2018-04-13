@@ -235,6 +235,7 @@ module processor(
 	
 	stage_memory memory(
 			// inputs
+			.clock						(clock),
 			.insn_in						(insn_xm_out), 
 			.q_dmem						(q_dmem), 
 			.o_in							(o_xm_out), 
