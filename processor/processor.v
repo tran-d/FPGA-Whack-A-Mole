@@ -204,6 +204,7 @@ module processor(
 			.wx_bypass_B				(wx_bypass_B),	
 			.o_xm_out					(o_xm_out),			// O value from XM latch output
 			.data_writeReg				(data_writeReg),	
+			.sensor_readings 			(capacitive_sensor_readings),
 			
 			// outputs
 			.o_out						(execute_o_out), 
@@ -242,7 +243,6 @@ module processor(
 			.b_in							(b_xm_out), 
 			.wm_bypass					(wm_bypass), 
 			.data_writeReg				(data_writeReg),
-			.sensor_readings			(capacitive_sensor_readings),
 			
 			// outputs
 			.d_dmem						(d_dmem), 

@@ -13,6 +13,7 @@ module stage_execute(
 	wx_bypass_B,
 	o_xm_out,
 	data_writeReg,
+	sensor_readings,
 
 	// outputs
 	o_out,
@@ -25,11 +26,14 @@ module stage_execute(
 
 	input [4:0] pc_upper_5;
 	input [31:0] insn_in, regfile_operandA, regfile_operandB, pc_out, o_xm_out, data_writeReg;
-	input clock, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;  
+	input clock, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;
+	input [287:0] sensor_readings;				// Capacitive Sensor data	
 	
 	output [31:0] pc_in, o_out, b_out;
 	output write_exception, branched_jumped;
 	output reg [143:0] led_commands;
+	
+	reg [31:0] selected_sensor_reading; 
 		
 	wire [31:0] ALU_operandA, ALU_operandB, ALU_result;
 	wire [4:0] ALU_op_new, shamt;
@@ -133,7 +137,7 @@ module stage_execute(
 	assign o_out_alt4 = (mul  && exception) ? 32'd4 : o_out_alt5;
 	assign o_out_alt5 = (div  && exception) ? 32'd5 : o_out_alt6;
 	assign o_out_alt6 = setx ? {pc_upper_5, target} : o_out_alt7;
-	assign o_out_alt7 = cap  ?	ALU_operandA 			: ALU_result;
+	assign o_out_alt7 = cap  ?	selected_sensor_reading : ALU_result;
 
 	assign b_out 		= mx_bypass_B ? o_xm_out 		: b_out_alt;
 	assign b_out_alt	= wx_bypass_B ? data_writeReg : regfile_operandB;
@@ -158,6 +162,27 @@ module stage_execute(
 				4'd6: led_commands[111:96] <= ALU_operandA[15:0];
 				4'd7: led_commands[127:112] <= ALU_operandA[15:0];
 				4'd8: led_commands[143:128] <= ALU_operandA[15:0];
+			endcase
+		end
+	end
+	
+	
+	/* CAPACITIVE SENSING */
+	// rs = o_out
+	// data = selected_sensor_reading
+	
+	always @(negedge clock) begin
+		if(cap) begin
+			case(ALU_operandA[3:0])
+				4'd0: selected_sensor_reading = sensor_readings[31:0];
+				4'd1: selected_sensor_reading = sensor_readings[63:32];
+				4'd2: selected_sensor_reading = sensor_readings[95:64];
+				4'd3: selected_sensor_reading = sensor_readings[127:96];
+				4'd4: selected_sensor_reading = sensor_readings[159:128];
+				4'd5: selected_sensor_reading = sensor_readings[191:160];
+				4'd6: selected_sensor_reading = sensor_readings[223:192];
+				4'd7: selected_sensor_reading = sensor_readings[255:224];
+				4'd8: selected_sensor_reading = sensor_readings[287:256];
 			endcase
 		end
 	end
