@@ -64,6 +64,4 @@
 */testbench/
 */*_sim/
 
-*.map.cdb
-*.map.hdb
-*.map.bpm
+*.map
