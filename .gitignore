@@ -63,3 +63,7 @@
 */timing/
 */testbench/
 */*_sim/
+
+.cdb
+.hdb
+.bpm
