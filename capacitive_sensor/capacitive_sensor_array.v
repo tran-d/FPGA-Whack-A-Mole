@@ -1,20 +1,20 @@
-module capacitive_sensor_array(clock, start, sensors_in, sensors_out, 
-										 f0, f1, f2, f3, f4, f5, f6, f7, f8								 
-										 );
+module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 
 	parameter CHARGE_CONFIDENCE_CYCLES = 15'd20000;
 
-
-	input clock, start;
+	input clock;
 	input [8:0] sensors_in;
 	
 	output reg sensors_out;
-	output [31:0] f0, f1, f2, f3, f4, f5, f6, f7, f8;
-	
+	output [287:0] readings;
+
+	wire start;
 	wire [31:0] final_counts [8:0];
 	
-	reg capacitors_charged;
+	
+	reg capacitors_charged, sensor_trigger;
 	reg [15:0] capacitors_charge_count;
+   reg [16:0] div_count;
 
 	
 	initial begin
@@ -22,7 +22,6 @@ module capacitive_sensor_array(clock, start, sensors_in, sensors_out,
 		capacitors_charged <= 1'b0;
 		capacitors_charge_count <= 16'b0;
 	end
-	
 	
 	always @(posedge clock) begin
 	
@@ -50,6 +49,12 @@ module capacitive_sensor_array(clock, start, sensors_in, sensors_out,
 			capacitors_charge_count <= 16'b0;
 		end
 		
+		// start trigger
+		div_count <= div_count + 17'b1;
+		if(div_count == 17'd50000) begin
+			div_count <= 17'b0;
+			sensor_trigger <= !sensor_trigger;
+		end
 	end		
 			
 	generate
@@ -59,15 +64,17 @@ module capacitive_sensor_array(clock, start, sensors_in, sensors_out,
 		end
 	endgenerate
 	
-	assign f0 = final_counts[0];
-	assign f1 = final_counts[1];
-	assign f2 = final_counts[2];
-	assign f3 = final_counts[3];
-	assign f4 = final_counts[4];
-	assign f5 = final_counts[5];
-	assign f6 = final_counts[6];
-	assign f7 = final_counts[7];
-	assign f8 = final_counts[8];
+	assign readings[31:0]     = final_counts[0];
+	assign readings[63:32]    = final_counts[1];
+	assign readings[95:64]    = final_counts[2];
+	assign readings[127:96]   = final_counts[3];
+	assign readings[159:128]  = final_counts[4];
+	assign readings[191:160]  = final_counts[5];
+	assign readings[223:192]  = final_counts[6];
+	assign readings[255:224]  = final_counts[7];
+	assign readings[287:256]  = final_counts[8];
+	
+	assign start = sensor_trigger;
 
 endmodule
 

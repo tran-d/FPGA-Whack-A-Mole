@@ -30,13 +30,11 @@ module skeleton_ta(
     output wire [31:0]  data_readRegA,
     output wire [31:0]  data_readRegB,
 	 // LED Array
-	 output wire [17:0] 	led_pins
+	 output wire [8:0] 	led_pins,
+	 // Capacitive Sensor Array
+	 input wire [8:0] 	capacitive_sensors_in,
+	 output wire 			capacitive_sensors_out
 );
-		
-	 /** LED ARRAY **/
-	 wire [143:0] led_commands;
-	 led_array my_leds(clock, led_pins, led_commands);
-	 
 
     /** IMEM **/
     imem my_imem(
@@ -93,7 +91,20 @@ module skeleton_ta(
         data_readRegB,                  // I: Data from port B of regfile
 		  
 		  // LED Array
-		  led_commands
+		  led_commands,
+		  
+		  // Capacitive Sensor Array
+		  capacitive_sensor_readings
     );
+	 
+	 		
+	 /** LED ARRAY **/
+	 wire [143:0] led_commands;
+	 led_array leds(clock, led_pins, led_commands);
+	 
+	 /** Capacitive Sensor Array **/
+	 wire [287:0] capacitive_sensor_readings;
+	 capacitive_sensor_array sensors(clock, capacitive_sensors_in, capacitive_sensors_out, capacitive_sensor_readings);
+
 
 endmodule

@@ -71,7 +71,11 @@ module processor(
     data_readRegA,                  // I: Data from port A of regfile
     data_readRegB,                  // I: Data from port B of regfile
 	 
-	 led_commands							// O: Data to write to LED array
+	 // LED Array
+	 led_commands,							// O: Data to write to LED array
+	 
+	 // Capacitive Sensor Array
+	 capacitive_sensor_readings		// I: Data being read from sensor array
 );
 
 	// Control signals
@@ -96,6 +100,8 @@ module processor(
 	// LED Array
 	output [143:0] led_commands;
 	
+	// Capacitive Sensor Array
+	input [287:0] capacitive_sensor_readings;
 
 	/* YOUR CODE STARTS HERE */
 	
@@ -235,6 +241,7 @@ module processor(
 			.b_in							(b_xm_out), 
 			.wm_bypass					(wm_bypass), 
 			.data_writeReg				(data_writeReg),
+			.sensor_readings			(capacitive_sensor_readings),
 			
 			// outputs
 			.d_dmem						(d_dmem), 
