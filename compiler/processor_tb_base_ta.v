@@ -96,6 +96,9 @@ module processor_tb_auto(
 	wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
 	wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
 
+	// WRITE STAGE
+	wire multdiv_RDY			= dut.my_processor.writeback.multdiv_RDY;
+
 	wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
 	wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
 	wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
@@ -175,7 +178,7 @@ module processor_tb_auto(
 
 
 		// FETCH STAGE
-		$monitor("clock: %d, pc_in_fetch: %d, insn_fd_in: %b, opcode_fetch: %d, pc_out_fetch: %d", clock, pc_in_fetch, insn_fd_in, opcode_fetch, pc_out_fetch);
+		$monitor("clock: %d, pc_in_fetch: %d, insn_fd_in: %b, opcode_fetch: %d, pc_out_fetch: %d, multdiv_RDY: %d", clock, pc_in_fetch, insn_fd_in, opcode_fetch, pc_out_fetch, multdiv_RDY);
 
 		// EXECUTE STAGE
 		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
