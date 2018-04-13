@@ -20,20 +20,27 @@ module processor_tb_auto(
     ctrl_readRegB, 
     data_writeReg, 
     data_readRegA, 
-    data_readRegB);
+    data_readRegB,
+    led_pins);
 
 	integer CYCLE_LIMIT = CYCLE_LIMIT_AUTO_GENERATE; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
+
+	// LEDS
+	wire [143:0] led_commands = dut.led_commands; 
+
 	// Instruction Memory
     output wire [11:0]  address_imem;
     output wire [31:0]  dut_q_imem;
+
     // Data Memory
     output wire [11:0]  address_dmem;
     output wire [31:0]  d_dmem;
     output wire         wren_dmem;
     output wire [31:0]  dut_q_dmem;
+
     // Regfile
     output wire         ctrl_writeEnable;
     output wire [4:0]   ctrl_writeReg;
@@ -42,6 +49,7 @@ module processor_tb_auto(
     output wire [31:0]  data_writeReg;
     output wire [31:0]  data_readRegA;
     output wire [31:0]  data_readRegB;
+    output wire [17:0] 	led_pins;
 	
 	// Probes
 	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
@@ -120,6 +128,8 @@ module processor_tb_auto(
 	wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
 
 	wire exec_write_exception = dut.my_processor.execute.exception;
+
+
 	
 	// DUT 
 	skeleton_ta dut(
@@ -140,7 +150,8 @@ module processor_tb_auto(
     ctrl_readRegB, 
     data_writeReg, 
     data_readRegA, 
-    data_readRegB);
+    data_readRegB,
+    led_pins);
 	
 	// Main: wait specified cycles, then perform tests
 	initial begin
