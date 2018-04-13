@@ -1,2 +1,4 @@
-processor/db/
-processor/incremental_db/
+**/db/
+**
+**/incremental_db/
+**
