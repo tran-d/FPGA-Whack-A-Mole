@@ -7,8 +7,8 @@ module random8(clock, seeds, data);
 	
 	wire [7:0] cell_data [7:0];
 	
-	random8_cell rc1(clock, seeds[7:0], cell_data[0]);
-	random8_cell rc2(clock, seeds[15:8], cell_data[1]);
+	random8_cell rc1(clock, seeds[7:0],   cell_data[0]);
+	random8_cell rc2(clock, seeds[15:8],  cell_data[1]);
 	random8_cell rc3(clock, seeds[23:16], cell_data[2]);
 	random8_cell rc4(clock, seeds[31:24], cell_data[3]);
 	random8_cell rc5(clock, seeds[39:32], cell_data[4]);
@@ -19,7 +19,7 @@ module random8(clock, seeds, data);
 	generate
 		genvar i;
 		for(i = 0; i < 8; i = i + 1) begin: loop
-			assign data[i] = cell_data[i][0];
+			assign data[i] = cell_data[i][i];
 		end
 	endgenerate
 
