@@ -71,13 +71,24 @@ opcode = {'add':'00000',
           'led':'01011',
           'cap':'01100'
           }
+
+jump_indicies = {}
+
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():
             continue
 
+        for variable in jump_indicies.keys():
+            instrLine = instrLine.replace(variable, jump_indicies[variable])
+
         instr = instrLine.split()
         instr = [x.strip(',') for x in instr]
+
+        if instr[0][-1] == ':':
+            jump_indicies[instr[0][:-1]] = str(counter)
+            instr.pop(0)
+
         line = str(counter) + ' : '
         if instr[0] == 'add':
             line += opcode[instr[0]]
