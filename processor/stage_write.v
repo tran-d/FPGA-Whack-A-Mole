@@ -41,12 +41,14 @@ module write_controls(insn_in, lw, jal, setx, mul, div, ctrl_writeEnable);
 	input [31:0] insn_in;
 	output lw, jal, ctrl_writeEnable, setx, mul, div;
 	
+
 	wire [4:0] opcode, ALU_op;
-	wire addi, custom_r, r_insn;
+	wire addi, cap, custom_r, r_insn;
 	
 	assign opcode 		= insn_in[31:27];
 	assign ALU_op		= insn_in[6:2];
 	assign r_insn 		= ~opcode[4] & ~opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	
+	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
 	assign addi 		= ~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//00101
 	assign lw	 		= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	//01000
 	assign jal	 		= ~opcode[4] & ~opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//00011
@@ -55,8 +57,8 @@ module write_controls(insn_in, lw, jal, setx, mul, div, ctrl_writeEnable);
 	
 	assign mul		 	= r_insn && (~ALU_op[4] & ~ALU_op[3] &  ALU_op[2] &  ALU_op[1] & ~ALU_op[0]);	//00110
 	assign div		 	= r_insn && (~ALU_op[4] & ~ALU_op[3] &  ALU_op[2] &  ALU_op[1] &  ALU_op[0]);	//00111
-	
-	
-	assign ctrl_writeEnable = r_insn || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
+
+	assign ctrl_writeEnable = cap || r_insn || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
+
 
 endmodule

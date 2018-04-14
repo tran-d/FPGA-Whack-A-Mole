@@ -37,23 +37,23 @@ module multdiv_controller(
 	
 	
 	
-	latch_md ctrl_mult(ctrl_MULT, clock, 1'b0, 1'b1, latch_ctrl_MULT);
-	latch_md ctrl_div(ctrl_DIV, clock, 1'b0, 1'b1, latch_ctrl_DIV);
+	latch_ctrl ctrl_mult(ctrl_MULT, clock, 1'b0, 1'b1, latch_ctrl_MULT);
+	latch_ctrl ctrl_div(ctrl_DIV, clock, 1'b0, 1'b1, latch_ctrl_DIV);
 	
 	multdiv my_multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, multdiv_result, multdiv_exception, multdiv_RDY);
 	
 	wire latch_operand_ena = ctrl_MULT || ctrl_DIV;
 	
-	latch_md latch_operandA(data_operandA, clock, 1'b0, latch_operand_ena, latch_data_operandA);
-	latch_md latch_operandB(data_operandB, clock, 1'b0, latch_operand_ena, latch_data_operandB);
-	latch_md latch_multdiv1(multdiv_result, clock, 1'b0, multdiv_RDY, latch_multdiv1_out);
-	latch_md latch_multdiv2(latch_multdiv1_out, clock, 1'b0, 1'b1, latch_multdiv2_out);
-	latch_md latch_multdiv3(latch_multdiv2_out, clock, 1'b0, 1'b1, latch_multdiv3_out);
+	latch_multdiv latch_operandA(data_operandA, clock, 1'b0, latch_operand_ena, latch_data_operandA);
+	latch_multdiv latch_operandB(data_operandB, clock, 1'b0, latch_operand_ena, latch_data_operandB);
+	latch_multdiv latch_multdiv1(multdiv_result, clock, 1'b0, multdiv_RDY, latch_multdiv1_out);
+	latch_multdiv latch_multdiv2(latch_multdiv1_out, clock, 1'b0, 1'b1, latch_multdiv2_out);
+	latch_multdiv latch_multdiv3(latch_multdiv2_out, clock, 1'b0, 1'b1, latch_multdiv3_out);
 	
 endmodule
 
 
-module latch_md(in, clock, reset, enable, out);
+module latch_multdiv(in, clock, reset, enable, out);
 	
 	input [31:0] in;
 	input clock, reset, enable;
@@ -62,3 +62,14 @@ module latch_md(in, clock, reset, enable, out);
 	reg32 my_reg32(in, clock, reset, enable, out);
 
 endmodule
+
+module latch_ctrl(in, clock, reset, enable, out);
+	
+	input in;
+	input clock, reset, enable;
+	output out;
+	
+	dflipflop my_dff(in, clock, reset, enable, out);
+
+endmodule
+
