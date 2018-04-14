@@ -26,8 +26,8 @@ try:
     outputFile = open(str(argv[2]) + 'imem.mif','w')
     print("MIF file: " + argv[2] + 'imem.mif')
 except:
-    outputFile = open('imem.mif', 'w')
-    print("Warning: imem location not specified - writing to current location")
+    argv[2] = '../processor/'
+    outputFile = open('../processor/imem.mif', 'w')
 
 newLine = lambda: outputFile.write('\n')
 outputFile.write('-- Compiled from text: ' + argv[1])
