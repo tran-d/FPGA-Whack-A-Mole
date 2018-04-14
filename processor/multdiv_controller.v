@@ -6,29 +6,36 @@ module multdiv_controller(
 	clock, 
 	latch_multdiv3_out, 
 	multdiv_exception, 
-	multdiv_RDY
+	multdiv_actually_RDY
 );
    input [31:0] data_operandA, data_operandB; 
 	input mul, div, clock;
 	
 	output [31:0] latch_multdiv3_out;
-	output multdiv_exception, multdiv_RDY;
+	output multdiv_exception, multdiv_actually_RDY;
 	
 	wire [31:0] latch_data_operandA, latch_data_operandB, multdiv_result, latch_multdiv1_out, latch_multdiv2_out;
-	wire latch_ctrl_MULT, latch_ctrl_DIV;
-	reg ctrl_MULT, ctrl_DIV; 
+	wire multdiv_RDY, latch_ctrl_MULT, latch_ctrl_DIV;
+	reg waiting_for_multdiv, ctrl_MULT, ctrl_DIV; 
+	
+	assign multdiv_actually_RDY = ~waiting_for_multdiv && multdiv_RDY;
 	
 	initial begin
 		ctrl_MULT <= 1'b0;
 		ctrl_DIV <= 1'b0;
+		waiting_for_multdiv <= 1'b0;
 	end
 	
 	always @(posedge clock)
 	begin
-	if(mul)
-		ctrl_MULT = 1'b1;
-	else if(div)
+	if(mul) begin
+		ctrl_MULT <= 1'b1;
+		waiting_for_multdiv <= 1'b1;
+	end
+	else if(div) begin
 		ctrl_DIV = 1'b1;
+		waiting_for_multdiv <= 1'b1;
+	end
 	else if(latch_ctrl_MULT)
 		ctrl_MULT = 1'b0;
 	else if(latch_ctrl_DIV)
@@ -40,7 +47,7 @@ module multdiv_controller(
 	latch_ctrl ctrl_mult(ctrl_MULT, clock, 1'b0, 1'b1, latch_ctrl_MULT);
 	latch_ctrl ctrl_div(ctrl_DIV, clock, 1'b0, 1'b1, latch_ctrl_DIV);
 	
-	multdiv my_multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, multdiv_result, multdiv_exception, multdiv_RDY);
+	multdiv my_multdiv(latch_data_operandA, latch_data_operandB, ctrl_MULT, ctrl_DIV, clock, multdiv_result, multdiv_exception, multdiv_RDY);
 	
 	wire latch_operand_ena = ctrl_MULT || ctrl_DIV;
 	

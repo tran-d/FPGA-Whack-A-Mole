@@ -6,7 +6,7 @@ mul  $r3, $r1, $r2
 addi $r5, $r0, 5
 addi $r6, $r0, 6
 
-cycles 30
+cycles 100
 
 # "checkreg A, B" checks register "A" for value "B".
 

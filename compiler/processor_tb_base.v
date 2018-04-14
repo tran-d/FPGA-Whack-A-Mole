@@ -136,7 +136,11 @@ module processor_tb_auto(
 
 	wire exec_write_exception = dut.my_processor.execute.ALU_exception;
 
+	// BYPASS-STALL
 
+	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
+	wire wait_multdiv_RDY = dut.my_processor.my_bypass_stall.wait_multdiv_RDY;
+	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
 	
 	// DUT 
 	skeleton dut(
@@ -188,8 +192,9 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
 
-		$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
+		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
+		$monitor("clock: %d, pc_in: %d, pc_out: %d, insn_dx_out: %b, is_bypass_hazard: %d, wait_multdiv_RDY: %d", clock, pc_in, pc_out, insn_dx_out, is_bypass_hazard, wait_multdiv_RDY);
 
 
 

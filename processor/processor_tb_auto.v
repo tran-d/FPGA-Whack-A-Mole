@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 30; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 100; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -136,7 +136,10 @@ module processor_tb_auto(
 
 	wire exec_write_exception = dut.my_processor.execute.ALU_exception;
 
+	// BYPASS-STALL
 
+	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
+	wire wait_multdiv_RDY = dut.my_processor.my_bypass_stall.wait_multdiv_RDY;
 	
 	// DUT 
 	skeleton dut(
@@ -188,8 +191,9 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
 
-		$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
+		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
+		$monitor("clock: %d, pc_in: %d, pc_out: %d, insn_dx: %b, is_bypass_hazard: %d, wait_multdiv_RDY: %d", clock, pc_in, pc_out, insn_dx, is_bypass_hazard, wait_multdiv_RDY);
 
 
 
@@ -234,12 +238,10 @@ module processor_tb_auto(
 
 	task performTests; begin
 		checkRegister(32'd1, 32'd3);
-		checkRegister(32'd2, 32'd3);
+		checkRegister(32'd2, 32'd2);
 		checkRegister(32'd3, 32'd6);
-		checkRegister(32'd7, 32'd0);
-		checkRegister(32'd8, 32'd0);
-		checkRegister(32'd9, 32'd999);
-		checkRegister(32'd10, 32'd10);
+		checkRegister(32'd5, 32'd5);
+		checkRegister(32'd6, 32'd6);
 	end endtask
 
 endmodule

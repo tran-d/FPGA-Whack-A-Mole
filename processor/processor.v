@@ -304,6 +304,7 @@ module processor(
 	//data_hazard_control dhc(insn_fd_out, insn_dx_out, insn_xm_out, data_hazard);
 	bypass_stall 	my_bypass_stall(
 			// inputs
+			.clock						(clock),
 			.fd_insn						(insn_fd_out), 
 			.dx_insn						(insn_dx_out),
 			.multdiv_RDY				(multdiv_RDY),

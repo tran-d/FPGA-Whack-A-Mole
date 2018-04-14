@@ -112,12 +112,12 @@ module skeleton(
 	 
 	 
 	 /** Debugger **/
-	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
-	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
-	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
-	 debugger d10(.probe({16'b0, led_commands[15:0]}));
-	 debugger d11(.probe(r1));
-	 debugger d12(.probe(r2));
-	 debugger d13(.probe(r3));
+//	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
+//	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+//	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
+//	 debugger d10(.probe({16'b0, led_commands[15:0]}));
+//	 debugger d11(.probe(r1));
+//	 debugger d12(.probe(r2));
+//	 debugger d13(.probe(r3));
 
 endmodule

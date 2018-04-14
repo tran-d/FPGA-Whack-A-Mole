@@ -1,7 +1,7 @@
-module bypass_stall(fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
+module bypass_stall(clock, fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
 
 	input [31:0] fd_insn, dx_insn;
-	input multdiv_RDY;
+	input clock, multdiv_RDY;
 	output is_bypass_hazard;
 	
 	wire [4:0] fd_rs1, fd_rs2, dx_rd, dx_opcode, dx_ALU_op, fd_rs1_equals_dx_rd, fd_rs2_equals_dx_rd;
@@ -29,7 +29,7 @@ module bypass_stall(fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
 		wait_multdiv_RDY <= 1'b0;
 	end
 	
-	always @(posedge dx_mul_insn or posedge dx_div_insn or posedge multdiv_RDY)
+	always @(negedge clock)
 	begin
 	if (dx_mul_insn || dx_div_insn) 
 		wait_multdiv_RDY <= 1'b1;
@@ -38,6 +38,9 @@ module bypass_stall(fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
 	end
 	
 	assign multdiv_hazard = wait_multdiv_RDY && ~multdiv_RDY;
+//	
+//	dflipflop my_dff1(~mul);
+//	dflipflop my_dff2();
 	
 	
 	genvar i;
