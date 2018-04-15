@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 100; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 60; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -140,7 +140,12 @@ module processor_tb_auto(
 
 	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
 	wire wait_multdiv_RDY = dut.my_processor.my_bypass_stall.wait_multdiv_RDY;
-	
+	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
+	wire multdiv_RDY = dut.my_processor.multdiv_RDY;
+	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
+	wire waiting_for_multdiv = dut.my_processor.execute.my_multdiv_controller.waiting_for_multdiv;
+	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
+
 	// DUT 
 	skeleton dut(
 	clock, 
@@ -193,7 +198,7 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
-		$monitor("clock: %d, pc_in: %d, pc_out: %d, insn_dx: %b, is_bypass_hazard: %d, wait_multdiv_RDY: %d", clock, pc_in, pc_out, insn_dx, is_bypass_hazard, wait_multdiv_RDY);
+		$monitor("clock: %d, pc_out: %d, insn_dx_out: %b, is_bypass_hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, waiting_for_multdiv: %d, multdiv_RDY: %b, wait_multdiv_RDY: %d", clock, pc_out, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, waiting_for_multdiv, multdiv_RDY, wait_multdiv_RDY);
 
 
 

@@ -38,7 +38,7 @@ module bypass_stall(clock, fd_insn, dx_insn, multdiv_RDY, is_bypass_hazard);
 	end
 	
 	assign multdiv_hazard = wait_multdiv_RDY && ~multdiv_RDY;
-//	
+	
 //	dflipflop my_dff1(~mul);
 //	dflipflop my_dff2();
 	

@@ -60,7 +60,7 @@ module stage_execute(
 	wire [31:0] immediate_extended;
 	wire [4:0] ALU_op_new_alt;
 	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, 
-	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap;
+	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop;
 	
 	signextender_16to32 my_se(immediate, immediate_extended);
 	
@@ -74,6 +74,7 @@ module stage_execute(
 	assign sub 			= r_insn && ALU_sub;
 	assign mul 			= r_insn && ALU_mul;
 	assign div 			= r_insn && ALU_div;
+	assign nop 			= ~(|insn_in);
 	
 	assign immed_insn =  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]) || // addi
 								(~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]) || // sw
@@ -95,7 +96,7 @@ module stage_execute(
 	
 	
 	/* Multiplier/Divider */
-	multdiv_controller my_multdiv_controller(ALU_operandA, ALU_operandB, mul, div, clock, multdiv_result, multdiv_exception, multdiv_RDY);
+	multdiv_controller my_multdiv_controller(ALU_operandA, ALU_operandB, mul, div, nop, clock, multdiv_result, multdiv_exception, multdiv_RDY);
 
 	/* TEST */
 	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011

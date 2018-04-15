@@ -84,4 +84,19 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	assign data_resultRDY = ctrl_MULT_DIV? DIV_data_resultRDY : MULT_data_resultRDY;
 	assign data_result = ctrl_MULT_DIV? DIV_data_result : MULT_data_result;
 	
+	reg currently_solving;
+	
+	initial begin
+		currently_solving <= 1'b0;
+	
+	always @(negedge clock)
+	begin
+		if(ctrl_MULT | ctrl_DIV)
+			currently_solving <= 1'b1;
+		else
+			currently_solving <= 1'b0;
+	end
+	
+	assign data_resultRDY_actually = currently_solving && data_resultRDY;
+	
 endmodule
