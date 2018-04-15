@@ -1,10 +1,10 @@
-module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_result, data_exception, data_resultRDY_actually);
+module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_result, data_exception, data_resultRDY_actually, in_progress);
    
 	input signed [31:0] data_operandA, data_operandB;
    input ctrl_MULT, ctrl_DIV, clock;
 
    output signed [31:0] data_result;
-	output data_exception, data_resultRDY_actually;
+	output data_exception, data_resultRDY_actually, in_progress;
 	 
 	// Solution Register
 	wire signed [63:0] sR_in, sR_out;
@@ -106,5 +106,6 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	dflipflop my_dff2(data_resultRDY, clock, 1'b0, currently_solving_latch, data_resultRDY_latch);
 	
 	assign data_resultRDY_actually = currently_solving && data_resultRDY_latch;
+    assign in_progress = currently_solving;
 	
 endmodule

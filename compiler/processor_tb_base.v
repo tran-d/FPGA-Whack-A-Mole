@@ -97,6 +97,8 @@ module processor_tb_auto(
 	wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
 	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
 	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
+	
+	wire [31:0] insn_writeback = dut.my_processor.writeback.insn_in;
 
 	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
 	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
@@ -143,13 +145,14 @@ module processor_tb_auto(
 	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
 	wire multdiv_act_RDY = dut.my_processor.multdiv_RDY;
 	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
-	wire waiting_for_multdiv = dut.my_processor.execute.my_multdiv_controller.waiting_for_multdiv;
+	//wire waiting_for_multdiv = dut.my_processor.execute.my_multdiv_controller.waiting_for_multdiv;
 	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
 
 	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
 	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
 	wire currently_solving = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving;
-
+	wire latch_ena = dut.my_processor.latch_ena;
+	wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
 
 	// DUT 
 	skeleton dut(
@@ -178,32 +181,13 @@ module processor_tb_auto(
 	// Main: wait specified cycles, then perform tests
 	initial begin
 		$display($time, ":  << Starting Test >>\n");	
-
-
-		//$monitor("clock %d, opcode: %b, pc_curr(out): %d, pc_next(in) %d\ninsn_fd: %d, insn_dx: %d, insn_xm: %d insn_mw: %d\nALU_op: %b, alu_opA: %d, alu_opB: %d alu_result: %d\n\n", clock, opcode, pc_out, pc_in, insn_fd, insn_dx, insn_xm, insn_mw, ALU_op, alu_operandA, alu_operandB, alu_operandB, exec_alu_operandB, alu_result);
 		
-		//$monitor("ALU_op: %b, alu_opA: %d, alu_opB: %d alu_result: %d", ALU_op, alu_operandA, alu_operandB, alu_operandB, exec_alu_operandB, alu_result);
-		
-		//$monitor("clock: %d, opcode: %b, pc_curr(out): %d, pc_next(in) %d", clock, opcode, pc_out, pc_in);
-
-		// HAZARDS
-		//$monitor("clock: %d, opcode: %b, fd_dx_dhaz_rs_rt: %b, fd_xm_dhaz_rs_rt: %b", clock, opcode, fd_dx_dhaz_rs_rt, fd_xm_dhaz_rs_rt);
-
-		//$monitor("pc_out: %d, clock: %d, opcode: %b, fd_dx_haz_r: %b, fd_xm_haz_r: %b, fd_dx_haz_addi: %b, fd_xm_haz_addi: %b", pc_out, clock, opcode, fd_dx_dhaz_rs_rt, fd_xm_dhaz_rs_rt, fd_dx_dhaz_rs, fd_xm_dhaz_rs);
-
-		//$monitor("pc_out: %d, clock: %d, opcode: %b, fd_dx_haz_rd: %b, fd_xm_haz_rd: %b", pc_out, clock, opcode, fd_dx_dhaz_rd, fd_xm_dhaz_rd);
-
-		//$monitor("pc_out: %d, clock: %d, opcode: %b, fd_dx_haz_r: %b, fd_xm_haz_r: %b, alu_opA: %d, alu_opB: %d ctrl_writeReg: %d", pc_out, clock, opcode, fd_dx_dhaz_rs, fd_xm_dhaz_rs, alu_operandA, alu_operandB, regfile_ctrlWrite);
-
-		//$monitor("clock: %d, opcode: %d, exec_write_exception: %d", clock, opcode, exec_write_exception);
-
-		//$monitor("clock: %d, opcode: %d, mx_bypass_A: %d, wx_bypass_A: %d, mx_bypass_B: %d, wx_bypass_B: %d, wm_bypass: %d", clock, opcode, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B, wm_bypass);
-
-		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
-
 		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
-		$monitor("clock: %d, insn_dx_out: %b, hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, curr_solving: %d, multdiv_RDY_latch: %d, multdiv_RDY: %b", clock, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, currently_solving, data_resultRDY_latch, data_resultRDY_actually);
+		//$monitor("clock: %d, insn_dx_out: %b, hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, curr_solving: %d, multdiv_RDY_latch: %d, multdiv_RDY: %b", clock, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, currently_solving, data_resultRDY_latch, data_resultRDY_actually);
+		
+		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, multdiv_act_RDY, multdiv_result);
+		
 
 
 

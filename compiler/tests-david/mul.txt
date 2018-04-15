@@ -3,6 +3,15 @@
 addi $r1, $r0, 3 		# $r1 = 0 + 3 = 3
 addi $r2, $r0, 2		
 mul  $r3, $r1, $r2
+nop
+nop
+nop
+nop
+mul $r4, $r3, $r1
+nop
+nop
+nop
+nop
 addi $r5, $r0, 5
 addi $r6, $r0, 6
 addi $r7, $r0, 7
@@ -14,6 +23,7 @@ cycles 60
 checkreg 1, 3
 checkreg 2, 2
 checkreg 3, 6
+checkreg 4, 18
 checkreg 5, 5
 checkreg 6, 6
 checkreg 7, 7

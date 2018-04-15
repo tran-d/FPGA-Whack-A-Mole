@@ -119,6 +119,7 @@ module processor(
 	wire is_bypass_hazard, branched_jumped, multdiv_RDY;
 	wire mx_bypass_A, mx_bypass_B, wx_bypass_A, wx_bypass_B, wm_bypass;
 	
+    wire latch_ena;
 	assign nop = 32'd0;
 	
 	/* flushing */
@@ -177,7 +178,7 @@ module processor(
 			// inputs
 			.clock						(clock), 
 			.reset 						(reset), 
-			.enable						(1'b1), 
+			.enable						(latch_ena), 
 			.pc_in 						(pc_fd_out), 
 			.insn_in						(insn_dx_in),	
 			.a_in							(data_readRegA), 
@@ -222,7 +223,7 @@ module processor(
 			// inputs
 			.clock						(clock), 
 			.reset						(reset), 
-			.enable						(1'b1), 
+			.enable						(latch_ena), 
 			.insn_in						(insn_dx_out),
 			.o_in							(execute_o_out), 
 			.b_in							(execute_b_out), 	
@@ -258,7 +259,7 @@ module processor(
 			// inputs
 			.clock						(clock), 
 			.reset						(reset), 
-			.enable						(), 
+			.enable						(latch_ena), 
 			.insn_in						(insn_xm_out), 
 			.o_in							(memory_o_out), 
 			.d_in							(memory_d_out), 
@@ -307,11 +308,12 @@ module processor(
 			.clock						(clock),
 			.fd_insn						(insn_fd_out), 
 			.dx_insn						(insn_dx_out),
-			.writeback_insn			(insn_xm_out)
+			.writeback_insn			(insn_mw_out),
 			.multdiv_RDY				(multdiv_RDY),
 			
 			// outputs
-			.is_bypass_hazard			(is_bypass_hazard)
+			.is_bypass_hazard			(is_bypass_hazard),
+            .latch_ena              (latch_ena)
 	);
 	
 endmodule

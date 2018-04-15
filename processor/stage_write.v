@@ -27,18 +27,19 @@ module stage_write(
 	
 	assign rd 						= insn_in[26:22];
 	assign data_writeReg 		= lw 								? d_in	: data_writeReg_alt;
-	assign data_writeReg_alt	= multdiv_RDY					? multdiv_result : o_in;
+	assign data_writeReg_alt	= (mul || div)					? multdiv_result : o_in;
 	
 	assign ctrl_writeReg 		= jal 							? 5'd31 	: ctrl_writeReg_alt1;
 	assign ctrl_writeReg_alt1	= (write_exception | setx) ? 5'd30 	: rd;
 	
-	write_controls	wc(insn_in, lw, jal, setx, mul, div, ctrl_writeEnable);
+	write_controls	wc(insn_in, multdiv_RDY, lw, jal, setx, mul, div, ctrl_writeEnable);
 	
 endmodule
 
-module write_controls(insn_in, lw, jal, setx, mul, div, ctrl_writeEnable);
+module write_controls(insn_in, multdiv_RDY, lw, jal, setx, mul, div, ctrl_writeEnable);
 	
 	input [31:0] insn_in;
+    input multdiv_RDY;
 	output lw, jal, ctrl_writeEnable, setx, mul, div;
 	
 
@@ -53,12 +54,12 @@ module write_controls(insn_in, lw, jal, setx, mul, div, ctrl_writeEnable);
 	assign lw	 		= ~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0];	//01000
 	assign jal	 		= ~opcode[4] & ~opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//00011
 	assign setx			=  opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0];	//10101
-	assign custom_r   = 1'b0; // CHANGE THIS FOR PROJECT
+	assign custom_r     = 1'b0; // CHANGE THIS FOR PROJECT
 	
 	assign mul		 	= r_insn && (~ALU_op[4] & ~ALU_op[3] &  ALU_op[2] &  ALU_op[1] & ~ALU_op[0]);	//00110
 	assign div		 	= r_insn && (~ALU_op[4] & ~ALU_op[3] &  ALU_op[2] &  ALU_op[1] &  ALU_op[0]);	//00111
 
-	assign ctrl_writeEnable = cap || r_insn || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
+	assign ctrl_writeEnable = cap || (r_insn && ~mul && ~div) || ((mul || div) && multdiv_RDY) || addi || lw || jal || setx || custom_r;		// includes write to $rstatus
 
 
 endmodule

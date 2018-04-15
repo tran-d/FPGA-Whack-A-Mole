@@ -1,8 +1,8 @@
-module bypass_stall(clock, fd_insn, dx_insn, writeback_insn, multdiv_RDY, is_bypass_hazard), writeback_ena;
+module bypass_stall(clock, fd_insn, dx_insn, writeback_insn, multdiv_RDY, is_bypass_hazard, latch_ena);
 
 	input [31:0] fd_insn, dx_insn, writeback_insn;
 	input clock, multdiv_RDY;
-	output is_bypass_hazard, writeback_ena;
+	output is_bypass_hazard, latch_ena;
 	
 	wire [4:0] fd_rs1, fd_rs2, dx_rd, dx_opcode, dx_ALU_op, fd_rs1_equals_dx_rd, fd_rs2_equals_dx_rd;
 	wire dx_r_insn, dx_lw_insn, dx_mul_insn, dx_div_insn, lw_hazard, multdiv_hazard;
@@ -53,13 +53,23 @@ module bypass_stall(clock, fd_insn, dx_insn, writeback_insn, multdiv_RDY, is_byp
 	end
 	endgenerate
 	
-	/* Enable bits */
+	/* Latch Enable bits */
 	
-	wire w_mul_insn, w_opcode;
-	assign w_opcode = 
-	assign w_mul_insn = 
+    wire [4:0] w_opcode, w_ALU_op;
+	wire w_r_insn, w_mul_insn, w_div_insn;
+    
+	assign w_opcode = writeback_insn[31:27];
+    assign w_ALU_op = writeback_insn[6:2];
+    assign w_r_insn 	= ~w_opcode[4] && ~w_opcode[3] && ~w_opcode[2] && ~w_opcode[1] && ~w_opcode[0];
+    assign w_mul_insn 	=  w_r_insn && (~w_ALU_op[4] && ~w_ALU_op[3] &&  w_ALU_op[2] &&  w_ALU_op[1] && ~w_ALU_op[0]);	// 00000 & 00110
+	assign w_div_insn 	=  w_r_insn && (~w_ALU_op[4] && ~w_ALU_op[3] &&  w_ALU_op[2] &&  w_ALU_op[1] &&  w_ALU_op[0]);	// 00000 & 00111
 	
-	dx_mul_insn
-	!(mw_mul_insn && !multdiv_RDY)
+    reg latch_ena_reg; 
+    always @(negedge clock)
+	begin
+        latch_ena_reg = ~((w_mul_insn || w_div_insn) && ~multdiv_RDY);
+	end 
+    
+    assign latch_ena = latch_ena_reg;
 	
 endmodule
