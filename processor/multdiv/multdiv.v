@@ -86,8 +86,9 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	
 	
 	/* processor integration */
-	wire data_resultRDY_latch, currently_solving_latch;
+	wire data_resultRDY_latch, currently_solving_latch, reset;
 	reg currently_solving;
+    assign reset = ctrl_MULT || ctrl_DIV;
 	
 	initial begin
 		currently_solving <= 1'b0;
@@ -97,13 +98,19 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	begin
 		if(ctrl_MULT || ctrl_DIV) 
 			currently_solving <= 1'b1;
-		else if(data_resultRDY_latch)  // need to latch
+		else if(data_resultRDY_actually)  // need to latch
 			currently_solving <= 1'b0;
 	end
+    
+//    always @(posedge clock)
+//	begin
+//		if(data_resultRDY_actually)  // need to latch
+//			currently_solving <= 1'b0;
+//	end
 	
 	dflipflop my_dff1(currently_solving, clock, 1'b0, 1'b1, currently_solving_latch);
 	
-	dflipflop my_dff2(data_resultRDY, clock, 1'b0, currently_solving_latch, data_resultRDY_latch);
+	dflipflop my_dff2(data_resultRDY, clock, reset, currently_solving_latch, data_resultRDY_latch);
 	
 	assign data_resultRDY_actually = currently_solving && data_resultRDY_latch;
     assign in_progress = currently_solving;

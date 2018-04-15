@@ -144,8 +144,8 @@ module processor_tb_auto(
 	wire wait_multdiv_RDY = dut.my_processor.my_bypass_stall.wait_multdiv_RDY;
 	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
 	wire multdiv_act_RDY = dut.my_processor.multdiv_RDY;
+	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
 	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
-	//wire waiting_for_multdiv = dut.my_processor.execute.my_multdiv_controller.waiting_for_multdiv;
 	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
 
 	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
@@ -186,7 +186,7 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, insn_dx_out: %b, hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, curr_solving: %d, multdiv_RDY_latch: %d, multdiv_RDY: %b", clock, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, currently_solving, data_resultRDY_latch, data_resultRDY_actually);
 		
-		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, multdiv_act_RDY, multdiv_result);
+		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
 		
 
 

@@ -45,8 +45,6 @@ module multdiv_controller(
 	
 	multdiv my_multdiv(latch_data_operandA, latch_data_operandB, ctrl_MULT, ctrl_DIV, clock, multdiv_result, multdiv_exception, multdiv_actually_RDY, in_progress);
 	
-	wire latch_operand_ena = ctrl_MULT || ctrl_DIV;
-	
 	latch_multdiv latch_operandA(data_operandA, clock, 1'b0, ~in_progress, latch_data_operandA);
 	latch_multdiv latch_operandB(data_operandB, clock, 1'b0, ~in_progress, latch_data_operandB);
     
