@@ -1,14 +1,14 @@
-module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_result, data_exception, data_resultRDY);
+module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_result, data_exception, data_resultRDY_actually);
    
 	input signed [31:0] data_operandA, data_operandB;
    input ctrl_MULT, ctrl_DIV, clock;
 
    output signed [31:0] data_result;
-	output data_exception, data_resultRDY;
+	output data_exception, data_resultRDY_actually;
 	 
 	// Solution Register
 	wire signed [63:0] sR_in, sR_out;
-	wire sR_in_ena, sR_aclr;
+	wire sR_in_ena, sR_aclr, data_resultRDY;
 	reg64 solutionReg_sR(sR_in, clock, sR_aclr, sR_in_ena, sR_out);
 	 
 	// ALU
@@ -84,6 +84,9 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	assign data_resultRDY = ctrl_MULT_DIV? DIV_data_resultRDY : MULT_data_resultRDY;
 	assign data_result = ctrl_MULT_DIV? DIV_data_result : MULT_data_result;
 	
+	
+	/* processor integration */
+	wire data_resultRDY_latch;
 	reg currently_solving;
 	
 	initial begin
@@ -93,9 +96,11 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 	begin
 		if(ctrl_MULT | ctrl_DIV)
 			currently_solving <= 1'b1;
-		else
+		else if(data_resultRDY_latch)  // need to latch
 			currently_solving <= 1'b0;
 	end
+	
+	dflipflop my_dff(data_resultRDY, clock, 1'b0, 1'b1, data_resultRDY_latch);
 	
 	assign data_resultRDY_actually = currently_solving && data_resultRDY;
 	
