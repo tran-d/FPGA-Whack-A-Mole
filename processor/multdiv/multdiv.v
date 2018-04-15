@@ -102,11 +102,6 @@ module multdiv(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_re
 			currently_solving <= 1'b0;
 	end
     
-//    always @(posedge clock)
-//	begin
-//		if(data_resultRDY_actually)  // need to latch
-//			currently_solving <= 1'b0;
-//	end
 	
 	dflipflop my_dff1(currently_solving, clock, 1'b0, 1'b1, currently_solving_latch);
 	
