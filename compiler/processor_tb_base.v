@@ -58,23 +58,7 @@ module processor_tb_auto(
 	output wire 		capacitive_sensors_out;
 
 	
-	// Probes
-	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
-	// wire [31:0] r0 = dut.my_regfile.register_output[0];
-	// wire [31:0] r1 = dut.my_regfile.register_output[1];
-	// wire [31:0] r2 = dut.my_regfile.register_output[2];
-	// wire [4:0] alu_op = dut.my_processor.execute.ctrl_alu_op;
-	// wire [31:0] alu_a = dut.my_processor.execute.operand_A;
-	// wire [31:0] alu_b = dut.my_processor.execute.operand_B;
-	// wire [31:0] rd_data = dut.my_processor.writeback.rf_write_data;
-	// wire rd_enable = dut.my_processor.writeback.rf_write_enable;
-	// wire [4:0] rd_ctrl = dut.my_processor.writeback.rf_write_ctrl;
-	// wire [4:0] alu_shift = dut.my_processor.execute.math_unit.ctrl_shiftamt;
-	wire [4:0] regfile_ctrlA = dut.my_processor.ctrl_readRegA;
-	wire [4:0] regfile_ctrlB = dut.my_processor.ctrl_readRegB;
-	wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
-	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
-	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
+	
 
 	wire 	branched_jumped	= dut.my_processor.branched_jumped;
 
@@ -85,7 +69,8 @@ module processor_tb_auto(
 	//wire fd_xm_dhaz_rs			= dut.my_processor.dhc.fd_xm_dhaz_rs;
 	//wire fd_dx_dhaz_rd			= dut.my_processor.dhc.fd_dx_dhaz_rd;
 	//wire fd_xm_dhaz_rd			= dut.my_processor.dhc.fd_xm_dhaz_rd;
-
+	
+	
 	// Bypass
 	wire mx_bypass_A			= dut.my_processor.mx_bypass_A;
 	wire mx_bypass_B			= dut.my_processor.mx_bypass_B;
@@ -97,8 +82,22 @@ module processor_tb_auto(
 	wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
 	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
 	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
-	
 	wire [31:0] insn_writeback = dut.my_processor.writeback.insn_in;
+	
+	// MULTDIV 
+	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
+	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
+	wire multdiv_act_RDY = dut.my_processor.multdiv_RDY;
+	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
+	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
+	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
+	wire ctrl_DIV = dut.my_processor.execute.my_multdiv_controller.ctrl_DIV;
+	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
+	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
+	wire currently_solving = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving;
+	wire latch_ena = dut.my_processor.latch_ena;
+	wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
+
 
 	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
 	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
@@ -138,23 +137,25 @@ module processor_tb_auto(
 
 	wire exec_write_exception = dut.my_processor.execute.ALU_exception;
 
-	// BYPASS-STALL
+	// Probes
+	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
+	// wire [31:0] r0 = dut.my_regfile.register_output[0];
+	// wire [31:0] r1 = dut.my_regfile.register_output[1];
+	// wire [31:0] r2 = dut.my_regfile.register_output[2];
+	// wire [4:0] alu_op = dut.my_processor.execute.ctrl_alu_op;
+	// wire [31:0] alu_a = dut.my_processor.execute.operand_A;
+	// wire [31:0] alu_b = dut.my_processor.execute.operand_B;
+	// wire [31:0] rd_data = dut.my_processor.writeback.rf_write_data;
+	// wire rd_enable = dut.my_processor.writeback.rf_write_enable;
+	// wire [4:0] rd_ctrl = dut.my_processor.writeback.rf_write_ctrl;
+	// wire [4:0] alu_shift = dut.my_processor.execute.math_unit.ctrl_shiftamt;
+	wire [4:0] regfile_ctrlA = dut.my_processor.ctrl_readRegA;
+	wire [4:0] regfile_ctrlB = dut.my_processor.ctrl_readRegB;
+	wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
+	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
+	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
 
-	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
-	wire wait_multdiv_RDY = dut.my_processor.my_bypass_stall.wait_multdiv_RDY;
-	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
-	wire multdiv_act_RDY = dut.my_processor.multdiv_RDY;
-	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
-	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
-	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
-	wire ctrl_DIV = dut.my_processor.execute.my_multdiv_controller.ctrl_DIV;
 	
-	
-	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
-	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
-	wire currently_solving = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving;
-	wire latch_ena = dut.my_processor.latch_ena;
-	wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
 
 	// DUT 
 	skeleton dut(
@@ -186,10 +187,9 @@ module processor_tb_auto(
 		
 		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
-		$monitor("clock: %d, insn_dx_out: %b, latch_ena: %d, hazard: %d, ctrl_DIV: %d, curr_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", 
-					clock, insn_dx_out, latch_ena, is_bypass_hazard, ctrl_DIV, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
+		//$monitor("clock: %d, insn_dx_out: %b, latch_ena: %d, hazard: %d, ctrl_DIV: %d, curr_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_dx_out, latch_ena, is_bypass_hazard, ctrl_DIV, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
 		
-		//$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
+		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
 		
 
 
