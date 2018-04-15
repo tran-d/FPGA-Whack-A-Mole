@@ -146,6 +146,11 @@ module processor_tb_auto(
 	wire waiting_for_multdiv = dut.my_processor.execute.my_multdiv_controller.waiting_for_multdiv;
 	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
 
+	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
+	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
+	wire currently_solving = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving;
+
+
 	// DUT 
 	skeleton dut(
 	clock, 
@@ -198,7 +203,7 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
-		$monitor("clock: %d, pc_out: %d, insn_dx_out: %b, is_bypass_hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, waiting_for_multdiv: %d, multdiv_act_RDY: %b, wait_multdiv_RDY: %d", clock, pc_out, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, waiting_for_multdiv, multdiv_act_RDY, wait_multdiv_RDY);
+		$monitor("clock: %d, insn_dx_out: %b, hazard: %d, ctrl_MULT: %d, latch_ctrl_MULT: %d, curr_solving: %d, multdiv_RDY_latch: %d, multdiv_RDY: %b", clock, insn_dx_out, is_bypass_hazard, ctrl_MULT, latch_ctrl_MULT, currently_solving, data_resultRDY_latch, data_resultRDY_actually);
 
 
 

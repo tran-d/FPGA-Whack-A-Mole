@@ -118,7 +118,7 @@ module processor(
 	wire exec_write_exception, xm_write_exception, mw_write_exception;
 	wire is_bypass_hazard, branched_jumped, multdiv_RDY;
 	wire mx_bypass_A, mx_bypass_B, wx_bypass_A, wx_bypass_B, wm_bypass;
-
+	
 	assign nop = 32'd0;
 	
 	/* flushing */
@@ -258,7 +258,7 @@ module processor(
 			// inputs
 			.clock						(clock), 
 			.reset						(reset), 
-			.enable						(1'b1), 
+			.enable						(), 
 			.insn_in						(insn_xm_out), 
 			.o_in							(memory_o_out), 
 			.d_in							(memory_d_out), 
@@ -307,6 +307,7 @@ module processor(
 			.clock						(clock),
 			.fd_insn						(insn_fd_out), 
 			.dx_insn						(insn_dx_out),
+			.writeback_insn			(insn_xm_out)
 			.multdiv_RDY				(multdiv_RDY),
 			
 			// outputs
