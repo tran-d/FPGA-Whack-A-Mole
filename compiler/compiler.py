@@ -74,6 +74,7 @@ opcode = {'add':'00000',
           }
 
 jump_indicies = {}
+counter = 0
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():
@@ -90,6 +91,7 @@ for instrLine in instructions:
         print "Details:", e
         sys.exit()
 
+counter = 0
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():

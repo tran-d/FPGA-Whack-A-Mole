@@ -7,7 +7,6 @@ begin: nop
 	addi $r3, $r3, 2
 	blt $r1, $r2, 1
 	j end
-
 	j begin
 
 end: nop
