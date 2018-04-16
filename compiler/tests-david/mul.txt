@@ -4,14 +4,14 @@ mul  $r3, $r1, $r2
 nop
 nop
 nop
-addi $r1, $r0, -2147483647
+addi $r1, $r0, -1000
 addi $r2, $r0, 1
 mul  $r4, $r1, $r2
 nop
 nop
 nop
 addi $r1, $r0, 1
-addi $r2, $r0, -2147483647
+addi $r2, $r0, -1000
 mul  $r5, $r1, $r2
 nop
 nop
@@ -58,8 +58,8 @@ cycles 400
 # "checkreg A, B" checks register "A" for value "B".
 
 checkreg 3, 234850064
-checkreg 4, -2147483647
-checkreg 5, -2147483647
+checkreg 4, -1000
+checkreg 5, -1000
 checkreg 6, -3182486
 checkreg 7, -3182486
 checkreg 8, -304506657
