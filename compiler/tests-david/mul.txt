@@ -1,30 +1,68 @@
-addi $r1, $r0, 3 		# $r1 = 0 + 3 = 3
-addi $r2, $r0, 2	
+addi $r1, $r0, 13001
+addi $r2, $r0, 18064	
 mul  $r3, $r1, $r2
 nop
 nop
 nop
-mul $r4, $r3, $r1
+addi $r1, $r0, -2147483647
+addi $r2, $r0, 1
+mul  $r4, $r1, $r2
 nop
 nop
 nop
-mul $r8, $r4, $r2
+addi $r1, $r0, 1
+addi $r2, $r0, -2147483647
+mul  $r5, $r1, $r2
 nop
 nop
 nop
-addi $r5, $r0, 5
-addi $r6, $r0, 6
-addi $r7, $r0, 7
+addi $r1, $r0, 1234
+addi $r2, $r0, -2579
+mul  $r6, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 2579
+addi $r2, $r0, -1234
+mul  $r7, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, -47901
+addi $r2, $r0, 6357
+mul  $r8, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, -6357
+addi $r2, $r0, 47901
+mul  $r9, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 0
+addi $r2, $r0, 4278255360
+mul  $r10, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 4278255360
+addi $r2, $r0, 0
+mul  $r11, $r1, $r2
+nop
+nop
+nop
 
-cycles 200
+cycles 400
 
 # "checkreg A, B" checks register "A" for value "B".
 
-checkreg 1, 3
-checkreg 2, 2
-checkreg 3, 6
-checkreg 4, 18
-checkreg 5, 5
-checkreg 6, 6
-checkreg 7, 7
-checkreg 8, 36
+checkreg 3, 234850064
+checkreg 4, -2147483647
+checkreg 5, -2147483647
+checkreg 6, -3182486
+checkreg 7, -3182486
+checkreg 8, -304506657
+checkreg 9, -304506657
+checkreg 10, 0
+checkreg 11, 0
