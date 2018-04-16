@@ -1,6 +1,6 @@
 `timescale 1 ns / 100 ps
 
-module multdiv_tb1();
+module multdiv_tb();
 
     // inputs to the multdiv are reg type
     reg            clock, ctrl_MULT, ctrl_DIV, data_exception_expected;
@@ -18,13 +18,14 @@ module multdiv_tb1();
 	 wire [63:0] RQB;
 	 wire RQB_lt_Divisor;
 	 wire [5:0] counter_bitsD;*/
+     
 
     // Tracking the number of errors
     integer errors;
     integer index;    // for testing...
 
     // Instantiate multdiv
-    multdiv multdiv_ut(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock, data_result, data_exception, data_resultRDY);
+    multdiv_controller multdiv_ut(data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, 1'b0, clock, data_result, data_exception, data_resultRDY);
 
     initial
 
@@ -32,6 +33,8 @@ module multdiv_tb1();
         $display($time, "<< Starting the Simulation >>");
         clock = 1'b0;    // at time 0
         errors = 0;
+        
+        $monitor("clock: %d, data_resultRDY: %d data_result: %d", clock, data_resultRDY, data_result);
 		  
 //		  $monitor("time $d, clock: %b, ctrl_DIV: %b, A: %h, B: %h, quotient: %b %b, \n\n\t RQB_lt_Divisor: %b, adder_resultD: %b, data_exception: %b, data_resultRDY: %b counterD: %b\n\n", 
 //					$time, clock, ctrl_DIV, data_operandA, data_operandB, RQB[63:32], RQB[31:0], RQB_lt_Divisor, adder_resultD, data_exception, data_resultRDY, counter_bitsD);
@@ -40,6 +43,13 @@ module multdiv_tb1();
 //					clock, ctrl_DIV, data_operandA, data_operandB, RQB[63:32], RQB[31:0], RQB_lt_Divisor, data_exception, data_resultRDY, counter_bitsD);
 		  
 		  
+           $display("initialization");
+        @(negedge clock);
+        assign data_operandA = 32'd13001;
+        assign data_operandB = 32'd18064;
+        assign ctrl_MULT = 1'b0;
+        assign ctrl_DIV = 1'b0;
+          
 		  // MULTIPLICATION
 		  $display($time, "<< MULTIPLICATION >>");
 
