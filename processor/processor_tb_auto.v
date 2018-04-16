@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 9; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 1000; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -60,9 +60,10 @@ module processor_tb_auto(
 	
 	// Probes
 	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
-	// wire [31:0] r0 = dut.my_regfile.register_output[0];
-	// wire [31:0] r1 = dut.my_regfile.register_output[1];
-	// wire [31:0] r2 = dut.my_regfile.register_output[2];
+	wire [31:0] r1 = dut.my_regfile.register_output[1];
+	wire [31:0] r2 = dut.my_regfile.register_output[2];
+	wire [31:0] r3 = dut.my_regfile.register_output[3];
+
 	// wire [4:0] alu_op = dut.my_processor.execute.ctrl_alu_op;
 	// wire [31:0] alu_a = dut.my_processor.execute.operand_A;
 	// wire [31:0] alu_b = dut.my_processor.execute.operand_B;
@@ -70,13 +71,13 @@ module processor_tb_auto(
 	// wire rd_enable = dut.my_processor.writeback.rf_write_enable;
 	// wire [4:0] rd_ctrl = dut.my_processor.writeback.rf_write_ctrl;
 	// wire [4:0] alu_shift = dut.my_processor.execute.math_unit.ctrl_shiftamt;
-	wire [4:0] regfile_ctrlA = dut.my_processor.ctrl_readRegA;
-	wire [4:0] regfile_ctrlB = dut.my_processor.ctrl_readRegB;
-	wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
+	// wire [4:0] regfile_ctrlA = dut.my_processor.ctrl_readRegA;
+	// wire [4:0] regfile_ctrlB = dut.my_processor.ctrl_readRegB;
+	// wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
 	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
 	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
 
-	wire 	branched_jumped	= dut.my_processor.branched_jumped;
+	// wire 	branched_jumped	= dut.my_processor.branched_jumped;
 
 	// Hazards
 	//wire fd_dx_dhaz_rs_rt		= dut.my_processor.dhc.fd_dx_dhaz_rs_rt;
@@ -87,55 +88,54 @@ module processor_tb_auto(
 	//wire fd_xm_dhaz_rd			= dut.my_processor.dhc.fd_xm_dhaz_rd;
 
 	// Bypass
-	wire mx_bypass_A			= dut.my_processor.mx_bypass_A;
-	wire mx_bypass_B			= dut.my_processor.mx_bypass_B;
-	wire wx_bypass_A			= dut.my_processor.wx_bypass_A;
-	wire wx_bypass_B			= dut.my_processor.wx_bypass_B;
-	wire wm_bypass				= dut.my_processor.wm_bypass;
+	// wire mx_bypass_A			= dut.my_processor.mx_bypass_A;
+	// wire mx_bypass_B			= dut.my_processor.mx_bypass_B;
+	// wire wx_bypass_A			= dut.my_processor.wx_bypass_A;
+	// wire wx_bypass_B			= dut.my_processor.wx_bypass_B;
+	// wire wm_bypass				= dut.my_processor.wm_bypass;
 	
-	wire [31:0] insn_fd		= dut.my_processor.lfd.insn_in;
-	wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
-	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
-	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
+	// wire [31:0] insn_fd		= dut.my_processor.lfd.insn_in;
+	// wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
+	// wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
+	// wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
 
-	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
-	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
-	wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
-	wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
-	wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
+	// wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
+	// wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
+	// wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
+	// wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
+	// wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
 
-	wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
-	wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
-	wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
-	wire [31:0] alu_operandB = dut.my_processor.execute.ALU_operandB;
-	wire [31:0] alu_result 	= dut.my_processor.execute.o_out;
-	wire [31:0] exec_alu_operandB = dut.my_processor.execute.ALU_operandB;
-	wire 		isNotEqual 	= dut.my_processor.execute.isNotEqual;
-	wire [31:0] immediate 	= dut.my_processor.execute.immediate;
-	wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
-	wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
-	wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
+	// wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
+	// wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
+	// wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
+	// wire [31:0] alu_operandB = dut.my_processor.execute.ALU_operandB;
+	// wire [31:0] alu_result 	= dut.my_processor.execute.o_out;
+	// wire [31:0] exec_alu_operandB = dut.my_processor.execute.ALU_operandB;
+	// wire 		isNotEqual 	= dut.my_processor.execute.isNotEqual;
+	// wire [31:0] immediate 	= dut.my_processor.execute.immediate;
+	// wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
+	// wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
+	// wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
  
-	wire [31:0] pc_in = dut.my_processor.pc_in;
-	wire [31:0] pc_out = dut.my_processor.pc_out;
-	wire [31:0] q_dmem = dut.my_processor.q_dmem;
+	// wire [31:0] pc_in = dut.my_processor.pc_in;
+	// wire [31:0] pc_out = dut.my_processor.pc_out;
+	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
 	// wire [31:0] decode_a_out = dut.my_processor.decode.a_out;
 	// wire [31:0] decode_b_out = dut.my_processor.decode.b_out;
 	// wire [31:0] execute_a_in = dut.my_processor.execute.a_in;
 	// wire [31:0] execute_b_in = dut.my_processor.execute.b_in;
-	wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
-	wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
-	wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
-	wire [31:0] memory_b_in = dut.my_processor.memory.b_in;
-	wire [11:0] memory_address = dut.my_processor.memory.address_dmem;
-	wire [31:0] memory_q_dmem = dut.my_processor.memory.q_dmem;
-	wire [31:0] memory_o_out = dut.my_processor.memory.o_out;
-	wire [31:0] memory_d_out = dut.my_processor.memory.d_out;
-	wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
-	wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
+	// wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
+	// wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
+	// wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
+	// wire [31:0] memory_b_in = dut.my_processor.memory.b_in;
+	// wire [11:0] memory_address = dut.my_processor.memory.address_dmem;
+	// wire [31:0] memory_q_dmem = dut.my_processor.memory.q_dmem;
+	// wire [31:0] memory_o_out = dut.my_processor.memory.o_out;
+	// wire [31:0] memory_d_out = dut.my_processor.memory.d_out;
+	// wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
+	// wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
 
-	wire exec_write_exception = dut.my_processor.execute.exception;
-
+	// wire exec_write_exception = dut.my_processor.execute.exception;
 
 	
 	// DUT 
@@ -188,7 +188,7 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, ex_opcode: %d, isNotEqual %d, immediate: %d, pc_dx_out: %d, pc_plus_1_plus_immediate: %d, address_imem: %d, branched_jumped: %d, \n insn_execute: %b", clock, execute_opcode, isNotEqual, immediate, pc_dx_out, pc_plus_1_plus_immediate, address_imem, branched_jumped, insn_execute);
 
-		$monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
+		// $monitor("clock: %d, insn_execute: %b, ex_opcode: %d, alu_operandA_ex: %d, alu_operandB_ex: %d, isNotEqual %d, branched_jumped: %d, immediate: %d, pc_plus_1_plus_immediate: %d", clock, insn_execute, opcode_execute, ALU_operandA_execute, ALU_operandB_execute, isNotEqual, branched_jumped, immediate, pc_plus_1_plus_immediate);
 
 
 
@@ -233,6 +233,9 @@ module processor_tb_auto(
 	endtask
 
 	task performTests; begin
+		checkRegister(32'd1, 32'd20);
+		checkRegister(32'd2, 32'd20);
+		checkRegister(32'd3, 32'd40);
 	end endtask
 
 endmodule

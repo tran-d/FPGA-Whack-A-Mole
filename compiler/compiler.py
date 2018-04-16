@@ -26,8 +26,9 @@ try:
     outputFile = open(str(argv[2]) + 'imem.mif','w')
     print("MIF file: " + argv[2] + 'imem.mif')
 except:
-    outputFile = open('imem.mif', 'w')
-    print("Warning: imem location not specified - writing to current location")
+    outputFile = open('../processor/imem.mif', 'w')
+    print("MIF file: " + '../processor/' + 'imem.mif')
+
 
 newLine = lambda: outputFile.write('\n')
 outputFile.write('-- Compiled from text: ' + argv[1])
@@ -71,13 +72,43 @@ opcode = {'add':'00000',
           'led':'01011',
           'cap':'01100'
           }
+
+jump_indicies = {}
+counter = 0
+for instrLine in instructions:
+    try:
+        if not instrLine.rstrip():
+            continue
+        instr = instrLine.split()
+        instr = [x.strip(',') for x in instr]
+        if instr[0][-1] == ':':
+            jump_indicies[instr[0][:-1]] = str(counter)
+            instr.pop(0)
+        if instr[0] != '#' and instr[0] != 'checkreg' and instr[0] != 'cycles':
+            counter += 1
+    except Exception as e:
+        print "Syntax Error:", str(instrLine)
+        print "Details:", e
+        sys.exit()
+
+counter = 0
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():
             continue
 
+        for variable in jump_indicies.keys():
+            instrLine = instrLine.replace(variable, jump_indicies[variable])
+
+
         instr = instrLine.split()
         instr = [x.strip(',') for x in instr]
+
+        if instr[0][-1] == ':':
+            instr.pop(0)
+
+        print instr
+
         line = str(counter) + ' : '
         if instr[0] == 'add':
             line += opcode[instr[0]]
@@ -255,7 +286,10 @@ outputFile.write('END;')
 
 
 # Write tests to testbench
-tb_path = argv[2] + 'processor_tb_auto.v'
+try:
+    tb_path = argv[2] + 'processor_tb_auto.v'
+except IndexError:
+    tb_path = '../processor/processor_tb_auto.v'
 print "Testbench file: " + tb_path
 
 tests_str = ''

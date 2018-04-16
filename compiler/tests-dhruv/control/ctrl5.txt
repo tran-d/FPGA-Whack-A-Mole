@@ -1,0 +1,19 @@
+addi $r1, $r0, 0
+addi $r2, $r0, 20
+
+begin: nop
+
+	addi $r1, $r1, 1
+	addi $r3, $r3, 2
+	blt $r1, $r2, 1
+	j end
+	j begin
+
+end: nop
+
+
+cycles 1000
+
+checkreg 1, 20
+checkreg 2, 20
+checkreg 3, 40
