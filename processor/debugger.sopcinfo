@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="debugger" kind="debugger" version="1.0" fabric="QSYS">
  <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2018.04.16.00:36:42 -->
+ <!-- 2018.04.17.15:37:28 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1523853402</value>
+  <value>1523993848</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>

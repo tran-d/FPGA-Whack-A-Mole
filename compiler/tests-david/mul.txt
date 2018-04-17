@@ -40,14 +40,14 @@ mul  $r9, $r1, $r2
 nop
 nop
 nop
-addi $r1, $r0, 0
-addi $r2, $r0, 4278255360
+addi $r1, $r0, 1
+addi $r2, $r0, 65535
 mul  $r10, $r1, $r2
 nop
 nop
 nop
-addi $r1, $r0, 4278255360
-addi $r2, $r0, 0
+addi $r1, $r0, 65535
+addi $r2, $r0, 1
 mul  $r11, $r1, $r2
 nop
 nop
@@ -64,5 +64,5 @@ checkreg 6, -3182486
 checkreg 7, -3182486
 checkreg 8, -304506657
 checkreg 9, -304506657
-checkreg 10, 0
-checkreg 11, 0
+checkreg 10, 65535
+checkreg 11, 65535

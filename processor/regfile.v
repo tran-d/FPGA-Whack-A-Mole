@@ -26,9 +26,9 @@ module regfile (
 	
 	
 	output [31:0] r1, r2, r3;
-	assign r1 = register_output[1];
-	assign r2 = register_output[2];
-	assign r3 = register_output[3];
+	assign r1 = register_output[10];
+	assign r2 = register_output[11];
+	assign r3 = register_output[12];
 	
 	
 	/***** create decoder for write_reg *****/						
