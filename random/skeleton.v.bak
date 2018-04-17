@@ -1,0 +1,7 @@
+module skeleton(seed0, seed1, data0, data1);
+
+	input [7:0] seed0, seed1;
+	output [7:0] data0, data1;
+	
+	random8_cell
+endmodule

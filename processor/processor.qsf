@@ -92,6 +92,9 @@ set_global_assignment -name VERILOG_FILE multdiv/divctrl.v
 set_global_assignment -name VERILOG_FILE multdiv/cla8.v
 set_global_assignment -name VERILOG_FILE multdiv/alu.v
 set_global_assignment -name VERILOG_FILE multdiv/adder32.v
+set_global_assignment -name VERILOG_FILE ../random/random8_cell.v
+set_global_assignment -name VERILOG_FILE ../random/random8.v
+
 set_global_assignment -name QSYS_FILE debugger.qsys
 set_global_assignment -name VERILOG_FILE twos_complement32.v
 set_global_assignment -name VERILOG_FILE stage_write.v

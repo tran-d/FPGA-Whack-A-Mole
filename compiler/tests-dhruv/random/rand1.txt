@@ -1,0 +1,34 @@
+add $r1, $r0, $r29	# set r1 to random value once
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+add $r2, $r0, $r29  # set r2 to random value once
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+add $r3, $r0, $r29  # set r3 to random value every cycle
+j 32

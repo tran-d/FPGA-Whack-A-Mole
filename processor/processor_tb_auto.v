@@ -57,10 +57,8 @@ module processor_tb_auto(
 	input wire [8:0] 	capacitive_sensors_in;
 	output wire 		capacitive_sensors_out;
 
-	
-	
 
-	wire 	branched_jumped	= dut.my_processor.branched_jumped;
+	// wire 	branched_jumped	= dut.my_processor.branched_jumped;
 
 	// Hazards
 	//wire fd_dx_dhaz_rs_rt		= dut.my_processor.dhc.fd_dx_dhaz_rs_rt;
@@ -72,12 +70,13 @@ module processor_tb_auto(
 	
 	
 	// Bypass
-	wire mx_bypass_A			= dut.my_processor.mx_bypass_A;
-	wire mx_bypass_B			= dut.my_processor.mx_bypass_B;
-	wire wx_bypass_A			= dut.my_processor.wx_bypass_A;
-	wire wx_bypass_B			= dut.my_processor.wx_bypass_B;
-	wire wm_bypass				= dut.my_processor.wm_bypass;
+	// wire mx_bypass_A			= dut.my_processor.mx_bypass_A;
+	// wire mx_bypass_B			= dut.my_processor.mx_bypass_B;
+	// wire wx_bypass_A			= dut.my_processor.wx_bypass_A;
+	// wire wx_bypass_B			= dut.my_processor.wx_bypass_B;
+	// wire wm_bypass				= dut.my_processor.wm_bypass;
 	
+
 	wire [31:0] insn_fd		= dut.my_processor.lfd.insn_in;
 	wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
 	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
@@ -116,14 +115,16 @@ module processor_tb_auto(
 	wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
 	wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
 	wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
- 
-	wire [31:0] pc_in = dut.my_processor.pc_in;
-	wire [31:0] pc_out = dut.my_processor.pc_out;
-	wire [31:0] q_dmem = dut.my_processor.q_dmem;
+
+
+	// wire [31:0] pc_in = dut.my_processor.pc_in;
+	// wire [31:0] pc_out = dut.my_processor.pc_out;
+	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
 	// wire [31:0] decode_a_out = dut.my_processor.decode.a_out;
 	// wire [31:0] decode_b_out = dut.my_processor.decode.b_out;
 	// wire [31:0] execute_a_in = dut.my_processor.execute.a_in;
 	// wire [31:0] execute_b_in = dut.my_processor.execute.b_in;
+
 	wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
 	wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
 	wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
@@ -154,6 +155,20 @@ module processor_tb_auto(
 	wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
 	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
 	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
+
+	// wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
+	// wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
+	// wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
+	// wire [31:0] memory_b_in = dut.my_processor.memory.b_in;
+	// wire [11:0] memory_address = dut.my_processor.memory.address_dmem;
+	// wire [31:0] memory_q_dmem = dut.my_processor.memory.q_dmem;
+	// wire [31:0] memory_o_out = dut.my_processor.memory.o_out;
+	// wire [31:0] memory_d_out = dut.my_processor.memory.d_out;
+	// wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
+	// wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
+
+	// wire exec_write_exception = dut.my_processor.execute.exception;
+
 
 	
 
@@ -191,8 +206,6 @@ module processor_tb_auto(
 		
 		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
 		
-
-
 
 		#(20*(CYCLE_LIMIT+1.5))
 
