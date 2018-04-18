@@ -53,9 +53,9 @@ j set_led_on
 check_active: nop
 addi $t5, $r0, 1					# $t5 = 1
 lw $t4, 1($t1) 						# $t4 = mole.state 
-beq $t4, $t5, 1
-j while								# continue
+beq $t4, $t5, 1						# continue
 j set_led_off
+j while	
 
 
 set_led_on: nop
