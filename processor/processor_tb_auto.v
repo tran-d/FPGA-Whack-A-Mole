@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 400; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 1000; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -86,17 +86,29 @@ module processor_tb_auto(
 	// MULTDIV 
 	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
 	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
-	wire multdiv_act_RDY = dut.my_processor.multdiv_RDY;
-	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
+	wire multdiv_RDY = dut.my_processor.multdiv_RDY;
+	
+	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
 	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
 	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
 	wire ctrl_DIV = dut.my_processor.execute.my_multdiv_controller.ctrl_DIV;
-	wire data_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_latch;
 	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
-	wire currently_solving = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving;
 	wire latch_ena = dut.my_processor.latch_ena;
 	wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
-
+	
+	wire [31:0] latch_data_operandA = dut.my_processor.execute.my_multdiv_controller.latch_data_operandA;
+	wire [31:0] latch_data_operandB = dut.my_processor.execute.my_multdiv_controller.latch_data_operandB;
+	
+	wire currently_solving_DIV_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV_latch;
+	
+	wire mult_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
+	wire div_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_resultRDY_latch;
+	
+	wire currently_solving_MULT	= dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_MULT;
+	wire currently_solving_DIV = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV;
+	
+	wire mult_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_RDY;
+	wire div_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_RDY;
 
 	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
 	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
@@ -204,7 +216,13 @@ module processor_tb_auto(
 
 		//$monitor("clock: %d, insn_dx_out: %b, latch_ena: %d, hazard: %d, ctrl_DIV: %d, curr_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_dx_out, latch_ena, is_bypass_hazard, ctrl_DIV, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
 		
-		$monitor("clock: %d, insn_writeback: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving: %d, md_dataRDY_l: %d, multdiv_RDY: %d, multdiv_result: %d", clock, insn_writeback, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving, md_dataRDY_l, multdiv_act_RDY, multdiv_result);
+		//MULT
+		//$monitor("clock: %d, insn_dx_out: %b, latch_ena: %d, ctrl_writeEnable: %d, hazard: %d, currently_solving_MULT: %d, m_dataRDY_latch: %d, currently_solving_DIV: %d, div_resultRDY: %d, multdiv_RDY: %d, multdiv_result: %d", 
+		//			clock, insn_dx_out, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving_MULT, mult_resultRDY_latch, currently_solving_DIV, div_RDY, multRDY, multdiv_result);
+		
+		//DIV
+		$monitor("clock: %d, insn_writeback: %b, A: %d, B: %d, currently_solving_DIV: %d, currently_solving_DIV_latch: %d, multdiv_RDY: %d, div_RDY_latch: %d, div_RDY: %d, multdiv_result: %d", 
+					clock, insn_writeback, latch_data_operandA, latch_data_operandB, currently_solving_DIV, currently_solving_DIV_latch, multdiv_RDY, div_resultRDY_latch, div_RDY, multdiv_result);
 		
 
 		#(20*(CYCLE_LIMIT+1.5))
@@ -247,13 +265,9 @@ module processor_tb_auto(
 	endtask
 
 	task performTests; begin
-		checkRegister(32'd3, 32'd5);
-		checkRegister(32'd4, -32'd5);
-		checkRegister(32'd5, -32'd17260);
-		checkRegister(32'd6, 32'd0);
-		checkRegister(32'd7, 32'd0);
-		checkRegister(32'd8, 32'd293435);
-		checkRegister(32'd9, 32'd0);
+		checkRegister(32'd1, 32'd20);
+		checkRegister(32'd2, 32'd20);
+		checkRegister(32'd3, 32'd40);
 	end endtask
 
 endmodule

@@ -24,22 +24,22 @@ module multdiv_controller(
 		ctrl_DIV <= 1'b0;
 	end
 	
-	always @(posedge clock)
+	always @(negedge clock)
 	begin
 	if(mul) begin
 		ctrl_MULT <= 1'b1;
 		end
 	else if(div) begin
-		ctrl_DIV = 1'b1;
+		ctrl_DIV <= 1'b1;
 		end	
 	else if(latch_ctrl_MULT)
-		ctrl_MULT = 1'b0;
+		ctrl_MULT <= 1'b0;
 	else if(latch_ctrl_DIV)
-		ctrl_DIV = 1'b0;
+		ctrl_DIV <= 1'b0;
 	end
     
-    wire in_progress;
-	
+   wire in_progress;
+	 
 	latch_ctrl ctrl_mult(ctrl_MULT, clock, 1'b0, 1'b1, latch_ctrl_MULT);
 	latch_ctrl ctrl_div(ctrl_DIV, clock, 1'b0, 1'b1, latch_ctrl_DIV);
 	

@@ -97,15 +97,14 @@ for instrLine in instructions:
         if not instrLine.rstrip():
             continue
 
-        for variable in jump_indicies.keys():
-            instrLine = instrLine.replace(variable, jump_indicies[variable])
-
-
         instr = instrLine.split()
         instr = [x.strip(',') for x in instr]
 
         if instr[0][-1] == ':':
             instr.pop(0)
+
+        for variable in jump_indicies.keys():
+            instr = [w if w != variable else jump_indicies[variable] for w in instr]
 
         print instr
 
