@@ -59,17 +59,19 @@ j set_led_off
 
 
 set_led_on: nop
-
+addi $t11, $r0, 65535
+led $t1, $t11
+sw $r0, 2($t1)
+j while
 
 
 set_led_off: nop
-led $t1, 65535
-addi $t6, $r0, 100000000
-sw $t6, 2($t1)
-						mole.time_limit_off = random_time()
-						mole.time_elapsed = 0
+led $t1, $r0
+sw $r0, 2($t1)
+j while
+						# mole.time_limit_off = random_time()
 
 
 touched: nop
-bne $r0
+j set_led_on
 
