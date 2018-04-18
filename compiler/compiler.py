@@ -73,7 +73,40 @@ opcode = {'add':'00000',
           'cap':'01100'
           }
 
-jump_indicies = {}
+replacements = {
+    '$v0' : '$r1',
+    '$v1' : '$r2',
+    '$a0' : '$r3',
+    '$a1' : '$r4',
+    '$a2' : '$r5',
+    '$a3' : '$r6',
+    '$t0' : '$r7',
+    '$t1' : '$r8',
+    '$t2' : '$r9',
+    '$t3' : '$r10',
+    '$t4' : '$r11',
+    '$t5' : '$r12',
+    '$t6' : '$r13',
+    '$t7' : '$r14',
+    '$t8' : '$r15',
+    '$t9' : '$r16',
+    '$t10' : '$r17',
+    '$t11' : '$r18',
+    '$t12' : '$r19',
+    '$s0' : '$r20',
+    '$s1' : '$r21',
+    '$s2' : '$r22',
+    '$s3' : '$r23',
+    '$s4' : '$r24',
+    '$s5' : '$r25',
+    '$s6' : '$r26',
+    '$s7' : '$r27',
+    '$sp' : '$r28',
+    '$rm' : '$r29',
+    '$rstatus' : '$r30',
+    '$ra' : '$r31'
+}
+
 counter = 0
 for instrLine in instructions:
     try:
@@ -82,7 +115,7 @@ for instrLine in instructions:
         instr = instrLine.split()
         instr = [x.strip(',') for x in instr]
         if instr[0][-1] == ':':
-            jump_indicies[instr[0][:-1]] = str(counter)
+            replacements[instr[0][:-1]] = str(counter)
             instr.pop(0)
         if instr[0] != '#' and instr[0] != 'checkreg' and instr[0] != 'cycles':
             counter += 1
@@ -103,8 +136,8 @@ for instrLine in instructions:
         if instr[0][-1] == ':':
             instr.pop(0)
 
-        for variable in jump_indicies.keys():
-            instr = [w if w != variable else jump_indicies[variable] for w in instr]
+        for variable in replacements.keys():
+            instr = [w if w != variable else replacements[variable] for w in instr]
 
         print instr
 
