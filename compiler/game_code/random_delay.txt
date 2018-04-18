@@ -1,0 +1,14 @@
+random_time_on: nop
+	
+	addi $s0, $r0, 500	  # min
+	addi $s1, $r0, 5000   # max
+
+	add  $s2, $r0, $rm    # random 0-255
+
+	sub  $s3, $s1, $s0    # map random to min/max
+	mul  $v0, $s2, $s3
+	addi $s4, $r0, 255
+	div  $v0, $v0, $s4	 
+	add  $v0, $v0, $s0    # save to v0
+
+	jr 	 $ra 			  # return
