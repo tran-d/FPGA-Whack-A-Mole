@@ -1,0 +1,122 @@
+# r1 = capcitor threshold
+# r4 = good color
+# r5 = bad color
+
+addi $r1, $r0, 3000   # (0)
+
+addi $r4, $r0, 65280  # blue for good dhruvs (1)
+addi $r5, $r0, 255 # red for bad dhruvs (2)
+
+# r2 = current index
+# r3 = current capacitor value
+
+# r10 - r18 = led values
+# r19 - r27 = pad timing values
+# r28 = SCORE
+
+# capacitive sensing for pad 0
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led0            # jump to led0
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 1
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led1            # jump to led1
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 2
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led2            # jump to led2
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 3
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led3            # jump to led3
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 4
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led4            # jump to led4
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 5
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led5            # jump to led5
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 6
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led6            # jump to led6
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 7
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led7            # jump to led7
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# capacitive sensing for pad 8
+
+  cap $r3, $r2
+  blt $r3, $r1, 1     # if the capacitor is under threshold, skip led check
+  jal led8            # jump to led8
+
+  addi $r2, $r2, 1    # increment capacitor index by one
+
+# increment procedures
+
+  addi $r19, 
+
+
+# reset procedures
+
+  addi $r2, $r0, 0    # reset index to 0
+
+
+
+
+
+# led logic
+
+led0: nop
+
+  bne $r10, $r5, 2    # hit bad dhruv
+  addi $r28, $r28, 1  # UPDATE SCORE HERE (ADD)
+  j jreturn0
+
+  bne $r10, $r5, 2    # hit good dhruv (sad)
+  addi $r28, $r28, 1  # UPDATE SCORE HERE (SUBTRACT)
+  j jreturn0
+
+  bne $r10, $r0, 2    # hit nothing (sad)
+  addi $r28, $r28, 1  # UPDATE SCORE HERE (SUBTRACT)
+  j jreturn0
+
+  jreturn0: jr $r31   # return to caller
+
+end0: nop
+
+j 0                   # loop
