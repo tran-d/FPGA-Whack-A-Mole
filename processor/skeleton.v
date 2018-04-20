@@ -56,18 +56,18 @@ module skeleton(
 
     /** IMEM **/
     imem my_imem(
-        .address    (address_imem),            // address of data
-        .clock      (~clock),                  // you may need to invert the clock
-        .q          (q_imem)                   // the raw instruction
+        .address    (address_imem),    // address of data
+        .clock      (~clock),          // you may need to invert the clock
+        .q          (q_imem)           // the raw instruction
     );
 
     /** DMEM **/
     dmem my_dmem(
-        .address    (address_dmem),       // address of data
-        .clock      (~clock),            			 // may need to invert the clock
-        .data	    (d_dmem),    // data you want to write
-        .wren	    (wren_dmem),      // write enable
-        .q          (q_dmem)    // data from dmem
+        .address    (address_dmem),    // address of data
+        .clock      (~clock),          // may need to invert the clock
+        .data	     (d_dmem),    		// data you want to write
+        .wren	     (wren_dmem),     	// write enable
+        .q          (q_dmem)    			// data from dmem
     );
 
     /** REGFILE **/
@@ -98,7 +98,7 @@ module skeleton(
         // Dmem
         address_dmem,                   // O: The address of the data to get or put from/to dmem
         d_dmem,                         // O: The data to write to dmem
-        wren_dmem,                           // O: Write enable for dmem
+        wren_dmem,                      // O: Write enable for dmem
         q_dmem,                         // I: The data from dmem
 
         // Regfile

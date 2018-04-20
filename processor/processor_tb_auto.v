@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 120; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 118; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -77,112 +77,59 @@ module processor_tb_auto(
 	// wire wm_bypass				= dut.my_processor.wm_bypass;
 	
 
-	wire [31:0] insn_fd		= dut.my_processor.lfd.insn_in;
-	wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
-	wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
-	wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
-	wire [31:0] insn_writeback = dut.my_processor.writeback.insn_in;
+	// wire [31:0] insn_fd		= dut.my_processor.lfd.insn_in;
+	// wire [31:0] insn_dx		= dut.my_processor.ldx.insn_in;
+	// wire [31:0] insn_xm		= dut.my_processor.lxm.insn_in;
+	// wire [31:0] insn_mw		= dut.my_processor.lmw.insn_in;
+	// wire [31:0] insn_writeback = dut.my_processor.writeback.insn_in;
 	
-	// MULTDIV 
-	wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
-	wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
-	wire multdiv_RDY = dut.my_processor.multdiv_RDY;
-	
-	wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
-	wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
-	wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
-	wire ctrl_DIV = dut.my_processor.execute.my_multdiv_controller.ctrl_DIV;
-	wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
-	wire latch_ena = dut.my_processor.latch_ena;
-	wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
-	
-	wire [31:0] latch_data_operandA = dut.my_processor.execute.my_multdiv_controller.latch_data_operandA;
-	wire [31:0] latch_data_operandB = dut.my_processor.execute.my_multdiv_controller.latch_data_operandB;
-	
-	wire currently_solving_DIV_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV_latch;
-	
-	wire mult_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
-	wire div_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_resultRDY_latch;
-	
-	wire currently_solving_MULT	= dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_MULT;
-	wire currently_solving_DIV = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV;
-	
-	wire mult_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_RDY;
-	wire div_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_RDY;
-
-	wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
-	wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
-	wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
-	wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
-	wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
-
-	wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
-	wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
-	wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
-	wire [31:0] alu_operandB = dut.my_processor.execute.ALU_operandB;
-	wire [31:0] alu_result 	= dut.my_processor.execute.o_out;
-	wire [31:0] exec_alu_operandB = dut.my_processor.execute.ALU_operandB;
-	wire 		isNotEqual 	= dut.my_processor.execute.isNotEqual;
-	wire [31:0] immediate 	= dut.my_processor.execute.immediate;
-	wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
-	wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
-	wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
-
-
-	// wire [31:0] pc_in = dut.my_processor.pc_in;
-	// wire [31:0] pc_out = dut.my_processor.pc_out;
-	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
-	// wire [31:0] decode_a_out = dut.my_processor.decode.a_out;
-	// wire [31:0] decode_b_out = dut.my_processor.decode.b_out;
-	// wire [31:0] execute_a_in = dut.my_processor.execute.a_in;
-	// wire [31:0] execute_b_in = dut.my_processor.execute.b_in;
-
-	wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
-	wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
-	wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
-	wire [31:0] memory_b_in = dut.my_processor.memory.b_in;
-	wire [11:0] memory_address = dut.my_processor.memory.address_dmem;
-	wire [31:0] memory_q_dmem = dut.my_processor.memory.q_dmem;
-	wire [31:0] memory_o_out = dut.my_processor.memory.o_out;
-	wire [31:0] memory_d_out = dut.my_processor.memory.d_out;
-	wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
-	wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
-
-	wire exec_write_exception = dut.my_processor.execute.ALU_exception;
+	// // MULTDIV 
+	// wire [31:0] is_bypass_hazard = dut.my_processor.is_bypass_hazard;
+	// wire [31:0] insn_dx_out = dut.my_processor.insn_dx_out;
+	// wire multdiv_RDY = dut.my_processor.multdiv_RDY;
+	// wire md_dataRDY_l = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
+	// wire ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.ctrl_MULT;
+	// wire latch_ctrl_MULT = dut.my_processor.execute.my_multdiv_controller.latch_ctrl_MULT;
+	// wire ctrl_DIV = dut.my_processor.execute.my_multdiv_controller.ctrl_DIV;
+	// wire data_resultRDY_actually = dut.my_processor.execute.my_multdiv_controller.my_multdiv.data_resultRDY_actually;
+	// wire latch_ena = dut.my_processor.latch_ena;
+	// wire [31:0] multdiv_result = dut.my_processor.multdiv_result;
+	// wire [31:0] latch_data_operandA = dut.my_processor.execute.my_multdiv_controller.latch_data_operandA;
+	// wire [31:0] latch_data_operandB = dut.my_processor.execute.my_multdiv_controller.latch_data_operandB;
+	// wire currently_solving_DIV_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV_latch;
+	// wire mult_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_resultRDY_latch;
+	// wire div_resultRDY_latch = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_resultRDY_latch;
+	// wire currently_solving_MULT	= dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_MULT;
+	// wire currently_solving_DIV = dut.my_processor.execute.my_multdiv_controller.my_multdiv.currently_solving_DIV;
+	// wire mult_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.mult_RDY;
+	// wire div_RDY = dut.my_processor.execute.my_multdiv_controller.my_multdiv.div_RDY;
+	// wire [31:0] pc_in_execute	= dut.my_processor.pc_in;
+	// wire [31:0] insn_execute	= dut.my_processor.execute.insn_in;
+	// wire [31:0] opcode_execute	= dut.my_processor.execute.insn_in[31:27];
+	// wire [31:0] ALU_operandA_execute = dut.my_processor.execute.ALU_operandA;
+	// wire [31:0] ALU_operandB_execute = dut.my_processor.execute.ALU_operandB;
+	// wire [4:0] opcode		= dut.my_processor.q_imem[31:27];
+	// wire [4:0] ALU_op 	     = dut.my_processor.execute.ALU_op;
+	// wire [31:0] alu_operandA = dut.my_processor.execute.ALU_operandA;
+	// wire [31:0] alu_operandB = dut.my_processor.execute.ALU_operandB;
+	// wire [31:0] alu_result 	= dut.my_processor.execute.o_out;
+	// wire [31:0] exec_alu_operandB = dut.my_processor.execute.ALU_operandB;
+	// wire 		isNotEqual 	= dut.my_processor.execute.isNotEqual;
+	// wire [31:0] immediate 	= dut.my_processor.execute.immediate;
+	// wire [31:0] immediate_extended = dut.my_processor.execute.immediate_extended;
+	// wire [31:0] pc_dx_out = dut.my_processor.pc_dx_out;
+	// wire [31:0] pc_plus_1_plus_immediate = dut.my_processor.execute.pc_plus_1_plus_immediate;
+	// wire exec_write_exception = dut.my_processor.execute.ALU_exception;
 
 	// Probes
-	// wire [31:0] instruction = dut.my_processor.fetch.instruction_out;
-	// wire [31:0] r0 = dut.my_regfile.register_output[0];
-	// wire [31:0] r1 = dut.my_regfile.register_output[1];
-	// wire [31:0] r2 = dut.my_regfile.register_output[2];
-	// wire [4:0] alu_op = dut.my_processor.execute.ctrl_alu_op;
-	// wire [31:0] alu_a = dut.my_processor.execute.operand_A;
-	// wire [31:0] alu_b = dut.my_processor.execute.operand_B;
-	// wire [31:0] rd_data = dut.my_processor.writeback.rf_write_data;
-	// wire rd_enable = dut.my_processor.writeback.rf_write_enable;
-	// wire [4:0] rd_ctrl = dut.my_processor.writeback.rf_write_ctrl;
-	// wire [4:0] alu_shift = dut.my_processor.execute.math_unit.ctrl_shiftamt;
-	wire [4:0] regfile_ctrlA = dut.my_processor.ctrl_readRegA;
-	wire [4:0] regfile_ctrlB = dut.my_processor.ctrl_readRegB;
-	wire [4:0] regfile_ctrlWrite = dut.my_processor.ctrl_writeReg;
-	// wire [4:0] decode_ctrl_b = dut.my_processor.ctrl_readRegB;
-	// wire [31:0] q_dmem = dut.my_processor.q_dmem;
+	wire [31:0] r1 = dut.my_regfile.register_output[1];
+	wire [31:0] r2 = dut.my_regfile.register_output[2];
+	wire [31:0] r3 = dut.my_regfile.register_output[3];
+	wire [31:0] r29 = dut.my_regfile.register_output[29];
+	wire [7:0] rand = dut.random_data;
+	wire [63:0] seeds = dut.seeds;
+	wire [7:0] rng = dut.rng.cell_data[0];
 
-	// wire [31:0] execute_o_out = dut.my_processor.execute.o_out;
-	// wire [31:0] execute_b_out = dut.my_processor.execute.b_out;
-	// wire [31:0] memory_o_in = dut.my_processor.memory.o_in;
-	// wire [31:0] memory_b_in = dut.my_processor.memory.b_in;
-	// wire [11:0] memory_address = dut.my_processor.memory.address_dmem;
-	// wire [31:0] memory_q_dmem = dut.my_processor.memory.q_dmem;
-	// wire [31:0] memory_o_out = dut.my_processor.memory.o_out;
-	// wire [31:0] memory_d_out = dut.my_processor.memory.d_out;
-	// wire [31:0] writeback_o_in = dut.my_processor.writeback.o_in;
-	// wire [31:0] writeback_d_in = dut.my_processor.writeback.d_in;
-
-	// wire exec_write_exception = dut.my_processor.execute.exception;
-
-
-	
 
 	// DUT 
 	skeleton dut(
@@ -221,8 +168,8 @@ module processor_tb_auto(
 		//			clock, insn_dx_out, latch_ena, ctrl_writeEnable, is_bypass_hazard, currently_solving_MULT, mult_resultRDY_latch, currently_solving_DIV, div_RDY, multRDY, multdiv_result);
 		
 		//DIV
-		$monitor("clock: %d, insn_writeback: %b, A: %d, B: %d, currently_solving_DIV: %d, currently_solving_DIV_latch: %d, multdiv_RDY: %d, div_RDY_latch: %d, div_RDY: %d, multdiv_result: %d", 
-					clock, insn_writeback, latch_data_operandA, latch_data_operandB, currently_solving_DIV, currently_solving_DIV_latch, multdiv_RDY, div_resultRDY_latch, div_RDY, multdiv_result);
+		// $monitor("clock: %d, insn_writeback: %b, A: %d, B: %d, currently_solving_DIV: %d, currently_solving_DIV_latch: %d, multdiv_RDY: %d, div_RDY_latch: %d, div_RDY: %d, multdiv_result: %d", 
+					// clock, insn_writeback, latch_data_operandA, latch_data_operandB, currently_solving_DIV, currently_solving_DIV_latch, multdiv_RDY, div_resultRDY_latch, div_RDY, multdiv_result);
 		
 
 		#(20*(CYCLE_LIMIT+1.5))

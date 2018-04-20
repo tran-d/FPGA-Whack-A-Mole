@@ -27,9 +27,8 @@ while: nop
 
 	blt $t6, $t5, 0 				# if sensor touched (THRESHOLD < sensor_value[moles.index] ?)
 	j blah
-	addi $t10, $r0, 1
-	addi $t11, $r0, 99
-	j while
+	nop
+	j wat
 
 blah: nop
 	
@@ -79,8 +78,8 @@ blah: nop
 wat: nop
 	
 	# test
-	addi $t10, $r0, 1
-	addi $t11, $r0, 99
+	addi $t10, $r0, 98
+	addi $t11, $r0, 2
 	j while
 
 #	j update_time_elapsed			# CHANGE THIS LATER
@@ -117,4 +116,3 @@ random_time_on: nop
 	add  $v0, $s6, $s0    # save to v0
 
 	jr 	 $ra 			  # return
-

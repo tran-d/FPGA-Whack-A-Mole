@@ -138,8 +138,11 @@ for instrLine in instructions:
 
         for variable in replacements.keys():
             instr = [w if w != variable else replacements[variable] for w in instr]
+          
+        if instr[0][0] == "#":
+            continue
 
-        print instr
+        print str(counter) + ":\t" + str(instr)
 
         line = str(counter) + ' : '
         if instr[0] == 'add':
@@ -229,11 +232,13 @@ for instrLine in instructions:
             line += str(binary_repr(0,2))
 
         elif instr[0] == 'sw' or instr[0] == 'lw':
-            line += opcode[instr[0]]
-            line += str(binary_repr(int(instr[1][2:]),5))
-            pt2 = re.findall(r'\d+', instr[2])
-            line += str(binary_repr(int(pt2[1]),5))
-            line += str(binary_repr(int(pt2[0]),17))
+			for r in replacements.keys():
+				instr[2] = instr[2].replace(r, replacements[r])
+			line += opcode[instr[0]]
+			line += str(binary_repr(int(instr[1][2:]),5))
+			pt2 = re.findall(r'\d+', instr[2])
+			line += str(binary_repr(int(pt2[1]),5))
+			line += str(binary_repr(int(pt2[0]),17))
 
         elif instr[0] =='j':
             line += opcode[instr[0]]

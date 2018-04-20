@@ -12,7 +12,6 @@ module random8_cell(clock, seed, data);
 		data <= 8'hFF;
 	end
 	
-	
 	always @(posedge clock) begin
 	
 		if(feedback_seed) 
@@ -24,5 +23,4 @@ module random8_cell(clock, seed, data);
 		
 	end
 	
-
 endmodule
