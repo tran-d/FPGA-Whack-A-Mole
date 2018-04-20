@@ -138,8 +138,11 @@ for instrLine in instructions:
 
         for variable in replacements.keys():
             instr = [w if w != variable else replacements[variable] for w in instr]
-            
-        print instr
+          
+        if instr[0][0] == "#":
+            continue
+
+        print str(counter) + ":\t" + str(instr)
 
         line = str(counter) + ' : '
         if instr[0] == 'add':
