@@ -104,4 +104,3 @@ random_time_on: nop
 	add  $v0, $v0, $s0    # save to v0
 
 	jr 	 $ra 			  # return
-

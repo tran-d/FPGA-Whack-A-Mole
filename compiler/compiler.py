@@ -138,7 +138,7 @@ for instrLine in instructions:
 
         for variable in replacements.keys():
             instr = [w if w != variable else replacements[variable] for w in instr]
-
+            
         print instr
 
         line = str(counter) + ' : '

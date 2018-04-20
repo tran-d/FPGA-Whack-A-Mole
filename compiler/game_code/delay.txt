@@ -1,0 +1,19 @@
+delay: nop
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $r0
+	addi $s2, $s0, 16667
+	mul $s0, $s0, 
+
+	delay_loop_begin: # 3 cycles/loop
+
+		addi $s1, $s1, 1
+		blt $s0, $s1, 1
+		j delay_loop_begin
+
+	delay_loop_end:
+
+	jr $ra
+
+	
+

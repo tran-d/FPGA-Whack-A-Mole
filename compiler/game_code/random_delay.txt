@@ -1,3 +1,11 @@
+while: nop
+
+	jal random_time_on
+
+	add $r2, $r0, $rm
+
+	j while
+
 random_time_on: nop
 	
 	addi $s0, $r0, 500	  # min
@@ -12,3 +20,11 @@ random_time_on: nop
 	add  $v0, $v0, $s0    # save to v0
 
 	jr 	 $ra 			  # return
+
+delay: nop
+
+	add $s0, $r0, $a0
+	addi $
+
+
+cycles 5000
