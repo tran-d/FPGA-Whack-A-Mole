@@ -25,10 +25,10 @@ while: nop
 	lw $t3, 3($t0) 					# $t3 = moles[index].time_limit_on
 	lw $t4, 4($t0)					# $t4 = moles[index].time_limit_off
 
-	blt $t6, $t5, 1 				# if sensor touched (THRESHOLD < sensor_value[moles.index] ?)
+	blt $t6, $t5, 0 				# if sensor touched (THRESHOLD < sensor_value[moles.index] ?)
 	j blah
-	addi $t10, $r0, 99
-	addi $t11, $r0, 1
+	addi $t10, $r0, 1
+	addi $t11, $r0, 99
 	j while
 
 blah: nop
@@ -42,32 +42,32 @@ blah: nop
 #	j check_time_off
 #	j check_active
 #
-#check_time_off: nop
+# check_time_off: nop
 #
 #	blt $t4, $t2, 1					# time_limit_off < time_elasped
 #	j update_time_elapsed			# DONE - update mole time_elapsed
 #	j check_not_active
 #
-#check_not_active: nop
+# check_not_active: nop
 #
 #	beq $t1, $r0, 1					# mole.state == 0		???
 #	j update_time_elapsed			# DONE - update mole time_elapsed
 #	j turn_mole_on
 #
-#check_active: nop
+# check_active: nop
 #
 #	bne $t1, $r0, 1					# mole.state != 0		???
 #	j turn_mole_off	
 #	j update_time_elapsed			# DONE - update mole time_elapsed
 #
-#turn_mole_on: nop
+# turn_mole_on: nop
 #
 #	addi $t1, $r0, 65535			# define color value of mole, need random
 #	led $t0, $t1					# set color value of mole
 #	sw $t1, 1($t0)					# update mole state in memory
 #	j update_time_elapsed			# DONE - update mole time_elapsed
 #
-#turn_mole_off: nop
+# turn_mole_off: nop
 #	
 #	addi $t1, $r0, 0				# define color value of mole (i.e. off)
 #	led $t1, $r0					# set color value of mole
@@ -86,13 +86,13 @@ wat: nop
 #	j update_time_elapsed			# CHANGE THIS LATER
 #
 #
-#update_time_elapsed: nop
+# update_time_elapsed: nop
 #	
 #	addi $t2, $t2, 1				# time_elapsed += 1
 #	sw $t2, 2($t0) 					# stores new time_elasped 
 #	j iterate						# DONE - iterate to next mole
 #
-#iterate: nop
+# iterate: nop
 #
 #	beq $t0, $s1, 2					# mole.index == 45 ? reset to zero 
 #	addi $t0, $t0, 5
@@ -100,6 +100,7 @@ wat: nop
 #	addi $t0, $r0, 0
 #	j while							# LOOP
 #
+
 random_time_on: nop
 	
 	addi $s0, $r0, 500	  # min
