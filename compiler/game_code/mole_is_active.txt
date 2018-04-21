@@ -1,3 +1,41 @@
+test_mole_is_active: nop
+
+	# initialize dmem
+	sw $t0, 1($r0)
+
+	addi $t0, $t0, 5
+	sw $t0, 6($r0)
+
+	addi $t0, $t0, 5
+	sw $t0, 11($r0)
+
+	addi $t0, $t0, 123456
+	sw $r0, 41($r0)
+
+
+	# test function
+	addi $a0, $r0, 0
+	jal mole_is_active
+	add $t2, $r0, $v0
+
+	addi $a0, $r0, 1
+	jal mole_is_active
+	add $t3, $r0, $v0
+
+	addi $a0, $r0, 2
+	jal mole_is_active
+	add $t4, $r0, $v0
+
+	addi $a0, $r0, 3
+	jal mole_is_active
+	add $t5, $r0, $v0
+
+	addi $a0, $r0, 8
+	jal mole_is_active
+	add $t11, $r0, $v0
+
+# --------------------------------------------------
+
 mole_is_active: nop
 	
 	# a0: mole index
