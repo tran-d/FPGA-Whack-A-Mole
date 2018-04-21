@@ -37,7 +37,7 @@ module skeleton(
 );
 	
 	 /** Testing **/
-	 wire [31:0] p0, p1, p2, p3, p4, p5;
+	 wire [31:0] p1, p2, p3, p4, p5, p6;
 	 
 	 /** LED ARRAY **/
 	 wire [143:0] led_commands;
@@ -82,7 +82,7 @@ module skeleton(
         data_readRegA,
         data_readRegB, 
 		  random_data,
-		  p0, p1, p2, p3, p4, p5
+		  p1, p2, p3, p4, p5, p6
     );
 	 
     /** PROCESSOR **/
@@ -126,7 +126,6 @@ module skeleton(
 	 
 	 debugger d20(.probe({20'd0 , address_imem[11:0]}));		// PC
 	 
-	 debugger d11(.probe(p0));
 	 debugger d12(.probe(p1));
 	 debugger d13(.probe(p2));
 	 debugger d14(.probe(p3));

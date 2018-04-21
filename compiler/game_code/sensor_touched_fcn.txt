@@ -1,0 +1,59 @@
+	
+	addi $s7, $r0, 0
+
+	# TEST
+	# addi $a0, $r0, 5000
+	# jal delay
+
+test: nop
+
+	addi $a0, $r0, 0			# $v0 = 1 if touched, 0 else
+	jal check_sensor
+	add $t1, $v0, $r0
+
+	j end
+
+
+check_sensor: nop
+
+	# $a0: index of capacitive sensor
+	# $v0: 1 - sensor touched, 0 - sensor not touched
+
+	cap $s0, $a0
+	addi $s1, $r0, 1900					# set THRESHOLD
+
+	blt $s1, $s0, 1
+	j sensor_not_touched
+
+	sensor_touched: nop
+		addi $v0, $r0, 1
+		jr $ra
+
+	sensor_not_touched: nop
+		addi $v0, $r0, 0
+		jr $ra
+
+delay: nop
+	
+	# a0: delay time (ms)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $r0
+	addi $s2, $r0, 8333
+	mul $s0, $s0, $s2
+	nop
+	nop
+
+	delay_loop_begin: nop # 3 cycles/loop
+
+		addi $s1, $s1, 1
+		blt $s0, $s1, 1
+		j delay_loop_begin
+
+	delay_loop_end: nop
+
+	jr $ra
+
+end: nop
+
+	addi $s7, $r0, 99

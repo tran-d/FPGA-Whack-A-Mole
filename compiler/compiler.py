@@ -323,28 +323,28 @@ outputFile.write('END;')
 
 
 # Write tests to testbench
-try:
-    tb_path = argv[2] + 'processor_tb_auto.v'
-except IndexError:
-    tb_path = '../processor/processor_tb_auto.v'
-print "Testbench file: " + tb_path
+# try:
+#     tb_path = argv[2] + 'processor_tb_auto.v'
+# except IndexError:
+#     tb_path = '../processor/processor_tb_auto.v'
+# print "Testbench file: " + tb_path
 
-tests_str = ''
-for test_type in tests:
-    if test_type == 'cycles':
-        continue
-    for test in tests[test_type]:
-        sgn = ['-' if t < 0 else '' for t in test]
-        test = [math.fabs(t) for t in test]
-        tests_str += "\t\t%s(%s32\'d%d, %s32\'d%d);\n" % (test_type, sgn[0], test[0], sgn[1], test[1])
+# tests_str = ''
+# for test_type in tests:
+#     if test_type == 'cycles':
+#         continue
+#     for test in tests[test_type]:
+#         sgn = ['-' if t < 0 else '' for t in test]
+#         test = [math.fabs(t) for t in test]
+#         tests_str += "\t\t%s(%s32\'d%d, %s32\'d%d);\n" % (test_type, sgn[0], test[0], sgn[1], test[1])
 
-# change file
-with open(tb_path,'w') as tb:
-    for line in open("./processor_tb_base.v"):
-       line = line.replace("CYCLE_LIMIT_AUTO_GENERATE", str(tests['cycles']))
-       tb.write(line)
+# # change file
+# with open(tb_path,'w') as tb:
+#     for line in open("./processor_tb_base.v"):
+#        line = line.replace("CYCLE_LIMIT_AUTO_GENERATE", str(tests['cycles']))
+#        tb.write(line)
 
-    tb.write('\n\ttask performTests; begin\n')
-    tb.write(tests_str)
-    tb.write('\tend endtask\n\n')
-    tb.write('endmodule\n')
+#     tb.write('\n\ttask performTests; begin\n')
+#     tb.write(tests_str)
+#     tb.write('\tend endtask\n\n')
+#     tb.write('endmodule\n')

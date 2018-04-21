@@ -28,11 +28,12 @@ module regfile (
 
 	assign p1 = register_output[1];
 	
-	//assign p1 = register_output[7];
-	//assign p2 = register_output[8];
-	//assign p3 = register_output[9];
-	//assign p4 = register_output[10];
-	//assign p5 = register_output[11];
+	assign p2 = register_output[26];
+	assign p3 = register_output[27];
+	
+	assign p4 = register_output[8];
+	assign p5 = register_output[20];
+	assign p6 = register_output[11];
 	
 	/***** create decoder for write_reg *****/						
 	decoder5to32 my_decoder(ctrl_writeReg, selectedRegisterBits);
