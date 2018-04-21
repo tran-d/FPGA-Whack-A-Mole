@@ -25,7 +25,7 @@ module processor_tb_auto(
     capacitive_sensors_in,
 	capacitive_sensors_out);
 
-	integer CYCLE_LIMIT = 60; // Modify this to change number of cycles run during test
+	integer CYCLE_LIMIT = 95; // Modify this to change number of cycles run during test
 
 	reg clock = 0, reset = 0;
 	integer cycle_count = 0, error_count = 0;
@@ -212,6 +212,11 @@ module processor_tb_auto(
 	endtask
 
 	task performTests; begin
+		checkRegister(32'd11, 32'd1);
+		checkRegister(32'd21, 32'd5);
+		checkRegister(32'd22, 32'd5);
+		checkRegister(32'd23, 32'd5);
+		checkRegister(32'd25, 32'd11);
 	end endtask
 
 endmodule
