@@ -5,18 +5,21 @@ addi $t3, $r0, 65535
 
 while: nop
 
-	blt $t0, $t4, 1
-	j loop
+	blt $t4, $t2, 1
+	j turn_on
 	nop
+	j reset
+
+turn_on: nop
+
 	addi $t2, $t2, 5
+	led $r0, $t3
 	j while
 
-loop: nop
-
-	led $r0, $t3
-	addi $a0, $r0, 10000
-	jal delay
+reset: nop
+	
 	addi $t2, $r0, 0
+	led $r0, $r0
 	j while
 
 
