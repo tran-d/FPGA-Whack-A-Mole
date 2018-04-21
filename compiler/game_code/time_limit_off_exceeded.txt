@@ -1,6 +1,6 @@
 
 
-prep:
+prep: nop
 	
 	# first mole					# $v0 = 0
 	addi $t0, $r0, 0
@@ -37,7 +37,7 @@ prep:
 	addi $t2, $r0, 15000			# t_elap = 15000
 	sw $t2, 2($t0)
 
-test:
+test: nop
 
 	# first mole
 	addi $t0, $r0, 0
@@ -47,29 +47,27 @@ test:
 	# second mole
 	addi $t0, $r0, 5
 	jal time_limit_off_exceeded
-	add $t1, $r0, $v0
+	add $t2, $r0, $v0
 
 	# third mole
 	addi $t0, $r0, 10
 	jal time_limit_off_exceeded
-	add $t1, $r0, $v0
+	add $t3, $r0, $v0
 
 	# fourth mole
 	addi $t0, $r0, 15
 	jal time_limit_off_exceeded
-	add $t1, $r0, $v0
+	add $t4, $r0, $v0
 
 	# fifth mole
 	addi $t0, $r0, 20
 	jal time_limit_off_exceeded
-	add $t1, $r0, $v0
+	add $t5, $r0, $v0
+
+	j end
 
 
-
-
-
-
-time_limit_off_exceeded:
+time_limit_off_exceeded: nop
 
 	# a0: mole index
 	# v0: 1 - exceeded, 0 - not exceeded
@@ -82,12 +80,23 @@ time_limit_off_exceeded:
 	nop
 	j exceeded
 
-exceeded:
+exceeded: nop
 	
 	addi $v0, $r0, 1
 	jr $ra
 
-not_exceeded:  
+not_exceeded: nop
 
 	addi $v0, $r0, 0
 	jr $ra
+
+
+end: nop
+
+cycles 400
+
+checkreg 8, 0
+checkreg 9, 0
+checkreg 10, 1
+checkreg 11, 1
+checkreg 12, 1
