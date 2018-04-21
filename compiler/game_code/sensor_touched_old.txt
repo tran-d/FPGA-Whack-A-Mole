@@ -21,6 +21,9 @@ while: nop
 	addi $a0, $r0, 5
 	jal delay
 
+	addi $t11, $r0, 0			
+	led $t0, $t11
+
 	# LOAD CURRENT MOLE VALUES FROM DMEM
 	cap $t5, $t0					# load sensor_value[moles.index] into $t5
 	lw $t1, 1($t0) 					# $t1 = moles[index].state 
@@ -35,7 +38,7 @@ while: nop
 
 not_touched: nop
 	
-	blt $t3, $t2, 1					# time_limit_on < time_elasped
+	blt $t3, $t2, 1					# time_elasped > time_limit_on
 	j check_time_off
 	nop
 	j check_active
@@ -44,11 +47,13 @@ touched: nop
 	
 	# test
 	addi $t10, $r0, 99
+	addi $t11, $r0, 65535			
+	led $t0, $t11					
 	j while
 
 check_time_off: nop
 
-	blt $t4, $t2, 1					# time_limit_off < time_elasped
+	blt $t4, $t2, 1					# time_elasped > time_limit_off
 	j update_time_elapsed			# DONE - update mole time_elapsed
 	nop
 	j check_not_active
@@ -62,7 +67,7 @@ check_not_active: nop
 
  check_active: nop
 
-	blt $r0, $t1, 1					# check mole.state > 0
+	bne $t1, $r0, 1					# check mole.state != 0
 	j update_time_elapsed			# DONE - update mole time_elapsed
 	nop
 	j turn_mole_off	
@@ -71,23 +76,32 @@ turn_mole_on: nop
 
 	# test
  	addi $t10, $r0, 1
- 	j while
 
-#	addi $t1, $r0, 65535			# define color value of mole, need random
-#	led $t0, $t1					# set color value of mole
-#	sw $t1, 1($t0)					# update mole state in memory
-#	j update_time_elapsed			# DONE - update mole time_elapsed
+	addi $t1, $r0, 65535			# define color value of mole, need random
+	led $t0, $t1					# set color value of mole
+	sw $t1, 1($t0)					# update mole state in memory
+	sw $r0, 2($t0)					# reset time_elapsed
+
+	addi $a0, $r0, 10000
+	jal delay
+
+	j while	
 
 turn_mole_off: nop
 	
 	# test
  	addi $t10, $r0, 0
- 	j while
 
-#	addi $t1, $r0, 0				# define color value of mole (i.e. off)
-#	led $t1, $r0					# set color value of mole
-#	sw $r0, 1($t0)					# update mole state in memory
-#	sw $r0, 2($t0)					# reset time_elapsed			
+	addi $t1, $r0, 0				# define color value of mole (i.e. off)
+	led $t0, $t1					# set color value of mole
+	sw $t1, 1($t0)					# update mole state in memory
+	sw $r0, 2($t0)					# reset time_elapsed
+
+	addi $a0, $r0, 10000
+	jal delay
+
+	j while			
+
 #	j iterate						# DONE - iterate to next mole
 #
 

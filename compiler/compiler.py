@@ -142,8 +142,6 @@ for instrLine in instructions:
         if instr[0][0] == "#":
             continue
 
-        print str(counter) + ":\t" + str(instr)
-
         line = str(counter) + ' : '
         if instr[0] == 'add':
             line += opcode[instr[0]]
@@ -232,11 +230,13 @@ for instrLine in instructions:
             line += str(binary_repr(0,2))
 
         elif instr[0] == 'sw' or instr[0] == 'lw':
-            line += opcode[instr[0]]
-            line += str(binary_repr(int(instr[1][2:]),5))
-            pt2 = re.findall(r'\d+', instr[2])
-            line += str(binary_repr(int(pt2[1]),5))
-            line += str(binary_repr(int(pt2[0]),17))
+			for r in replacements.keys():
+				instr[2] = instr[2].replace(r, replacements[r])
+			line += opcode[instr[0]]
+			line += str(binary_repr(int(instr[1][2:]),5))
+			pt2 = re.findall(r'\d+', instr[2])
+			line += str(binary_repr(int(pt2[1]),5))
+			line += str(binary_repr(int(pt2[0]),17))
 
         elif instr[0] =='j':
             line += opcode[instr[0]]
@@ -306,6 +306,8 @@ for instrLine in instructions:
             outputFile.write(line)
             newLine()
             counter += 1
+			
+        print str(counter - 1) + ":\t" + str(instr)
 
     except Exception as e:
         print "Syntax Error:", str(instrLine)

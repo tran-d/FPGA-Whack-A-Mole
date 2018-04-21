@@ -121,8 +121,10 @@ module skeleton(
 	 /** Debugger **/
 	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
 	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
-	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
+	 //debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
 	 //debugger d10(.probe({16'b0, led_commands[15:0]}));
+	 
+	 debugger d20(.probe({20'd0 , address_imem[11:0]}));
 	 
 	 debugger d11(.probe(r0));
 	 debugger d12(.probe(r1));

@@ -16,10 +16,7 @@ module capacitive_sensor(clock, start, capacitor_charged, sensor_in, final_count
 	
 	always @(posedge clock or negedge start) begin
 	
-		if(!start) begin 
-			if(!sensing_complete)	  					// If no reading, sensor value is infinite (Hardware error)
-				final_count <= 32'hFFFFFFFF;
-				
+		if(!start) begin 				
 			sensing_complete <= 1'b0;
 			count <= 32'b0;	
 		end

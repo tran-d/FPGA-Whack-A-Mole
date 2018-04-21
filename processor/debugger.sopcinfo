@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="debugger" kind="debugger" version="1.0" fabric="QSYS">
-<<<<<<< HEAD
- <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2018.04.19.22:35:36 -->
- <!-- A collection of modules and connections -->
- <parameter name="AUTO_GENERATION_ID">
-  <type>java.lang.Integer</type>
-  <value>1524191736</value>
-=======
  <!-- Format version 16.0 211 (Future versions may contain additional information.) -->
- <!-- 2018.04.20.16:59:40 -->
+ <!-- 2018.04.20.22:26:49 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1524257980</value>
->>>>>>> 3b055330230ba07eea792692d2fde5fea99d2fe3
+  <value>1524277609</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -77,22 +68,10 @@
  <module
    name="in_system_sources_probes_0"
    kind="altera_in_system_sources_probes"
-   version="17.1"
+   version="16.0"
    path="in_system_sources_probes_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
-  <assignment>
-   <name>embeddedsw.dts.group</name>
-   <value>ignore</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.name</name>
-   <value>debug</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.vendor</name>
-   <value>altr</value>
-  </assignment>
   <parameter name="device_family">
    <type>java.lang.String</type>
    <value>CYCLONEIVE</value>
@@ -198,7 +177,7 @@ the requested settings for a module instance. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <interface name="sources" kind="conduit_end" version="17.1">
+  <interface name="sources" kind="conduit_end" version="16.0">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -243,7 +222,7 @@ parameters are a RESULT of the module parameters. -->
     <role>source</role>
    </port>
   </interface>
-  <interface name="probes" kind="conduit_end" version="17.1">
+  <interface name="probes" kind="conduit_end" version="16.0">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
@@ -295,7 +274,7 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName><![CDATA[Altera In-System Sources & Probes]]></displayName>
-  <version>17.1</version>
+  <version>16.0</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
@@ -303,8 +282,8 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Conduit</displayName>
-  <version>17.1</version>
+  <version>16.0</version>
  </plugin>
- <reportVersion>17.1 590</reportVersion>
+ <reportVersion>16.0 211</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

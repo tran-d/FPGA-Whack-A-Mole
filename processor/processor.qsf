@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY skeleton
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:20:38  MARCH 29, 2018"
-set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -79,6 +79,12 @@ set_location_assignment PIN_Y23 -to reset
 set_global_assignment -name EDA_TEST_BENCH_NAME multdiv_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id multdiv_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME multdiv_tb -section_id multdiv_tb
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE processor_tb_auto.v -section_id processor_tb_auto
+set_global_assignment -name EDA_TEST_BENCH_FILE multdiv_tb.v -section_id multdiv_tb
 set_global_assignment -name MIF_FILE imem.mif
 set_global_assignment -name VERILOG_FILE multdiv_controller.v
 set_global_assignment -name VERILOG_FILE multdiv/multdiv.v
@@ -89,7 +95,6 @@ set_global_assignment -name VERILOG_FILE multdiv/alu.v
 set_global_assignment -name VERILOG_FILE multdiv/adder32.v
 set_global_assignment -name VERILOG_FILE ../random/random8_cell.v
 set_global_assignment -name VERILOG_FILE ../random/random8.v
-
 set_global_assignment -name QSYS_FILE debugger.qsys
 set_global_assignment -name VERILOG_FILE twos_complement32.v
 set_global_assignment -name VERILOG_FILE stage_write.v
@@ -131,10 +136,5 @@ set_global_assignment -name VERILOG_FILE ../capacitive_sensor/capacitive_sensor.
 set_global_assignment -name VERILOG_FILE ../led_controller/pwm.v
 set_global_assignment -name VERILOG_FILE ../led_controller/led_array.v
 set_global_assignment -name VERILOG_FILE ../led_controller/led.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE processor_tb_auto.v -section_id processor_tb_auto
-set_global_assignment -name EDA_TEST_BENCH_FILE multdiv_tb.v -section_id multdiv_tb
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
