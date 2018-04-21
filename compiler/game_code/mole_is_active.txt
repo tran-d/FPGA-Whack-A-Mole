@@ -1,55 +1,41 @@
 test_mole_is_active: nop
 
 	# initialize dmem
-#	addi $t0, $r0, 0
-#	sw $t0, 1($r0)
+	addi $t0, $r0, 0
+	sw $t0, 1($r0)
 
-#	addi $t0, $t0, 5
-#	sw $t0, 6($r0)
+	addi $t0, $t0, 5
+	sw $t0, 6($r0)
 
 	addi $t0, $t0, 5
 	sw $t0, 11($r0)
 
-	lw $s2, 11($r0) 
+	addi $t0, $r0, 0
+	sw $t0, 16($r0)
 
-#	addi $t0, $r0, 0
-#	sw $t0, 16($r0)
-
-#	addi $t0, $r0, 65534
-#	sw $t0, 41($r0)
+	addi $t0, $r0, 65534
+	sw $t0, 41($r0)
 
 	# test function
-#	addi $a0, $r0, 0
-#	jal mole_is_active
-#	add $t2, $r0, $v0
+	addi $a0, $r0, 0
+	jal mole_is_active
+	add $t2, $r0, $v0
 
-#	addi $a0, $r0, 5
-#	jal mole_is_active
-#	add $t3, $r0, $v0
+	addi $a0, $r0, 5
+	jal mole_is_active
+	add $t3, $r0, $v0
 	
 	addi $a0, $r0, 10
-	addi $s5, $r0, 10
-
-	nop
-	nop
-	nop
-	nop
-
-	lw $s3, 1($s5) 
-
 	jal mole_is_active
 	add $t4, $r0, $v0
-
-	lw $s1, 0($s5) 
-
 	
-#	addi $a0, $r0, 15
-#	jal mole_is_active
-#	add $t5, $r0, $v0
+	addi $a0, $r0, 15
+	jal mole_is_active
+	add $t5, $r0, $v0
 	
-#	addi $a0, $r0, 40
-#	jal mole_is_active
-#	add $t11, $r0, $v0
+	addi $a0, $r0, 40
+	jal mole_is_active
+	add $t11, $r0, $v0
 
 	j end
 
@@ -62,9 +48,6 @@ mole_is_active: nop
 	# v0: 1 - active, 0 - not active
 
 	lw $s0, 1($a0)      # load state
-	nop
-	nop
-	nop
 	nop
 	nop
 
@@ -83,13 +66,10 @@ end: nop
 	
 	nop
 
-# checkreg 9, 0
-# checkreg 10, 1
+checkreg 9, 0
+checkreg 10, 1
 checkreg 11, 1
-# checkreg 12, 0
-# checkreg 18, 1
+checkreg 12, 0
+checkreg 18, 1
 
-checkreg 21, 5
-checkreg 22, 5
-checkreg 23, 5
-checkreg 25, 11
+cycles 1000

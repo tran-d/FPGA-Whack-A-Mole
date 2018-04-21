@@ -1,0 +1,23 @@
+
+time_limit_on_exceeded:
+
+	# a0: mole index
+	# v0: 1 - exceeded, 0 - not exceeded
+
+	lw $s0, 2($a0)			# load time_elapsed
+	lw $s1, 3($a0)			# load time_limit_on
+
+	blt $s1, $s0, 1			# if(time_limit_on < time_elapsed)
+	j not_exceeded
+	nop
+	j exceeded
+
+exceeded:
+	
+	addi $v0, $r0, 1
+	jr $ra
+
+not_exceeded:  
+
+	addi $v0, $r0, 0
+	jr $ra
