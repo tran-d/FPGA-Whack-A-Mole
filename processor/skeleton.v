@@ -37,7 +37,7 @@ module skeleton(
 );
 	
 	 /** Testing **/
-	 wire [31:0] r0, r1, r2, r3, r4, r5;
+	 wire [31:0] p0, p1, p2, p3, p4, p5;
 	 
 	 /** LED ARRAY **/
 	 wire [143:0] led_commands;
@@ -82,7 +82,7 @@ module skeleton(
         data_readRegA,
         data_readRegB, 
 		  random_data,
-		  r0, r1, r2, r3, r4, r5
+		  p0, p1, p2, p3, p4, p5
     );
 	 
     /** PROCESSOR **/
@@ -120,17 +120,17 @@ module skeleton(
 	 
 	 /** Debugger **/
 	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
-	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+	 //debugger d4(.probe(capacitive_sensor_readings[159:128]));
 	 //debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
 	 //debugger d10(.probe({16'b0, led_commands[15:0]}));
 	 
-	 debugger d20(.probe({20'd0 , address_imem[11:0]}));
+	 debugger d20(.probe({20'd0 , address_imem[11:0]}));		// PC
 	 
-	 debugger d11(.probe(r0));
-	 debugger d12(.probe(r1));
-	 debugger d13(.probe(r2));
-	 debugger d14(.probe(r3));
-	 debugger d15(.probe(r4));
-	 debugger d16(.probe(r5));
-
+	 debugger d11(.probe(p0));
+	 debugger d12(.probe(p1));
+	 debugger d13(.probe(p2));
+	 debugger d14(.probe(p3));
+	 debugger d15(.probe(p4));
+	 debugger d16(.probe(p5));
+	 debugger d17(.probe(p6));
 endmodule

@@ -1,0 +1,108 @@
+# 0-44: moles {index, state, time_elapsed, time_limit_on, time_limit_off}
+# $t12 = Game State Reg,   1 = Whack-A-Mole loop, 0 = Whack-A-Mole start
+
+
+addi $t12, $r0, 0						# game_state = 0
+
+
+while: nop
+	
+	whack_a_mole_start: nop
+		addi $t0, $r0, 0
+		beq $t0, $t12, 1
+		j whack_a_mole_loop
+
+		# set time limit off for all moles randomly
+		addi $t0, $r0, 4
+		addi $t1, $r0, 44
+		whack_a_mole_start_moles: nop
+
+			jal random_time_off
+			sw $v0, 0($t0)
+
+			# TEST
+			lw $s6, 0($t0)
+			add $s7, $s7, $s6 
+
+			addi $t0, $t0, 5
+			blt $t1, $t0, 1
+			j whack_a_mole_start_moles
+
+		addi $t12, $r0, 1
+		j while
+
+	whack_a_mole_loop: nop
+		addi $t0, $r0, 1
+		beq $t0, $t12, 1
+		j else
+
+
+		# TEST
+		addi $s7, $s7, 1 
+
+
+		j while
+
+	else: nop
+		j while
+
+
+random_time_on: nop
+	
+	# v0: random time on (ms)
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 500	  # min
+	addi $a1, $r0, 5000   # max
+	
+	jal random_range
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra
+	
+random_time_off: nop
+
+	# v0: random time off (ms)
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 5000
+	addi $a1, $r0, 15000
+	
+	jal random_range 
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra	
+
+random_range: nop
+
+	# a0: min_time
+	# a1: max_time
+	# v0: random value between (min_time, max_time)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $a1
+
+	add  $s2, $r0, $rm    # random 0-255
+
+	sub  $s3, $s1, $s0    # map random to min/max (max - min)
+	mul  $s4, $s2, $s3
+	nop
+	nop
+	addi $s5, $r0, 255
+	div  $s6, $s4, $s5
+	nop
+	nop	
+	add  $v0, $s6, $s0    # save to v0
+
+	jr 	 $ra 			  # return
+
+end: nop
+

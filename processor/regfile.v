@@ -5,7 +5,7 @@ module regfile (
     ctrl_readRegA, ctrl_readRegB, data_writeReg,
     data_readRegA, data_readRegB, 
 	 random_data,
-	 r0, r1, r2, r3, r4, r5
+	 p1, p2, p3, p4, p5, p6
 );
 
    input clock, ctrl_writeEnable, ctrl_reset;
@@ -24,13 +24,15 @@ module regfile (
 	genvar j; 
 
 	/* Probes for testing */
-	output [31:0] r0, r1, r2, r3, r4, r5;
-	assign r0 = register_output[12];		// $t5 cap sensor value
-	assign r1 = register_output[9];		// $t2 time-elapsed
-	assign r2 = register_output[10];		// $t3 time_limit_on
-	assign r3 = register_output[11];		// $t4 time_limit_off
-	assign r4 = register_output[17];		// $t10 test probe
-	assign r5 = register_output[18];		// $t11
+	output [31:0] p1, p2, p3, p4, p5, p6;
+
+	assign p1 = register_output[1];
+	
+	//assign p1 = register_output[7];
+	//assign p2 = register_output[8];
+	//assign p3 = register_output[9];
+	//assign p4 = register_output[10];
+	//assign p5 = register_output[11];
 	
 	/***** create decoder for write_reg *****/						
 	decoder5to32 my_decoder(ctrl_writeReg, selectedRegisterBits);
