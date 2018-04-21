@@ -142,8 +142,6 @@ for instrLine in instructions:
         if instr[0][0] == "#":
             continue
 
-        print str(counter) + ":\t" + str(instr)
-
         line = str(counter) + ' : '
         if instr[0] == 'add':
             line += opcode[instr[0]]
@@ -308,6 +306,8 @@ for instrLine in instructions:
             outputFile.write(line)
             newLine()
             counter += 1
+			
+        print str(counter - 1) + ":\t" + str(instr)
 
     except Exception as e:
         print "Syntax Error:", str(instrLine)
