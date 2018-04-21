@@ -60,7 +60,7 @@ module stage_execute(
 	wire [31:0] immediate_extended;
 	wire [4:0] ALU_op_new_alt;
 	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, 
-	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop;
+	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop, lw, sw;
 	
 	signextender_16to32 my_se(immediate, immediate_extended);
 	
@@ -78,7 +78,7 @@ module stage_execute(
 	
 	assign lw			= (~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
 	assign sw 			= (~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]); // sw
-	assign addi 		=  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]); // addi
+	//assign addi 		=  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]); // addi
 	assign immed_insn = addi || sw || lw;
 	
 	/* ALU Inputs */
