@@ -29,7 +29,7 @@ random_time_on: nop
 	addi $a0, $r0, 500	  # min
 	addi $a1, $r0, 5000   # max
 	
-	jal random_time
+	jal random_range
 	
 	lw $ra, 0($sp)
 	addi $sp, $sp, 1
@@ -46,14 +46,14 @@ random_time_off: nop
 	addi $a0, $r0, 5000
 	addi $a1, $r0, 15000
 	
-	jal random_time 
+	jal random_range 
 	
 	lw $ra, 0($sp)
 	addi $sp, $sp, 1
 	
 	jr $ra	
 
-random_time: nop
+random_range: nop
 
 	# a0: min_time
 	# a1: max_time
