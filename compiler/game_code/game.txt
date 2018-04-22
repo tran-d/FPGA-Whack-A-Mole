@@ -5,10 +5,12 @@
 addi $t12, $r0, 0						# game_state = 0
 
 # TEST 
-addi $t7, $r0, 65535
+addi $t7, $r0, 65535					# red-blue
+addi $t8, $r0, 255						# red
+addi $t9, $r0, 65280					# blue
 
 # TEST
-addi $a0, $r0, 5000
+addi $a0, $r0, 3000
 jal delay
 
 while: nop
@@ -23,14 +25,19 @@ while: nop
 		addi $t0, $r0, 0								# set starting mole index
 		addi $t1, $r0, 40								# set last mole index
 		addi $t2, $r0, 0								# set led index to store (0-8)
+
+		# test set mole active
 		
 		whack_a_mole_start_moles: nop
 			jal random_time_off
 			sw $v0, 4($t0)
 			sw $t2, 0($t0)
+			addi $t3, $r0, 1
+			sll $t3, $t3, 29
+			sw $t3, 3($t0)
 
 			# TEST 
-			addi $a0, $r0, 1000
+			addi $a0, $r0, 500
 			jal delay
 
 			addi $t0, $t0, 5							# increment mole index
@@ -48,20 +55,26 @@ while: nop
 		j else
 		nop
 
-		addi $t0, $r0, 0								# set starting mole index
-		addi $t1, $r0, 8								# set last mole index
+		addi $t0, $r0, 0								# set starting mole index [0-40]
+		addi $t1, $r0, 40								# set last mole index
+		addi $t2, $r0, 0								# set starting LED index [0-8]
 	
 		check_next_mole: nop
-
+			# $a0 = index of led
 			addi $a0, $t0, 0
 			jal check_sensor
-			bne $v0, $r0, 1 							# branch if sensor touched
+			# addi $t3, $r0, 1
+			# beq $v0, $t3, 1							# branch if sensor touched
+			bne $v0, $r0, 1
 			j sensor_not_touched
 			
 			sensor_touched: nop
-				
+
 				# TEST
-				led $t0, $t7
+				# led $t0, $t7
+				lw $t6, 3($t0)
+				lw $t5, 2($t0)
+				lw $t4, 4($t0)
 				addi $s7, $r0, -1
 				addi $a0, $r0, 1000
 				jal delay
@@ -75,19 +88,13 @@ while: nop
 				penalty: nop
 
 					# TODO
-					# decrement score
+					# decrement score by some value
 					# reset mole off
 					# iterate to next mole
 
 					addi $a0, $t0, 0
-					jal deactivate_mole
+					# jal deactivate_mole
 					# decrement score
-
-					# TEST
-					addi $s7, $r0, -1
-					addi $a0, $r0, 1000
-					jal delay
-					#
 					
 					j check_next_mole
 
@@ -95,6 +102,7 @@ while: nop
 
 					# TODO
 					# deactivate mole
+					# increment score by time_elapsed
 					# iterate to next mole
 
 					addi $a0, $t0, 0
@@ -110,7 +118,11 @@ while: nop
 			sensor_not_touched: nop
 
 				# TEST
-				addi $s7, $r0, 0
+				# led $t0, $t8
+				lw $t6, 3($t0)
+				lw $t5, 2($t0)
+				lw $t4, 4($t0)
+				addi $s7, $r0, 7
 				addi $a0, $r0, 1000
 				jal delay
 
@@ -127,13 +139,14 @@ while: nop
 				check_time_limit_off_exceeded: nop
 					addi $a0, $t0, 0
 					jal time_limit_off_exceeded
-					bne $v0, $r0, 1						# branch if time limit off exceeded
+					addi $t3, $r0, 1
+					beq $v0, $t3, 1						# branch if time limit off exceeded
 					j check_time_limit_on_exceeded
 
 				check_mole_inactive: nop
 					addi $a0, $t0, 0
 					jal mole_is_active
-					beq $v0, $r0, 0						# branch if mole is inactive
+					beq $v0, $r0, 1						# branch if mole is inactive
 					j update_time_elapsed
 
 				set_mole_active: nop
@@ -142,20 +155,38 @@ while: nop
 					j check_next_mole	
 
 				check_time_limit_on_exceeded: nop
-					addi $a0, $r0, 0
+					addi $a0, $t0, 0
 					jal time_limit_on_exceeded
-					bne $v0, $r0, 1						# branch if time limit on exceeded
+					addi $t3, $r0, 1
+					beq $v0, $t3, 1						# branch if time limit on exceeded
 					j update_time_elapsed
 
-				set_mole_inactive: nop
-					addi $a0, $t0, 0
-					jal deactivate_mole
-					j check_next_mole
+					check_mole_active: nop
+					
+						addi $a0, $t0, 0
+						jal mole_is_active
+						addi $t3, $r0, 1
+						beq $v0, $t3, 1					# branch if mole is active
+						j update_time_elapsed
+				
+					set_mole_inactive: nop
+						addi $a0, $t0, 0
+						jal deactivate_mole
+						j check_next_mole
 				
 				
 			update_time_elapsed: nop
 				addi $a0, $t0, 0
 				jal increment_time_elapsed
+
+				# TEST
+				# led $t0, $t9
+				lw $t6, 3($t0)
+				lw $t5, 2($t0)
+				lw $t4, 4($t0)
+				addi $a0, $r0, 1000
+				jal delay
+
 				j check_next_mole						# DONE - iterate to next mole
 
 		j whack_a_mole_loop
@@ -171,8 +202,8 @@ random_time_on: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 1000	  # min
-	addi $a1, $r0, 2000   # max
+	addi $a0, $r0, 40	  # min
+	addi $a1, $r0, 50     # max
 	
 	jal random_range
 	
@@ -188,8 +219,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 1000
-	addi $a1, $r0, 2000
+	addi $a0, $r0, 40
+	addi $a1, $r0, 50
 	
 	jal random_range 
 	
@@ -252,7 +283,7 @@ check_sensor: nop
 	addi $s1, $r0, 3000					# set THRESHOLD
 
 	blt $s1, $s0, 1
-	j sensor_not_touched
+	j not_touched
 
 	touched: nop
 		addi $v0, $r0, 1
@@ -287,36 +318,52 @@ activate_mole: nop
 	
 	# $a0: index of mole
 
-	update_time_limit_on: nop
-		addi $sp, $sp, -2
-		sw $ra, 0($sp)
-		sw $a0, 1($sp)
+	# set new time_limit_on 
+	addi $sp, $sp, -2
+	sw $ra, 0($sp)
+	sw $a0, 1($sp)
 
-		jal random_time_on
+	jal random_time_on
 
-		lw $ra, 0($sp)
-		lw $a0, 1($sp)
-		addi $sp, $sp, 2
+	lw $ra, 0($sp)
+	lw $a0, 1($sp)
+	addi $sp, $sp, 2
+	sw $v0, 3($a0)					# store new time_limit_on
 
-		sw $v0, 3($a0)					# store new time_limit_on
 
-	reset_time_elapsed: nop
+	# reset time_elapsed
+	sw $r0, 2($a0)
+	
+	# set time_limit_off to very high value
+	addi $s0, $r0, 1
+	sll $s1, $s0, 29
+	sw $s1, 4($a0)
+	# sw $r0, 4($a0)
 
-		sw $r0, 2($a0)
+	# turn led on
 
-	set_time_limit_off_zero: nop
+	# TEST
+	# lw $t6, 3($t0)
+	# lw $t5, 2($t0)
+	# lw $t4, 4($t0)
+	# addi $sp, $sp, -2
+	# sw $ra, 0($sp)
+	# sw $a0, 1($sp)
+	# addi $a0, $r0, 1000
+	# jal delay
+	# lw $ra, 0($sp)
+	# lw $a0, 1($sp)
+	# addi $sp, $sp, 2
 
-		sw $r0, 4($a0)
+	addi $s1, $r0, 65535
+	lw $s0, 0($a0)					# get LED index
+	nop
+	nop
+	nop
+	led $s0, $s1					# LED color
 
-	turn_led_on: nop
-
-		addi $s1, $r0, 65535 
-		lw $s0, 0($a0)					# get LED index
-		led $s0, $s1					# LED color
-
-	set_state: nop
-
-		sw $s1, 1($a0)
+	# update state
+	sw $s1, 1($a0)
 
 	jr $ra
 
@@ -328,35 +375,33 @@ deactivate_mole: nop
 	
 	# $a0: index of mole
 
-	update_time_limit_off: nop
-		addi $sp, $sp, -2
-		sw $ra, 0($sp)
-		sw $a0, 1($sp)
+	# set new time_limit_off
+	addi $sp, $sp, -2
+	sw $ra, 0($sp)
+	sw $a0, 1($sp)
 
-		jal random_time_off
+	jal random_time_off
 
-		lw $ra, 0($sp)
-		lw $a0, 1($sp)
-		addi $sp, $sp, 2
+	lw $ra, 0($sp)
+	lw $a0, 1($sp)
+	addi $sp, $sp, 2
+	sw $v0, 4($a0)					# store new time_limit_off
 
-		sw $v0, 4($a0)					# store new time_limit_off
+	# reset time_elapsed
+	sw $r0, 2($a0)
 
-	reset_time_elapsed: nop
+	# set time_limit_on to very high value
+	addi $s0, $r0, 1
+	sll $s1, $s0, 29
+	sw $s1, 3($a0)
+	# sw $r0, 3($a0)
 
-		sw $r0, 2($a0)
+	# turn led off
+	lw $s0, 0($a0)					# get LED index
+	led $s0, $r0					# LED color (off)
 
-	set_time_limit_on_zero: nop
-
-		sw $r0, 3($a0)
-
-	turn_led_off: nop
- 
-		lw $s0, 0($a0)					# get LED index
-		led $s0, $r0					# LED color (off)
-
-	set_state: nop
-
-		sw $r0, 1($a0)
+	# update state
+	sw $r0, 1($a0)
 
 	jr $ra
 
@@ -366,15 +411,8 @@ increment_time_elapsed: nop
 	# $a0: index of mole
 
 	lw $s0, 2($a0)
-	addi $s0, $s0, 1
-	sw $s0, 2($a0)
-
-	jr $ra
-
-reset_time_elapsed: nop
-
-	# $a0: index of mole
-	sw $r0, 2($a0)
+	addi $s1, $s0, 5
+	sw $s1, 2($a0)
 
 	jr $ra
 
@@ -387,17 +425,17 @@ time_limit_on_exceeded: nop
 	lw $s1, 3($a0)			# load time_limit_on
 
 	blt $s1, $s0, 1			# if(time_limit_on < time_elapsed)
-	j not_exceeded
+	j on_not_exceeded
 
-exceeded: nop
-	
-	addi $v0, $r0, 1
-	jr $ra
+	on_exceeded: nop
+		
+		addi $v0, $r0, 1
+		jr $ra
 
-not_exceeded: nop
+	on_not_exceeded: nop
 
-	addi $v0, $r0, 0
-	jr $ra
+		addi $v0, $r0, 0
+		jr $ra
 
 
 time_limit_off_exceeded: nop
@@ -409,35 +447,17 @@ time_limit_off_exceeded: nop
 	lw $s1, 4($a0)			# load time_limit_off
 
 	blt $s1, $s0, 1			# if(time_limit_off < time_elapsed)
-	j not_exceeded
+	j off_not_exceeded
 
-	exceeded: nop
+	off_exceeded: nop
 		
 		addi $v0, $r0, 1
 		jr $ra
 
-	not_exceeded: nop
+	off_not_exceeded: nop
 
 		addi $v0, $r0, 0
 		jr $ra
-
-set_time_limit_on: nop
-
-	# $a0: index of mole
-	# $a1: time_limit_on (ms)
-	
-	sw $a1, 3($a0)
-
-	jr $ra
-
-set_time_limit_off: nop
-
-	# $a0: index of mole
-	# $a1: time_limit_off (ms)
-	
-	sw $a1, 4($a0)
-
-	jr $ra
 
 end: nop
 
