@@ -4,6 +4,9 @@
 
 addi $t12, $r0, 0						# game_state = 0
 
+# TEST 
+addi $t7, $r0, 65535
+
 # TEST
 addi $a0, $r0, 5000
 jal delay
@@ -17,18 +20,21 @@ while: nop
 		nop
 
 		# set time limit off for all moles randomly
-		addi $t0, $r0, 4								# set starting mole index
-		addi $t1, $r0, 44								# set last mole index
+		addi $t0, $r0, 0								# set starting mole index
+		addi $t1, $r0, 40								# set last mole index
+		addi $t2, $r0, 0								# set led index to store (0-8)
 		
 		whack_a_mole_start_moles: nop
 			jal random_time_off
-			sw $v0, 0($t0)
+			sw $v0, 4($t0)
+			sw $t2, 0($t0)
 
 			# TEST 
 			addi $a0, $r0, 1000
 			jal delay
 
 			addi $t0, $t0, 5							# increment mole index
+			addi $t2, $t2, 1							# increment led index
 			blt $t1, $t0, 1								# branch if current mole index > last mole index
 			j whack_a_mole_start_moles
 			nop
@@ -45,22 +51,105 @@ while: nop
 		addi $t0, $r0, 0								# set starting mole index
 		addi $t1, $r0, 8								# set last mole index
 	
-		check_current_mole: nop
+		check_next_mole: nop
 
 			addi $a0, $t0, 0
 			jal check_sensor
-			addi $t2, $r0, 1
-			beq $v0, $t2, 1 							# branch if sensor touched
+			bne $v0, $r0, 1 							# branch if sensor touched
 			j sensor_not_touched
 			
 			sensor_touched: nop
-				addi $s7, $r0, 1
-				j check_current_mole
+				
+				addi $a0, $t0, 0
+				jal mole_is_active
+				beq $v0, $r0, 1							# branch if mole is inactive
+				j mole_whacked
+			
+				penalty: nop
+
+					# TODO
+					# decrement score
+					# reset mole off
+					# iterate to next mole
+
+					addi $a0, $t0, 0
+					jal deactivate_mole
+					# decrement score
+
+					# TEST
+					addi $s7, $r0, -1
+					addi $a0, $r0, 1000
+					jal delay
+					#
+					
+					j check_next_mole
+
+				mole_whacked: nop
+
+					# TODO
+					# deactivate mole
+					# iterate to next mole
+
+					addi $a0, $t0, 0
+					jal deactivate_mole
+
+					# TEST
+					addi $s7, $r0, 69
+					addi $a0, $r0, 1000
+					jal delay
+
+					j check_next_mole
 
 			sensor_not_touched: nop
+
+				# TEST
 				addi $s7, $r0, 0
-				j check_current_mole
-			
+				addi $a0, $r0, 1000
+				jal delay
+
+				# TODO
+				# check if off limit exceed 
+					# check if mole is inactive
+						# activate mole and iterate to next mole
+					# else, update_time_elapsed and iterate to next mole
+				# check if on limit exceeded
+					# check if mole is active
+						# deactivate mole and iterate to next mole_is_active
+					# else, update_time_elapsed and iterate to next mole
+
+				check_time_limit_off_exceeded: nop
+					addi $a0, $t0, 0
+					jal time_limit_off_exceeded
+					bne $v0, $r0, 1						# branch if time limit off exceeded
+					j check_time_limit_on_exceeded
+
+				check_mole_inactive: nop
+					addi $a0, $t0, 0
+					jal mole_is_active
+					beq $v0, $r0, 0						# branch if mole is inactive
+					j update_time_elapsed
+
+				set_mole_active: nop
+					addi $a0, $t0, 0
+					jal activate_mole
+					j check_next_mole	
+
+				check_time_limit_on_exceeded: nop
+					addi $a0, $r0, 0
+					jal time_limit_on_exceeded
+					bne $v0, $r0, 1						# branch if time limit on exceeded
+					j update_time_elapsed
+
+				set_mole_inactive: nop
+					addi $a0, $t0, 0
+					jal deactivate_mole
+					j check_next_mole
+				
+				
+			update_time_elapsed: nop
+				addi $a0, $t0, 0
+				jal increment_time_elapsed
+				j check_next_mole						# DONE - iterate to next mole
 
 		j whack_a_mole_loop
 
@@ -75,8 +164,8 @@ random_time_on: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 500	  # min
-	addi $a1, $r0, 5000   # max
+	addi $a0, $r0, 1000	  # min
+	addi $a1, $r0, 2000   # max
 	
 	jal random_range
 	
@@ -92,8 +181,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 5000
-	addi $a1, $r0, 15000
+	addi $a0, $r0, 1000
+	addi $a1, $r0, 2000
 	
 	jal random_range 
 	
@@ -185,6 +274,163 @@ mole_is_active: nop
 	mole_is_active_true: nop
 		addi $v0, $r0, 1
 		jr $ra
+
+# reset time_elapsed, set random time_limit_on, set time_limit_off = 0, turn LED on to random color, set new state
+activate_mole: nop
+	
+	# $a0: index of mole
+
+	update_time_limit_on: nop
+		addi $sp, $sp, -2
+		sw $ra, 0($sp)
+		sw $a0, 1($sp)
+
+		jal random_time_on
+
+		lw $ra, 0($sp)
+		lw $a0, 1($sp)
+		addi $sp, $sp, 2
+
+		sw $v0, 3($a0)					# store new time_limit_on
+
+	reset_time_elapsed: nop
+
+		sw $r0, 2($a0)
+
+	set_time_limit_off_zero: nop
+
+		sw $r0, 4($a0)
+
+	turn_led_on: nop
+
+		addi $s1, $r0, 65535 
+		lw $s0, 0($a0)					# get LED index
+		led $s0, $s1					# LED color
+
+	set_state: nop
+
+		sw $s1, 1($a0)
+
+	jr $ra
+
+
+
+
+# reset time_elapsed, set random time_limit_off, , set time_limit_on = 0, turn LED off to random color
+deactivate_mole: nop
+	
+	# $a0: index of mole
+
+	update_time_limit_off: nop
+		addi $sp, $sp, -2
+		sw $ra, 0($sp)
+		sw $a0, 1($sp)
+
+		jal random_time_off
+
+		lw $ra, 0($sp)
+		lw $a0, 1($sp)
+		addi $sp, $sp, 2
+
+		sw $v0, 4($a0)					# store new time_limit_off
+
+	reset_time_elapsed: nop
+
+		sw $r0, 2($a0)
+
+	set_time_limit_on_zero: nop
+
+		sw $r0, 3($a0)
+
+	turn_led_off: nop
+ 
+		lw $s0, 0($a0)					# get LED index
+		led $s0, $r0					# LED color (off)
+
+	set_state: nop
+
+		sw $r0, 1($a0)
+
+	jr $ra
+
+
+increment_time_elapsed: nop
+
+	# $a0: index of mole
+
+	lw $s0, 2($a0)
+	addi $s0, $s0, 1
+	sw $s0, 2($a0)
+
+	jr $ra
+
+reset_time_elapsed: nop
+
+	# $a0: index of mole
+	sw $r0, 2($a0)
+
+	jr $ra
+
+time_limit_on_exceeded: nop
+
+	# a0: mole index
+	# v0: 1 - exceeded, 0 - not exceeded
+
+	lw $s0, 2($a0)			# load time_elapsed
+	lw $s1, 3($a0)			# load time_limit_on
+
+	blt $s1, $s0, 1			# if(time_limit_on < time_elapsed)
+	j not_exceeded
+
+exceeded: nop
+	
+	addi $v0, $r0, 1
+	jr $ra
+
+not_exceeded: nop
+
+	addi $v0, $r0, 0
+	jr $ra
+
+
+time_limit_off_exceeded: nop
+
+	# a0: mole index
+	# v0: 1 - exceeded, 0 - not exceeded
+
+	lw $s0, 2($a0)			# load time_elapsed
+	lw $s1, 4($a0)			# load time_limit_off
+
+	blt $s1, $s0, 1			# if(time_limit_off < time_elapsed)
+	j not_exceeded
+
+	exceeded: nop
+		
+		addi $v0, $r0, 1
+		jr $ra
+
+	not_exceeded: nop
+
+		addi $v0, $r0, 0
+		jr $ra
+
+set_time_limit_on: nop
+
+	# $a0: index of mole
+	# $a1: time_limit_on (ms)
+	
+	sw $a1, 3($a0)
+
+	jr $ra
+
+set_time_limit_off: nop
+
+	# $a0: index of mole
+	# $a1: time_limit_off (ms)
+	
+	sw $a1, 4($a0)
+
+	jr $ra
 
 end: nop
 
