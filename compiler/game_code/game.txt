@@ -1,5 +1,6 @@
 # 0-44: moles {index, state, time_elapsed, time_limit_on, time_limit_off}
 # $t12 = Game State Reg,   1 = Whack-A-Mole loop, 0 = Whack-A-Mole start
+# Address 45 = score
 
 
 addi $t12, $r0, 0						# game_state = 0
@@ -8,6 +9,10 @@ addi $t12, $r0, 0						# game_state = 0
 addi $t7, $r0, 65535					# red-blue
 addi $t8, $r0, 255						# red
 addi $t9, $r0, 65280					# blue
+# TEST 
+# addi $s7, $r0, -1
+# addi $a0, $r0, 1000
+# jal delay
 
 # TEST
 addi $a0, $r0, 3000
@@ -60,26 +65,18 @@ while: nop
 		addi $t2, $r0, 0								# set starting LED index [0-8]
 	
 		check_next_mole: nop
-			# $a0 = index of led
-			addi $a0, $t0, 0
+
+			addi $a0, $r0, 5
+			jal delay
+
+			addi $a0, $t2, 0							# $a0 = index of led
 			jal check_sensor
-			# addi $t3, $r0, 1
-			# beq $v0, $t3, 1							# branch if sensor touched
-			bne $v0, $r0, 1
+			addi $t3, $r0, 1
+			beq $t3, $v0, 1								# branch if sensor touche
 			j sensor_not_touched
 			
 			sensor_touched: nop
 
-				# TEST
-				# led $t0, $t7
-				lw $t6, 3($t0)
-				lw $t5, 2($t0)
-				lw $t4, 4($t0)
-				addi $s7, $r0, -1
-				addi $a0, $r0, 1000
-				jal delay
-				# 
-				
 				addi $a0, $t0, 0
 				jal mole_is_active
 				beq $v0, $r0, 1							# branch if mole is inactive
@@ -93,7 +90,7 @@ while: nop
 					# iterate to next mole
 
 					addi $a0, $t0, 0
-					# jal deactivate_mole
+					jal deactivate_mole
 					# decrement score
 					
 					j check_next_mole
@@ -107,34 +104,13 @@ while: nop
 
 					addi $a0, $t0, 0
 					jal deactivate_mole
-
-					# TEST
-					addi $s7, $r0, 69
-					addi $a0, $r0, 1000
-					jal delay
+					# increment score
 
 					j check_next_mole
 
 			sensor_not_touched: nop
 
-				# TEST
-				# led $t0, $t8
-				lw $t6, 3($t0)
-				lw $t5, 2($t0)
-				lw $t4, 4($t0)
-				addi $s7, $r0, 7
-				addi $a0, $r0, 1000
-				jal delay
 
-				# TODO
-				# check if off limit exceed 
-					# check if mole is inactive
-						# activate mole and iterate to next mole
-					# else, update_time_elapsed and iterate to next mole
-				# check if on limit exceeded
-					# check if mole is active
-						# deactivate mole and iterate to next mole_is_active
-					# else, update_time_elapsed and iterate to next mole
 
 				check_time_limit_off_exceeded: nop
 					addi $a0, $t0, 0
@@ -165,30 +141,18 @@ while: nop
 					addi $a0, $t0, 0
 					jal mole_is_active
 					addi $t3, $r0, 1
-					beq $v0, $t3, 1					# branch if mole is active
+					beq $v0, $t3, 1						# branch if mole is active
 					j update_time_elapsed
 				
 				set_mole_inactive: nop
 					addi $a0, $t0, 0
 					jal deactivate_mole
-					lw $t4, 0($t0)					# <-- jank methods :'(
-					sw $r0, 1($t0)
-					led $t4, $r0
 					j check_next_mole
 				
 				
 			update_time_elapsed: nop
 				addi $a0, $t0, 0
 				jal increment_time_elapsed
-
-				# TEST
-				# led $t0, $t9
-				lw $t6, 3($t0)
-				lw $t5, 2($t0)
-				lw $t4, 4($t0)
-				addi $a0, $r0, 1000
-				jal delay
-
 				j check_next_mole						# DONE - iterate to next mole
 
 		j whack_a_mole_loop
@@ -204,8 +168,8 @@ random_time_on: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 30	  # min
-	addi $a1, $r0, 40     # max
+	addi $a0, $r0, 1000	  # min
+	addi $a1, $r0, 1500     # max
 	
 	jal random_range
 	
@@ -221,8 +185,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 30
-	addi $a1, $r0, 40
+	addi $a0, $r0, 1000
+	addi $a1, $r0, 5000
 	
 	jal random_range 
 	
@@ -330,7 +294,8 @@ activate_mole: nop
 	lw $ra, 0($sp)
 	lw $a0, 1($sp)
 	addi $sp, $sp, 2
-	sw $v0, 3($a0)					# store new time_limit_on
+	
+	sw $v0, 3($a0)									# store new time_limit_on
 
 
 	# reset time_elapsed
@@ -363,6 +328,8 @@ activate_mole: nop
 	nop
 	nop
 	led $s0, $s1					# LED color
+	nop
+	nop
 
 	# update state
 	sw $s1, 1($a0)
@@ -387,6 +354,7 @@ deactivate_mole: nop
 	lw $ra, 0($sp)
 	lw $a0, 1($sp)
 	addi $sp, $sp, 2
+	
 	sw $v0, 4($a0)					# store new time_limit_off
 
 	# reset time_elapsed
@@ -400,7 +368,13 @@ deactivate_mole: nop
 
 	# turn led off
 	lw $s0, 0($a0)					# get LED index
+	nop
+	nop
+	nop
 	led $s0, $r0					# LED color (off)
+	nop
+	nop
+	nop
 
 	# update state
 	sw $r0, 1($a0)
@@ -464,3 +438,13 @@ time_limit_off_exceeded: nop
 end: nop
 
 
+
+# Some logic for when sensor not touched:
+	# check if off limit exceed 
+		# check if mole is inactive
+			# activate mole and iterate to next mole
+		# else, update_time_elapsed and iterate to next mole
+	# check if on limit exceeded
+		# check if mole is active
+			# deactivate mole and iterate to next mole_is_active
+		# else, update_time_elapsed and iterate to next mole

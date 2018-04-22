@@ -1,5 +1,6 @@
 	
 	addi $s7, $r0, 0
+	addi $t4, $r0, 65280
 
 	# TEST
 	# addi $a0, $r0, 5000
@@ -9,7 +10,27 @@ test: nop
 
 	addi $a0, $r0, 0			# $v0 = 1 if touched, 0 else
 	jal check_sensor
-	add $t1, $v0, $r0
+	# add $t1, $v0, $r0
+
+	addi $t3, $r0, 1
+	beq $t3, $v0, 1								# branch if sensor touche
+	j sensor_not_touched
+
+	sensor_touched: nop
+
+		# TEST
+		led $r0, $t4
+		addi $a0, $r0, 2000
+		jal delay
+		j test
+
+	sensor_not_touched: nop
+
+		# TEST
+		led $r0, $r0
+		addi $a0, $r0, 2000
+		jal delay
+		j test
 
 	j end
 
@@ -20,16 +41,16 @@ check_sensor: nop
 	# $v0: 1 - sensor touched, 0 - sensor not touched
 
 	cap $s0, $a0
-	addi $s1, $r0, 1900					# set THRESHOLD
+	addi $s1, $r0, 3000					# set THRESHOLD
 
 	blt $s1, $s0, 1
-	j sensor_not_touched
+	j not_touched
 
-	sensor_touched: nop
+	touched: nop
 		addi $v0, $r0, 1
 		jr $ra
 
-	sensor_not_touched: nop
+	not_touched: nop
 		addi $v0, $r0, 0
 		jr $ra
 
