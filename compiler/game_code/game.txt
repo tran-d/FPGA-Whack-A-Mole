@@ -195,6 +195,23 @@ random_time_off: nop
 	
 	jr $ra	
 
+random_color: nop
+	
+	# v0: random color [280, 65535]
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 280	  		# min
+	addi $a1, $r0, 65535     	# max
+	
+	jal random_range
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra
+
 random_range: nop
 
 	# a0: min_time
@@ -307,27 +324,20 @@ activate_mole: nop
 	sw $s1, 4($a0)
 	# sw $r0, 4($a0)
 
-	# turn led on
+	# turn led on (random color)
+	addi $sp, $sp, -2
+	sw $ra, 0($sp)
+	sw $a0, 1($sp)
+	jal random_color
+	lw $ra, 0($sp)
+	lw $a0, 1($sp)
+	addi $sp, $sp, 2
 
-	# TEST
-	# lw $t6, 3($t0)
-	# lw $t5, 2($t0)
-	# lw $t4, 4($t0)
-	# addi $sp, $sp, -2
-	# sw $ra, 0($sp)
-	# sw $a0, 1($sp)
-	# addi $a0, $r0, 1000
-	# jal delay
-	# lw $ra, 0($sp)
-	# lw $a0, 1($sp)
-	# addi $sp, $sp, 2
-
-	addi $s1, $r0, 65535
 	lw $s0, 0($a0)					# get LED index
 	nop
 	nop
 	nop
-	led $s0, $s1					# LED color
+	led $s0, $v0					# random LED color
 	nop
 	nop
 
