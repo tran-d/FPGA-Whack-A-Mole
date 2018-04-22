@@ -60,6 +60,13 @@ while: nop
 			
 			sensor_touched: nop
 				
+				# TEST
+				led $t0, $t7
+				addi $s7, $r0, -1
+				addi $a0, $r0, 1000
+				jal delay
+				# 
+				
 				addi $a0, $t0, 0
 				jal mole_is_active
 				beq $v0, $r0, 1							# branch if mole is inactive
