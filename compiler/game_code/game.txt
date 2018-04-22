@@ -33,7 +33,7 @@ while: nop
 			sw $v0, 4($t0)
 			sw $t2, 0($t0)
 			addi $t3, $r0, 1
-			sll $t3, $t3, 29
+			sll $t3, $t3, 20
 			sw $t3, 3($t0)
 
 			# TEST 
@@ -161,18 +161,20 @@ while: nop
 					beq $v0, $t3, 1						# branch if time limit on exceeded
 					j update_time_elapsed
 
-					check_mole_active: nop
-					
-						addi $a0, $t0, 0
-						jal mole_is_active
-						addi $t3, $r0, 1
-						beq $v0, $t3, 1					# branch if mole is active
-						j update_time_elapsed
+				check_mole_active: nop
+					addi $a0, $t0, 0
+					jal mole_is_active
+					addi $t3, $r0, 1
+					beq $v0, $t3, 1					# branch if mole is active
+					j update_time_elapsed
 				
-					set_mole_inactive: nop
-						addi $a0, $t0, 0
-						jal deactivate_mole
-						j check_next_mole
+				set_mole_inactive: nop
+					addi $a0, $t0, 0
+					jal deactivate_mole
+					lw $t4, 0($t0)					# <-- jank methods :'(
+					sw $r0, 1($t0)
+					led $t4, $r0
+					j check_next_mole
 				
 				
 			update_time_elapsed: nop
@@ -202,8 +204,8 @@ random_time_on: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 40	  # min
-	addi $a1, $r0, 50     # max
+	addi $a0, $r0, 30	  # min
+	addi $a1, $r0, 40     # max
 	
 	jal random_range
 	
@@ -219,8 +221,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 40
-	addi $a1, $r0, 50
+	addi $a0, $r0, 30
+	addi $a1, $r0, 40
 	
 	jal random_range 
 	
@@ -336,7 +338,7 @@ activate_mole: nop
 	
 	# set time_limit_off to very high value
 	addi $s0, $r0, 1
-	sll $s1, $s0, 29
+	sll $s1, $s0, 20
 	sw $s1, 4($a0)
 	# sw $r0, 4($a0)
 
@@ -392,7 +394,7 @@ deactivate_mole: nop
 
 	# set time_limit_on to very high value
 	addi $s0, $r0, 1
-	sll $s1, $s0, 29
+	sll $s1, $s0, 20
 	sw $s1, 3($a0)
 	# sw $r0, 3($a0)
 
