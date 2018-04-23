@@ -2,9 +2,18 @@ test: nop
 	
 	addi $t0, $r0, 45
 	addi $t1, $r0, 2345
-	sw  $t1, 0($t0)
+	sw  $t1, 0($t0)					# store score
+	lw $t2, 0($t0)					# load it back
 
+	addi $a0, $r0, -10				# 2445
+	jal update_score
 
+	lw $t3, 0($t0)	
+	addi $a0, $r0, 10				
+	jal update_score
+
+	lw $t4, 0($t0)
+	j end
 
 update_score: nop
 
@@ -12,7 +21,16 @@ update_score: nop
 
 	addi $s0, $r0, 45				# get address 45
 	lw $s1, 0($s0)					# load score from address 45
-	add $s1, $s1, $a0				# score += arg0
-	sw $s1, 0($s0)					# store new score
+	
+	add $s2, $s1, $a0				# score += arg0
+	sw $s2, 0($s0)					# store new score
 
 	jr $ra
+
+end: nop
+
+cycles 200
+
+checkreg 9, 2345
+checkreg 10, 2335
+checkreg 11, 2345

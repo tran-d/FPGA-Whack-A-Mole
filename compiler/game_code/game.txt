@@ -29,7 +29,7 @@ while: nop
 		# set time limit off for all moles randomly
 		addi $t0, $r0, 0								# set starting mole index
 		addi $t1, $r0, 40								# set last mole index
-		addi $t2, $r0, 0								# set led index to store (0-8)
+		addi $t2, $r0, 0								# set led index
 
 		# test set mole active
 		
@@ -37,9 +37,9 @@ while: nop
 			jal random_time_off
 			sw $v0, 4($t0)
 			sw $t2, 0($t0)
-			addi $t3, $r0, 1
-			sll $t3, $t3, 20
-			sw $t3, 3($t0)
+			addi $t4, $r0, 1
+			sll $t4, $t4, 20
+			sw $t4, 3($t0)
 
 			# TEST 
 			addi $a0, $r0, 500
@@ -60,19 +60,24 @@ while: nop
 		j else
 		nop
 
-		addi $t0, $r0, 0								# set starting mole index [0-40]
+		addi $t0, $r0, 0								# set starting mole index [0-40], increments by 5
 		addi $t1, $r0, 40								# set last mole index
-		addi $t2, $r0, 0								# set starting LED index [0-8]
+		addi $t2, $r0, 0								# set starting LED index [0-8], increments by 1
+		addi $t3, $r0, 8								# set last led index
 	
 		check_next_mole: nop
+
+			# TEST score
+			addi $t11, $r0, 45
+			lw $t10, 0($t11)
 
 			addi $a0, $r0, 5
 			jal delay
 
 			addi $a0, $t2, 0							# $a0 = index of led
 			jal check_sensor
-			addi $t3, $r0, 1
-			beq $t3, $v0, 1								# branch if sensor touche
+			addi $t4, $r0, 1
+			beq $t4, $v0, 1								# branch if sensor touche
 			j sensor_not_touched
 			
 			sensor_touched: nop
@@ -89,11 +94,19 @@ while: nop
 					# reset mole off
 					# iterate to next mole
 
+					addi $a0, $r0, -500						# penalty
+					jal update_score
+
+					# TEST
+					# addi $t5, $r0, 45
+					# lw $t5, 0($t5)
+					# addi $a0, $r0, 2000
+					# jal delay
+
 					addi $a0, $t0, 0
 					jal deactivate_mole
-					# decrement score
-					
-					j check_next_mole
+										
+					j iterate
 
 				mole_whacked: nop
 
@@ -102,21 +115,31 @@ while: nop
 					# increment score by time_elapsed
 					# iterate to next mole
 
+					lw $t5, 3($t0)
+					lw $t6, 2($t0)
+					sub $a0, $t5, $t6
+					jal update_score
+
+					# TEST
+					# addi $t5, $r0, 45
+					# lw $t5, 0($t5)
+					# addi $a0, $r0, 2000
+					# jal delay
+
 					addi $a0, $t0, 0
 					jal deactivate_mole
-					# increment score
+					
 
-					j check_next_mole
+
+					j iterate
 
 			sensor_not_touched: nop
-
-
 
 				check_time_limit_off_exceeded: nop
 					addi $a0, $t0, 0
 					jal time_limit_off_exceeded
-					addi $t3, $r0, 1
-					beq $v0, $t3, 1						# branch if time limit off exceeded
+					addi $t4, $r0, 1
+					beq $v0, $t4, 1						# branch if time limit off exceeded
 					j check_time_limit_on_exceeded
 
 				check_mole_inactive: nop
@@ -128,32 +151,44 @@ while: nop
 				set_mole_active: nop
 					addi $a0, $t0, 0
 					jal activate_mole
-					j check_next_mole	
+					j iterate	
 
 				check_time_limit_on_exceeded: nop
 					addi $a0, $t0, 0
 					jal time_limit_on_exceeded
-					addi $t3, $r0, 1
-					beq $v0, $t3, 1						# branch if time limit on exceeded
+					addi $t4, $r0, 1
+					beq $v0, $t4, 1						# branch if time limit on exceeded
 					j update_time_elapsed
 
 				check_mole_active: nop
 					addi $a0, $t0, 0
 					jal mole_is_active
-					addi $t3, $r0, 1
-					beq $v0, $t3, 1						# branch if mole is active
+					addi $t4, $r0, 1
+					beq $v0, $t4, 1						# branch if mole is active
 					j update_time_elapsed
 				
 				set_mole_inactive: nop
 					addi $a0, $t0, 0
 					jal deactivate_mole
-					j check_next_mole
+					j iterate
 				
 				
 			update_time_elapsed: nop
 				addi $a0, $t0, 0
 				jal increment_time_elapsed
-				j check_next_mole						# DONE - iterate to next mole
+				j iterate								# iterate to next mole
+
+			iterate: nop
+				addi $t0, $t0, 5
+				addi $t2, $t2, 1
+
+				beq $t2, $t3, 1							# branch if current index exceeds last mole index (i.e. reset)
+				j check_next_mole						# DONE
+
+			reset_index: nop
+				addi $t0, $r0, 0
+				addi $t2, $r0, 0
+				j check_next_mole						# DONE
 
 		j whack_a_mole_loop
 
@@ -169,7 +204,7 @@ random_time_on: nop
 	sw $ra, 0($sp)
 	
 	addi $a0, $r0, 1000	  # min
-	addi $a1, $r0, 1500     # max
+	addi $a1, $r0, 2000     # max
 	
 	jal random_range
 	
@@ -185,8 +220,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 1000
-	addi $a1, $r0, 5000
+	addi $a0, $r0, 500
+	addi $a1, $r0, 1000
 	
 	jal random_range 
 	
@@ -263,7 +298,7 @@ check_sensor: nop
 	# $v0: 1 - sensor touched, 0 - sensor not touched
 
 	cap $s0, $a0
-	addi $s1, $r0, 3000					# set THRESHOLD
+	addi $s1, $r0, 2000					# set THRESHOLD
 
 	blt $s1, $s0, 1
 	j not_touched
@@ -397,7 +432,7 @@ increment_time_elapsed: nop
 	# $a0: index of mole
 
 	lw $s0, 2($a0)
-	addi $s1, $s0, 5
+	addi $s1, $s0, 50
 	sw $s1, 2($a0)
 
 	jr $ra
@@ -444,6 +479,19 @@ time_limit_off_exceeded: nop
 
 		addi $v0, $r0, 0
 		jr $ra
+
+update_score: nop
+
+	# $a0: value to add
+
+	addi $s0, $r0, 45				# get address 45
+	lw $s1, 0($s0)					# load score from address 45
+	
+	add $s2, $s1, $a0				# score += arg0
+	sw $s2, 0($s0)					# store new score
+
+	jr $ra
+
 
 end: nop
 
