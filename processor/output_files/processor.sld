@@ -5,6 +5,11 @@
         <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524443885"/>
       </assignment_values>
     </sld_info>
+    <sld_info hpath="debugger:d11" name="d11">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524443885"/>
+      </assignment_values>
+    </sld_info>
     <sld_info hpath="debugger:d12" name="d12">
       <assignment_values>
         <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524443885"/>
@@ -16,11 +21,6 @@
       </assignment_values>
     </sld_info>
     <sld_info hpath="debugger:d14" name="d14">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524443885"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="debugger:d11" name="d11">
       <assignment_values>
         <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524443885"/>
       </assignment_values>

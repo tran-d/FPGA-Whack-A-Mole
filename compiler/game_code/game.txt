@@ -170,7 +170,7 @@ random_time_on: nop
 	sw $ra, 0($sp)
 	
 	addi $a0, $r0, 1000	  # min
-	addi $a1, $r0, 2000     # max
+	addi $a1, $r0, 1500     # max
 	
 	jal random_range
 	
@@ -186,8 +186,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 500
-	addi $a1, $r0, 1000
+	addi $a0, $r0, 1000
+	addi $a1, $r0, 4000
 	
 	jal random_range 
 	
