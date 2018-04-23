@@ -6,9 +6,9 @@
 addi $t12, $r0, 0						# game_state = 0
 
 # TEST 
-addi $t7, $r0, 65535					# red-blue
-addi $t8, $r0, 255						# red
-addi $t9, $r0, 65280					# blue
+# addi $t7, $r0, 65535					# red-blue
+# addi $t8, $r0, 255						# red
+# addi $t9, $r0, 65280					# blue
 # TEST 
 # addi $s7, $r0, -1
 # addi $a0, $r0, 1000
@@ -66,7 +66,6 @@ while: nop
 		addi $t3, $r0, 8								# set last led index
 	
 		check_next_mole: nop
-
 			# TEST score
 			addi $t11, $r0, 45
 			lw $t10, 0($t11)
@@ -81,56 +80,25 @@ while: nop
 			j sensor_not_touched
 			
 			sensor_touched: nop
-
 				addi $a0, $t0, 0
 				jal mole_is_active
 				beq $v0, $r0, 1							# branch if mole is inactive
 				j mole_whacked
 			
 				penalty: nop
-
-					# TODO
-					# decrement score by some value
-					# reset mole off
-					# iterate to next mole
-
 					addi $a0, $r0, -500						# penalty
 					jal update_score
-
-					# TEST
-					# addi $t5, $r0, 45
-					# lw $t5, 0($t5)
-					# addi $a0, $r0, 2000
-					# jal delay
-
 					addi $a0, $t0, 0
-					jal deactivate_mole
-										
+					jal deactivate_mole			
 					j iterate
 
 				mole_whacked: nop
-
-					# TODO
-					# deactivate mole
-					# increment score by time_elapsed
-					# iterate to next mole
-
 					lw $t5, 3($t0)
 					lw $t6, 2($t0)
 					sub $a0, $t5, $t6
 					jal update_score
-
-					# TEST
-					# addi $t5, $r0, 45
-					# lw $t5, 0($t5)
-					# addi $a0, $r0, 2000
-					# jal delay
-
 					addi $a0, $t0, 0
-					jal deactivate_mole
-					
-
-
+					jal deactivate_mole			
 					j iterate
 
 			sensor_not_touched: nop
@@ -172,16 +140,14 @@ while: nop
 					jal deactivate_mole
 					j iterate
 				
-				
 			update_time_elapsed: nop
-				addi $a0, $t0, 0
+				addi $a0, $t0, 0 
 				jal increment_time_elapsed
 				j iterate								# iterate to next mole
 
 			iterate: nop
 				addi $t0, $t0, 5
 				addi $t2, $t2, 1
-
 				beq $t2, $t3, 1							# branch if current index exceeds last mole index (i.e. reset)
 				j check_next_mole						# DONE
 
