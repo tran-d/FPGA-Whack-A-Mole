@@ -19,8 +19,6 @@ addi $t12, $r0, 0						# game_state = 0
 addi $a0, $r0, 3000
 jal delay
 
-
-
 while: nop
 	
 	whack_a_mole_start: nop
