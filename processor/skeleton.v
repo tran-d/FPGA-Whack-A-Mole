@@ -33,11 +33,13 @@ module skeleton(
 	 output wire [17:0] 	led_pins,
 	 // Capacitive Sensor Array
 	 input wire [8:0] 	capacitive_sensors_in,
-	 output wire 			capacitive_sensors_out
+	 output wire 			capacitive_sensors_out,
+	 // Score display
+	 output wire [6:0]   sev_seg_ones, sev_seg_tens, sev_seg_hundreds
 );
 	
 	 /** Testing **/
-	 wire [31:0] p1, p2, p3, p4, p5, p6, p7;
+	 wire [31:0] p1, p2, p3, p4, p5, p6, p7, t11;
 	 
 	 /** LED ARRAY **/
 	 wire [143:0] led_commands;
@@ -82,7 +84,7 @@ module skeleton(
         data_readRegA,
         data_readRegB, 
 		  random_data,
-		  p1, p2, p3, p4, p5, p6, p7
+		  p1, p2, p3, p4, p5, p6, p7, t11
     );
 	 
     /** PROCESSOR **/
@@ -116,6 +118,41 @@ module skeleton(
 		  // Capacitive Sensor Array
 		  capacitive_sensor_readings
     );
+	 
+	 
+	 reg [3:0] ones, tens, hundreds;
+	 reg [31:0] score;
+	 reg [31:0] score_latch_counter;
+	 reg [3:0] hex_ones, hex_tens, hex_hundreds;
+	 
+
+	 /** Score **/
+	 wire [3:0] score_ones, score_tens, score_hundreds;
+//	 output [6:0] sev_seg_ones, sev_seg_tens, sev_seg_hundreds;
+	 hex_converter hc0(in, score_ones, score_tens, score_hundreds);
+	 Hexadecimal_To_Seven_Segment hs0(score_ones, sev_seg_ones);
+	 Hexadecimal_To_Seven_Segment hs1(score_tens, sev_seg_tens);
+	 Hexadecimal_To_Seven_Segment hs2(score_hundreds, sev_seg_hundreds);
+	 
+	 initial begin
+		score_latch_counter = 32'b0;
+		score = 32'b0;
+	 end
+	 always @(negedge clock) begin
+		if(score_latch_counter > 32'd8) begin
+			score_latch_counter = 32'd0;
+			
+			hex_ones = score_ones;
+			hex_tens = score_tens;
+			hex_hundreds = score_hundreds;
+			
+			score = t11;
+		end	
+		else begin
+			score_latch_counter = score_latch_counter + 32'b1;
+		end
+	 
+	 end
 	 
 	 
 	 /** Debugger **/
