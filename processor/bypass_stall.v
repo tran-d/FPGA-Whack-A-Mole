@@ -17,7 +17,7 @@ module bypass_stall(clock, fd_insn, dx_insn, writeback_insn, multdiv_RDY, is_byp
 	assign dx_mul_insn 	= dx_r_insn && (~dx_ALU_op[4] && ~dx_ALU_op[3] &&  dx_ALU_op[2] &&  dx_ALU_op[1] && ~dx_ALU_op[0]);	// 00000 & 00110
 	assign dx_div_insn 	= dx_r_insn && (~dx_ALU_op[4] && ~dx_ALU_op[3] &&  dx_ALU_op[2] &&  dx_ALU_op[1] &&  dx_ALU_op[0]);	// 00000 & 00111
 					
-	assign lw_hazard 			= dx_lw_insn && (&fd_rs1_equals_dx_rd || &fd_rs2_equals_dx_rd);
+	assign lw_hazard 			= dx_lw_insn ; //&& (&fd_rs1_equals_dx_rd || &fd_rs2_equals_dx_rd);
 	assign is_bypass_hazard = lw_hazard || multdiv_hazard ; 							// && !fd_sw_insn;
 	
 	

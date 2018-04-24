@@ -60,7 +60,7 @@ module stage_execute(
 	wire [31:0] immediate_extended;
 	wire [4:0] ALU_op_new_alt;
 	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, 
-	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop;
+	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop, lw, sw;
 	
 	signextender_16to32 my_se(immediate, immediate_extended);
 	
@@ -76,9 +76,10 @@ module stage_execute(
 	assign div 			= r_insn && ALU_div;
 	assign nop 			= ~(|insn_in);
 	
-	assign immed_insn =  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]) || // addi
-								(~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]) || // sw
-								(~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
+	assign lw			= (~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
+	assign sw 			= (~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]); // sw
+	//assign addi 		=  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]); // addi
+	assign immed_insn = addi || sw || lw;
 	
 	/* ALU Inputs */
 	wire [31:0] ALU_operandA_alt1, ALU_operandB_alt1, ALU_operandB_alt2, ALU_operandB_alt3;
@@ -91,7 +92,7 @@ module stage_execute(
 	assign ALU_operandB_alt2 	= mx_bypass_B  ? o_xm_out			: ALU_operandB_alt3;
 	assign ALU_operandB_alt3 	= wx_bypass_B	? data_writeReg	: regfile_operandB;
 	
-	assign ALU_op_new 			= addi 			? 5'd0 				: ALU_op_new_alt;
+	assign ALU_op_new 			= (addi || lw || sw)			? 5'd0 				: ALU_op_new_alt;
 	assign ALU_op_new_alt 		= (blt | bne | bex | beq)  ? 5'd1 : ALU_op;
 	
 	

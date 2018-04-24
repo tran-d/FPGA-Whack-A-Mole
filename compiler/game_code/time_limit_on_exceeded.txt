@@ -1,0 +1,88 @@
+test_time_limit_on_exceeded: nop
+
+	
+	addi $t0, $r0, 0  # time time_elapsed
+	addi $t1, $r0, 10 # time limit on
+	addi $t2, $r0, 0  # mole index
+	sw $t0, 2($t2)
+	sw $t1, 3($t2)
+
+	addi $t0, $r0, 11  # time time_elapsed
+	addi $t1, $r0, 10 # time limit on
+	addi $t2, $r0, 5  # mole index
+	sw $t0, 2($t2)
+	sw $t1, 3($t2)
+
+	addi $t0, $r0, 10  # time time_elapsed
+	addi $t1, $r0, 10 # time limit on
+	addi $t2, $r0, 10  # mole index
+	sw $t0, 2($t2)
+	sw $t1, 3($t2)
+
+	addi $t0, $r0, 5   # time time_elapsed
+	addi $t1, $r0, 10  # time limit on
+	addi $t2, $r0, 15  # mole index
+	sw $t0, 2($t2)
+	sw $t1, 3($t2)
+
+	addi $t0, $r0, 11  # time time_elapsed
+	addi $t1, $r0, 10  # time limit on
+	addi $t2, $r0, 40  # mole index
+	sw $t0, 2($t2)
+	sw $t1, 3($t2)
+
+
+	addi $a0, $r0, 0
+	jal time_limit_on_exceeded
+	add $t0, $r0, $v0
+
+	addi $a0, $r0, 5
+	jal time_limit_on_exceeded
+	add $t1, $r0, $v0
+
+	addi $a0, $r0, 10
+	jal time_limit_on_exceeded
+	add $t2, $r0, $v0
+
+	addi $a0, $r0, 15
+	jal time_limit_on_exceeded
+	add $t3, $r0, $v0
+
+	addi $a0, $r0, 40
+	jal time_limit_on_exceeded
+	add $t4, $r0, $v0
+
+	j end
+
+
+time_limit_on_exceeded: nop
+
+	# a0: mole index
+	# v0: 1 - exceeded, 0 - not exceeded
+
+	lw $s0, 2($a0)			# load time_elapsed
+	lw $s1, 3($a0)			# load time_limit_on
+
+	blt $s1, $s0, 1			# if(time_limit_on < time_elapsed)
+	j not_exceeded
+
+exceeded: nop
+	
+	addi $v0, $r0, 1
+	jr $ra
+
+not_exceeded: nop
+
+	addi $v0, $r0, 0
+	jr $ra
+
+end: nop
+
+
+checkreg 7, 0
+checkreg 8, 1
+checkreg 9, 0
+checkreg 10, 0
+checkreg 11, 1
+
+cycles 1000

@@ -1,0 +1,45 @@
+
+	
+addi $t4, $r0, 10000
+addi $t3, $r0, 65535
+
+while: nop
+
+	blt $t4, $t2, 1
+	j turn_on
+	nop
+	j reset
+
+turn_on: nop
+
+	addi $t2, $t2, 5
+	led $r0, $t3
+	j while
+
+reset: nop
+	
+	addi $t2, $r0, 0
+	led $r0, $r0
+	j while
+
+
+delay: nop
+	
+	# a0: delay time (ms)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $r0
+	addi $s2, $r0, 8333
+	mul $s0, $s0, $s2
+	nop
+	nop
+
+	delay_loop_begin: nop # 3 cycles/loop
+
+		addi $s1, $s1, 1
+		blt $s0, $s1, 1
+		j delay_loop_begin
+
+	delay_loop_end: nop
+
+	jr $ra
