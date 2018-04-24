@@ -63,14 +63,14 @@ while: nop
 		addi $t0, $r0, 0								# set starting mole index [0-40], increments by 5
 		addi $t1, $r0, 40								# set last mole index
 		addi $t2, $r0, 0								# set starting LED index [0-8], increments by 1
-		addi $t3, $r0, 8								# set last led index
+		addi $t3, $r0, 9								# set last led index
 	
 		check_next_mole: nop
 			# TEST score
 			addi $t11, $r0, 45
 			lw $t10, 0($t11)
 
-			addi $a0, $r0, 5
+			addi $a0, $r0, 3
 			jal delay
 
 			addi $a0, $t2, 0							# $a0 = index of led
@@ -170,7 +170,7 @@ random_time_on: nop
 	sw $ra, 0($sp)
 	
 	addi $a0, $r0, 1000	  # min
-	addi $a1, $r0, 1500     # max
+	addi $a1, $r0, 2000     # max
 	
 	jal random_range
 	
@@ -186,8 +186,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 1000
-	addi $a1, $r0, 4000
+	addi $a0, $r0, 2000
+	addi $a1, $r0, 8000
 	
 	jal random_range 
 	
@@ -203,7 +203,7 @@ random_color: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 280	  		# min
+	addi $a0, $r0, 65534	  		# min
 	addi $a1, $r0, 65535     	# max
 	
 	jal random_range
@@ -264,7 +264,7 @@ check_sensor: nop
 	# $v0: 1 - sensor touched, 0 - sensor not touched
 
 	cap $s0, $a0
-	addi $s1, $r0, 2000					# set THRESHOLD
+	addi $s1, $r0, 3000					# set THRESHOLD
 
 	blt $s1, $s0, 1
 	j not_touched
@@ -341,6 +341,7 @@ activate_mole: nop
 	led $s0, $v0					# random LED color
 	nop
 	nop
+	nop
 
 	# update state
 	sw $s1, 1($a0)
@@ -398,7 +399,7 @@ increment_time_elapsed: nop
 	# $a0: index of mole
 
 	lw $s0, 2($a0)
-	addi $s1, $s0, 50
+	addi $s1, $s0, 35
 	sw $s1, 2($a0)
 
 	jr $ra

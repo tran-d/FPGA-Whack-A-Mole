@@ -19,7 +19,7 @@ module skeleton(
     // Data Memory
     output wire [11:0]  address_dmem,
     output wire [31:0]  d_dmem,
-    output wire         wren_dmem,
+    output wire         wren_dmem, 
     output wire [31:0]  q_dmem,
     // Regfile
     output wire         ctrl_writeEnable,
@@ -111,7 +111,7 @@ module skeleton(
         data_readRegB,                  // I: Data from port B of regfile
 		  
 		  // LED Array
-		  led_commands,
+		  led_commands, 
 		  
 		  // Capacitive Sensor Array
 		  capacitive_sensor_readings
@@ -120,19 +120,27 @@ module skeleton(
 	 
 	 /** Debugger **/
 	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
+	 //debugger d1(.probe(capacitive_sensor_readings[63:32]));
+	 debugger d2(.probe(capacitive_sensor_readings[95:64]));
+	 debugger d3(.probe(capacitive_sensor_readings[127:96]));
+	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+	 debugger d5(.probe(capacitive_sensor_readings[191:160]));
+	 debugger d6(.probe(capacitive_sensor_readings[223:192]));
+	 debugger d7(.probe(capacitive_sensor_readings[255:224]));
+	 debugger d8(.probe(capacitive_sensor_readings[287:256]));
 	 //debugger d4(.probe(capacitive_sensor_readings[159:128]));
 	 //debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
 	 //debugger d10(.probe({16'b0, led_commands[15:0]}));
 	 
 	 //debugger d20(.probe({20'd0 , address_imem[11:0]}));		// PC
 	 
-	 debugger d12(.probe(p1));
-	 debugger d13(.probe(p2));
-	 debugger d14(.probe(p3));
-     
-     debugger d11(.probe(p4));
-     
-	 debugger d15(.probe(p5));
-	 debugger d16(.probe(p6));
-	 debugger d17(.probe(p7));
+//	 debugger d12(.probe(p1));
+//	 debugger d13(.probe(p2));
+//	 debugger d14(.probe(p3));
+//     
+//     debugger d11(.probe(p4));
+//     
+//	 debugger d15(.probe(p5));
+//	 debugger d16(.probe(p6));
+//	 debugger d17(.probe(p7));
 endmodule
