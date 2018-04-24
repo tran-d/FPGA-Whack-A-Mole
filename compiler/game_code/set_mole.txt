@@ -1,0 +1,181 @@
+
+test: nop
+	
+	# addi $a0, $r0, 0
+	# sw $r0, 0($a0)
+	# addi $t0, $r0, 99
+	# sw $t0, 2($a0)
+	# sw $t0, 4($a0)
+	# jal activate_mole
+	# lw $t1, 1($a0)			# state
+	# lw $t2, 2($a0)			# time_elapsed
+	# lw $t3, 3($a0)			# on limit
+	# lw $t4, 4($a0)			# off limit
+
+	addi $a0, $r0, 5
+	addi $t1, $r0, 1
+	sw $t1, 0($a0)
+	addi $t0, $r0, 99
+	sw $t0, 1($a0)
+	sw $t0, 2($a0)
+	sw $t0, 3($a0)
+	jal deactivate_mole
+	lw $t0, 0($a0)				# index
+	lw $t1, 1($a0)				# state
+	lw $t2, 2($a0)				# time_elapsed
+	lw $t3, 3($a0)				# on limit
+	lw $t4, 4($a0)				# off limit
+
+	j end
+
+# reset time_elapsed, set random time_limit_on, set time_limit_off = 0, turn LED on to random color, set new state
+activate_mole: nop
+	
+	# $a0: index of mole
+
+	update_time_limit_on: nop
+		addi $sp, $sp, -2
+		sw $ra, 0($sp)
+		sw $a0, 1($sp)
+
+		jal random_time_on
+
+		lw $ra, 0($sp)
+		lw $a0, 1($sp)
+		addi $sp, $sp, 2
+
+		sw $v0, 3($a0)					# store new time_limit_on
+
+	reset_time_elapsed: nop
+
+		sw $r0, 2($a0)
+
+	set_time_limit_off_zero: nop
+
+		sw $r0, 4($a0)
+
+	turn_led_on: nop
+
+		addi $s1, $r0, 65535 
+		lw $s0, 0($a0)					# get LED index
+		led $s0, $s1					# LED color
+
+	set_state: nop
+
+		sw $s1, 1($a0)
+
+	jr $ra
+
+
+
+
+# reset time_elapsed, set random time_limit_off, , set time_limit_on = 0, turn LED off to random color
+deactivate_mole: nop
+	
+	# $a0: index of mole
+
+	update_time_limit_off: nop
+		addi $sp, $sp, -2
+		sw $ra, 0($sp)
+		sw $a0, 1($sp)
+
+		jal random_time_off
+
+		lw $ra, 0($sp)
+		lw $a0, 1($sp)
+		addi $sp, $sp, 2
+
+		sw $v0, 4($a0)					# store new time_limit_off
+
+	reset_time_elapsed: nop
+
+		sw $r0, 2($a0)
+
+	set_time_limit_on_zero: nop
+
+		sw $r0, 3($a0)
+
+	turn_led_off: nop
+ 
+		lw $s0, 0($a0)					# get LED index
+		led $s0, $r0					# LED color (off)
+
+	set_state: nop
+
+		sw $r0, 1($a0)
+
+	jr $ra
+
+
+
+random_time_on: nop
+	
+	# v0: random time on (ms)
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 500	  # min
+	addi $a1, $r0, 5000   # max
+	
+	jal random_range
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra
+	
+random_time_off: nop
+
+	# v0: random time off (ms)
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 5000
+	addi $a1, $r0, 15000
+	
+	jal random_range 
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra	
+
+random_range: nop
+
+	# a0: min_time
+	# a1: max_time
+	# v0: random value between (min_time, max_time)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $a1
+
+	add  $s2, $r0, $rm    # random 0-255
+
+	sub  $s3, $s1, $s0    # map random to min/max (max - min)
+	mul  $s4, $s2, $s3
+	nop
+	nop
+	addi $s5, $r0, 255
+	div  $s6, $s4, $s5
+	nop
+	nop	
+	add  $v0, $s6, $s0    # save to v0
+
+	jr 	 $ra 			  # return
+
+end: nop
+
+# test for activate
+# checkreg 8, 65535
+# checkreg 9, 0
+# checkreg 10, 23624123
+# checkreg 11, 0
+
+# test for deactivate
+checkreg 7, 1
+checkreg 8, 0
+checkreg 9, 0
+checkreg 10, 0
+checkreg 11, 123094781

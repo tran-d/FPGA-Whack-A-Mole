@@ -1,0 +1,68 @@
+addi $r1, $r0, 13001
+addi $r2, $r0, 18064	
+mul  $r3, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, -1000
+addi $r2, $r0, 1
+mul  $r4, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 1
+addi $r2, $r0, -1000
+mul  $r5, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 1234
+addi $r2, $r0, -2579
+mul  $r6, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 2579
+addi $r2, $r0, -1234
+mul  $r7, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, -47901
+addi $r2, $r0, 6357
+mul  $r8, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, -6357
+addi $r2, $r0, 47901
+mul  $r9, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 1
+addi $r2, $r0, 65535
+mul  $r10, $r1, $r2
+nop
+nop
+nop
+addi $r1, $r0, 65535
+addi $r2, $r0, 1
+mul  $r11, $r1, $r2
+nop
+nop
+nop
+
+cycles 400
+
+# "checkreg A, B" checks register "A" for value "B".
+
+checkreg 3, 234850064
+checkreg 4, -1000
+checkreg 5, -1000
+checkreg 6, -3182486
+checkreg 7, -3182486
+checkreg 8, -304506657
+checkreg 9, -304506657
+checkreg 10, 65535
+checkreg 11, 65535

@@ -1,0 +1,15 @@
+multdiv_controller(
+	ALU_operandA, 
+	ALU_operandB, 
+	ctrl_MULT, 
+	ctrl_DIV, 
+	clock, 
+	multdiv_result, 
+	multdiv_exception, 
+	multdiv_RDY
+);
+   input [31:0] ALU_operandA, ALU_operandB; 
+	input ctrl_MULT, ctrl_DIV, clock;
+	
+	output [31:0] multdiv_result;
+	output multdiv_exception, multdiv_RDY;

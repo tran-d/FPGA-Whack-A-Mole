@@ -1,0 +1,301 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[9]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[8]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[18]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[17]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[16]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[27]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[26]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[25]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[24]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[36]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[35]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[34]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[33]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[32]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[45]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[44]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[43]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[42]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[41]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[40]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[54]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[53]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[52]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[51]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[50]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[49]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[48]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[63]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[62]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[61]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[60]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[59]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[58]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[57]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[56]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[7]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[11]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[10]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[13]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[12]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[14]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[15]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[19]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[21]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[20]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[22]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[23]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[29]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[28]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[30]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[31]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[37]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[38]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[39]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[46]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[47]",
+					"strict" : false
+				},
+				{
+					"name" : "seeds[55]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

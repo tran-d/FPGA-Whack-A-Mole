@@ -1,0 +1,1404 @@
+TimeQuest Timing Analyzer report for random
+Thu Apr 19 20:57:46 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'clock'
+ 13. Slow 1200mV 85C Model Hold: 'clock'
+ 14. Slow 1200mV 85C Model Metastability Summary
+ 15. Slow 1200mV 0C Model Fmax Summary
+ 16. Slow 1200mV 0C Model Setup Summary
+ 17. Slow 1200mV 0C Model Hold Summary
+ 18. Slow 1200mV 0C Model Recovery Summary
+ 19. Slow 1200mV 0C Model Removal Summary
+ 20. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 21. Slow 1200mV 0C Model Setup: 'clock'
+ 22. Slow 1200mV 0C Model Hold: 'clock'
+ 23. Slow 1200mV 0C Model Metastability Summary
+ 24. Fast 1200mV 0C Model Setup Summary
+ 25. Fast 1200mV 0C Model Hold Summary
+ 26. Fast 1200mV 0C Model Recovery Summary
+ 27. Fast 1200mV 0C Model Removal Summary
+ 28. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Fast 1200mV 0C Model Setup: 'clock'
+ 30. Fast 1200mV 0C Model Hold: 'clock'
+ 31. Fast 1200mV 0C Model Metastability Summary
+ 32. Multicorner Timing Analysis Summary
+ 33. Board Trace Model Assignments
+ 34. Input Transition Times
+ 35. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 36. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 37. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Report TCCS
+ 41. Report RSKM
+ 42. Unconstrained Paths Summary
+ 43. Clock Status Summary
+ 44. Unconstrained Input Ports
+ 45. Unconstrained Output Ports
+ 46. Unconstrained Input Ports
+ 47. Unconstrained Output Ports
+ 48. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; random                                              ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.05        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   2.7%      ;
+;     Processor 3            ;   1.7%      ;
+;     Processor 4            ;   0.9%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                       ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 301.3 MHz ; 250.0 MHz       ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; clock ; -2.319 ; -127.555           ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; clock ; 0.388 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; clock ; -3.000 ; -85.240                          ;
++-------+--------+----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clock'                                                                                               ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -2.319 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.237      ;
+; -2.302 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.218      ;
+; -2.220 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.138      ;
+; -2.219 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.137      ;
+; -2.211 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.127      ;
+; -2.204 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.122      ;
+; -2.203 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.121      ;
+; -2.203 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.121      ;
+; -2.203 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.121      ;
+; -2.203 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.121      ;
+; -2.203 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.119      ;
+; -2.201 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.117      ;
+; -2.197 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.115      ;
+; -2.193 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.109      ;
+; -2.188 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.105      ;
+; -2.185 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.101      ;
+; -2.168 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.086      ;
+; -2.168 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.084      ;
+; -2.164 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.081      ;
+; -2.161 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.078      ;
+; -2.160 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.077      ;
+; -2.160 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.077      ;
+; -2.159 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 1.000        ; -0.078     ; 3.079      ;
+; -2.159 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.076      ;
+; -2.152 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.068      ;
+; -2.150 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.066      ;
+; -2.143 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.060      ;
+; -2.143 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.060      ;
+; -2.142 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.058      ;
+; -2.137 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.055      ;
+; -2.136 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.054      ;
+; -2.134 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.082     ; 3.050      ;
+; -2.121 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.039      ;
+; -2.120 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.038      ;
+; -2.120 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.038      ;
+; -2.120 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.038      ;
+; -2.118 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.035      ;
+; -2.108 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.513     ; 2.593      ;
+; -2.100 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.513     ; 2.585      ;
+; -2.098 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.513     ; 2.583      ;
+; -2.097 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 3.015      ;
+; -2.090 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.513     ; 2.575      ;
+; -2.086 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.003      ;
+; -2.086 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.003      ;
+; -2.085 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.002      ;
+; -2.085 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.002      ;
+; -2.085 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.002      ;
+; -2.085 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.002      ;
+; -2.084 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 3.001      ;
+; -2.082 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.513     ; 2.567      ;
+; -2.078 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.996      ;
+; -2.077 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.995      ;
+; -2.076 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.993      ;
+; -2.068 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.985      ;
+; -2.068 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.985      ;
+; -2.062 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.980      ;
+; -2.061 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.979      ;
+; -2.061 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.979      ;
+; -2.061 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.979      ;
+; -2.058 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.975      ;
+; -2.055 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.511     ; 2.542      ;
+; -2.054 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.511     ; 2.541      ;
+; -2.054 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.511     ; 2.541      ;
+; -2.052 ; random8_cell:rc4|data[7] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.970      ;
+; -2.048 ; random8_cell:rc6|data[7] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.965      ;
+; -2.048 ; random8_cell:rc3|data[7] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.964      ;
+; -2.043 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[7] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.961      ;
+; -2.035 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[7] ; clock        ; clock       ; 1.000        ; -0.078     ; 2.955      ;
+; -2.034 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.951      ;
+; -2.030 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.946      ;
+; -2.030 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.947      ;
+; -2.030 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 1.000        ; -0.078     ; 2.950      ;
+; -2.024 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.940      ;
+; -2.022 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.938      ;
+; -2.020 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.936      ;
+; -2.014 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 1.000        ; -0.506     ; 2.506      ;
+; -2.012 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.928      ;
+; -2.010 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 1.000        ; -0.506     ; 2.502      ;
+; -2.009 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.926      ;
+; -2.004 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.920      ;
+; -2.003 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[4] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.921      ;
+; -1.999 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 1.000        ; -0.078     ; 2.919      ;
+; -1.996 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.913      ;
+; -1.994 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.910      ;
+; -1.985 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[4] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.902      ;
+; -1.980 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.897      ;
+; -1.979 ; random8_cell:rc7|data[7] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.897      ;
+; -1.979 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.896      ;
+; -1.978 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.511     ; 2.465      ;
+; -1.967 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.885      ;
+; -1.966 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.080     ; 2.884      ;
+; -1.966 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 1.000        ; -0.076     ; 2.888      ;
+; -1.963 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.880      ;
+; -1.963 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.880      ;
+; -1.963 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.512     ; 2.449      ;
+; -1.962 ; random8_cell:rc7|data[7] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 1.000        ; -0.082     ; 2.878      ;
+; -1.961 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.878      ;
+; -1.960 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.877      ;
+; -1.960 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.877      ;
+; -1.959 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 1.000        ; -0.081     ; 2.876      ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clock'                                                                                               ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.388 ; random8_cell:rc8|data[4] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.086      ;
+; 0.418 ; random8_cell:rc5|data[2] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.116      ;
+; 0.449 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.146      ;
+; 0.482 ; random8_cell:rc1|data[4] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.506      ; 1.174      ;
+; 0.517 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.508      ; 1.211      ;
+; 0.519 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.219      ;
+; 0.562 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.261      ;
+; 0.566 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.265      ;
+; 0.570 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.836      ;
+; 0.581 ; random8_cell:rc7|data[0] ; random8_cell:rc7|data[1] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.847      ;
+; 0.585 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.851      ;
+; 0.588 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.855      ;
+; 0.593 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.860      ;
+; 0.646 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.345      ;
+; 0.672 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.371      ;
+; 0.684 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.951      ;
+; 0.685 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.951      ;
+; 0.686 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.952      ;
+; 0.686 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.953      ;
+; 0.690 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.957      ;
+; 0.697 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.963      ;
+; 0.706 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.403      ;
+; 0.709 ; random8_cell:rc4|data[6] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.975      ;
+; 0.712 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 0.000        ; 0.081      ; 0.979      ;
+; 0.717 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[4] ; clock        ; clock       ; 0.000        ; 0.080      ; 0.983      ;
+; 0.724 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.424      ;
+; 0.742 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.008      ;
+; 0.746 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.013      ;
+; 0.750 ; random8_cell:rc4|data[4] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.014      ;
+; 0.750 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.018      ;
+; 0.751 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.018      ;
+; 0.751 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.017      ;
+; 0.753 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.098      ; 1.037      ;
+; 0.755 ; random8_cell:rc7|data[2] ; random8_cell:rc7|data[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.021      ;
+; 0.756 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.456      ;
+; 0.760 ; random8_cell:rc7|data[6] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.026      ;
+; 0.764 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.030      ;
+; 0.768 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.032      ;
+; 0.789 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.057      ;
+; 0.789 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.508      ; 1.483      ;
+; 0.836 ; random8_cell:rc6|data[2] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.103      ;
+; 0.848 ; random8_cell:rc7|data[4] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.116      ;
+; 0.848 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.114      ;
+; 0.861 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.125      ;
+; 0.863 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.129      ;
+; 0.874 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[4] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.142      ;
+; 0.877 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[1] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.143      ;
+; 0.878 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.142      ;
+; 0.890 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.588      ;
+; 0.894 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.158      ;
+; 0.897 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.596      ;
+; 0.906 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.603      ;
+; 0.907 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.604      ;
+; 0.909 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.607      ;
+; 0.912 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.609      ;
+; 0.922 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.189      ;
+; 0.922 ; random8_cell:rc1|data[0] ; random8_cell:rc1|data[1] ; clock        ; clock       ; 0.000        ; 0.078      ; 1.186      ;
+; 0.925 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.622      ;
+; 0.939 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.638      ;
+; 0.953 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.510      ; 1.649      ;
+; 0.961 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.228      ;
+; 0.963 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.229      ;
+; 0.970 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.670      ;
+; 0.986 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.254      ;
+; 0.990 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 0.000        ; 0.080      ; 1.256      ;
+; 0.997 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.264      ;
+; 1.005 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.704      ;
+; 1.010 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[7] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.277      ;
+; 1.017 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.714      ;
+; 1.022 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.719      ;
+; 1.025 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.508      ; 1.719      ;
+; 1.026 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.723      ;
+; 1.031 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.728      ;
+; 1.058 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.325      ;
+; 1.069 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.767      ;
+; 1.070 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.768      ;
+; 1.071 ; random8_cell:rc6|data[7] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.338      ;
+; 1.097 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 0.000        ; -0.332     ; 0.951      ;
+; 1.101 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.799      ;
+; 1.101 ; random8_cell:rc6|data[6] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 0.000        ; -0.334     ; 0.953      ;
+; 1.104 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; -0.332     ; 0.958      ;
+; 1.106 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.098      ; 1.390      ;
+; 1.106 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.806      ;
+; 1.113 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.381      ;
+; 1.117 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[1] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.384      ;
+; 1.122 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; 0.081      ; 1.389      ;
+; 1.139 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.506      ; 1.831      ;
+; 1.149 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.848      ;
+; 1.149 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.848      ;
+; 1.150 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.849      ;
+; 1.155 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.855      ;
+; 1.164 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.508      ; 1.858      ;
+; 1.165 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.433      ;
+; 1.168 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.512      ; 1.866      ;
+; 1.170 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.514      ; 1.870      ;
+; 1.172 ; random8_cell:rc1|data[0] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.508      ; 1.866      ;
+; 1.185 ; random8_cell:rc6|data[2] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.513      ; 1.884      ;
+; 1.186 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.511      ; 1.883      ;
+; 1.194 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.462      ;
+; 1.197 ; random8_cell:rc3|data[7] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 0.000        ; 0.082      ; 1.465      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                        ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+; 333.0 MHz ; 250.0 MHz       ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clock ; -2.003 ; -108.952          ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clock ; 0.364 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clock ; -3.000 ; -85.240                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clock'                                                                                                ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -2.003 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.930      ;
+; -1.984 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 1.000        ; -0.074     ; 2.909      ;
+; -1.919 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.845      ;
+; -1.910 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.836      ;
+; -1.909 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.835      ;
+; -1.905 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.831      ;
+; -1.897 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.823      ;
+; -1.883 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.811      ;
+; -1.882 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.810      ;
+; -1.881 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.809      ;
+; -1.881 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.809      ;
+; -1.880 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.808      ;
+; -1.880 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.808      ;
+; -1.873 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.800      ;
+; -1.872 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.799      ;
+; -1.870 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.797      ;
+; -1.869 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 1.000        ; -0.070     ; 2.798      ;
+; -1.863 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.790      ;
+; -1.863 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.790      ;
+; -1.862 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.789      ;
+; -1.861 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.788      ;
+; -1.856 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.783      ;
+; -1.856 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.782      ;
+; -1.855 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.782      ;
+; -1.854 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.782      ;
+; -1.853 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.779      ;
+; -1.850 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.776      ;
+; -1.848 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.774      ;
+; -1.847 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.773      ;
+; -1.846 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.772      ;
+; -1.824 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.355      ;
+; -1.821 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.352      ;
+; -1.816 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.742      ;
+; -1.816 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.347      ;
+; -1.815 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.346      ;
+; -1.814 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.345      ;
+; -1.804 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.732      ;
+; -1.803 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.731      ;
+; -1.799 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.727      ;
+; -1.799 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.727      ;
+; -1.798 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.776 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.703      ;
+; -1.770 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.696      ;
+; -1.765 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 1.000        ; -0.463     ; 2.301      ;
+; -1.762 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 1.000        ; -0.463     ; 2.298      ;
+; -1.759 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.686      ;
+; -1.759 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.686      ;
+; -1.758 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.685      ;
+; -1.757 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.684      ;
+; -1.756 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.682      ;
+; -1.756 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.682      ;
+; -1.756 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.683      ;
+; -1.756 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.682      ;
+; -1.754 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.682      ;
+; -1.753 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.681      ;
+; -1.750 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 1.000        ; -0.070     ; 2.679      ;
+; -1.750 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.677      ;
+; -1.749 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.676      ;
+; -1.745 ; random8_cell:rc4|data[7] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.673      ;
+; -1.743 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.274      ;
+; -1.743 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.274      ;
+; -1.743 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.274      ;
+; -1.742 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.670      ;
+; -1.741 ; random8_cell:rc6|data[7] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.668      ;
+; -1.741 ; random8_cell:rc3|data[7] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.667      ;
+; -1.741 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.669      ;
+; -1.740 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[7] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.668      ;
+; -1.740 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.074     ; 2.665      ;
+; -1.740 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.668      ;
+; -1.740 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.668      ;
+; -1.737 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[5] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.663      ;
+; -1.734 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[7] ; clock        ; clock       ; 1.000        ; -0.070     ; 2.663      ;
+; -1.725 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.651      ;
+; -1.724 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.650      ;
+; -1.723 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.649      ;
+; -1.721 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.647      ;
+; -1.716 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.642      ;
+; -1.715 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.641      ;
+; -1.714 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.640      ;
+; -1.713 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[4] ; clock        ; clock       ; 1.000        ; -0.071     ; 2.641      ;
+; -1.709 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.468     ; 2.240      ;
+; -1.702 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.074     ; 2.627      ;
+; -1.700 ; random8_cell:rc7|data[7] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.627      ;
+; -1.700 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.626      ;
+; -1.698 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[4] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.624      ;
+; -1.698 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.624      ;
+; -1.697 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.623      ;
+; -1.697 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.623      ;
+; -1.688 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.469     ; 2.218      ;
+; -1.686 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.613      ;
+; -1.681 ; random8_cell:rc7|data[7] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 1.000        ; -0.074     ; 2.606      ;
+; -1.681 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 1.000        ; -0.069     ; 2.611      ;
+; -1.681 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 1.000        ; -0.068     ; 2.612      ;
+; -1.678 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 1.000        ; -0.068     ; 2.609      ;
+; -1.675 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[3] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.601      ;
+; -1.674 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.601      ;
+; -1.673 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 1.000        ; -0.073     ; 2.599      ;
+; -1.668 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.595      ;
+; -1.668 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.072     ; 2.595      ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clock'                                                                                                ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.364 ; random8_cell:rc8|data[4] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.470      ; 1.005      ;
+; 0.379 ; random8_cell:rc5|data[2] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.469      ; 1.019      ;
+; 0.419 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.058      ;
+; 0.454 ; random8_cell:rc1|data[4] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.463      ; 1.088      ;
+; 0.478 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.466      ; 1.115      ;
+; 0.485 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.124      ;
+; 0.513 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.152      ;
+; 0.517 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.760      ;
+; 0.526 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.165      ;
+; 0.533 ; random8_cell:rc7|data[0] ; random8_cell:rc7|data[1] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.776      ;
+; 0.535 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.779      ;
+; 0.538 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.780      ;
+; 0.539 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.782      ;
+; 0.587 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.226      ;
+; 0.595 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.233      ;
+; 0.620 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.259      ;
+; 0.628 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.871      ;
+; 0.628 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.870      ;
+; 0.628 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.872      ;
+; 0.630 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.874      ;
+; 0.634 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.878      ;
+; 0.637 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.879      ;
+; 0.646 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.285      ;
+; 0.648 ; random8_cell:rc4|data[6] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.890      ;
+; 0.650 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.894      ;
+; 0.655 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[4] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.897      ;
+; 0.670 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.912      ;
+; 0.688 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.088      ; 0.947      ;
+; 0.696 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.939      ;
+; 0.697 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.941      ;
+; 0.699 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.942      ;
+; 0.699 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 0.000        ; 0.071      ; 0.941      ;
+; 0.699 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.338      ;
+; 0.700 ; random8_cell:rc4|data[4] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 0.000        ; 0.069      ; 0.940      ;
+; 0.702 ; random8_cell:rc7|data[2] ; random8_cell:rc7|data[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.945      ;
+; 0.706 ; random8_cell:rc7|data[6] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.949      ;
+; 0.712 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 0.955      ;
+; 0.717 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 0.000        ; 0.070      ; 0.958      ;
+; 0.724 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.465      ; 1.360      ;
+; 0.728 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.073      ; 0.972      ;
+; 0.765 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.070      ; 1.006      ;
+; 0.769 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.012      ;
+; 0.773 ; random8_cell:rc6|data[2] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.016      ;
+; 0.777 ; random8_cell:rc7|data[4] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 0.000        ; 0.074      ; 1.022      ;
+; 0.777 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 0.000        ; 0.071      ; 1.019      ;
+; 0.812 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.451      ;
+; 0.815 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[1] ; clock        ; clock       ; 0.000        ; 0.071      ; 1.057      ;
+; 0.815 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.070      ; 1.056      ;
+; 0.815 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[4] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.059      ;
+; 0.816 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.470      ; 1.457      ;
+; 0.819 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.458      ;
+; 0.824 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.463      ;
+; 0.826 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 0.000        ; 0.070      ; 1.067      ;
+; 0.831 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.470      ;
+; 0.838 ; random8_cell:rc1|data[0] ; random8_cell:rc1|data[1] ; clock        ; clock       ; 0.000        ; 0.070      ; 1.079      ;
+; 0.842 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.086      ;
+; 0.845 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.470      ; 1.486      ;
+; 0.860 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.499      ;
+; 0.870 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.508      ;
+; 0.882 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.126      ;
+; 0.884 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.523      ;
+; 0.887 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 0.000        ; 0.071      ; 1.129      ;
+; 0.902 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.145      ;
+; 0.905 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.544      ;
+; 0.905 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.544      ;
+; 0.908 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.152      ;
+; 0.910 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.074      ; 1.155      ;
+; 0.916 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.555      ;
+; 0.922 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.561      ;
+; 0.923 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.562      ;
+; 0.927 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.465      ; 1.563      ;
+; 0.931 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.570      ;
+; 0.940 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[7] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.184      ;
+; 0.948 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.586      ;
+; 0.951 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.466      ; 1.588      ;
+; 0.965 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.209      ;
+; 0.972 ; random8_cell:rc6|data[7] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 0.000        ; 0.072      ; 1.215      ;
+; 0.985 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.088      ; 1.244      ;
+; 1.005 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.470      ; 1.646      ;
+; 1.005 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 0.000        ; -0.306     ; 0.870      ;
+; 1.008 ; random8_cell:rc6|data[6] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 0.000        ; -0.307     ; 0.872      ;
+; 1.015 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; -0.307     ; 0.879      ;
+; 1.018 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[1] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.262      ;
+; 1.020 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.463      ; 1.654      ;
+; 1.022 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.661      ;
+; 1.027 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.074      ; 1.272      ;
+; 1.028 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.272      ;
+; 1.031 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.670      ;
+; 1.034 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.672      ;
+; 1.034 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.672      ;
+; 1.041 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.470      ; 1.682      ;
+; 1.049 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.465      ; 1.685      ;
+; 1.053 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.692      ;
+; 1.054 ; random8_cell:rc1|data[0] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.465      ; 1.690      ;
+; 1.057 ; random8_cell:rc6|data[2] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.467      ; 1.695      ;
+; 1.069 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.468      ; 1.708      ;
+; 1.075 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.319      ;
+; 1.077 ; random8_cell:rc3|data[7] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.321      ;
+; 1.082 ; random8_cell:rc4|data[7] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 0.000        ; 0.071      ; 1.324      ;
+; 1.083 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 0.000        ; 0.073      ; 1.327      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; clock ; -0.613 ; -30.147           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; clock ; 0.164 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; clock ; -3.000 ; -71.231                         ;
++-------+--------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clock'                                                                                                ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -0.613 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.559      ;
+; -0.612 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.558      ;
+; -0.606 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.552      ;
+; -0.605 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.551      ;
+; -0.605 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.551      ;
+; -0.604 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.550      ;
+; -0.601 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.546      ;
+; -0.595 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.540      ;
+; -0.595 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.540      ;
+; -0.594 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.540      ;
+; -0.594 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.539      ;
+; -0.594 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.539      ;
+; -0.592 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.537      ;
+; -0.591 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.536      ;
+; -0.591 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.536      ;
+; -0.586 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.531      ;
+; -0.586 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.531      ;
+; -0.583 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.528      ;
+; -0.582 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 1.000        ; -0.043     ; 1.526      ;
+; -0.581 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.526      ;
+; -0.574 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.520      ;
+; -0.573 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.519      ;
+; -0.572 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.517      ;
+; -0.571 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.516      ;
+; -0.571 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.516      ;
+; -0.567 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.513      ;
+; -0.566 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.512      ;
+; -0.566 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.512      ;
+; -0.565 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.511      ;
+; -0.563 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.508      ;
+; -0.549 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.494      ;
+; -0.549 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.494      ;
+; -0.549 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.494      ;
+; -0.546 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.245     ; 1.288      ;
+; -0.541 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.487      ;
+; -0.537 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.245     ; 1.279      ;
+; -0.537 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.483      ;
+; -0.536 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.245     ; 1.278      ;
+; -0.536 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.245     ; 1.278      ;
+; -0.536 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.482      ;
+; -0.533 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.478      ;
+; -0.533 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.478      ;
+; -0.532 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.477      ;
+; -0.532 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.477      ;
+; -0.530 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.476      ;
+; -0.529 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.475      ;
+; -0.529 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.475      ;
+; -0.528 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.245     ; 1.270      ;
+; -0.528 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.474      ;
+; -0.526 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.472      ;
+; -0.524 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.469      ;
+; -0.524 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.469      ;
+; -0.515 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.460      ;
+; -0.509 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.454      ;
+; -0.507 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.244     ; 1.250      ;
+; -0.507 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.244     ; 1.250      ;
+; -0.507 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.244     ; 1.250      ;
+; -0.506 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.451      ;
+; -0.506 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.452      ;
+; -0.504 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.449      ;
+; -0.502 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.447      ;
+; -0.500 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.445      ;
+; -0.499 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.444      ;
+; -0.499 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.444      ;
+; -0.497 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.443      ;
+; -0.495 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 1.000        ; -0.043     ; 1.439      ;
+; -0.494 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 1.000        ; -0.039     ; 1.442      ;
+; -0.492 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.437      ;
+; -0.491 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 1.000        ; -0.039     ; 1.439      ;
+; -0.491 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.436      ;
+; -0.486 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.431      ;
+; -0.485 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.430      ;
+; -0.477 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 1.000        ; -0.239     ; 1.225      ;
+; -0.476 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.422      ;
+; -0.475 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[0] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.421      ;
+; -0.473 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 1.000        ; -0.239     ; 1.221      ;
+; -0.473 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.418      ;
+; -0.473 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.418      ;
+; -0.473 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.418      ;
+; -0.471 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.416      ;
+; -0.471 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.416      ;
+; -0.469 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.415      ;
+; -0.469 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.414      ;
+; -0.469 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.414      ;
+; -0.468 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.414      ;
+; -0.468 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.414      ;
+; -0.468 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.413      ;
+; -0.468 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.413      ;
+; -0.467 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.413      ;
+; -0.467 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.413      ;
+; -0.466 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.412      ;
+; -0.460 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.406      ;
+; -0.460 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.405      ;
+; -0.460 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 1.000        ; -0.042     ; 1.405      ;
+; -0.460 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 1.000        ; -0.244     ; 1.203      ;
+; -0.459 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[1] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.405      ;
+; -0.459 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[3] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.405      ;
+; -0.459 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.405      ;
+; -0.457 ; random8_cell:rc4|data[7] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.403      ;
+; -0.455 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 1.000        ; -0.041     ; 1.401      ;
++--------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clock'                                                                                                ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.164 ; random8_cell:rc8|data[4] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.493      ;
+; 0.175 ; random8_cell:rc5|data[2] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.504      ;
+; 0.195 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.523      ;
+; 0.206 ; random8_cell:rc1|data[4] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.239      ; 0.529      ;
+; 0.227 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.241      ; 0.552      ;
+; 0.228 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.558      ;
+; 0.235 ; random8_cell:rc3|data[1] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.564      ;
+; 0.255 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.584      ;
+; 0.261 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.386      ;
+; 0.263 ; random8_cell:rc7|data[0] ; random8_cell:rc7|data[1] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.388      ;
+; 0.267 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[2] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.393      ;
+; 0.267 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.392      ;
+; 0.273 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.399      ;
+; 0.282 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.611      ;
+; 0.289 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.618      ;
+; 0.307 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.635      ;
+; 0.311 ; random8_cell:rc2|data[5] ; random8_cell:rc2|data[6] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.437      ;
+; 0.312 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.437      ;
+; 0.312 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[1] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.438      ;
+; 0.312 ; random8_cell:rc4|data[2] ; random8_cell:rc4|data[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.437      ;
+; 0.316 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[5] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.442      ;
+; 0.321 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.446      ;
+; 0.323 ; random8_cell:rc2|data[3] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.653      ;
+; 0.326 ; random8_cell:rc4|data[6] ; random8_cell:rc4|data[7] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.451      ;
+; 0.328 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[7] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.454      ;
+; 0.329 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[4] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.454      ;
+; 0.331 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[1] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.457      ;
+; 0.331 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[5] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.457      ;
+; 0.332 ; random8_cell:rc6|data[0] ; random8_cell:rc6|data[1] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.458      ;
+; 0.332 ; random8_cell:rc4|data[0] ; random8_cell:rc4|data[1] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.457      ;
+; 0.335 ; random8_cell:rc4|data[4] ; random8_cell:rc4|data[5] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.458      ;
+; 0.335 ; random8_cell:rc2|data[6] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.665      ;
+; 0.336 ; random8_cell:rc7|data[2] ; random8_cell:rc7|data[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.461      ;
+; 0.339 ; random8_cell:rc7|data[6] ; random8_cell:rc7|data[7] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.464      ;
+; 0.341 ; random8_cell:rc7|data[1] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.466      ;
+; 0.345 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[6] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.470      ;
+; 0.345 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[4] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.468      ;
+; 0.347 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.050      ; 0.481      ;
+; 0.357 ; random8_cell:rc4|data[5] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.043      ; 0.484      ;
+; 0.359 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.241      ; 0.684      ;
+; 0.374 ; random8_cell:rc6|data[2] ; random8_cell:rc6|data[3] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.500      ;
+; 0.377 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[5] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.503      ;
+; 0.378 ; random8_cell:rc7|data[3] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.501      ;
+; 0.378 ; random8_cell:rc7|data[4] ; random8_cell:rc7|data[5] ; clock        ; clock       ; 0.000        ; 0.043      ; 0.505      ;
+; 0.381 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.506      ;
+; 0.392 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[1] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.517      ;
+; 0.395 ; random8_cell:rc6|data[3] ; random8_cell:rc6|data[4] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.521      ;
+; 0.397 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.726      ;
+; 0.400 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.729      ;
+; 0.401 ; random8_cell:rc7|data[5] ; random8_cell:rc7|data[4] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.524      ;
+; 0.404 ; random8_cell:rc1|data[1] ; random8_cell:rc1|data[2] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.527      ;
+; 0.408 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.736      ;
+; 0.411 ; random8_cell:rc8|data[7] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.739      ;
+; 0.412 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.741      ;
+; 0.414 ; random8_cell:rc1|data[0] ; random8_cell:rc1|data[1] ; clock        ; clock       ; 0.000        ; 0.039      ; 0.537      ;
+; 0.418 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.544      ;
+; 0.420 ; random8_cell:rc6|data[5] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.749      ;
+; 0.420 ; random8_cell:rc5|data[1] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.748      ;
+; 0.421 ; random8_cell:rc5|data[0] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.749      ;
+; 0.425 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[2] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.551      ;
+; 0.425 ; random8_cell:rc1|data[7] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.243      ; 0.752      ;
+; 0.428 ; random8_cell:rc4|data[1] ; random8_cell:rc4|data[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.553      ;
+; 0.431 ; random8_cell:rc2|data[7] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.761      ;
+; 0.438 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.043      ; 0.565      ;
+; 0.439 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[3] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.564      ;
+; 0.451 ; random8_cell:rc8|data[6] ; random8_cell:rc8|data[7] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.577      ;
+; 0.458 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[2] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.787      ;
+; 0.459 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[3] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.585      ;
+; 0.469 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.797      ;
+; 0.474 ; random8_cell:rc5|data[4] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.802      ;
+; 0.475 ; random8_cell:rc1|data[2] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.241      ; 0.800      ;
+; 0.476 ; random8_cell:rc8|data[1] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.804      ;
+; 0.484 ; random8_cell:rc8|data[0] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.812      ;
+; 0.484 ; random8_cell:rc3|data[4] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.813      ;
+; 0.485 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[0] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.611      ;
+; 0.486 ; random8_cell:rc6|data[4] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.815      ;
+; 0.490 ; random8_cell:rc6|data[7] ; random8_cell:rc6|data[0] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.616      ;
+; 0.492 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.822      ;
+; 0.493 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[5] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.822      ;
+; 0.494 ; random8_cell:rc1|data[5] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.049      ; 0.627      ;
+; 0.504 ; random8_cell:rc2|data[0] ; random8_cell:rc2|data[1] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.630      ;
+; 0.505 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.631      ;
+; 0.506 ; random8_cell:rc6|data[6] ; random8_cell:rc6|data[7] ; clock        ; clock       ; 0.000        ; -0.153     ; 0.437      ;
+; 0.506 ; random8_cell:rc3|data[2] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 0.000        ; -0.153     ; 0.437      ;
+; 0.506 ; random8_cell:rc3|data[5] ; random8_cell:rc3|data[4] ; clock        ; clock       ; 0.000        ; 0.043      ; 0.633      ;
+; 0.510 ; random8_cell:rc5|data[3] ; random8_cell:rc5|data[4] ; clock        ; clock       ; 0.000        ; -0.152     ; 0.442      ;
+; 0.510 ; random8_cell:rc2|data[1] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.840      ;
+; 0.518 ; random8_cell:rc1|data[3] ; random8_cell:rc1|data[5] ; clock        ; clock       ; 0.000        ; 0.239      ; 0.841      ;
+; 0.530 ; random8_cell:rc5|data[5] ; random8_cell:rc5|data[3] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.858      ;
+; 0.531 ; random8_cell:rc4|data[3] ; random8_cell:rc4|data[4] ; clock        ; clock       ; 0.000        ; 0.043      ; 0.658      ;
+; 0.534 ; random8_cell:rc8|data[3] ; random8_cell:rc8|data[2] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.863      ;
+; 0.536 ; random8_cell:rc5|data[7] ; random8_cell:rc5|data[6] ; clock        ; clock       ; 0.000        ; 0.244      ; 0.864      ;
+; 0.536 ; random8_cell:rc2|data[2] ; random8_cell:rc2|data[4] ; clock        ; clock       ; 0.000        ; 0.246      ; 0.866      ;
+; 0.537 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[7] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.663      ;
+; 0.543 ; random8_cell:rc7|data[6] ; random8_cell:rc7|data[2] ; clock        ; clock       ; 0.000        ; 0.041      ; 0.668      ;
+; 0.543 ; random8_cell:rc6|data[1] ; random8_cell:rc6|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.872      ;
+; 0.544 ; random8_cell:rc3|data[0] ; random8_cell:rc3|data[6] ; clock        ; clock       ; 0.000        ; 0.245      ; 0.873      ;
+; 0.544 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[3] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.670      ;
+; 0.545 ; random8_cell:rc3|data[3] ; random8_cell:rc3|data[0] ; clock        ; clock       ; 0.000        ; 0.042      ; 0.671      ;
+; 0.545 ; random8_cell:rc1|data[4] ; random8_cell:rc1|data[6] ; clock        ; clock       ; 0.000        ; 0.241      ; 0.870      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.319   ; 0.164 ; N/A      ; N/A     ; -3.000              ;
+;  clock           ; -2.319   ; 0.164 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -127.555 ; 0.0   ; 0.0      ; 0.0     ; -85.24              ;
+;  clock           ; -127.555 ; 0.000 ; N/A      ; N/A     ; -85.240             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; data[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[4]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[5]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[6]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; data[7]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; seeds[0]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clock                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[9]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[8]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[18]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[17]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[16]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[27]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[26]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[25]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[24]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[36]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[35]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[34]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[33]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[32]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[45]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[44]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[43]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[42]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[41]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[40]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[54]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[53]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[52]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[51]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[50]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[49]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[48]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[63]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[62]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[61]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[60]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[59]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[58]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[57]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[56]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[7]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[6]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[5]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[4]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[3]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[2]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[1]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[11]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[10]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[13]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[12]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[14]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[15]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[19]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[21]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[20]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[22]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[23]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[29]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[28]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[30]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[31]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[37]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[38]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[39]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[46]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[47]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; seeds[55]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; data[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.33 V              ; -0.00467 V          ; 0.226 V                              ; 0.087 V                              ; 2.91e-09 s                  ; 2.74e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.33 V             ; -0.00467 V         ; 0.226 V                             ; 0.087 V                             ; 2.91e-09 s                 ; 2.74e-09 s                 ; Yes                       ; Yes                       ;
+; data[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; data[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; data[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
+; data[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; data[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; data[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; data[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; data[7]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 1176     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 1176     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 64    ; 64   ;
+; Unconstrained Input Port Paths  ; 288   ; 288  ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clock  ; clock ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; seeds[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[4]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[5]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[6]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[7]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[8]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[9]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[10]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[11]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[12]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[13]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[14]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[15]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[16]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[17]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[18]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[19]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[20]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[21]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[22]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[23]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[24]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[25]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[26]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[27]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[28]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[29]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[30]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[31]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[32]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[33]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[34]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[35]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[36]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[37]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[38]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[39]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[40]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[41]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[42]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[43]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[44]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[45]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[46]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[47]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[48]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[49]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[50]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[51]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[52]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[53]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[54]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[55]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[56]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[57]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[58]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[59]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[60]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[61]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[62]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[63]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; seeds[0]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[1]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[2]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[3]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[4]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[5]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[6]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[7]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[8]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[9]   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[10]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[11]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[12]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[13]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[14]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[15]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[16]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[17]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[18]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[19]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[20]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[21]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[22]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[23]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[24]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[25]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[26]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[27]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[28]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[29]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[30]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[31]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[32]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[33]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[34]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[35]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[36]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[37]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[38]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[39]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[40]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[41]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[42]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[43]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[44]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[45]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[46]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[47]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[48]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[49]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[50]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[51]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[52]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[53]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[54]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[55]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[56]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[57]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[58]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[59]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[60]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[61]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[62]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; seeds[63]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Apr 19 20:57:44 2018
+Info: Command: quartus_sta random -c random
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'random.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.319
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.319            -127.555 clock 
+Info (332146): Worst-case hold slack is 0.388
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.388               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -85.240 clock 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.003
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.003            -108.952 clock 
+Info (332146): Worst-case hold slack is 0.364
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.364               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -85.240 clock 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.613
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.613             -30.147 clock 
+Info (332146): Worst-case hold slack is 0.164
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.164               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -71.231 clock 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 912 megabytes
+    Info: Processing ended: Thu Apr 19 20:57:46 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

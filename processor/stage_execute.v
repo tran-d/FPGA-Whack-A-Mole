@@ -18,6 +18,8 @@ module stage_execute(
 	// outputs
 	o_out,
 	b_out,
+	multdiv_result,
+	multdiv_RDY,
 	write_exception,
 	pc_in,
 	branched_jumped,
@@ -27,21 +29,21 @@ module stage_execute(
 	input [4:0] pc_upper_5;
 	input [31:0] insn_in, regfile_operandA, regfile_operandB, pc_out, o_xm_out, data_writeReg;
 	input clock, mx_bypass_A, wx_bypass_A, mx_bypass_B, wx_bypass_B;
-	input [287:0] sensor_readings;				// Capacitive Sensor data	
-	
-	output [31:0] pc_in, o_out, b_out;
-	output write_exception, branched_jumped;
+	input [287:0] sensor_readings;
+
+	output [31:0] pc_in, o_out, b_out, multdiv_result;
+	output write_exception, branched_jumped, multdiv_RDY;
 	output reg [143:0] led_commands;
 	
 	reg [31:0] selected_sensor_reading; 
 		
 	wire [31:0] ALU_operandA, ALU_operandB, ALU_result;
 	wire [4:0] ALU_op_new, shamt;
-	wire isNotEqual, isLessThan, exception;
+	wire isNotEqual, isLessThan, ALU_exception, multdiv_exception;
 	
 	assign shamt = insn_in[11:7];
 		
-	alu my_alu(ALU_operandA, ALU_operandB, ALU_op_new, shamt, ALU_result, isNotEqual, isLessThan, exception);
+	alu my_alu(ALU_operandA, ALU_operandB, ALU_op_new, shamt, ALU_result, isNotEqual, isLessThan, ALU_exception);
 
 	/* Insn Controls */
 	wire [4:0] opcode, ALU_op;
@@ -58,7 +60,7 @@ module stage_execute(
 	wire [31:0] immediate_extended;
 	wire [4:0] ALU_op_new_alt;
 	wire r_insn, addi, add, sub, mul, div, ALU_add, ALU_sub, ALU_mul, ALU_div, immed_insn, 
-	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap;
+	bne, blt, bex, j, jr, jal, setx, beq, rand_insn, led, cap, nop, lw, sw;
 	
 	signextender_16to32 my_se(immediate, immediate_extended);
 	
@@ -72,10 +74,12 @@ module stage_execute(
 	assign sub 			= r_insn && ALU_sub;
 	assign mul 			= r_insn && ALU_mul;
 	assign div 			= r_insn && ALU_div;
+	assign nop 			= ~(|insn_in);
 	
-	assign immed_insn =  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]) || // addi
-								(~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]) || // sw
-								(~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
+	assign lw			= (~opcode[4] &  opcode[3] & ~opcode[2] & ~opcode[1] & ~opcode[0]);   // lw
+	assign sw 			= (~opcode[4] & ~opcode[3] &  opcode[2] &  opcode[1] &  opcode[0]); // sw
+	//assign addi 		=  (~opcode[4] & ~opcode[3] &  opcode[2] & ~opcode[1] &  opcode[0]); // addi
+	assign immed_insn = addi || sw || lw;
 	
 	/* ALU Inputs */
 	wire [31:0] ALU_operandA_alt1, ALU_operandB_alt1, ALU_operandB_alt2, ALU_operandB_alt3;
@@ -88,14 +92,17 @@ module stage_execute(
 	assign ALU_operandB_alt2 	= mx_bypass_B  ? o_xm_out			: ALU_operandB_alt3;
 	assign ALU_operandB_alt3 	= wx_bypass_B	? data_writeReg	: regfile_operandB;
 	
-	assign ALU_op_new 			= addi 			? 5'd0 				: ALU_op_new_alt;
+	assign ALU_op_new 			= (addi || lw || sw)			? 5'd0 				: ALU_op_new_alt;
 	assign ALU_op_new_alt 		= (blt | bne | bex | beq)  ? 5'd1 : ALU_op;
 	
 	
+	/* Multiplier/Divider */
+	multdiv_controller my_multdiv_controller(ALU_operandA, ALU_operandB, mul, div, nop, clock, multdiv_result, multdiv_exception, multdiv_RDY);
+
 	/* TEST */
 	assign led			= ~opcode[4] &  opcode[3] & ~opcode[2] &  opcode[1] &  opcode[0];	//01011
 	assign cap			= ~opcode[4] &  opcode[3] &  opcode[2] & ~opcode[1] & ~opcode[0];	//01100
-	
+
 	
 	/* Branch Controls */ 
 	wire take_bne, take_blt, take_bex, take_beq;
@@ -131,18 +138,19 @@ module stage_execute(
 	wire [31:0] o_out_alt1, o_out_alt2, o_out_alt3, o_out_alt4, o_out_alt5, o_out_alt6, o_out_alt7, b_out_alt;
 	
 	assign o_out 		= jal	? pc_out : o_out_alt1;
-	assign o_out_alt1 = (add  && exception) ? 32'd1 : o_out_alt2;
-	assign o_out_alt2 = (addi && exception) ? 32'd2 : o_out_alt3;
-	assign o_out_alt3 = (sub  && exception) ? 32'd3 : o_out_alt4;
-	assign o_out_alt4 = (mul  && exception) ? 32'd4 : o_out_alt5;
-	assign o_out_alt5 = (div  && exception) ? 32'd5 : o_out_alt6;
+	assign o_out_alt1 = (add  && ALU_exception) 			? 32'd1 : o_out_alt2;
+	assign o_out_alt2 = (addi && ALU_exception) 			? 32'd2 : o_out_alt3;
+	assign o_out_alt3 = (sub  && ALU_exception) 			? 32'd3 : o_out_alt4;
+	assign o_out_alt4 = (mul  && multdiv_exception) ? 32'd4 : o_out_alt5;
+	assign o_out_alt5 = (div  && multdiv_exception) ? 32'd5 : o_out_alt6;
 	assign o_out_alt6 = setx ? {pc_upper_5, target} : o_out_alt7;
 	assign o_out_alt7 = cap  ?	selected_sensor_reading : ALU_result;
 
 	assign b_out 		= mx_bypass_B ? o_xm_out 		: b_out_alt;
 	assign b_out_alt	= wx_bypass_B ? data_writeReg : regfile_operandB;
 	
-	assign write_exception = exception && (add | addi | sub | mul | div);
+	assign write_exception = ALU_exception && (add | addi | sub | mul | div);
+
 	
 	
 	/* LED Array */

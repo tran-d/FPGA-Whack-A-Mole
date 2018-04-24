@@ -26,8 +26,9 @@ try:
     outputFile = open(str(argv[2]) + 'imem.mif','w')
     print("MIF file: " + argv[2] + 'imem.mif')
 except:
-    outputFile = open('imem.mif', 'w')
-    print("Warning: imem location not specified - writing to current location")
+    outputFile = open('../processor/imem.mif', 'w')
+    print("MIF file: " + '../processor/' + 'imem.mif')
+
 
 newLine = lambda: outputFile.write('\n')
 outputFile.write('-- Compiled from text: ' + argv[1])
@@ -71,6 +72,59 @@ opcode = {'add':'00000',
           'led':'01011',
           'cap':'01100'
           }
+
+replacements = {
+    '$v0' : '$r1',
+    '$v1' : '$r2',
+    '$a0' : '$r3',
+    '$a1' : '$r4',
+    '$a2' : '$r5',
+    '$a3' : '$r6',
+    '$t0' : '$r7',
+    '$t1' : '$r8',
+    '$t2' : '$r9',
+    '$t3' : '$r10',
+    '$t4' : '$r11',
+    '$t5' : '$r12',
+    '$t6' : '$r13',
+    '$t7' : '$r14',
+    '$t8' : '$r15',
+    '$t9' : '$r16',
+    '$t10' : '$r17',
+    '$t11' : '$r18',
+    '$t12' : '$r19',
+    '$s0' : '$r20',
+    '$s1' : '$r21',
+    '$s2' : '$r22',
+    '$s3' : '$r23',
+    '$s4' : '$r24',
+    '$s5' : '$r25',
+    '$s6' : '$r26',
+    '$s7' : '$r27',
+    '$sp' : '$r28',
+    '$rm' : '$r29',
+    '$rstatus' : '$r30',
+    '$ra' : '$r31'
+}
+
+counter = 0
+for instrLine in instructions:
+    try:
+        if not instrLine.rstrip():
+            continue
+        instr = instrLine.split()
+        instr = [x.strip(',') for x in instr]
+        if instr[0][-1] == ':':
+            replacements[instr[0][:-1]] = str(counter)
+            instr.pop(0)
+        if instr[0] != '#' and instr[0] != 'checkreg' and instr[0] != 'cycles':
+            counter += 1
+    except Exception as e:
+        print "Syntax Error:", str(instrLine)
+        print "Details:", e
+        sys.exit()
+
+counter = 0
 for instrLine in instructions:
     try:
         if not instrLine.rstrip():
@@ -78,6 +132,16 @@ for instrLine in instructions:
 
         instr = instrLine.split()
         instr = [x.strip(',') for x in instr]
+
+        if instr[0][-1] == ':':
+            instr.pop(0)
+
+        for variable in replacements.keys():
+            instr = [w if w != variable else replacements[variable] for w in instr]
+          
+        if instr[0][0] == "#":
+            continue
+
         line = str(counter) + ' : '
         if instr[0] == 'add':
             line += opcode[instr[0]]
@@ -166,11 +230,13 @@ for instrLine in instructions:
             line += str(binary_repr(0,2))
 
         elif instr[0] == 'sw' or instr[0] == 'lw':
-            line += opcode[instr[0]]
-            line += str(binary_repr(int(instr[1][2:]),5))
-            pt2 = re.findall(r'\d+', instr[2])
-            line += str(binary_repr(int(pt2[1]),5))
-            line += str(binary_repr(int(pt2[0]),17))
+			for r in replacements.keys():
+				instr[2] = instr[2].replace(r, replacements[r])
+			line += opcode[instr[0]]
+			line += str(binary_repr(int(instr[1][2:]),5))
+			pt2 = re.findall(r'\d+', instr[2])
+			line += str(binary_repr(int(pt2[1]),5))
+			line += str(binary_repr(int(pt2[0]),17))
 
         elif instr[0] =='j':
             line += opcode[instr[0]]
@@ -240,6 +306,8 @@ for instrLine in instructions:
             outputFile.write(line)
             newLine()
             counter += 1
+			
+        print str(counter - 1) + ":\t" + str(instr)
 
     except Exception as e:
         print "Syntax Error:", str(instrLine)
@@ -255,25 +323,28 @@ outputFile.write('END;')
 
 
 # Write tests to testbench
-tb_path = argv[2] + 'processor_tb_auto.v'
-print "Testbench file: " + tb_path
+# try:
+#     tb_path = argv[2] + 'processor_tb_auto.v'
+# except IndexError:
+#     tb_path = '../processor/processor_tb_auto.v'
+# print "Testbench file: " + tb_path
 
-tests_str = ''
-for test_type in tests:
-    if test_type == 'cycles':
-        continue
-    for test in tests[test_type]:
-        sgn = ['-' if t < 0 else '' for t in test]
-        test = [math.fabs(t) for t in test]
-        tests_str += "\t\t%s(%s32\'d%d, %s32\'d%d);\n" % (test_type, sgn[0], test[0], sgn[1], test[1])
+# tests_str = ''
+# for test_type in tests:
+#     if test_type == 'cycles':
+#         continue
+#     for test in tests[test_type]:
+#         sgn = ['-' if t < 0 else '' for t in test]
+#         test = [math.fabs(t) for t in test]
+#         tests_str += "\t\t%s(%s32\'d%d, %s32\'d%d);\n" % (test_type, sgn[0], test[0], sgn[1], test[1])
 
-# change file
-with open(tb_path,'w') as tb:
-    for line in open("./processor_tb_base.v"):
-       line = line.replace("CYCLE_LIMIT_AUTO_GENERATE", str(tests['cycles']))
-       tb.write(line)
+# # change file
+# with open(tb_path,'w') as tb:
+#     for line in open("./processor_tb_base.v"):
+#        line = line.replace("CYCLE_LIMIT_AUTO_GENERATE", str(tests['cycles']))
+#        tb.write(line)
 
-    tb.write('\n\ttask performTests; begin\n')
-    tb.write(tests_str)
-    tb.write('\tend endtask\n\n')
-    tb.write('endmodule\n')
+#     tb.write('\n\ttask performTests; begin\n')
+#     tb.write(tests_str)
+#     tb.write('\tend endtask\n\n')
+#     tb.write('endmodule\n')
