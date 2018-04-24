@@ -1,0 +1,65 @@
+startup: nop
+	addi $t2, $r0, 9
+	addi $t1, $r0, 65280
+
+	lightup_red: nop 
+		addi $t0, $r0, 0
+		led $t0, $t1
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightup_red
+		nop
+		addi $a0, $r0, 1000
+		jal delay
+		addi $t0, $r0, 0
+
+	lightoff_red: nop
+		led $t0, $r0
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightoff_red
+		nop
+		addi $a0, $r0, 1000
+		jal delay
+		addi $t0, $r0, 0
+		addi $t1, $r0, 280
+
+	lightup_blue: nop 
+		led $t0, $t1
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightup_blue
+		nop
+		addi $a0, $r0, 1000
+		jal delay
+		addi $t0, $r0,  0
+
+	lightoff_blue: nop
+		led $t0, $r0
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightoff_blue
+		nop
+		addi $a0, $r0, 1000
+		jal delay
+		addi $t0, $r0,  0
+		addi $t1, $r0, 65535
+
+	lightup_pink: nop 
+		led $t0, $t1
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightup_pink
+		nop
+		addi $a0, $r0, 1000
+		jal delay
+		addi $t0, $r0,  0
+
+	lightoff_pink: nop
+		led $t0, $r0
+		addi $t0, $t0, 1
+		beq $t0, $t2, 1
+		j lightoff_pink
+		nop
+		addi $a0, $r0, 1000
+		jal delay
