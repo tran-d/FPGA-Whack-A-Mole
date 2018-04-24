@@ -87,7 +87,7 @@ while: nop
 				j mole_whacked
 			
 				penalty: nop
-					addi $a0, $r0, -500						# penalty
+					addi $a0, $r0, -10						# penalty
 					jal update_score
 					addi $a0, $t0, 0
 					# jal deactivate_mole		
@@ -267,7 +267,7 @@ check_sensor: nop
 	# $v0: 1 - sensor touched, 0 - sensor not touched
 
 	cap $s0, $a0
-	addi $s1, $r0, 1400					# set THRESHOLD
+	addi $s1, $r0, 1450					# set THRESHOLD
 
 	blt $s1, $s0, 1
 	j not_touched
