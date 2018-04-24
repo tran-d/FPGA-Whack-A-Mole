@@ -16,7 +16,7 @@ addi $t12, $r0, 0						# game_state = 0
 # jal delay
 
 # TEST
-addi $a0, $r0, 3000
+addi $a0, $r0, 2000
 jal delay
 
 while: nop
@@ -43,8 +43,8 @@ while: nop
 			sw $t4, 3($t0)
 
 			# TEST 
-			# addi $a0, $r0, 500
-			# jal delay
+			addi $a0, $r0, 500
+			jal delay
 
 			addi $t0, $t0, 5							# increment mole index
 			addi $t2, $t2, 1							# increment led index
@@ -71,7 +71,7 @@ while: nop
 			# addi $t11, $r0, 45
 			# lw $t10, 0($t11)
 
-			addi $a0, $r0, 5
+			addi $a0, $r0, 2
 			jal delay
 
 			addi $a0, $t2, 0							# $a0 = index of led
@@ -90,7 +90,9 @@ while: nop
 					addi $a0, $r0, -500						# penalty
 					jal update_score
 					addi $a0, $t0, 0
-					jal deactivate_mole			
+					# jal deactivate_mole		
+					addi $a0, $r0, 50
+					jal delay	
 					j iterate
 
 				mole_whacked: nop
@@ -400,7 +402,7 @@ increment_time_elapsed: nop
 	# $a0: index of mole
 
 	lw $s0, 2($a0)
-	addi $s1, $s0, 35
+	addi $s1, $s0, 25
 	sw $s1, 2($a0)
 
 	jr $ra
@@ -458,8 +460,8 @@ update_score: nop
 	# add $s2, $s1, $a0				# score += arg0
 	# sw $s2, 0($s0)					# store new score
 
-	add $t9, $r0, $a0
-	sll $t11, $t9, 9
+	add $t11, $t11, $a0
+	# sll $t11, $t9, 9
 
 
 	jr $ra

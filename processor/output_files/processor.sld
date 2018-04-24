@@ -2,42 +2,27 @@
   <sld_infos>
     <sld_info hpath="debugger:d0" name="d0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524595585"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="debugger:d2" name="d2">
+    <sld_info hpath="debugger:d12" name="d12">
       <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524595585"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="debugger:d3" name="d3">
+    <sld_info hpath="debugger:d13" name="d13">
       <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524595585"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="debugger:d4" name="d4">
+    <sld_info hpath="debugger:d14" name="d14">
       <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524595585"/>
       </assignment_values>
     </sld_info>
-    <sld_info hpath="debugger:d5" name="d5">
+    <sld_info hpath="debugger:dscore" name="dscore">
       <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="debugger:d6" name="d6">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="debugger:d7" name="d7">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
-      </assignment_values>
-    </sld_info>
-    <sld_info hpath="debugger:d8" name="d8">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524592721"/>
+        <assignment_value text="QSYS_NAME debugger HAS_SOPCINFO 1 GENERATION_ID 1524595585"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">

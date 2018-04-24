@@ -37,7 +37,7 @@ module regfile (
 	assign p5 = register_output[12];		// t5
 	assign p6 = register_output[13];		// t6
 	assign p7 = register_output[11];		// t4
-	assign t11 = register_output[18];   // t11
+	assign t11 = register_output[18];   // t11 = score
 	
 	/***** create decoder for write_reg *****/						
 	decoder5to32 my_decoder(ctrl_writeReg, selectedRegisterBits);

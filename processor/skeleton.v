@@ -158,26 +158,27 @@ module skeleton(
 	 /** Debugger **/
 	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
 	 //debugger d1(.probe(capacitive_sensor_readings[63:32]));
-	 debugger d2(.probe(capacitive_sensor_readings[95:64]));
-	 debugger d3(.probe(capacitive_sensor_readings[127:96]));
-	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
-	 debugger d5(.probe(capacitive_sensor_readings[191:160]));
-	 debugger d6(.probe(capacitive_sensor_readings[223:192]));
-	 debugger d7(.probe(capacitive_sensor_readings[255:224]));
-	 debugger d8(.probe(capacitive_sensor_readings[287:256]));
+//	 debugger d2(.probe(capacitive_sensor_readings[95:64]));
+//	 debugger d3(.probe(capacitive_sensor_readings[127:96]));
+//	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
+//	 debugger d5(.probe(capacitive_sensor_readings[191:160]));
+//	 debugger d6(.probe(capacitive_sensor_readings[223:192]));
+//	 debugger d7(.probe(capacitive_sensor_readings[255:224]));
+//	 debugger d8(.probe(capacitive_sensor_readings[287:256]));
 	 //debugger d4(.probe(capacitive_sensor_readings[159:128]));
 	 //debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
 	 //debugger d10(.probe({16'b0, led_commands[15:0]}));
 	 
 	 //debugger d20(.probe({20'd0 , address_imem[11:0]}));		// PC
 	 
-//	 debugger d12(.probe(p1));
-//	 debugger d13(.probe(p2));
-//	 debugger d14(.probe(p3));
+	 debugger d12(.probe(p1));
+	 debugger d13(.probe(p2));
+	 debugger d14(.probe(p3));
 //     
 //     debugger d11(.probe(p4));
 //     
 //	 debugger d15(.probe(p5));
 //	 debugger d16(.probe(p6));
 //	 debugger d17(.probe(p7));
+	debugger dscore(.probe(t11));
 endmodule
