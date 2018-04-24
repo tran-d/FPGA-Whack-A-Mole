@@ -70,7 +70,7 @@ while: nop
 			addi $t11, $r0, 45
 			lw $t10, 0($t11)
 
-			addi $a0, $r0, 3
+			addi $a0, $r0, 5
 			jal delay
 
 			addi $a0, $t2, 0							# $a0 = index of led
@@ -169,8 +169,8 @@ random_time_on: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 1000	  # min
-	addi $a1, $r0, 2000     # max
+	addi $a0, $r0, 500	  # min
+	addi $a1, $r0, 2500     # max
 	
 	jal random_range
 	
@@ -186,8 +186,8 @@ random_time_off: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 2000
-	addi $a1, $r0, 8000
+	addi $a0, $r0, 15000
+	addi $a1, $r0, 7000
 	
 	jal random_range 
 	
@@ -203,7 +203,7 @@ random_color: nop
 	addi $sp, $sp, -1
 	sw $ra, 0($sp)
 	
-	addi $a0, $r0, 65534	  		# min
+	addi $a0, $r0, 280	  		# min
 	addi $a1, $r0, 65535     	# max
 	
 	jal random_range
@@ -264,7 +264,7 @@ check_sensor: nop
 	# $v0: 1 - sensor touched, 0 - sensor not touched
 
 	cap $s0, $a0
-	addi $s1, $r0, 3000					# set THRESHOLD
+	addi $s1, $r0, 2000					# set THRESHOLD
 
 	blt $s1, $s0, 1
 	j not_touched

@@ -1,0 +1,31 @@
+
+
+
+init: nop
+	addi $t0, $r0, 0								# set starting mole index [0-40], increments by 5
+	addi $t1, $r0, 40								# set last mole index
+	addi $t2, $r0, 0								# set starting LED index [0-8], increments by 1
+	addi $t3, $r0, 9								# set last led index
+	addi $t4, $r0, 1450   # r1 = 3000
+	addi $t7, $r0, 65280  # r2 = red (on)
+loop: nop
+	cap $t5, $t2		  # r10 = cap(0)	
+	blt $t4, $t5, 2	  	  # if cap(0) < 3000, toline 7
+	j off   			  # toline 8
+on: nop
+	led $t2, $t7          # led(0) = r2
+	j iterate			  # repeat
+off: nop
+	led $t2, $r0
+	j iterate
+
+iterate: nop
+	addi $t0, $t0, 5
+	addi $t2, $t2, 1
+	beq $t2, $t3, 1							# branch if current index exceeds last mole index (i.e. reset)
+	j loop						# DONE
+
+reset_index: nop
+	addi $t0, $r0, 0
+	addi $t2, $r0, 0
+	j loop						# DONE
