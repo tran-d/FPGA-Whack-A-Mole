@@ -1,0 +1,17 @@
+set_time_limit_on: nop
+
+	# $a0: index of mole
+	# $a1: time_limit_on (ms)
+	
+	sw $a1, 3($a0)
+
+	jr $ra
+
+set_time_limit_off: nop
+
+	# $a0: index of mole
+	# $a1: time_limit_off (ms)
+	
+	sw $a1, 4($a0)
+
+	jr $ra

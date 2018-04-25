@@ -1,0 +1,45 @@
+check_time_limit_off_exceeded: nop
+					addi $a0, $t0, 0
+					jal time_limit_off_exceeded
+					addi $t2, $r0, 1
+					beq $v0, $t2, 1							# branch if time_limit_off exceeded 
+					j check_time_limit_on_exceeded
+
+					# CHECK IF MOLE IS NOT ACTIVE
+					addi $a0, $t0, 0
+					jal mole_is_active
+					addi $t2, $r0, 1
+					beq $v0, $r0, 1							# branch if mole is inactive
+					j update_time_elapsed
+
+					activate_mole: nop
+						addi $a0, $t0, 0
+						jal set_mole_on
+						# can combine with top function
+						jal reset_time_elapsed
+						# change to correct index or put in set_mole_on function
+						led $t0, $t7
+						j check_current_mole				# DONE - iterate to next mole
+
+				check_time_limit_on_exceeded: nop
+					addi $a0, $t0, 0
+					jal time_limit_off_exceeded
+					beq $v0, $t2, 1							# branch if time_limit_on exceeded
+					j update_time_elapsed
+
+					# CHECK IF MOLE IS ACTIVE
+					addi $a0, $t0, 0
+					jal mole_is_active
+					addi $t2, $r0, 1
+					bne $v0, $r0, 1							# branch if mole is active
+					j update_time_elapsed
+					
+					deactivate_mole: nop
+						addi $a0, $t0, 0 
+						jal set_mole_off
+						# can combine with top function
+						jal reset_time_elapsed
+						# change to correct index of put in set_mole_off function
+						led $t0, $r0
+						# need to get random 
+						j check_current_mole				# DONE - iterate to next mole

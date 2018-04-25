@@ -1,0 +1,65 @@
+
+while: nop
+
+	
+
+random_color: nop
+	
+	# v0: random color [280, 65535]
+
+	addi $sp, $sp, -1
+	sw $ra, 0($sp)
+	
+	addi $a0, $r0, 280	  		# min
+	addi $a1, $r0, 65535     	# max
+	
+	jal random_range
+	
+	lw $ra, 0($sp)
+	addi $sp, $sp, 1
+	
+	jr $ra
+
+random_range: nop
+
+	# a0: min_time
+	# a1: max_time
+	# v0: random value between (min_time, max_time)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $a1
+
+	add  $s2, $r0, $rm    # random 0-255
+
+	sub  $s3, $s1, $s0    # map random to min/max (max - min)
+	mul  $s4, $s2, $s3
+	nop
+	nop
+	addi $s5, $r0, 255
+	div  $s6, $s4, $s5
+	nop
+	nop	
+	add  $v0, $s6, $s0    # save to v0
+
+	jr 	 $ra 			  # return
+
+delay: nop
+	
+	# a0: delay time (ms)
+
+	add $s0, $r0, $a0
+	add $s1, $r0, $r0
+	addi $s2, $r0, 8333
+	mul $s0, $s0, $s2
+	nop
+	nop
+
+	delay_loop_begin: nop # 3 cycles/loop
+
+		addi $s1, $s1, 1
+		blt $s0, $s1, 1
+		j delay_loop_begin
+
+	delay_loop_end: nop
+
+	jr $ra

@@ -1,0 +1,14 @@
+3x3 whack-a-mole using LEDs (as moles) and capacitive sensors (as whacking detectors).
+
+Moles have the following attributes:
+Index, State, Time Elapsed, Time Limit On, Time Limit Off.
+
+Index corresponds to LED index
+State = inactive or active
+Time Elapsed = time spent in current state
+Time Limit On/Off = maximum amount of time spend on/off before switching states (pseudo-random number generator).
+
+
+Points per whack = (Time Limit On) - (Time Elapsed)
+Penalties for whacking an inactive mole. 
+Score tracked in register.

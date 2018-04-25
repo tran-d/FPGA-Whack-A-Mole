@@ -5,7 +5,7 @@ module regfile (
     ctrl_readRegA, ctrl_readRegB, data_writeReg,
     data_readRegA, data_readRegB, 
 	 random_data,
-	 r1, r2, r3
+	 p1, p2, p3, p4, p5, p6, p7
 );
 
    input clock, ctrl_writeEnable, ctrl_reset;
@@ -24,10 +24,18 @@ module regfile (
 	genvar j; 
 
 	/* Probes for testing */
-	output [31:0] r1, r2, r3;
-	assign r1 = register_output[4];
-	assign r2 = register_output[5];
-	assign r3 = register_output[6];
+	output [31:0] p1, p2, p3, p4, p5, p6, p7;
+
+	assign p1 = register_output[1];
+	
+	assign p2 = register_output[20]; 
+	assign p3 = register_output[27];  // s7
+    
+    assign p4 = register_output[17];		// t10
+	
+	assign p5 = register_output[12];		// t5
+	assign p6 = register_output[13];		// t6
+	assign p7 = register_output[11];		// t4
 	
 	/***** create decoder for write_reg *****/						
 	decoder5to32 my_decoder(ctrl_writeReg, selectedRegisterBits);
