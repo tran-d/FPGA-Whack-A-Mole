@@ -1,3 +1,8 @@
+# USE:
+# to install numpy: python -m pip install numpy
+# to run test: python compiler.py TEST_FILE.txt
+#
+
 from numpy import binary_repr, base_repr
 from sys import argv
 import sys
