@@ -17,7 +17,7 @@ module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 	reg [15:0] capacitors_charge_count;
    reg [16:0] div_count;
 
-	
+
 	initial begin
 		sensors_out <= 1'b0;
 		capacitors_charged <= 1'b0;
@@ -40,7 +40,7 @@ module capacitive_sensor_array(clock, sensors_in, sensors_out, readings);
 				sensors_out <= 1'b0;
 			end 
 			
-			else if(&sensors_in)	begin  // when capacitors not full, but all past threshold, count cycles until capacitors are definitely full
+			else if(&sensors_in === 1'b1)	begin  // when capacitors not full, but all past threshold, count cycles until capacitors are definitely full
 				sensors_out <= 1'b1;
 				capacitors_charge_count = capacitors_charge_count + 16'b1;
 				capacitors_charged = capacitors_charge_count > CHARGE_CONFIDENCE_CYCLES;

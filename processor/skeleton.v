@@ -19,7 +19,7 @@ module skeleton(
     // Data Memory
     output wire [11:0]  address_dmem,
     output wire [31:0]  d_dmem,
-    output wire         wren_dmem,
+    output wire         wren_dmem, 
     output wire [31:0]  q_dmem,
     // Regfile
     output wire         ctrl_writeEnable,
@@ -37,7 +37,7 @@ module skeleton(
 );
 	
 	 /** Testing **/
-	 wire [31:0] r0, r1, r2, r3, r4, r5;
+	 wire [31:0] p1, p2, p3, p4, p5, p6, p7;
 	 
 	 /** LED ARRAY **/
 	 wire [143:0] led_commands;
@@ -56,18 +56,18 @@ module skeleton(
 
     /** IMEM **/
     imem my_imem(
-        .address    (address_imem),            // address of data
-        .clock      (~clock),                  // you may need to invert the clock
-        .q          (q_imem)                   // the raw instruction
+        .address    (address_imem),    // address of data
+        .clock      (~clock),          // you may need to invert the clock
+        .q          (q_imem)           // the raw instruction
     );
 
     /** DMEM **/
     dmem my_dmem(
-        .address    (address_dmem),       // address of data
-        .clock      (~clock),            			 // may need to invert the clock
-        .data	    (d_dmem),    // data you want to write
-        .wren	    (wren_dmem),      // write enable
-        .q          (q_dmem)    // data from dmem
+        .address    (address_dmem),    // address of data
+        .clock      (~clock),          // may need to invert the clock
+        .data	     (d_dmem),    		// data you want to write
+        .wren	     (wren_dmem),     	// write enable
+        .q          (q_dmem)    			// data from dmem
     );
 
     /** REGFILE **/
@@ -82,7 +82,7 @@ module skeleton(
         data_readRegA,
         data_readRegB, 
 		  random_data,
-		  r0, r1, r2, r3, r4, r5
+		  p1, p2, p3, p4, p5, p6, p7
     );
 	 
     /** PROCESSOR **/
@@ -98,7 +98,7 @@ module skeleton(
         // Dmem
         address_dmem,                   // O: The address of the data to get or put from/to dmem
         d_dmem,                         // O: The data to write to dmem
-        wren_dmem,                           // O: Write enable for dmem
+        wren_dmem,                      // O: Write enable for dmem
         q_dmem,                         // I: The data from dmem
 
         // Regfile
@@ -111,7 +111,7 @@ module skeleton(
         data_readRegB,                  // I: Data from port B of regfile
 		  
 		  // LED Array
-		  led_commands,
+		  led_commands, 
 		  
 		  // Capacitive Sensor Array
 		  capacitive_sensor_readings
@@ -120,15 +120,27 @@ module skeleton(
 	 
 	 /** Debugger **/
 	 debugger d0(.probe(capacitive_sensor_readings[31:0]));
+	 //debugger d1(.probe(capacitive_sensor_readings[63:32]));
+	 debugger d2(.probe(capacitive_sensor_readings[95:64]));
+	 debugger d3(.probe(capacitive_sensor_readings[127:96]));
 	 debugger d4(.probe(capacitive_sensor_readings[159:128]));
-	 debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
+	 debugger d5(.probe(capacitive_sensor_readings[191:160]));
+	 debugger d6(.probe(capacitive_sensor_readings[223:192]));
+	 debugger d7(.probe(capacitive_sensor_readings[255:224]));
+	 debugger d8(.probe(capacitive_sensor_readings[287:256]));
+	 //debugger d4(.probe(capacitive_sensor_readings[159:128]));
+	 //debugger d8(.probe(capacitive_sensor_readings[287:256]));	 
 	 //debugger d10(.probe({16'b0, led_commands[15:0]}));
 	 
-	 debugger d11(.probe(r0));
-	 debugger d12(.probe(r1));
-	 debugger d13(.probe(r2));
-	 debugger d14(.probe(r3));
-	 debugger d15(.probe(r4));
-	 debugger d16(.probe(r5));
-
+	 //debugger d20(.probe({20'd0 , address_imem[11:0]}));		// PC
+	 
+//	 debugger d12(.probe(p1));
+//	 debugger d13(.probe(p2));
+//	 debugger d14(.probe(p3));
+//     
+//     debugger d11(.probe(p4));
+//     
+//	 debugger d15(.probe(p5));
+//	 debugger d16(.probe(p6));
+//	 debugger d17(.probe(p7));
 endmodule
