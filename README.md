@@ -1,4 +1,4 @@
-# Project Checkpoint 4
+# FPGA Whack-A-Mole
  - Author: David Tran, Dhruv Patel, Justin Wang
  - Date Completed: May 1, 2018
  - Course: ECE/CS 350, Duke University, Durham, NC
